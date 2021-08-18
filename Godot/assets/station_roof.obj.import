@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/station_roof.obj-590f1d51c4fe4b35a8e091298fbbacce.mesh"
+
+[deps]
+
+files=[ "res://.import/station_roof.obj-590f1d51c4fe4b35a8e091298fbbacce.mesh" ]
+
+source_file="res://assets/station_roof.obj"
+dest_files=[ "res://.import/station_roof.obj-590f1d51c4fe4b35a8e091298fbbacce.mesh", "res://.import/station_roof.obj-590f1d51c4fe4b35a8e091298fbbacce.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
