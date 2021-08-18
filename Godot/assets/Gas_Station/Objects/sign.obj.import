@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/sign.obj-39413d3377b6c3bf9314e73768402dc8.mesh"
+
+[deps]
+
+files=[ "res://.import/sign.obj-39413d3377b6c3bf9314e73768402dc8.mesh" ]
+
+source_file="res://assets/Gas_Station/Objects/sign.obj"
+dest_files=[ "res://.import/sign.obj-39413d3377b6c3bf9314e73768402dc8.mesh", "res://.import/sign.obj-39413d3377b6c3bf9314e73768402dc8.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

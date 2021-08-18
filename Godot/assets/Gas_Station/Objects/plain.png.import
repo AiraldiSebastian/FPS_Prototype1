@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/ak.png-3c65bfa7eae24f574cb40191feb885a7.s3tc.stex"
-path.etc2="res://.import/ak.png-3c65bfa7eae24f574cb40191feb885a7.etc2.stex"
+path.s3tc="res://.import/plain.png-7bfdc8b4fc41ab32f5d4b16786f057c9.s3tc.stex"
+path.etc2="res://.import/plain.png-7bfdc8b4fc41ab32f5d4b16786f057c9.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/ak.png"
-dest_files=[ "res://.import/ak.png-3c65bfa7eae24f574cb40191feb885a7.s3tc.stex", "res://.import/ak.png-3c65bfa7eae24f574cb40191feb885a7.etc2.stex" ]
+source_file="res://assets/Gas_Station/Objects/plain.png"
+dest_files=[ "res://.import/plain.png-7bfdc8b4fc41ab32f5d4b16786f057c9.s3tc.stex", "res://.import/plain.png-7bfdc8b4fc41ab32f5d4b16786f057c9.etc2.stex" ]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/zombie.png-4cd2dbe37cd76864df3927b059d3a180.s3tc.stex"
-path.etc2="res://.import/zombie.png-4cd2dbe37cd76864df3927b059d3a180.etc2.stex"
+path.s3tc="res://.import/road_blocker.png-771f1a111223e5ea259f5358f77ae40b.s3tc.stex"
+path.etc2="res://.import/road_blocker.png-771f1a111223e5ea259f5358f77ae40b.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/zombie.png"
-dest_files=[ "res://.import/zombie.png-4cd2dbe37cd76864df3927b059d3a180.s3tc.stex", "res://.import/zombie.png-4cd2dbe37cd76864df3927b059d3a180.etc2.stex" ]
+source_file="res://assets/Gas_Station/Objects/road_blocker.png"
+dest_files=[ "res://.import/road_blocker.png-771f1a111223e5ea259f5358f77ae40b.s3tc.stex", "res://.import/road_blocker.png-771f1a111223e5ea259f5358f77ae40b.etc2.stex" ]
 
 [params]
 

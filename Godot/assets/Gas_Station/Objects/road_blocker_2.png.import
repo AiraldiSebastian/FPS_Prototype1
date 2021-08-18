@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/oil_machine.png-1bf2bc7e0f6ead1e4b90c0a9d35bec58.s3tc.stex"
-path.etc2="res://.import/oil_machine.png-1bf2bc7e0f6ead1e4b90c0a9d35bec58.etc2.stex"
+path.s3tc="res://.import/road_blocker_2.png-824f228004e0805f2953cfea5c0925b8.s3tc.stex"
+path.etc2="res://.import/road_blocker_2.png-824f228004e0805f2953cfea5c0925b8.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/oil_machine.png"
-dest_files=[ "res://.import/oil_machine.png-1bf2bc7e0f6ead1e4b90c0a9d35bec58.s3tc.stex", "res://.import/oil_machine.png-1bf2bc7e0f6ead1e4b90c0a9d35bec58.etc2.stex" ]
+source_file="res://assets/Gas_Station/Objects/road_blocker_2.png"
+dest_files=[ "res://.import/road_blocker_2.png-824f228004e0805f2953cfea5c0925b8.s3tc.stex", "res://.import/road_blocker_2.png-824f228004e0805f2953cfea5c0925b8.etc2.stex" ]
 
 [params]
 

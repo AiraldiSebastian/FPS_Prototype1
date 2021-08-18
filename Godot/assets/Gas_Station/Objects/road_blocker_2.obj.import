@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/road_blocker_2.obj-9b829efb14991d11d44c4894ef8b53b4.mesh"
+
+[deps]
+
+files=[ "res://.import/road_blocker_2.obj-9b829efb14991d11d44c4894ef8b53b4.mesh" ]
+
+source_file="res://assets/Gas_Station/Objects/road_blocker_2.obj"
+dest_files=[ "res://.import/road_blocker_2.obj-9b829efb14991d11d44c4894ef8b53b4.mesh", "res://.import/road_blocker_2.obj-9b829efb14991d11d44c4894ef8b53b4.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

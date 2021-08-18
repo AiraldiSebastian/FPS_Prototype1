@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/sign.png-ce1750a0a91cc7aa81e844b4d838bf25.s3tc.stex"
-path.etc2="res://.import/sign.png-ce1750a0a91cc7aa81e844b4d838bf25.etc2.stex"
+path.s3tc="res://.import/zombie.png-2161d00f78345ac25414fa295b6e6485.s3tc.stex"
+path.etc2="res://.import/zombie.png-2161d00f78345ac25414fa295b6e6485.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sign.png"
-dest_files=[ "res://.import/sign.png-ce1750a0a91cc7aa81e844b4d838bf25.s3tc.stex", "res://.import/sign.png-ce1750a0a91cc7aa81e844b4d838bf25.etc2.stex" ]
+source_file="res://assets/Gas_Station/Objects/zombie.png"
+dest_files=[ "res://.import/zombie.png-2161d00f78345ac25414fa295b6e6485.s3tc.stex", "res://.import/zombie.png-2161d00f78345ac25414fa295b6e6485.etc2.stex" ]
 
 [params]
 

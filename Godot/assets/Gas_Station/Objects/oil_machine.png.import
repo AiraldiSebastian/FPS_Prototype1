@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/pistol.png-25ad999fb244d6e6522163977fe47a51.s3tc.stex"
-path.etc2="res://.import/pistol.png-25ad999fb244d6e6522163977fe47a51.etc2.stex"
+path.s3tc="res://.import/oil_machine.png-a915fb1ef9305135161e5cda37af73bd.s3tc.stex"
+path.etc2="res://.import/oil_machine.png-a915fb1ef9305135161e5cda37af73bd.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/pistol.png"
-dest_files=[ "res://.import/pistol.png-25ad999fb244d6e6522163977fe47a51.s3tc.stex", "res://.import/pistol.png-25ad999fb244d6e6522163977fe47a51.etc2.stex" ]
+source_file="res://assets/Gas_Station/Objects/oil_machine.png"
+dest_files=[ "res://.import/oil_machine.png-a915fb1ef9305135161e5cda37af73bd.s3tc.stex", "res://.import/oil_machine.png-a915fb1ef9305135161e5cda37af73bd.etc2.stex" ]
 
 [params]
 

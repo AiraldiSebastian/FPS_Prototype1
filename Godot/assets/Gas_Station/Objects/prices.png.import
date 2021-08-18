@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/knife.png-fe86871d33c75ce9d4eb4f1452dfa3c9.s3tc.stex"
-path.etc2="res://.import/knife.png-fe86871d33c75ce9d4eb4f1452dfa3c9.etc2.stex"
+path.s3tc="res://.import/prices.png-9d3ba7c5108b19e43e02f18537033f9c.s3tc.stex"
+path.etc2="res://.import/prices.png-9d3ba7c5108b19e43e02f18537033f9c.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/knife.png"
-dest_files=[ "res://.import/knife.png-fe86871d33c75ce9d4eb4f1452dfa3c9.s3tc.stex", "res://.import/knife.png-fe86871d33c75ce9d4eb4f1452dfa3c9.etc2.stex" ]
+source_file="res://assets/Gas_Station/Objects/prices.png"
+dest_files=[ "res://.import/prices.png-9d3ba7c5108b19e43e02f18537033f9c.s3tc.stex", "res://.import/prices.png-9d3ba7c5108b19e43e02f18537033f9c.etc2.stex" ]
 
 [params]
 

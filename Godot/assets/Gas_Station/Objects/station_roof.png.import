@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/prices.png-3c9496075027bb1618c98e052843f093.s3tc.stex"
-path.etc2="res://.import/prices.png-3c9496075027bb1618c98e052843f093.etc2.stex"
+path.s3tc="res://.import/station_roof.png-e74bb036cb153fccec119a830edde659.s3tc.stex"
+path.etc2="res://.import/station_roof.png-e74bb036cb153fccec119a830edde659.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/prices.png"
-dest_files=[ "res://.import/prices.png-3c9496075027bb1618c98e052843f093.s3tc.stex", "res://.import/prices.png-3c9496075027bb1618c98e052843f093.etc2.stex" ]
+source_file="res://assets/Gas_Station/Objects/station_roof.png"
+dest_files=[ "res://.import/station_roof.png-e74bb036cb153fccec119a830edde659.s3tc.stex", "res://.import/station_roof.png-e74bb036cb153fccec119a830edde659.etc2.stex" ]
 
 [params]
 
