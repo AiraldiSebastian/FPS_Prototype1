@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/ZT_name.obj-5fb86f0c3427948ccdac1d622474a0eb.mesh"
+
+[deps]
+
+files=[ "res://.import/ZT_name.obj-5fb86f0c3427948ccdac1d622474a0eb.mesh" ]
+
+source_file="res://assets/ZT_parts/ZT_name.obj"
+dest_files=[ "res://.import/ZT_name.obj-5fb86f0c3427948ccdac1d622474a0eb.mesh", "res://.import/ZT_name.obj-5fb86f0c3427948ccdac1d622474a0eb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
