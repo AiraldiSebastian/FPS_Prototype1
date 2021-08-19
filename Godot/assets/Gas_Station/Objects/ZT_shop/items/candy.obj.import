@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/candy.obj-16a37ba138ef9f823a13aef356614601.mesh"
+
+[deps]
+
+files=[ "res://.import/candy.obj-16a37ba138ef9f823a13aef356614601.mesh" ]
+
+source_file="res://assets/Gas_Station/Objects/ZT_shop/items/candy.obj"
+dest_files=[ "res://.import/candy.obj-16a37ba138ef9f823a13aef356614601.mesh", "res://.import/candy.obj-16a37ba138ef9f823a13aef356614601.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

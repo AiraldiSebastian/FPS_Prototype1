@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cupboard.obj-e2c3b7b0a30f0a684db04e16eccf18f0.mesh"
+
+[deps]
+
+files=[ "res://.import/cupboard.obj-e2c3b7b0a30f0a684db04e16eccf18f0.mesh" ]
+
+source_file="res://assets/Gas_Station/Objects/ZT_shop/cupboard.obj"
+dest_files=[ "res://.import/cupboard.obj-e2c3b7b0a30f0a684db04e16eccf18f0.mesh", "res://.import/cupboard.obj-e2c3b7b0a30f0a684db04e16eccf18f0.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

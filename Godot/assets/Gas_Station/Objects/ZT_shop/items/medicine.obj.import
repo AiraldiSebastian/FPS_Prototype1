@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/medicine.obj-fac51f851387abe8545bd8863213c31a.mesh"
+
+[deps]
+
+files=[ "res://.import/medicine.obj-fac51f851387abe8545bd8863213c31a.mesh" ]
+
+source_file="res://assets/Gas_Station/Objects/ZT_shop/items/medicine.obj"
+dest_files=[ "res://.import/medicine.obj-fac51f851387abe8545bd8863213c31a.mesh", "res://.import/medicine.obj-fac51f851387abe8545bd8863213c31a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

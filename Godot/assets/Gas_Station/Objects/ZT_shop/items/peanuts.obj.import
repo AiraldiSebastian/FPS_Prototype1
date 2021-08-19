@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/peanuts.obj-d81a980c1fe58641c4b0cc9f1d52734a.mesh"
+
+[deps]
+
+files=[ "res://.import/peanuts.obj-d81a980c1fe58641c4b0cc9f1d52734a.mesh" ]
+
+source_file="res://assets/Gas_Station/Objects/ZT_shop/items/peanuts.obj"
+dest_files=[ "res://.import/peanuts.obj-d81a980c1fe58641c4b0cc9f1d52734a.mesh", "res://.import/peanuts.obj-d81a980c1fe58641c4b0cc9f1d52734a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
