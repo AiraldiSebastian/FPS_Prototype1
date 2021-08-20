@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/road_mark.vox-a736194bc688fab55840a0bcdd39ab60.mesh"
+
+[deps]
+
+source_file="res://assets/road_mark.vox"
+dest_files=[ "res://.import/road_mark.vox-a736194bc688fab55840a0bcdd39ab60.mesh" ]
+
+[params]
+
+Scale=0.1

@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/roof_basement.vox-81235010526944576e4bca638a91b1ef.mesh"
+
+[deps]
+
+source_file="res://assets/roof_basement.vox"
+dest_files=[ "res://.import/roof_basement.vox-81235010526944576e4bca638a91b1ef.mesh" ]
+
+[params]
+
+Scale=0.1

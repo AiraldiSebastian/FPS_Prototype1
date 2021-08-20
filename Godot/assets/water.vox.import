@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/water.vox-fc3514a03390b1cd83f6614187a7fa9e.mesh"
+
+[deps]
+
+source_file="res://assets/water.vox"
+dest_files=[ "res://.import/water.vox-fc3514a03390b1cd83f6614187a7fa9e.mesh" ]
+
+[params]
+
+Scale=0.1

@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/ZT_name.vox-46b2f1f8eeffb49e16f02b81df5d7d02.mesh"
+
+[deps]
+
+source_file="res://assets/ZT_name.vox"
+dest_files=[ "res://.import/ZT_name.vox-46b2f1f8eeffb49e16f02b81df5d7d02.mesh" ]
+
+[params]
+
+Scale=0.1

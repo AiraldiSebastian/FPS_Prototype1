@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/glass_door.vox-cc56c2858882fc220ef18b23915bf95b.mesh"
+
+[deps]
+
+source_file="res://assets/glass_door.vox"
+dest_files=[ "res://.import/glass_door.vox-cc56c2858882fc220ef18b23915bf95b.mesh" ]
+
+[params]
+
+Scale=0.1
