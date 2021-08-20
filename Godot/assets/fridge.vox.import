@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/fridge.vox-78c9cc638697f361d8c1627be00e112c.mesh"
+
+[deps]
+
+source_file="res://assets/fridge.vox"
+dest_files=[ "res://.import/fridge.vox-78c9cc638697f361d8c1627be00e112c.mesh" ]
+
+[params]
+
+Scale=0.1

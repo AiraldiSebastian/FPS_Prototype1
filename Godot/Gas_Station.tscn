@@ -1,4 +1,4 @@
-[gd_scene load_steps=212 format=2]
+[gd_scene load_steps=271 format=2]
 
 [ext_resource path="res://assets/plain.vox" type="ArrayMesh" id=1]
 [ext_resource path="res://assets/road_blocker.vox" type="ArrayMesh" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/sign.vox" type="ArrayMesh" id=7]
 [ext_resource path="res://assets/prices.vox" type="ArrayMesh" id=8]
 [ext_resource path="res://assets/oil_machine.vox" type="ArrayMesh" id=9]
+[ext_resource path="res://assets/stone_window.vox" type="ArrayMesh" id=10]
 [ext_resource path="res://assets/road_mark.vox" type="ArrayMesh" id=11]
 [ext_resource path="res://assets/shop_staps.vox" type="ArrayMesh" id=12]
 [ext_resource path="res://assets/stone_wall.vox" type="ArrayMesh" id=13]
@@ -17,6 +18,11 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/glass_door.vox" type="ArrayMesh" id=17]
 [ext_resource path="res://assets/blocker.vox" type="ArrayMesh" id=18]
+[ext_resource path="res://assets/cupboard.vox" type="ArrayMesh" id=19]
+[ext_resource path="res://assets/cupboard2.vox" type="ArrayMesh" id=20]
+[ext_resource path="res://assets/orange_sign.vox" type="ArrayMesh" id=21]
+[ext_resource path="res://assets/fridge.vox" type="ArrayMesh" id=22]
+[ext_resource path="res://assets/shop_roof.vox" type="ArrayMesh" id=23]
 
 [sub_resource type="ConvexPolygonShape" id=429]
 points = PoolVector3Array( -0.741618, 2.12265, 3.32948, -0.741618, 2.62207, 3.32948, -0.741618, 2.62207, 3.8288, -0.698395, 2.18507, 3.8, -0.575014, 2.78833, 3.07977, -0.575014, 2.78833, 4.07861, -0.575014, 3.20452, 3.07977, -0.575014, 3.20452, 4.07861, -0.325474, 2.12265, 3.16317, -0.325474, 2.12265, 4.07861, -0.159017, 2.37236, 3.07977, -0.101574, 2.17054, 3.2, -0.1, 3.15955, 3.12128, -0.1, 3.15955, 4.0371, -0.0757878, 2.12265, 4.07861, -0.0305408, 3, 3.13051, -0.0305408, 3, 4.02787, -0.0280352, 2.4, 3.12717, -0.0280352, 2.4, 4.03121 )
@@ -470,6 +476,165 @@ points = PoolVector3Array( -4.68571, -0.0341918, -0.234286, -4.68571, -0.0341918
 
 [sub_resource type="ConvexPolygonShape" id=387]
 points = PoolVector3Array( -5.23423, -0.0339837, -0.234286, -5.23423, -0.0339837, 0.245714, -5.23423, 3.05143, -0.234286, -5.23423, 3.05143, 0.245714, -4.75433, 3.05143, -0.234286, -4.75433, 3.05143, 0.245714, -4.68571, -0.0339837, -0.234286, -4.68571, -0.0339837, 0.245714, -4.68571, 0.446224, -0.234286, -4.68571, 0.446224, 0.245714 )
+
+[sub_resource type="ConvexPolygonShape" id=529]
+points = PoolVector3Array( -3.70833, 0, -3.70833, -3.70833, 0, 3.70833, -3.70833, 1, -3.70833, -3.70833, 1, 3.70833, 3.70833, 0, -3.70833, 3.70833, 0, 3.70833, 3.70833, 1, -3.70833, 3.70833, 1, 3.70833 )
+
+[sub_resource type="ConvexPolygonShape" id=530]
+points = PoolVector3Array( -2.76, 1.08, 2.68013, -2.76, 1.08, 4.03973, -2.51714, 0, 2.72869, -2.51714, 1.11022e-16, 3.99118, 3.79714, -1.11022e-16, 3.99118, 3.79714, 1.11022e-16, 2.72869, 4.04, 1.08, 2.68013, 4.04, 1.08, 4.03973 )
+
+[sub_resource type="ConvexPolygonShape" id=531]
+points = PoolVector3Array( -4.03987, 1.08, 1.48, -4.03987, 1.08, 4.04, -3.99416, -1.11022e-16, 1.57143, -3.99416, -1.11022e-16, 3.94857, -2.84018, -0.04, 1.48, -2.84018, 1.08, 1.48, -2.80571, -1.11022e-16, 3.94857, -2.76, -0.04, 2.68006, -2.76, 1.08, 2.68006, -2.76, 1.08, 4.04 )
+
+[sub_resource type="ConvexPolygonShape" id=532]
+points = PoolVector3Array( -4.03969, 1.08, -4.04, -4.03969, 1.08, 1.48, -3.75113, 0, -3.84286, -3.75113, 1.11022e-16, 1.28286, -2.83913, -0.04, 1.48, -2.83913, 1.08, 1.48, 3.75144, 0, -3.84286, 3.75144, 0, -0.500305, 4.04, 1.08, -4.04, 4.04, 1.08, -0.440329 )
+
+[sub_resource type="ConvexPolygonShape" id=533]
+points = PoolVector3Array( -0.785714, 2.07146, 0.184127, -0.785714, 2.07146, 1.65714, -0.785714, 2.2555, 0.184127, -0.785714, 2.2555, 1.65714, -0.601569, 1.97937, 0.184127, -0.601569, 1.97937, 1.65714, 0.779365, 1.97937, 0.184127, 0.779365, 1.97937, 1.65714, 0.779365, 2.2555, 0.184127, 0.779365, 2.2555, 1.65714 )
+
+[sub_resource type="ConvexPolygonShape" id=534]
+points = PoolVector3Array( -0.785714, 1.05877, 0.184127, -0.785714, 1.05877, 1.65714, -0.785714, 1.24283, 0.184127, -0.785714, 1.24283, 1.65714, -0.601569, 0.966694, 0.184127, -0.601569, 0.966694, 1.65714, 0.779365, 0.966694, 0.184127, 0.779365, 0.966694, 1.65714, 0.779365, 1.24283, 0.184127, 0.779365, 1.24283, 1.65714 )
+
+[sub_resource type="ConvexPolygonShape" id=535]
+points = PoolVector3Array( -0.826833, 2.06905, -1.8, -0.826833, 2.26276, -1.8, -0.785714, 2.07146, 0.184127, -0.785714, 2.2555, 0.184127, -0.633012, 1.97211, -1.8, -0.601569, 1.97937, 0.184127, 0.779365, 1.97937, 0.184127, 0.779365, 2.2555, 0.184127, 0.820484, 1.97211, -1.8, 0.820484, 2.26276, -1.8 )
+
+[sub_resource type="ConvexPolygonShape" id=536]
+points = PoolVector3Array( -0.826833, 1.05635, -1.8, -0.826833, 1.25008, -1.8, -0.785714, 1.05877, 0.184127, -0.785714, 1.24283, 0.184127, -0.633012, 0.959439, -1.8, -0.601569, 0.966694, 0.184127, 0.779365, 0.966694, 0.184127, 0.779365, 1.24283, 0.184127, 0.820484, 0.959439, -1.8, 0.820484, 1.25008, -1.8 )
+
+[sub_resource type="ConvexPolygonShape" id=537]
+points = PoolVector3Array( 0.789508, 1, 0.2247, 0.789508, 1, 1.61657, 0.794124, 2.2, 0.243163, 0.794124, 2.2, 1.59811, 0.864513, 3, 0.128805, 0.864513, 3, 1.71246, 0.869348, 0.2, 0.167486, 0.869348, 0.2, 1.67378, 1.14762, 2.89974, 0.184127, 1.14762, 2.89974, 1.65714, 1.16557, 0.1, 0.112308, 1.16557, 0.1, 1.72896 )
+
+[sub_resource type="ConvexPolygonShape" id=538]
+points = PoolVector3Array( 0.76969, 0.935647, -1.8, 0.76969, 2.29162, -1.8, 0.789508, 1, 0.130874, 0.794124, 2.2, 0.106643, 0.864513, 3, 0.256737, 0.866591, 2.96988, -1.8, 0.869348, 0.2, -1.77105, 0.869348, 0.2, 0.205968, 1.14762, 2.89974, -1.74921, 1.14762, 2.89974, 0.184127, 1.16557, 0.1, -1.84347, 1.16557, 0.1, 0.278389 )
+
+[sub_resource type="ConvexPolygonShape" id=539]
+points = PoolVector3Array( -1.15397, 3.17614, 0.184127, -1.15397, 3.17614, 1.65714, -1.08841, 3, 0.226086, -1.08841, 3, 1.61518, -1.06182, 3.26818, 0.184127, -1.06182, 3.26818, 1.65714, -0.785615, 3.36027, 1.38074, -0.7, 3.3351, 1.57655, 0.7, 3.33702, 1.58272, 0.779041, 3.36027, 1.38074, 0.9, 2.89251, 0.159855, 0.9, 2.89251, 1.68141, 1.05525, 3.26818, 0.184127, 1.05525, 3.26818, 1.65714, 1.1, 2.90961, 0.214603, 1.1, 2.90961, 1.62667, 1.14762, 3.17614, 0.184127, 1.14762, 3.17614, 1.65714 )
+
+[sub_resource type="ConvexPolygonShape" id=540]
+points = PoolVector3Array( -1.15397, 3.17614, -1.74921, -1.15397, 3.17614, 0.184127, -1.08841, 3, -1.69414, -1.08841, 3, 0.129056, -1.06182, 3.26818, -1.74921, -1.06182, 3.26818, 0.184127, -0.785615, 3.36027, -1.38075, -0.7, 3.3351, -1.64343, 0.7, 3.33702, -1.65153, 0.779041, 3.36027, -1.38075, 0.9, 2.89251, -1.78106, 0.9, 2.89251, 0.215984, 1.05525, 3.26818, -1.74921, 1.05525, 3.26818, 0.184127, 1.1, 2.90961, -1.70921, 1.1, 2.90961, 0.144127, 1.14762, 3.17614, -1.74921, 1.14762, 3.17614, 0.184127 )
+
+[sub_resource type="ConvexPolygonShape" id=541]
+points = PoolVector3Array( -1.15397, 0.230159, 1.8414, -1.15397, 0.230159, 2.76178, -1.15397, 2.99203, 1.65726, -1.15397, 3.17617, 2.76178, -1.09049, 3.1, 1.69026, -1.06182, 3.26809, 2.76178, -0.966537, 0.371028, 2.8, -0.966537, 3.05188, 2.8, -0.805454, 3.4, 1.64209, -0.805454, 3.4, 2.49139, -0.577529, 1, 1.68128, 0.798874, 3.4, 1.64209, 0.798874, 3.4, 2.49139, 0.888034, 0.2, 1.64573, 0.959983, 0.371028, 2.8, 0.959983, 3.05188, 2.8, 1.05525, 3.26809, 2.76178, 1.08414, 3.1, 1.69026, 1.1, 0.294921, 1.68202, 1.14762, 0.230159, 2.76178, 1.14762, 3.17617, 2.76178 )
+
+[sub_resource type="ConvexPolygonShape" id=542]
+points = PoolVector3Array( -1.15397, 0.230159, -2.76173, -1.15397, 0.230159, -1.84144, -1.15397, 2.99203, -1.74942, -1.15397, 3.17617, -2.76173, -1.09049, 3.1, -1.77988, -1.06182, 3.26809, -2.76173, -0.964862, 0.373504, -1.8, -0.95857, 0.382807, -2.8, -0.95857, 3.04148, -2.8, -0.805454, 3.4, -2.49023, -0.805454, 3.4, -1.73542, 0.798874, 3.4, -2.49023, 0.798874, 3.4, -1.73542, 0.952017, 0.382807, -2.8, 0.952017, 3.04148, -2.8, 1.05525, 3.26809, -2.76173, 1.08414, 3.1, -1.77988, 1.1, 0.294921, -1.77227, 1.14762, 0.230159, -2.76173, 1.14762, 3.17617, -2.76173 )
+
+[sub_resource type="ConvexPolygonShape" id=543]
+points = PoolVector3Array( -1.24603, -0.0460317, -2.76147, -1.24603, -0.0460317, 2.76147, -1.24603, 0.13805, -2.76147, -1.24603, 0.13805, 2.76147, -1.1, 0.2237, -2.63232, -1.1, 0.2237, 2.63232, -1.06184, -0.0460317, -2.94603, -1.06184, -0.0460317, 2.94603, -1.0048, 0.222719, -2.7, -1.0048, 0.222719, 2.7, 1, 0.13564, -2.79161, 1, 0.13564, 2.79161, 1, 0.22292, -2.70417, 1, 0.22292, 2.70417, 1.05549, -0.0460317, -2.94603, 1.05549, -0.0460317, 2.94603, 1.1, 0.224462, -2.64756, 1.1, 0.224462, 2.64756, 1.23968, -0.0460317, -2.76147, 1.23968, -0.0460317, 2.76147, 1.23968, 0.13805, -2.76147, 1.23968, 0.13805, 2.76147 )
+
+[sub_resource type="ConvexPolygonShape" id=544]
+points = PoolVector3Array( -1.15397, 3.45242, -2.85397, -1.15397, 3.45242, 2.85397, -1.15397, 3.63648, -2.85397, -1.15397, 3.63648, 2.85397, -1.06182, 3.36032, -2.76178, -1.06182, 3.36032, 2.76178, 1.05525, 3.36032, -2.76178, 1.05525, 3.36032, 2.76178, 1.14762, 3.45242, -2.85397, 1.14762, 3.45242, 2.85397, 1.14762, 3.63648, -2.85397, 1.14762, 3.63648, 2.85397 )
+
+[sub_resource type="ConvexPolygonShape" id=545]
+points = PoolVector3Array( 2.33839, 3.56541, 0.833065, 2.33839, 3.68288, 1.12768, 2.3389, 3.8, 0.833571, 2.39734, 2.68143, 1.12768, 2.39734, 4.50804, 1.12768, 2.40533, 2.76401, 0.9, 2.40533, 4.42546, 0.9, 2.51516, 2.68143, 1.12768, 2.51516, 4.50804, 1.12768, 2.63304, 2.68143, 0.89201, 2.63304, 2.68143, 1.00979, 2.63304, 3.68288, 0.833065, 2.63304, 4.50804, 0.89201, 2.63304, 4.50804, 1.00979 )
+
+[sub_resource type="ConvexPolygonShape" id=546]
+points = PoolVector3Array( 2.33839, 3.56518, -0.227678, 2.33839, 3.56518, 0.833036, 2.33948, 3.8, -0.223763, 2.33948, 3.8, 0.82912, 2.51516, 3.56518, -0.227678, 2.51516, 3.56518, 0.833036, 2.63304, 3.68302, -0.227678, 2.63304, 3.68302, 0.833036, 2.63304, 3.80087, -0.227678, 2.63304, 3.80087, 0.833036 )
+
+[sub_resource type="ConvexPolygonShape" id=547]
+points = PoolVector3Array( 2.29542, 1.9, 1.01837, 2.33713, 1.8, 0.831803, 2.33839, 1.85609, 1.12768, 2.38976, 0.1, 1.14033, 2.3969, 0.2, 0.891564, 2.39734, 2.68125, 1.12768, 2.40533, 2.56936, 0.9, 2.51516, 2.68125, 1.12768, 2.51769, 0.1, 1.14033, 2.52375, 1.9, 0.7901, 2.63304, 2.0327, 0.833065, 2.63304, 2.68125, 0.89201, 2.63304, 2.68125, 1.00979, 2.64568, 0.1, 0.884424, 2.64568, 0.1, 1.01231 )
+
+[sub_resource type="ConvexPolygonShape" id=548]
+points = PoolVector3Array( 2.33839, 2.03304, -0.227678, 2.33839, 2.03304, 0.833036, 2.34171, 1.8, -0.215728, 2.34171, 1.8, 0.821085, 2.51516, 1.79734, -0.227678, 2.51516, 1.79734, 0.833036, 2.63304, 1.85627, -0.227678, 2.63304, 1.85627, 0.833036, 2.63304, 2.03304, -0.227678, 2.63304, 2.03304, 0.833036 )
+
+[sub_resource type="ConvexPolygonShape" id=549]
+points = PoolVector3Array( 2.33839, 3.56518, -0.816964, 2.33839, 3.56518, -0.227736, 2.33948, 3.8, -0.814789, 2.33948, 3.8, -0.229911, 2.51516, 3.56518, -0.816964, 2.51516, 3.56518, -0.227736, 2.63304, 3.68302, -0.816964, 2.63304, 3.68302, -0.227736, 2.63304, 3.80087, -0.816964, 2.63304, 3.80087, -0.227736 )
+
+[sub_resource type="ConvexPolygonShape" id=550]
+points = PoolVector3Array( 2.33839, 3.56541, -0.816993, 2.33839, 3.68285, -1.11161, 2.33917, 3.8, -0.817771, 2.39734, 2.79911, -0.875939, 2.39734, 4.50804, -0.875939, 2.40431, 2.86643, -1.1, 2.40431, 4.44071, -1.1, 2.51516, 2.79911, -1.11161, 2.51516, 4.50804, -1.11161, 2.63304, 2.79911, -1.05263, 2.63304, 2.79911, -0.875939, 2.63304, 3.68285, -0.816993, 2.63304, 4.50804, -1.05263, 2.63304, 4.50804, -0.875939 )
+
+[sub_resource type="ConvexPolygonShape" id=551]
+points = PoolVector3Array( 2.33839, 2.03304, -0.816964, 2.33839, 2.03304, -0.227736, 2.34171, 1.8, -0.810325, 2.34171, 1.8, -0.234375, 2.51516, 1.79734, -0.816964, 2.63304, 1.85627, -0.816964, 2.63304, 1.85627, -0.227736, 2.63304, 2.03304, -0.816964, 2.63304, 2.03304, -0.227736 )
+
+[sub_resource type="ConvexPolygonShape" id=552]
+points = PoolVector3Array( 2.28688, 1.9, -1.08352, 2.33691, 1.8, -0.815509, 2.33839, 1.85616, -1.11161, 2.3969, 0.2, -0.875495, 2.39734, 2.7986, -0.875939, 2.40431, 0.308626, -1.1, 2.40431, 2.69648, -1.1, 2.51516, 2.7986, -1.11161, 2.51758, 0.1, -1.12371, 2.52546, 1.9, -0.765486, 2.63304, 1.85616, -0.816993, 2.63304, 2.7986, -1.05263, 2.63304, 2.7986, -0.875939, 2.64514, 0.1, -1.05989, 2.64514, 0.1, -0.868678 )
+
+[sub_resource type="ConvexPolygonShape" id=553]
+points = PoolVector3Array( -2.61158, 5.50986, -0.816964, -2.61158, 5.50986, 0.715179, -2.6, 5.40825, -0.75675, -2.6, 5.40825, 0.654964, -2.55263, 5.62763, -0.816964, -2.43486, 5.80446, -0.816964, -2.43486, 5.80446, 0.715179, -2.32265, 5.4, -0.787409, -2.32265, 5.4, 0.685624, -2.32023, 5.7999, -0.8, -2.32015, 5.8, 0.698592 )
+
+[sub_resource type="ConvexPolygonShape" id=554]
+points = PoolVector3Array( -2.61158, 4.50804, -1.05263, -2.61158, 4.50804, -0.875939, -2.61158, 5.39195, -0.816993, -2.61158, 5.50981, -1.05263, -2.55263, 4.50804, -1.11161, -2.55263, 5.50981, -1.11161, -2.43486, 5.74554, -0.816993, -2.37594, 4.50804, -1.11161, -2.37594, 4.50804, -0.875939, -2.32781, 5.7, -0.827834, -2.31696, 5.39195, -1.11161, -2.31696, 5.74554, -0.934856, -2.31249, 5.4, -0.812519 )
+
+[sub_resource type="ConvexPolygonShape" id=555]
+points = PoolVector3Array( -2.61158, 2.26897, 1.00979, -2.61158, 3.68285, 0.833065, -2.61158, 4.5076, 1.00979, -2.59826, 2.37018, 0.9, -2.59826, 4.40639, 0.9, -2.55263, 2.26897, 1.12768, -2.55263, 4.5076, 1.12768, -2.37594, 2.26897, 0.89201, -2.37594, 2.26897, 1.12768, -2.37594, 4.5076, 0.89201, -2.37594, 4.5076, 1.12768, -2.31696, 3.68285, 1.12768, -2.28773, 3.6, 0.803826 )
+
+[sub_resource type="ConvexPolygonShape" id=556]
+points = PoolVector3Array( -2.61158, 3.68302, -0.16875, -2.61158, 3.68302, 0.833036, -2.6, 3.79161, -0.129379, -2.6, 3.79161, 0.793665, -2.55263, 3.56518, -0.16875, -2.55263, 3.56518, 0.833036, -2.31805, 3.8, -0.165052, -2.31805, 3.8, 0.829338, -2.31696, 3.56518, -0.16875, -2.31696, 3.56518, 0.833036 )
+
+[sub_resource type="ConvexPolygonShape" id=557]
+points = PoolVector3Array( -2.61158, 3.68302, -0.816837, -2.6, 3.79161, -0.791372, -2.6, 3.79161, -0.194342, -2.55263, 3.56518, -0.816837, -2.55263, 3.56518, -0.168877, -2.31805, 3.8, -0.814446, -2.31805, 3.8, -0.171269, -2.31696, 3.56518, -0.816837, -2.31696, 3.56518, -0.168877 )
+
+[sub_resource type="ConvexPolygonShape" id=558]
+points = PoolVector3Array( -2.61158, 2.26897, -1.05263, -2.61158, 2.26897, -0.875939, -2.61158, 3.68285, -0.816993, -2.61158, 4.5076, -1.05263, -2.61158, 4.5076, -0.875939, -2.55263, 2.26897, -1.11161, -2.55263, 4.5076, -1.11161, -2.37594, 2.26897, -1.11161, -2.37594, 2.26897, -0.875939, -2.37594, 4.5076, -1.11161, -2.37594, 4.5076, -0.875939, -2.31696, 3.68285, -1.11161, -2.28773, 3.6, -0.787754 )
+
+[sub_resource type="ConvexPolygonShape" id=559]
+points = PoolVector3Array( 2.34158, 5.8, -0.79974, 2.34158, 5.8, 0.756883, 2.34408, 5.4, -0.786273, 2.34408, 5.4, 0.743415, 2.45627, 5.80446, -0.816964, 2.45627, 5.80446, 0.774107, 2.63304, 5.39204, -0.816964, 2.63304, 5.39204, 0.774107, 2.63304, 5.50986, -0.816964, 2.63304, 5.50986, 0.774107 )
+
+[sub_resource type="ConvexPolygonShape" id=560]
+points = PoolVector3Array( 2.33392, 5.4, -0.812519, 2.33839, 5.39195, -1.11161, 2.33839, 5.62767, -1.05263, 2.34923, 5.7, -0.827834, 2.39734, 4.50804, -0.875939, 2.40431, 4.55679, -1.1, 2.45627, 5.74554, -0.934856, 2.51516, 4.50804, -1.11161, 2.51516, 5.50981, -1.11161, 2.63304, 4.50804, -1.05263, 2.63304, 4.50804, -0.875939, 2.63304, 5.50981, -1.05263, 2.63304, 5.50981, -0.816993 )
+
+[sub_resource type="ConvexPolygonShape" id=561]
+points = PoolVector3Array( -2.61158, 4.50804, 0.891993, -2.61158, 4.50804, 1.00978, -2.61158, 5.39191, 0.715179, -2.59528, 5.47068, 1, -2.55263, 4.50804, 1.12768, -2.55263, 5.5098, 1.12768, -2.55263, 5.62756, 0.715179, -2.55263, 5.62756, 1.00978, -2.43486, 5.80446, 0.715179, -2.37594, 4.50804, 0.891993, -2.37594, 4.50804, 1.12768, -2.33673, 5.46235, 1.1, -2.31798, 5.8, 0.716599, -2.31696, 5.39191, 1.12768, -2.31696, 5.74533, 0.950864, -2.31191, 5.4, 0.708095 )
+
+[sub_resource type="ConvexPolygonShape" id=562]
+points = PoolVector3Array( -2.61158, 1.85627, -0.816964, -2.61158, 1.85627, 0.715179, -2.61158, 2.03304, -0.816964, -2.61158, 2.03304, 0.715179, -2.55263, 1.79734, -0.816964, -2.55263, 1.79734, 0.715179, -2.32028, 1.8, -0.799702, -2.32028, 1.8, 0.697916, -2.31696, 2.03304, -0.816964, -2.31696, 2.03304, 0.715179 )
+
+[sub_resource type="ConvexPolygonShape" id=563]
+points = PoolVector3Array( -2.61158, 0.20625, -1.05263, -2.61158, 0.20625, -0.875939, -2.61158, 1.85589, -0.816993, -2.61158, 2.26875, -1.05263, -2.61158, 2.26875, -0.875939, -2.55263, 0.20625, -1.11161, -2.55263, 2.26875, -1.11161, -2.37594, 0.20625, -1.11161, -2.37594, 2.26875, -1.11161, -2.37594, 2.26875, -0.875939, -2.3754, 0.2, -0.875403, -2.32857, 1.97008, -1.1, -2.32303, 2, -0.823058, -2.31696, 1.85589, -1.11161, -2.31616, 1.8, -0.816186 )
+
+[sub_resource type="ConvexPolygonShape" id=564]
+points = PoolVector3Array( 2.33333, 5.4, 0.768036, 2.33839, 5.39191, 1.12764, 2.33839, 5.74533, 0.950876, 2.33941, 5.8, 0.775325, 2.39734, 4.50804, 0.892011, 2.39734, 4.50804, 1.12764, 2.45627, 5.80446, 0.833076, 2.51516, 4.50804, 1.12764, 2.51516, 5.5098, 1.12764, 2.63304, 4.50804, 0.892011, 2.63304, 4.50804, 1.00978, 2.63304, 5.5098, 0.774107, 2.63304, 5.5098, 1.00978 )
+
+[sub_resource type="ConvexPolygonShape" id=565]
+points = PoolVector3Array( -0.0774422, 3.56518, -1.05264, -0.0774422, 3.56518, 1.00975, -0.0774422, 3.68302, 1.12768, -0.0649212, 3.79965, -1.1, -0.0475843, 3.79796, 1.1, 2.3083, 3.79796, 1.1, 2.32564, 3.79965, -1.1, 2.33816, 3.56518, -1.05264, 2.33816, 3.68302, 1.12768, 2.4, 3.55914, 1.06104 )
+
+[sub_resource type="ConvexPolygonShape" id=566]
+points = PoolVector3Array( -0.0774422, 1.85627, 1.12768, -0.0774422, 2.03304, -1.11161, -0.0774422, 2.03304, 1.12768, -0.0502259, 1.8, 0.98718, -0.0174964, 1.80319, -1, 2.27821, 1.80319, -1, 2.31094, 1.8, 0.98718, 2.33816, 1.85627, 1.12768, 2.33816, 2.03304, -1.11161, 2.33816, 2.03304, 1.12768 )
+
+[sub_resource type="ConvexPolygonShape" id=567]
+points = PoolVector3Array( -2.31696, 5.50994, 1.12768, -2.31696, 5.62779, -1.05264, -2.31696, 5.80463, -0.934718, -2.31696, 5.80463, 0.950789, -2.30242, 5.4, -1.09707, -2.28929, 5.40726, 1.1, -2.258, 6.04009, -0.640121, -2.258, 6.04009, 0.656192, -2.13986, 6.04009, -0.757828, -2.13986, 6.04009, 0.715156, -1.76846, 6.4, -0.199597, -1.66435, 6.4, 0.267625, -1.65909, 6.39561, -0.3, -1.5, 6.54064, -0.0927944, -1.4739, 6.49494, 0.1, -0.169674, 6.57851, -0.1, -0.105357, 5.40726, 1.1, -0.09222, 5.4, -1.09707, -0.0776787, 5.50994, 1.12768, -0.0776787, 5.62779, -1.05264, -0.0776787, 5.80463, -0.934718, -0.0776787, 5.80463, 0.950789, -0.0776787, 6.04009, -0.757828, -0.0776787, 6.62934, 0.125524 )
+
+[sub_resource type="ConvexPolygonShape" id=568]
+points = PoolVector3Array( -2.4, 3.55644, 1.08404, -2.31696, 3.56518, -1.05264, -2.31696, 3.68302, 1.12768, -2.30536, 3.79965, -1.1, -2.28929, 3.79796, 1.1, -0.105357, 3.79796, 1.1, -0.0892857, 3.79965, -1.1, -0.0776787, 3.56518, -1.05264, -0.0776787, 3.56518, 1.00975, -0.0776787, 3.68302, 1.12768 )
+
+[sub_resource type="ConvexPolygonShape" id=569]
+points = PoolVector3Array( -2.61158, 0.20625, 0.891993, -2.61158, 0.20625, 1.00978, -2.61158, 1.85589, 0.715179, -2.61158, 2.26875, 0.891993, -2.61158, 2.26875, 1.00978, -2.55263, 0.20625, 1.12768, -2.55263, 1.79693, 0.715179, -2.55263, 2.26875, 1.12768, -2.37594, 0.20625, 1.12768, -2.37594, 2.26875, 0.891993, -2.37594, 2.26875, 1.12768, -2.3754, 0.2, 0.891815, -2.32303, 2, 0.72367, -2.31696, 1.85589, 1.12768, -2.31616, 1.8, 0.714049 )
+
+[sub_resource type="ConvexPolygonShape" id=570]
+points = PoolVector3Array( -0.0774422, 5.50994, 1.12768, -0.0774422, 5.62779, -1.05264, -0.0774422, 5.80463, 0.950789, -0.0774422, 6.04009, -0.757828, -0.0774422, 6.62934, 0.125524, -0.061756, 5.4, -1.09707, -0.0475843, 5.40726, 1.1, 0.0217965, 6.57851, -0.1, 1.48172, 6.57851, -0.1, 1.67541, 6.4, 0.267625, 1.86667, 6.04009, -0.816791, 2.10241, 6.04009, -0.816791, 2.22017, 6.04009, -0.757828, 2.22017, 6.04009, 0.656192, 2.3083, 5.40726, 1.1, 2.32247, 5.4, -1.09707, 2.33816, 5.50994, 1.12768, 2.33816, 5.62779, -1.05264, 2.33816, 5.80463, -0.934718, 2.33816, 5.80463, 0.950789 )
+
+[sub_resource type="ConvexPolygonShape" id=571]
+points = PoolVector3Array( -2.31696, 1.85627, 1.12768, -2.31696, 2.03304, -1.11161, -2.31696, 2.03304, 1.12768, -2.29173, 1.8, 0.98718, -2.26139, 1.80319, -1, -0.133249, 1.80319, -1, -0.102908, 1.8, 0.98718, -0.0776787, 1.85627, 1.12768, -0.0776787, 2.03304, -1.11161, -0.0776787, 2.03304, 1.12768 )
+
+[sub_resource type="ConvexPolygonShape" id=572]
+points = PoolVector3Array( -2.72946, -0.0294643, -1.22946, -2.72946, -0.0294643, 1.24554, -2.72946, 0.147321, -1.22946, -2.72946, 0.147321, 1.24554, -2.5, 0.201264, -1.06389, -2.5, 0.201264, 1.07996, 2.5, 0.200301, -1.05474, 2.5, 0.200301, 1.07081, 2.69188, -0.0294643, -1.22946, 2.69188, -0.0294643, 1.24554, 2.75089, 0.147321, -1.22946, 2.75089, 0.147321, 1.24554 )
+
+[sub_resource type="ConvexPolygonShape" id=573]
+points = PoolVector3Array( 1.6, 1.17766, -0.814415, 1.6, 1.17766, 0.50013, 1.6, 2.3779, -0.814415, 1.6, 2.3779, 0.50013, 1.71429, 2.44444, -0.887302, 1.71429, 2.44444, 0.573016, 1.84124, 1.11111, -0.887302, 1.84124, 1.11111, 0.573016, 1.84124, 2.25376, -0.887302, 1.84124, 2.25376, 0.573016 )
+
+[sub_resource type="ConvexPolygonShape" id=574]
+points = PoolVector3Array( 0, 0.730159, -0.887302, 0, 0.730159, 0.573016, 0, 1.04758, -0.887302, 0, 1.04758, 0.573016, 1.6, 1.11475, -0.90139, 1.6, 1.11475, 0.587104, 1.8, 0.738697, -0.85457, 1.8, 0.738697, 0.540285, 1.8, 1.10254, -0.85457, 1.8, 1.10254, 0.540285 )
+
+[sub_resource type="ConvexPolygonShape" id=575]
+points = PoolVector3Array( -1.59091, 1, 0.547852, -1.55046, 0.7, 1.15444, -1.52366, 0.730159, 0.573072, -1.52366, 1.42873, 1.14439, -1.52366, 2.25365, 0.953912, -1.52366, 2.44444, 0.636601, -1.52366, 2.44444, 0.827021, -0.000149131, 0.730159, 0.573072, -0.000149131, 1.42873, 1.14439, -0.000149131, 2.25365, 0.953912, -0.000149131, 2.44444, 0.636601, -0.000149131, 2.44444, 0.827021, 0.0266535, 0.7, 1.15444, 0.0671028, 1, 0.547852 )
+
+[sub_resource type="ConvexPolygonShape" id=576]
+points = PoolVector3Array( -1.52366, 0.730159, -0.887302, -1.52366, 0.730159, 0.573016, -1.52366, 1.04759, -0.887302, -1.52366, 1.04759, 0.573016, -0.000149131, 0.730159, -0.887302, -0.000149131, 0.730159, 0.573016, -0.000149131, 1.04759, -0.887302, -0.000149131, 1.04759, 0.573016 )
+
+[sub_resource type="ConvexPolygonShape" id=577]
+points = PoolVector3Array( -0.0812786, 1, 0.547852, -0.0323928, 0.7, 1.15444, 0, 0.730159, 0.573072, 0, 1.42873, 1.14439, 0, 2.25365, 0.953912, 0, 2.44444, 0.636601, 0, 2.44444, 0.827021, 1.58714, 2.44444, 0.573072, 1.67306, 2.4, 0.587884, 1.71421, 2.44444, 0.827021, 1.76714, 2.2, 0.596072, 1.84127, 1.42873, 1.14439, 1.84127, 2.25365, 0.953912, 1.87366, 0.7, 0.563021, 1.87366, 0.7, 1.15444 )
+
+[sub_resource type="ConvexPolygonShape" id=578]
+points = PoolVector3Array( -1.84685, 0.7, -0.922634, -1.84685, 0.7, 1.17978, -1.84127, 1.42873, 1.14405, -1.84127, 2.25365, -0.886904, -1.84127, 2.25365, 0.953757, -1.71427, 2.44444, -0.886904, -1.71427, 2.44444, 0.826698, -1.58736, 2.44444, -0.886904, -1.53659, 2.2, 0.887317, -1.53204, 2.4, 0.790499, -1.52381, 0.730159, -0.886904, -1.52381, 1.42873, 1.14405, -1.52381, 2.44444, 0.636409, -1.51822, 0.7, 1.17978, -1.5098, 1, -0.976555 )
+
+[sub_resource type="ConvexPolygonShape" id=579]
+points = PoolVector3Array( -1.84127, 0.730159, -1.3317, -1.84127, 2.25372, -1.3317, -1.8, 0.75008, -0.892325, -1.71402, 2.50776, -0.95085, -1.7, 2.20502, -0.904392, -1.62875, 2.46354, -1.2, -1.62212, 2.4, -0.899258, 1.62212, 2.4, -0.899258, 1.62875, 2.46354, -1.2, 1.7, 2.20502, -0.904392, 1.71402, 2.50776, -0.95085, 1.8, 0.75008, -0.892325, 1.84127, 0.730159, -1.3317, 1.84127, 2.25372, -1.3317 )
+
+[sub_resource type="ConvexPolygonShape" id=580]
+points = PoolVector3Array( -1.98337, 0.597055, -1.3, -1.97853, 0.59645, 1.3, -1.8628, -5.55112e-17, -1.22087, -1.8628, -5.55112e-17, 1.22405, -1.8, 0.709192, -1.25861, -1.75404, 0.7, 1.11229, 1.75404, 0.7, 1.11229, 1.8, 0.709192, -1.25861, 1.8628, -5.55112e-17, -1.22087, 1.8628, -5.55112e-17, 1.22405, 1.97853, 0.59645, 1.3, 1.98337, 0.597055, -1.3 )
+
+[sub_resource type="ConvexPolygonShape" id=581]
+points = PoolVector3Array( -5.3, 1.59014, -8.14579, -5.3, 1.59014, 8.24742, -5.2116, 1.6, -8.39814, -5.2116, 1.6, 8.49814, -4.83971, 0, -7.79437, -4.83971, 0, 7.89436, 4.96466, -1.11022e-16, 7.75308, 4.96466, 0, -7.65155, 5.19643, 1.6, -8.39814, 5.19643, 1.6, 8.49814, 5.3, 1.59266, -8.1709, 5.3, 1.59266, 8.27254 )
 
 [sub_resource type="ConvexPolygonShape" id=518]
 points = PoolVector3Array( -1.23345, 0.10036, -9.33345, -1.23345, 0.10036, 9.33345, 1.24198, 0.234173, -9.26585, 1.24198, 0.234173, 9.26585, 1.30893, -0.0334532, -9.33345, 1.30893, -0.0334532, 9.33345 )
@@ -1689,7 +1854,7 @@ shape = SubResource( 367 )
 [node name="Gas_Shop" type="Node" parent="."]
 
 [node name="shop_staps" type="MeshInstance" parent="Gas_Shop"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 57.584, -0.450558, 45.5941 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 57.7919, -0.450558, 45.5941 )
 mesh = ExtResource( 12 )
 material/0 = null
 
@@ -1699,7 +1864,7 @@ material/0 = null
 shape = SubResource( 19 )
 
 [node name="stone_wall" type="MeshInstance" parent="Gas_Shop"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0.2, 42.242 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0.2, 42.3742 )
 mesh = ExtResource( 13 )
 material/0 = null
 
@@ -1729,7 +1894,7 @@ material/0 = null
 shape = SubResource( 22 )
 
 [node name="stone_wall4" type="MeshInstance" parent="Gas_Shop"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0.2, 42.242 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0.2, 42.3752 )
 mesh = ExtResource( 13 )
 material/0 = null
 
@@ -1759,7 +1924,7 @@ material/0 = null
 shape = SubResource( 25 )
 
 [node name="glass_door" type="MeshInstance" parent="Gas_Shop"]
-transform = Transform( -2.01072e-08, 0, 0.46, 0, 0.5, 0, -0.46, 0, -2.01072e-08, 59.4161, 1.19235, 43.2095 )
+transform = Transform( 0.405722, 0, 0.216772, 0, 0.5, 0, -0.216772, 0, 0.405722, 58.0468, 1.19235, 41.8899 )
 mesh = ExtResource( 17 )
 material/0 = null
 
@@ -1796,7 +1961,7 @@ shape = SubResource( 376 )
 shape = SubResource( 377 )
 
 [node name="glass_door2" type="MeshInstance" parent="Gas_Shop"]
-transform = Transform( -2.01072e-08, 0, 0.46, 0, 0.5, 0, -0.46, 0, -2.01072e-08, 59.4161, 1.19235, 47.939 )
+transform = Transform( -2.01072e-08, 0, 0.46, 0, 0.5, 0, -0.46, 0, -2.01072e-08, 60.1033, 1.19235, 47.939 )
 mesh = ExtResource( 17 )
 material/0 = null
 
@@ -1831,6 +1996,464 @@ shape = SubResource( 386 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/glass_door2/StaticBody"]
 shape = SubResource( 387 )
+
+[node name="stone_wall8" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( 1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 71.8949, 5.14283, 38.3831 )
+mesh = ExtResource( 13 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/stone_wall8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/stone_wall8/StaticBody"]
+shape = SubResource( 529 )
+
+[node name="stone_wall9" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 76.0002, 5.14283, 42.7009 )
+mesh = ExtResource( 13 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/stone_wall9"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/stone_wall9/StaticBody"]
+shape = SubResource( 529 )
+
+[node name="stone_wall10" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 76.0002, 5.14283, 50.6709 )
+mesh = ExtResource( 13 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/stone_wall10"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/stone_wall10/StaticBody"]
+shape = SubResource( 529 )
+
+[node name="stone_wall11" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 76.0002, 5.14283, 58.1287 )
+mesh = ExtResource( 13 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/stone_wall11"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/stone_wall11/StaticBody"]
+shape = SubResource( 529 )
+
+[node name="stone_wall12" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( 1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 71.9127, 5.14283, 61.0691 )
+mesh = ExtResource( 13 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/stone_wall12"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/stone_wall12/StaticBody"]
+shape = SubResource( 529 )
+
+[node name="stone_window" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( -4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 59.9957, 5.143, 54.378 )
+mesh = ExtResource( 10 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/stone_window"]
+
+[node name="CollisionShape3" type="CollisionShape" parent="Gas_Shop/stone_window/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0 )
+shape = SubResource( 530 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Gas_Shop/stone_window/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0 )
+shape = SubResource( 531 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/stone_window/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0 )
+shape = SubResource( 532 )
+
+[node name="stone_window2" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 60.9823, 5.143, 58.0839 )
+mesh = ExtResource( 10 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/stone_window2"]
+
+[node name="CollisionShape3" type="CollisionShape" parent="Gas_Shop/stone_window2/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0 )
+shape = SubResource( 530 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Gas_Shop/stone_window2/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0 )
+shape = SubResource( 531 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/stone_window2/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0 )
+shape = SubResource( 532 )
+
+[node name="stone_window3" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 64.017, 5.143, 62.0739 )
+mesh = ExtResource( 10 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/stone_window3"]
+
+[node name="CollisionShape3" type="CollisionShape" parent="Gas_Shop/stone_window3/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0 )
+shape = SubResource( 530 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Gas_Shop/stone_window3/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0 )
+shape = SubResource( 531 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/stone_window3/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0 )
+shape = SubResource( 532 )
+
+[node name="stone_wall13" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 0.3, 60.9998, 5.14283, 39.5361 )
+mesh = ExtResource( 13 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/stone_wall13"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/stone_wall13/StaticBody"]
+shape = SubResource( 529 )
+
+[node name="stone_window4" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 63.9036, 5.143, 39.3626 )
+mesh = ExtResource( 10 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/stone_window4"]
+
+[node name="CollisionShape3" type="CollisionShape" parent="Gas_Shop/stone_window4/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0 )
+shape = SubResource( 530 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Gas_Shop/stone_window4/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0 )
+shape = SubResource( 531 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/stone_window4/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0 )
+shape = SubResource( 532 )
+
+[node name="cupboard" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 69.7197, 1.2, 42.336 )
+mesh = ExtResource( 19 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/cupboard"]
+
+[node name="CollisionShape12" type="CollisionShape" parent="Gas_Shop/cupboard/StaticBody"]
+shape = SubResource( 533 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Gas_Shop/cupboard/StaticBody"]
+shape = SubResource( 534 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Gas_Shop/cupboard/StaticBody"]
+shape = SubResource( 535 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Gas_Shop/cupboard/StaticBody"]
+shape = SubResource( 536 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Gas_Shop/cupboard/StaticBody"]
+shape = SubResource( 537 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Gas_Shop/cupboard/StaticBody"]
+shape = SubResource( 538 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Gas_Shop/cupboard/StaticBody"]
+shape = SubResource( 539 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Gas_Shop/cupboard/StaticBody"]
+shape = SubResource( 540 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Gas_Shop/cupboard/StaticBody"]
+shape = SubResource( 541 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Gas_Shop/cupboard/StaticBody"]
+shape = SubResource( 542 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Gas_Shop/cupboard/StaticBody"]
+shape = SubResource( 543 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/cupboard/StaticBody"]
+shape = SubResource( 544 )
+
+[node name="cupboard2" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 73.7875, 1.28705, 51.9259 )
+mesh = ExtResource( 20 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/cupboard2"]
+
+[node name="CollisionShape28" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 545 )
+
+[node name="CollisionShape27" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 546 )
+
+[node name="CollisionShape26" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 547 )
+
+[node name="CollisionShape25" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 548 )
+
+[node name="CollisionShape24" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 549 )
+
+[node name="CollisionShape23" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 550 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 551 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 552 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 553 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 554 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 555 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 556 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 557 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 558 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 559 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 560 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 561 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 562 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 563 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 564 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 565 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 566 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 567 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 568 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 569 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 570 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 571 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/cupboard2/StaticBody"]
+shape = SubResource( 572 )
+
+[node name="cupboard3" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 73.7875, 1.28705, 57.9959 )
+mesh = ExtResource( 20 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/cupboard3"]
+
+[node name="CollisionShape28" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 545 )
+
+[node name="CollisionShape27" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 546 )
+
+[node name="CollisionShape26" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 547 )
+
+[node name="CollisionShape25" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 548 )
+
+[node name="CollisionShape24" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 549 )
+
+[node name="CollisionShape23" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 550 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 551 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 552 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 553 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 554 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 555 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 556 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 557 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 558 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 559 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 560 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 561 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 562 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 563 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 564 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 565 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 566 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 567 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 568 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 569 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 570 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 571 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/cupboard3/StaticBody"]
+shape = SubResource( 572 )
+
+[node name="fridge" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 62.3556, 1.18889, 54.4333 )
+mesh = ExtResource( 22 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/fridge"]
+
+[node name="CollisionShape8" type="CollisionShape" parent="Gas_Shop/fridge/StaticBody"]
+shape = SubResource( 573 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Gas_Shop/fridge/StaticBody"]
+shape = SubResource( 574 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Gas_Shop/fridge/StaticBody"]
+shape = SubResource( 575 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Gas_Shop/fridge/StaticBody"]
+shape = SubResource( 576 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Gas_Shop/fridge/StaticBody"]
+shape = SubResource( 577 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Gas_Shop/fridge/StaticBody"]
+shape = SubResource( 578 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Gas_Shop/fridge/StaticBody"]
+shape = SubResource( 579 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/fridge/StaticBody"]
+shape = SubResource( 580 )
+
+[node name="fridge2" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 62.3556, 1.18889, 58.8599 )
+mesh = ExtResource( 22 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/fridge2"]
+
+[node name="CollisionShape8" type="CollisionShape" parent="Gas_Shop/fridge2/StaticBody"]
+shape = SubResource( 573 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Gas_Shop/fridge2/StaticBody"]
+shape = SubResource( 574 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Gas_Shop/fridge2/StaticBody"]
+shape = SubResource( 575 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Gas_Shop/fridge2/StaticBody"]
+shape = SubResource( 576 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Gas_Shop/fridge2/StaticBody"]
+shape = SubResource( 577 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Gas_Shop/fridge2/StaticBody"]
+shape = SubResource( 578 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Gas_Shop/fridge2/StaticBody"]
+shape = SubResource( 579 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/fridge2/StaticBody"]
+shape = SubResource( 580 )
+
+[node name="orange_sign" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 60.0231, 3.48519, 52.3484 )
+mesh = ExtResource( 21 )
+material/0 = null
+
+[node name="shop_roof" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 67.4958, 9.13948, 42.9768 )
+mesh = ExtResource( 23 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/shop_roof"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/shop_roof"]
+shape = SubResource( 581 )
+
+[node name="shop_roof2" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 67.4958, 9.13948, 52.7984 )
+mesh = ExtResource( 23 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/shop_roof2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/shop_roof2"]
+shape = SubResource( 581 )
+
+[node name="shop_roof3" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 67.4958, 9.13948, 57.3158 )
+mesh = ExtResource( 23 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Gas_Shop/shop_roof3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Gas_Shop/shop_roof3"]
+shape = SubResource( 581 )
 
 [node name="Gas_Station_Outside" type="Node" parent="."]
 
@@ -2191,3 +2814,13 @@ shape = SubResource( 26 )
 
 [node name="Player" parent="." instance=ExtResource( 16 )]
 transform = Transform( -0.825252, 0, -0.564765, 0, 1, 0, 0.564765, 0, -0.825252, 23.5734, 6.2221, 19.0452 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 65.9932, 4.28619, 46.4841 )
+light_energy = 9.18
+omni_range = 13.4264
+
+[node name="OmniLight2" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 67.0334, 3.66651, 54.0511 )
+light_energy = 9.18
+omni_range = 13.4264
