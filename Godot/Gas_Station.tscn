@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/plain.vox" type="ArrayMesh" id=1]
 [ext_resource path="res://assets/road_blocker.vox" type="ArrayMesh" id=2]
@@ -10,67 +10,420 @@
 [ext_resource path="res://assets/prices.vox" type="ArrayMesh" id=8]
 [ext_resource path="res://assets/oil_machine.vox" type="ArrayMesh" id=9]
 [ext_resource path="res://assets/ZT_name.vox" type="ArrayMesh" id=10]
+[ext_resource path="res://assets/road_mark.vox" type="ArrayMesh" id=11]
+[ext_resource path="res://assets/shop_staps.vox" type="ArrayMesh" id=12]
+[ext_resource path="res://assets/stone_wall.vox" type="ArrayMesh" id=13]
+[ext_resource path="res://assets/oil.vox" type="ArrayMesh" id=14]
+[ext_resource path="res://assets/curb.vox" type="ArrayMesh" id=15]
 
 [node name="Gas_Station" type="Spatial"]
 
-[node name="plain" type="MeshInstance" parent="."]
-transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 5, 64.692, 0.210413, 64.8592 )
-use_in_baked_light = true
-mesh = ExtResource( 1 )
-material/0 = null
+[node name="Blockers" type="Node" parent="."]
 
-[node name="road_blocker2" type="MeshInstance" parent="."]
+[node name="road_blocker2" type="MeshInstance" parent="Blockers"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 40.568 )
 use_in_baked_light = true
 mesh = ExtResource( 2 )
 material/0 = null
 
-[node name="road_blocker" type="MeshInstance" parent="."]
+[node name="road_blocker" type="MeshInstance" parent="Blockers"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 28.568 )
 use_in_baked_light = true
 mesh = ExtResource( 2 )
 material/0 = null
 
-[node name="road_blocker5" type="MeshInstance" parent="."]
+[node name="road_blocker5" type="MeshInstance" parent="Blockers"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 76.568 )
 use_in_baked_light = true
 mesh = ExtResource( 2 )
 material/0 = null
 
-[node name="road_blocker4" type="MeshInstance" parent="."]
+[node name="road_blocker4" type="MeshInstance" parent="Blockers"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 64.568 )
 use_in_baked_light = true
 mesh = ExtResource( 2 )
 material/0 = null
 
-[node name="road_blocker3" type="MeshInstance" parent="."]
+[node name="road_blocker3" type="MeshInstance" parent="Blockers"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 52.568 )
 use_in_baked_light = true
 mesh = ExtResource( 2 )
 material/0 = null
 
-[node name="block4" type="MeshInstance" parent="."]
+[node name="block4" type="MeshInstance" parent="Blockers"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.75, 13.58, -1.01453, 70.1819 )
 use_in_baked_light = true
 mesh = ExtResource( 3 )
 material/0 = null
 
-[node name="block3" type="MeshInstance" parent="."]
+[node name="block3" type="MeshInstance" parent="Blockers"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.75, 13.5799, -1.01029, 58.19 )
 use_in_baked_light = true
 mesh = ExtResource( 3 )
 material/0 = null
 
-[node name="block2" type="MeshInstance" parent="."]
+[node name="block2" type="MeshInstance" parent="Blockers"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.75, 13.5379, -1.00127, 46.2055 )
 use_in_baked_light = true
 mesh = ExtResource( 3 )
 material/0 = null
 
-[node name="block" type="MeshInstance" parent="."]
+[node name="block" type="MeshInstance" parent="Blockers"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.75, 13.5461, -1.00759, 34.1713 )
 use_in_baked_light = true
 mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="road_mark4" type="MeshInstance" parent="Blockers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.3907, 0.336774, 34.8836 )
+mesh = ExtResource( 11 )
+material/0 = null
+
+[node name="road_mark3" type="MeshInstance" parent="Blockers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.3907, 0.336774, 28.1694 )
+mesh = ExtResource( 11 )
+material/0 = null
+
+[node name="road_mark2" type="MeshInstance" parent="Blockers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.3907, 0.336774, 48.3119 )
+mesh = ExtResource( 11 )
+material/0 = null
+
+[node name="road_mark7" type="MeshInstance" parent="Blockers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.3907, 0.336774, 83.1477 )
+mesh = ExtResource( 11 )
+material/0 = null
+
+[node name="road_mark8" type="MeshInstance" parent="Blockers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.3906, 0.336774, 75.8943 )
+mesh = ExtResource( 11 )
+material/0 = null
+
+[node name="road_mark6" type="MeshInstance" parent="Blockers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.3906, 0.336774, 68.7729 )
+mesh = ExtResource( 11 )
+material/0 = null
+
+[node name="road_mark5" type="MeshInstance" parent="Blockers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.3907, 0.336774, 61.8707 )
+mesh = ExtResource( 11 )
+material/0 = null
+
+[node name="road_mark" type="MeshInstance" parent="Blockers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.3907, 0.336774, 55.026 )
+mesh = ExtResource( 11 )
+material/0 = null
+
+[node name="road_mark9" type="MeshInstance" parent="Blockers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.3907, 0.336774, 41.5977 )
+mesh = ExtResource( 11 )
+material/0 = null
+
+[node name="road_blocker6" type="MeshInstance" parent="Blockers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 88.5575 )
+use_in_baked_light = true
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="road_blocker7" type="MeshInstance" parent="Blockers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 76.5575 )
+use_in_baked_light = true
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="block5" type="MeshInstance" parent="Blockers"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.75, 13.5461, -1.00759, 82.1608 )
+use_in_baked_light = true
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="road_mark10" type="MeshInstance" parent="Blockers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.3907, 0.336774, 96.2385 )
+mesh = ExtResource( 11 )
+material/0 = null
+
+[node name="road_mark11" type="MeshInstance" parent="Blockers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.3907, 0.336774, 89.5872 )
+mesh = ExtResource( 11 )
+material/0 = null
+
+[node name="road_blocker8" type="MeshInstance" parent="Blockers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 100.622 )
+use_in_baked_light = true
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="road_blocker9" type="MeshInstance" parent="Blockers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 88.6221 )
+use_in_baked_light = true
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="block6" type="MeshInstance" parent="Blockers"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.75, 13.5461, -1.00759, 94.2254 )
+use_in_baked_light = true
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="road_mark12" type="MeshInstance" parent="Blockers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.3907, 0.336774, 102.474 )
+mesh = ExtResource( 11 )
+material/0 = null
+
+[node name="block7" type="MeshInstance" parent="Blockers"]
+transform = Transform( 0.5, 0, 0, 0, 0.466426, -0.270193, 0, 0.180129, 0.69964, 13.6635, -2.44462, 104.224 )
+use_in_baked_light = true
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="SpotLight" type="SpotLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31.2474, 11.8504, 82.5579 )
+light_energy = 4.75
+light_indirect_energy = 1.8
+spot_range = 14.8138
+
+[node name="OmniLight" type="OmniLight" parent="Lights/SpotLight"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.446808, 0 )
+light_energy = 1.42
+
+[node name="SpotLight2" type="SpotLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31.2474, 11.8504, 68.1417 )
+light_energy = 4.75
+light_indirect_energy = 1.8
+spot_range = 14.8138
+
+[node name="OmniLight" type="OmniLight" parent="Lights/SpotLight2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.85018, 0 )
+light_energy = 1.42
+
+[node name="SpotLight3" type="SpotLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31.2474, 11.8504, 57.7558 )
+light_energy = 4.75
+light_indirect_energy = 1.8
+spot_range = 14.8138
+
+[node name="OmniLight" type="OmniLight" parent="Lights/SpotLight3"]
+light_energy = 1.42
+
+[node name="SpotLight4" type="SpotLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31.2474, 11.8504, 49.237 )
+light_energy = 4.75
+light_indirect_energy = 1.8
+spot_range = 14.8138
+
+[node name="OmniLight" type="OmniLight" parent="Lights/SpotLight4"]
+light_energy = 1.42
+
+[node name="SpotLight5" type="SpotLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31.2474, 11.8504, 37.1226 )
+light_energy = 4.75
+light_indirect_energy = 1.8
+spot_range = 14.8138
+
+[node name="OmniLight" type="OmniLight" parent="Lights/SpotLight5"]
+light_energy = 1.42
+
+[node name="SpotLight6" type="SpotLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31.2474, 11.8504, 24.8278 )
+light_energy = 4.75
+light_indirect_energy = 1.8
+spot_range = 14.8138
+
+[node name="OmniLight" type="OmniLight" parent="Lights/SpotLight6"]
+light_energy = 1.42
+
+[node name="SpotLight7" type="SpotLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 45.4983, 11.8504, 82.5579 )
+light_energy = 4.75
+light_indirect_energy = 1.8
+spot_range = 14.8138
+
+[node name="OmniLight" type="OmniLight" parent="Lights/SpotLight7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.437347, 0 )
+light_energy = 1.42
+
+[node name="SpotLight8" type="SpotLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 45.4983, 11.8504, 68.1417 )
+light_energy = 4.75
+light_indirect_energy = 1.8
+spot_range = 14.8138
+
+[node name="OmniLight" type="OmniLight" parent="Lights/SpotLight8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.85997, 0 )
+light_energy = 1.42
+
+[node name="SpotLight9" type="SpotLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 45.4983, 11.8504, 57.7558 )
+light_energy = 4.75
+light_indirect_energy = 1.8
+spot_range = 14.8138
+
+[node name="OmniLight" type="OmniLight" parent="Lights/SpotLight9"]
+light_energy = 1.42
+
+[node name="SpotLight10" type="SpotLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 45.4983, 11.8504, 49.237 )
+light_energy = 4.75
+light_indirect_energy = 1.8
+spot_range = 14.8138
+
+[node name="OmniLight" type="OmniLight" parent="Lights/SpotLight10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.175079, 0 )
+light_energy = 1.42
+
+[node name="SpotLight11" type="SpotLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 45.4983, 11.8504, 37.1226 )
+light_energy = 4.75
+light_indirect_energy = 1.8
+spot_range = 14.8138
+
+[node name="OmniLight" type="OmniLight" parent="Lights/SpotLight11"]
+light_energy = 1.42
+
+[node name="SpotLight12" type="SpotLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 45.4983, 11.8504, 24.8278 )
+light_energy = 4.75
+light_indirect_energy = 1.8
+spot_range = 14.8138
+
+[node name="OmniLight" type="OmniLight" parent="Lights/SpotLight12"]
+light_energy = 1.42
+
+[node name="Curbs" type="Node" parent="."]
+
+[node name="curb" type="MeshInstance" parent="Curbs"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24.1204, 0.310076, 95.2268 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="curb2" type="MeshInstance" parent="Curbs"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24.1204, 0.310076, 91.145 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="curb3" type="MeshInstance" parent="Curbs"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24.1204, 0.310076, 87.0847 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="curb4" type="MeshInstance" parent="Curbs"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24.1204, 0.310076, 83.0571 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="curb5" type="MeshInstance" parent="Curbs"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24.1204, 0.310076, 79.041 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="curb6" type="MeshInstance" parent="Curbs"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24.1204, 0.310076, 74.9415 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="curb7" type="MeshInstance" parent="Curbs"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24.1204, 0.310076, 70.8598 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="curb8" type="MeshInstance" parent="Curbs"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24.1204, 0.310076, 66.7994 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="curb9" type="MeshInstance" parent="Curbs"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24.1204, 0.310076, 62.7719 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="curb10" type="MeshInstance" parent="Curbs"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24.1204, 0.310076, 58.7557 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="curb11" type="MeshInstance" parent="Curbs"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24.1204, 0.310076, 54.6615 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="curb12" type="MeshInstance" parent="Curbs"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24.1204, 0.310076, 50.5798 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="curb13" type="MeshInstance" parent="Curbs"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24.1204, 0.310076, 46.5194 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="curb14" type="MeshInstance" parent="Curbs"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24.1204, 0.310076, 42.4918 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="curb15" type="MeshInstance" parent="Curbs"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24.1204, 0.310076, 38.4757 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="curb16" type="MeshInstance" parent="Curbs"]
+transform = Transform( -0.935943, 0, -0.352152, 0, 1, 0, 0.352152, 0, -0.935943, 23.2979, 0.310076, 34.2391 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="curb17" type="MeshInstance" parent="Curbs"]
+transform = Transform( -0.935943, 0, -0.352152, 0, 1, 0, 0.352152, 0, -0.935943, 21.876, 0.310076, 30.4011 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="curb18" type="MeshInstance" parent="Curbs"]
+transform = Transform( -0.918974, -0.170684, -0.355462, -0.095561, 0.970991, -0.219193, 0.382563, -0.167464, -0.908626, 20.4434, -0.0263948, 26.7903 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="Gas_Shop" type="Node" parent="."]
+
+[node name="shop_staps" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 57.584, -0.450558, 45.777 )
+mesh = ExtResource( 12 )
+material/0 = null
+
+[node name="stone_wall" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0.2, 42.242 )
+mesh = ExtResource( 13 )
+material/0 = null
+
+[node name="stone_wall2" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0.2, 50.363 )
+mesh = ExtResource( 13 )
+material/0 = null
+
+[node name="stone_wall3" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0.2, 50.363 )
+mesh = ExtResource( 13 )
+material/0 = null
+
+[node name="stone_wall4" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0.2, 42.242 )
+mesh = ExtResource( 13 )
+material/0 = null
+
+[node name="stone_wall5" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0.2, 58.118 )
+mesh = ExtResource( 13 )
+material/0 = null
+
+[node name="stone_wall6" type="MeshInstance" parent="Gas_Shop"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0.2, 58.0783 )
+mesh = ExtResource( 13 )
+material/0 = null
+
+[node name="plain" type="MeshInstance" parent="."]
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 5, 64.692, 0.210413, 64.8592 )
+use_in_baked_light = true
+mesh = ExtResource( 1 )
 material/0 = null
 
 [node name="roof_basement2" type="MeshInstance" parent="."]
@@ -113,42 +466,6 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 34.399, -4, 34.6022 )
 mesh = ExtResource( 6 )
 material/0 = null
 
-[node name="SpotLight" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31.2474, 11.8504, 82.5579 )
-light_energy = 16.0
-light_indirect_energy = 1.8
-spot_range = 14.8138
-
-[node name="SpotLight2" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31.2474, 11.8504, 68.1417 )
-light_energy = 16.0
-light_indirect_energy = 1.8
-spot_range = 14.8138
-
-[node name="SpotLight3" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31.2474, 11.8504, 57.7558 )
-light_energy = 16.0
-light_indirect_energy = 1.8
-spot_range = 14.8138
-
-[node name="SpotLight4" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31.2474, 11.8504, 49.237 )
-light_energy = 16.0
-light_indirect_energy = 1.8
-spot_range = 14.8138
-
-[node name="SpotLight5" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31.2474, 11.8504, 37.1226 )
-light_energy = 16.0
-light_indirect_energy = 1.8
-spot_range = 14.8138
-
-[node name="SpotLight6" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31.2474, 11.8504, 24.8278 )
-light_energy = 16.0
-light_indirect_energy = 1.8
-spot_range = 14.8138
-
 [node name="prices" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5502, 0, 95.0773 )
 mesh = ExtResource( 8 )
@@ -165,42 +482,6 @@ transform = Transform( 1, 0, 0, 0, 0.966721, -0.255834, 0, 0.255834, 0.966721, 0
 light_energy = 8.23
 spot_range = 14.6212
 spot_angle = 9.4545
-
-[node name="SpotLight7" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 45.4983, 11.8504, 82.5579 )
-light_energy = 16.0
-light_indirect_energy = 1.8
-spot_range = 14.8138
-
-[node name="SpotLight8" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 45.4983, 11.8504, 68.1417 )
-light_energy = 16.0
-light_indirect_energy = 1.8
-spot_range = 14.8138
-
-[node name="SpotLight9" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 45.4983, 11.8504, 57.7558 )
-light_energy = 16.0
-light_indirect_energy = 1.8
-spot_range = 14.8138
-
-[node name="SpotLight10" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 45.4983, 11.8504, 49.237 )
-light_energy = 16.0
-light_indirect_energy = 1.8
-spot_range = 14.8138
-
-[node name="SpotLight11" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 45.4983, 11.8504, 37.1226 )
-light_energy = 16.0
-light_indirect_energy = 1.8
-spot_range = 14.8138
-
-[node name="SpotLight12" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 45.4983, 11.8504, 24.8278 )
-light_energy = 16.0
-light_indirect_energy = 1.8
-spot_range = 14.8138
 
 [node name="oil_machine" type="MeshInstance" parent="."]
 transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 35.5251, 0.64313, 74.1011 )
@@ -220,4 +501,14 @@ material/0 = null
 [node name="oil_machine4" type="MeshInstance" parent="."]
 transform = Transform( -0.75, 0, 6.55671e-08, 0, 0.75, 0, -6.55671e-08, 0, -0.75, 35.1216, 0.64313, 35.3878 )
 mesh = ExtResource( 9 )
+material/0 = null
+
+[node name="oil" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.3765, 0.6, 38.4672 )
+mesh = ExtResource( 14 )
+material/0 = null
+
+[node name="oil2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.3765, 0.6, 65.6526 )
+mesh = ExtResource( 14 )
 material/0 = null
