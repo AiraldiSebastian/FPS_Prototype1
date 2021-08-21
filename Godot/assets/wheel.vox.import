@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/wheel.vox-8d82f4e90949fe84ce012bb44e741bf1.mesh"
+
+[deps]
+
+source_file="res://assets/wheel.vox"
+dest_files=[ "res://.import/wheel.vox-8d82f4e90949fe84ce012bb44e741bf1.mesh" ]
+
+[params]
+
+Scale=0.1

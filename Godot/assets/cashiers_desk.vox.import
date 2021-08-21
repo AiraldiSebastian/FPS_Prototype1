@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/cashiers_desk.vox-bcf8239799c22472d02ebdffea0f9399.mesh"
+
+[deps]
+
+source_file="res://assets/cashiers_desk.vox"
+dest_files=[ "res://.import/cashiers_desk.vox-bcf8239799c22472d02ebdffea0f9399.mesh" ]
+
+[params]
+
+Scale=0.1

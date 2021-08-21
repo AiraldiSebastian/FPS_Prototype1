@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/grass.vox-1de5efb1f005e72b2f4fdb51062932f6.mesh"
+
+[deps]
+
+source_file="res://assets/grass.vox"
+dest_files=[ "res://.import/grass.vox-1de5efb1f005e72b2f4fdb51062932f6.mesh" ]
+
+[params]
+
+Scale=0.1

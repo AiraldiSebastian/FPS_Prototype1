@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/candy.vox-5ddd850d8377dbb0857a3d33bd13f23b.mesh"
+
+[deps]
+
+source_file="res://assets/candy.vox"
+dest_files=[ "res://.import/candy.vox-5ddd850d8377dbb0857a3d33bd13f23b.mesh" ]
+
+[params]
+
+Scale=0.1
