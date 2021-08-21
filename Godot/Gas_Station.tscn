@@ -1,4 +1,4 @@
-[gd_scene load_steps=303 format=2]
+[gd_scene load_steps=328 format=2]
 
 [ext_resource path="res://assets/plain.vox" type="ArrayMesh" id=1]
 [ext_resource path="res://assets/road_blocker.vox" type="ArrayMesh" id=2]
@@ -29,6 +29,8 @@
 [ext_resource path="res://assets/peanuts.vox" type="ArrayMesh" id=27]
 [ext_resource path="res://assets/candy.vox" type="ArrayMesh" id=28]
 [ext_resource path="res://assets/water.vox" type="ArrayMesh" id=29]
+[ext_resource path="res://assets/grass_plain.vox" type="ArrayMesh" id=30]
+[ext_resource path="res://assets/grass.vox" type="ArrayMesh" id=31]
 
 [sub_resource type="ConvexPolygonShape" id=1]
 points = PoolVector3Array( -0.741618, 2.12265, 3.32948, -0.741618, 2.62207, 3.32948, -0.741618, 2.62207, 3.8288, -0.698395, 2.18507, 3.8, -0.575014, 2.78833, 3.07977, -0.575014, 2.78833, 4.07861, -0.575014, 3.20452, 3.07977, -0.575014, 3.20452, 4.07861, -0.325474, 2.12265, 3.16317, -0.325474, 2.12265, 4.07861, -0.159017, 2.37236, 3.07977, -0.101574, 2.17054, 3.2, -0.1, 3.15955, 3.12128, -0.1, 3.15955, 4.0371, -0.0757878, 2.12265, 4.07861, -0.0305408, 3, 3.13051, -0.0305408, 3, 4.02787, -0.0280352, 2.4, 3.12717, -0.0280352, 2.4, 4.03121 )
@@ -845,6 +847,75 @@ points = PoolVector3Array( -1.6381, -0.0380952, -2.4381, -1.6381, -0.0380952, 2.
 
 [sub_resource type="ConvexPolygonShape" id=246]
 points = PoolVector3Array( -0.4, 0.0638283, -0.196476, -0.4, 4.13209, -0.196476, -0.379639, 0.170727, 0.2, -0.379639, 4.0354, 0.2, -0.3, 0.149231, -0.299976, -0.3, 4.05485, -0.299976, -0.3, 4.16646, 0.202046, -0.2, 4.37224, -0.199909, -0.196624, 0.0632048, -0.4, -0.196624, 4.13265, -0.4, -0.19312, 4.3, 0.206732, -0.189773, 0.135151, 0.4, -0.189773, 4.06758, 0.4, 0.2, 0.171241, -0.37943, 0.2, 0.171241, 0.393128, 0.2, 4.03494, -0.37943, 0.2, 4.03494, 0.393128, 0.200049, 4.22927, 0.2, 0.202111, 4.16661, -0.3, 0.206782, 4.3, -0.193033, 0.285851, 0.149068, -0.3, 0.285851, 4.05499, -0.3, 0.393379, 0.170727, 0.2, 0.393379, 4.0358, 0.2, 0.4, 0.135966, -0.18961, 0.4, 4.06725, -0.18961 )
+
+[sub_resource type="ConvexPolygonShape" id=274]
+points = PoolVector3Array( 0.199118, 0.0997056, 0.5, 0.2, 6.93889e-18, 0.498236, 0.2, 3.94919e-07, 0.300609, 0.2, 0.0988231, 0.300609, 0.204129, -0.00411765, 0.506471, 0.204129, 0.102941, 0.506471, 0.298813, -6.93889e-18, 0.300608, 0.299118, 0.0991278, 0.3, 0.302931, -0.00411765, 0.407616, 0.302931, 0.102941, 0.407616 )
+
+[sub_resource type="ConvexPolygonShape" id=275]
+points = PoolVector3Array( 0.0970588, -0.00411765, 0.50646, 0.0970588, 0.102941, 0.50646, 0.1, 0.0997543, 0.402598, 0.100859, -1.38778e-17, 0.403529, 0.192063, -1.38778e-17, 0.403529, 0.193149, 0.1, 0.402353, 0.195863, -0.00411765, 0.50646, 0.195863, 0.102941, 0.50646 )
+
+[sub_resource type="ConvexPolygonShape" id=276]
+points = PoolVector3Array( 0.1, 0.206941, -0.00258823, 0.102715, 0.00176471, 0.1, 0.102715, 0.196333, 0.1, 0.104977, 0.00411764, -6.93889e-18, 0.295023, 0.00411764, -6.93889e-18, 0.297285, 0.196333, 0.1, 0.298982, 0, 0.100882, 0.3, 0.206941, -0.00258823 )
+
+[sub_resource type="ConvexPolygonShape" id=277]
+points = PoolVector3Array( 0.0970588, 0.193513, -0.102941, 0.0970588, 0.193513, -0.00411765, 0.1, 0.208353, -0.00552941, 0.103186, 0.206569, -0.1, 0.195546, 0.0899255, 6.93889e-18, 0.195889, 0.0947284, -0.102941, 0.293526, 0.1, -0.0984218, 0.296814, 0.206569, -0.1, 0.3, 0.208353, -0.00552942, 0.31152, 0.0899255, -6.93889e-18 )
+
+[sub_resource type="ConvexPolygonShape" id=278]
+points = PoolVector3Array( 0.192685, 0.1, 0.41109, 0.195882, 0.102951, 0.292353, 0.195882, 0.201755, 0.292353, 0.195882, 0.201755, 0.407647, 0.302931, 0.102951, 0.292353, 0.302931, 0.102951, 0.407647, 0.302931, 0.201755, 0.292353, 0.302931, 0.201755, 0.407647 )
+
+[sub_resource type="ConvexPolygonShape" id=279]
+points = PoolVector3Array( 0.192685, 0.106139, 0.1, 0.2, 3.94919e-07, 0.106751, 0.2, 3.94919e-07, 0.197954, 0.2, 0.0988231, 0.197954, 0.298813, 0, 0.106751, 0.298813, 0, 0.197955, 0.29999, 0.1, 0.105665, 0.29999, 0.1, 0.199041 )
+
+[sub_resource type="ConvexPolygonShape" id=280]
+points = PoolVector3Array( -0.0182353, -0.00411765, 0.193537, -0.0182353, 0.102941, 0.193537, -0.0175566, 0.1, 0.265611, -0.0172851, 0, 0.264797, 0.00647058, -0.00411765, 0.193537, 0.00647058, -0.00411765, 0.267647, 0.00647058, 0.102941, 0.193537, 0.00647058, 0.102941, 0.267647 )
+
+[sub_resource type="ConvexPolygonShape" id=281]
+points = PoolVector3Array( 0.000950224, 0.1, 0.1, 0.00203619, -6.93889e-18, -6.93889e-18, 0.00203619, -6.93889e-18, 0.0988235, 0.00203619, 0.0988235, -6.93889e-18, 0.0932579, -6.93889e-18, -6.93889e-18, 0.0932579, -6.93889e-18, 0.0988235, 0.0932579, 0.0988235, -6.93889e-18, 0.0943439, 0.1, 0.1 )
+
+[sub_resource type="ConvexPolygonShape" id=282]
+points = PoolVector3Array( 0.39355, -0.00411765, 0.300588, 0.39355, 0.102941, 0.300588, 0.396491, 0.1, 0.00425342, 0.397667, -6.93889e-18, 0.00760181, 0.401776, -0.00411765, -0.00411764, 0.401776, 0.102941, -0.00411764, 0.495304, 0.00115757, 0.1, 0.495304, 0.097666, 0.1, 0.496461, 0, 0.288869, 0.497637, 0.1, 0.292217 )
+
+[sub_resource type="ConvexPolygonShape" id=283]
+points = PoolVector3Array( 0.3, 0.106417, -0.0075936, 0.302941, -0.00411765, -0.00411765, 0.30543, 0.1, 0.1, 0.306425, -6.93889e-18, 0.0988235, 0.390045, -6.93889e-18, 0.0988235, 0.390045, 0.0988235, -6.93889e-18, 0.391041, 0.1, 0.1, 0.393529, -0.00411765, -0.00411765 )
+
+[sub_resource type="ConvexPolygonShape" id=284]
+points = PoolVector3Array( -0.0175566, 0.1, 0.268552, -0.0175566, 0.1, 0.299683, -0.0172851, 0, 0.268914, -0.0172851, 0, 0.299321, 0.00647058, -0.00411765, 0.267647, 0.00647058, -0.00411765, 0.300588, 0.00647058, 0.102941, 0.267647, 0.00647058, 0.102941, 0.300588 )
+
+[sub_resource type="ConvexPolygonShape" id=285]
+points = PoolVector3Array( -0.182941, -0.00411765, 0.201771, -0.182941, 0.102941, 0.201771, -0.178417, 0.1, 0.188462, -0.176608, -1.38778e-17, 0.189729, -0.100596, -0.00411765, 0.300588, -0.100596, 0.102941, 0.300588, -0.0923747, -0.00411765, 0.185294, -0.0923747, 0.102941, 0.185294, -0.0246011, -1.38778e-17, 0.296154, -0.0227916, 0.1, 0.297421, -0.0182675, -0.00411765, 0.193544, -0.0182675, 0.102941, 0.193544 )
+
+[sub_resource type="ConvexPolygonShape" id=286]
+points = PoolVector3Array( -0.180444, 0.1, 0.00110401, -0.180444, 0.1, 0.180091, -0.179448, -6.93889e-18, 0.00318524, -0.179448, -6.93889e-18, 0.17801, -0.092353, -0.00411765, -0.00409912, -0.092353, -0.00411765, 0.185294, -0.092353, 0.102941, -0.00409912, -0.092353, 0.102941, 0.185294 )
+
+[sub_resource type="ConvexPolygonShape" id=287]
+points = PoolVector3Array( 0.390354, 0.1, 0.0915085, 0.39355, 0.102951, 0.201765, 0.39355, 0.201755, 0.0947059, 0.39355, 0.201755, 0.201765, 0.495285, 0.107837, 0.1, 0.495285, 0.196869, 0.1, 0.498677, 0.2, 0.199863, 0.498814, 0.104579, 0.2 )
+
+[sub_resource type="ConvexPolygonShape" id=288]
+points = PoolVector3Array( -0.215879, -0.00411765, 0.193482, -0.215879, 0.102941, 0.193482, -0.214974, 0.1, 0.292217, -0.214612, -1.38778e-17, 0.288869, -0.207641, -0.00411765, -0.00411764, -0.207641, 0.102941, -0.00411764, -0.19941, -0.00411765, 0.300588, -0.19941, 0.102941, 0.300588, -0.184208, -1.38778e-17, 0.00760181, -0.184208, -6.93889e-18, 0.197628, -0.183846, 0.1, 0.00425342, -0.183846, 0.1, 0.198804 )
+
+[sub_resource type="ConvexPolygonShape" id=289]
+points = PoolVector3Array( 0.195902, 0.102924, -0.407647, 0.195902, 0.102924, -0.193529, 0.202124, 0.0021236, -0.2, 0.203255, 0.00325472, -0.4, 0.294723, 0.201765, -0.407647, 0.294723, 0.201765, -0.292393, 0.394412, 0.00325472, -0.4, 0.394412, 0.194412, -0.4, 0.395544, 0.0021236, -0.2, 0.401765, 0.102924, -0.193529, 0.401765, 0.201765, -0.292393 )
+
+[sub_resource type="ConvexPolygonShape" id=290]
+points = PoolVector3Array( -0.00176471, -0.00411765, -0.19354, -0.00176471, 0.102941, -0.19354, 0.00117647, 0.1, -0.297647, 0.00235293, -6.93889e-18, -0.296471, 0.1, 0.00117647, -0.295295, 0.1, 0.0976471, -0.295295, 0.105294, -0.00411765, -0.19354, 0.105294, 0.102941, -0.19354 )
+
+[sub_resource type="ConvexPolygonShape" id=291]
+points = PoolVector3Array( -0.4, 0.0999488, 0.10046, -0.4, 0.0999488, 0.294834, -0.398009, -6.93889e-18, 0.102624, -0.398009, -6.93889e-18, 0.29267, -0.29824, -0.00411765, 0.0947059, -0.29824, 0.102941, 0.0947059, -0.223167, -6.93889e-18, 0.29267, -0.221086, 0.1, 0.294932, -0.215882, -0.00411765, 0.193536, -0.215882, 0.102941, 0.193536 )
+
+[sub_resource type="ConvexPolygonShape" id=292]
+points = PoolVector3Array( 0.102715, 0.215429, -0.1, 0.104977, 0.2176, 6.93889e-18, 0.104986, 0.4, -0.0988191, 0.104986, 0.4, -4.38569e-06, 0.204111, 0.407608, -0.102941, 0.204111, 0.407608, 0.00411765, 0.295023, 0.2176, 6.93889e-18, 0.297285, 0.215429, -0.1, 0.302941, 0.300612, -0.102941, 0.302941, 0.300612, 0.00411765 )
+
+[sub_resource type="ConvexPolygonShape" id=293]
+points = PoolVector3Array( 0.3, 0.00117647, -0.693898, 0.3, 0.00117647, -0.508414, 0.3, 0.0976471, -0.693898, 0.3, 0.0976471, -0.508414, 0.397647, -6.93889e-18, -0.69616, 0.397647, -6.93889e-18, -0.506152, 0.398823, 0.1, -0.698422, 0.398823, 0.1, -0.50389 )
+
+[sub_resource type="ConvexPolygonShape" id=294]
+points = PoolVector3Array( -0.207636, -0.00411765, 0.597069, -0.207636, -0.00411765, 0.704107, -0.207636, 0.102941, 0.597069, -0.207636, 0.102941, 0.704107, -0.0923642, -0.00411765, 0.597069, -0.0923642, -0.00411765, 0.704107, -0.0923642, 0.102941, 0.597069, -0.0923642, 0.102941, 0.704107 )
+
+[sub_resource type="ConvexPolygonShape" id=295]
+points = PoolVector3Array( -0.207636, -0.00411764, -0.300588, -0.207636, -0.00411764, -0.0947059, -0.207636, 0.102989, -0.300588, -0.207636, 0.300588, -0.201758, -0.207636, 0.300588, -0.0947059, -0.0923642, -0.00411764, -0.300588, -0.0923642, -0.00411764, -0.0947059, -0.0923642, 0.102989, -0.300588, -0.0923642, 0.300588, -0.201758, -0.0923642, 0.300588, -0.0947059 )
+
+[sub_resource type="ConvexPolygonShape" id=296]
+points = PoolVector3Array( -0.5, 0.0988328, -0.197656, -0.499991, -6.93889e-18, -0.197647, -0.498815, 0.00117647, -0.1, -0.498815, 0.0976471, -0.1, -0.402372, 0.00117647, -0.1, -0.402372, 0.0976471, -0.1, -0.401196, -6.93889e-18, -0.197647, -0.40002, 0.1, -0.198824 )
 
 [sub_resource type="ConvexPolygonShape" id=247]
 points = PoolVector3Array( -12.8696, 0.209836, -12.8699, -12.8696, 0.209836, 12.8699, 12.8699, 0.209836, -12.8699, 12.8699, 0.209836, 12.8699 )
@@ -3125,6 +3196,1446 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11618, 1.49716 )
 light_energy = 4.09
 omni_range = 2.62091
+
+[node name="Greenery" type="Node" parent="."]
+
+[node name="grass_plain" type="MeshInstance" parent="Greenery"]
+transform = Transform( 1.93248, 0, -0.515278, 0, 1, 0, 0.515278, 0, 1.93248, 18.8329, 0.264369, 107.855 )
+mesh = ExtResource( 30 )
+material/0 = null
+
+[node name="grass_plain2" type="MeshInstance" parent="Greenery"]
+transform = Transform( 1.99535, 0, -0.136309, 0, 1, 0, 0.136309, 0, 1.99535, 20.2941, 0.387001, 102.485 )
+mesh = ExtResource( 30 )
+material/0 = null
+
+[node name="grass_plain3" type="MeshInstance" parent="Greenery"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 20.9229, 0.466921, 99.971 )
+mesh = ExtResource( 30 )
+material/0 = null
+
+[node name="grass_plain4" type="MeshInstance" parent="Greenery"]
+transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 2.5, 20.0864, 0.405869, 94.7101 )
+mesh = ExtResource( 30 )
+material/0 = null
+
+[node name="grass_plain5" type="MeshInstance" parent="Greenery"]
+transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 2.5, 20.0864, 0.428834, 87.3404 )
+mesh = ExtResource( 30 )
+material/0 = null
+
+[node name="grass_plain6" type="MeshInstance" parent="Greenery"]
+transform = Transform( -1.09278e-07, 0, 2.5, 0, 1, 0, -2.5, 0, -1.09278e-07, 20.0864, 0.358857, 80.2899 )
+mesh = ExtResource( 30 )
+material/0 = null
+
+[node name="grass_plain7" type="MeshInstance" parent="Greenery"]
+transform = Transform( -1.09278e-07, 0, 2.5, 0, 1, 0, -2.5, 0, -1.09278e-07, 20.0864, 0.270828, 72.9423 )
+mesh = ExtResource( 30 )
+material/0 = null
+
+[node name="grass_plain8" type="MeshInstance" parent="Greenery"]
+transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 2.5, 20.0864, 0.270828, 65.5824 )
+mesh = ExtResource( 30 )
+material/0 = null
+
+[node name="grass_plain9" type="MeshInstance" parent="Greenery"]
+transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 2.5, 20.0864, 0.317749, 58.3523 )
+mesh = ExtResource( 30 )
+material/0 = null
+
+[node name="grass_plain10" type="MeshInstance" parent="Greenery"]
+transform = Transform( -1.09278e-07, 0, -2.5, 0, 1, 0, 2.5, 0, -1.09278e-07, 20.0864, 0.317749, 50.9855 )
+mesh = ExtResource( 30 )
+material/0 = null
+
+[node name="grass_plain11" type="MeshInstance" parent="Greenery"]
+transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 2.5, 20.0864, 0.317749, 43.5132 )
+mesh = ExtResource( 30 )
+material/0 = null
+
+[node name="grass_plain12" type="MeshInstance" parent="Greenery"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 20.9402, 0.317749, 38.6481 )
+mesh = ExtResource( 30 )
+material/0 = null
+
+[node name="grass_plain13" type="MeshInstance" parent="Greenery"]
+transform = Transform( 1.90799, 0, 0.599647, 0, 1, 0, -0.599647, 0, 1.90799, 19.68, 0.374296, 34.1461 )
+mesh = ExtResource( 30 )
+material/0 = null
+
+[node name="grass_plain14" type="MeshInstance" parent="Greenery"]
+transform = Transform( 1.49959, 0, 0.0348947, 0, 1, 0, -0.0348947, 0, 1.49959, 18.7799, 0.428116, 30.3023 )
+mesh = ExtResource( 30 )
+material/0 = null
+
+[node name="grass" type="MeshInstance" parent="Greenery"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 18.6667, 0.687002, 64.4687 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass/StaticBody"]
+shape = SubResource( 296 )
+
+[node name="grass2" type="MeshInstance" parent="Greenery"]
+transform = Transform( 1.49174, 0, 1.33218, 0, 2, 0, -1.33218, 0, 1.49174, 21.8896, 0.687002, 67.8494 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass2"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass2/StaticBody"]
+shape = SubResource( 296 )
+
+[node name="grass3" type="MeshInstance" parent="Greenery"]
+transform = Transform( 1.50609, -0.0500136, -1.31499, -0.324902, 1.92255, -0.445238, 1.2752, 0.548905, 1.43964, 19.2955, 0.637407, 74.8489 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass3"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass3/StaticBody"]
+shape = SubResource( 296 )
+
+[node name="grass4" type="MeshInstance" parent="Greenery"]
+transform = Transform( 1.42366, 0, 1.4047, 0, 2, 0, -1.4047, 0, 1.42366, 20.6222, 0.687002, 80.116 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass4"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass4/StaticBody"]
+shape = SubResource( 296 )
+
+[node name="grass5" type="MeshInstance" parent="Greenery"]
+transform = Transform( 1.14352, 0, 1.64084, 0, 2, 0, -1.64084, 0, 1.14352, 18.6667, 0.687002, 86.4587 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass5"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass5/StaticBody"]
+shape = SubResource( 296 )
+
+[node name="grass6" type="MeshInstance" parent="Greenery"]
+transform = Transform( 0.256484, 0, -1.98349, 0, 2, 0, 1.98349, 0, 0.256484, 22.085, 0.687002, 84.4672 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass6"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass6/StaticBody"]
+shape = SubResource( 296 )
+
+[node name="grass7" type="MeshInstance" parent="Greenery"]
+transform = Transform( 1.37364, 0, -1.45365, 0, 2, 0, 1.45365, 0, 1.37364, 16.6255, 0.687002, 71.6296 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass7"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass7/StaticBody"]
+shape = SubResource( 296 )
+
+[node name="grass8" type="MeshInstance" parent="Greenery"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 18.6667, 0.687002, 94.144 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass8"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass8/StaticBody"]
+shape = SubResource( 296 )
+
+[node name="grass9" type="MeshInstance" parent="Greenery"]
+transform = Transform( 1.26141, 0, 1.55205, 0, 2, 0, -1.55205, 0, 1.26141, 21.0042, 0.687002, 102.85 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass9"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass9/StaticBody"]
+shape = SubResource( 296 )
+
+[node name="grass10" type="MeshInstance" parent="Greenery"]
+transform = Transform( 1.52759, 0, 1.29092, 0, 2, 0, -1.29092, 0, 1.52759, 17.4429, 0.687002, 107.938 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass10"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass10/StaticBody"]
+shape = SubResource( 296 )
+
+[node name="grass11" type="MeshInstance" parent="Greenery"]
+transform = Transform( 1.44945, 0, 1.37808, 0, 2, 0, -1.37808, 0, 1.44945, 21.8617, 0.687002, 59.6057 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass11"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass11/StaticBody"]
+shape = SubResource( 296 )
+
+[node name="grass12" type="MeshInstance" parent="Greenery"]
+transform = Transform( 1.1071, 0, -1.66563, 0, 2, 0, 1.66563, 0, 1.1071, 18.6667, 0.687002, 52.4975 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass12"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass12/StaticBody"]
+shape = SubResource( 296 )
+
+[node name="grass13" type="MeshInstance" parent="Greenery"]
+transform = Transform( -1.43221, 0, -1.39598, 0, 2, 0, 1.39598, 0, -1.43221, 21.7051, 0.687002, 48.839 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass13"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass13/StaticBody"]
+shape = SubResource( 296 )
+
+[node name="grass14" type="MeshInstance" parent="Greenery"]
+transform = Transform( 1.96886, 0, -0.351558, 0, 2, 0, 0.351558, 0, 1.96886, 18.6667, 0.687002, 43.8139 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass14"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass14/StaticBody"]
+shape = SubResource( 296 )
+
+[node name="grass15" type="MeshInstance" parent="Greenery"]
+transform = Transform( 1.1071, 0, -1.66563, 0, 2, 0, 1.66563, 0, 1.1071, 23.0606, 0.687002, 40.365 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass15"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass15/StaticBody"]
+shape = SubResource( 296 )
+
+[node name="grass16" type="MeshInstance" parent="Greenery"]
+transform = Transform( 1.1071, 0, -1.66563, 0, 2, 0, 1.66563, 0, 1.1071, 18.6667, 0.687002, 28.5272 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass16"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass16/StaticBody"]
+shape = SubResource( 296 )
+
+[node name="grass17" type="MeshInstance" parent="Greenery"]
+transform = Transform( -1.83687, 0, -0.791155, 0, 2, 0, 0.791155, 0, -1.83687, 21.6296, 0.687002, 36.7637 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass17"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass17/StaticBody"]
+shape = SubResource( 296 )
+
+[node name="grass18" type="MeshInstance" parent="Greenery"]
+transform = Transform( 1.1071, 0, -1.66563, 0, 2, 0, 1.66563, 0, 1.1071, 17.9344, 0.687002, 33.2651 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Greenery/grass18"]
+
+[node name="CollisionShape23" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 274 )
+
+[node name="CollisionShape22" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 275 )
+
+[node name="CollisionShape21" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 276 )
+
+[node name="CollisionShape20" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 277 )
+
+[node name="CollisionShape19" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 278 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 279 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 280 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 281 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 282 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 283 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 284 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 285 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 286 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 287 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 288 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 289 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 290 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 291 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 292 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 293 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 294 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 295 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Greenery/grass18/StaticBody"]
+shape = SubResource( 296 )
 
 [node name="plain" type="MeshInstance" parent="."]
 transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 5, 64.692, 0.210413, 64.8592 )
