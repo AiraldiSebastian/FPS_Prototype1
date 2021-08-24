@@ -9,12 +9,23 @@ var is_weapon_enabled = false
 
 var player_node = null
 
+# Ammo
+var ammo_in_weapon = 50
+var spare_ammo = 100
+const AMMO_IN_MAG = 50
+
+const CAN_RELOAD = true
+const CAN_REFILL = true
+
+const RELOADING_ANIM_NAME = "Rifle_reload"
+
 func _ready():
 	pass
 
 func fire_weapon():
 	var ray = $Ray_Cast
 	ray.force_raycast_update()
+	ammo_in_weapon -= 1
 
 	if ray.is_colliding():
 		var body = ray.get_collider()
@@ -23,6 +34,31 @@ func fire_weapon():
 			pass
 		elif body.has_method("bullet_hit"):
 			body.bullet_hit(DAMAGE, ray.global_transform)
+
+func reload_weapon():
+	var can_reload = false
+
+	if player_node.animation_manager.current_state == IDLE_ANIM_NAME:
+		can_reload = true
+
+	if spare_ammo <= 0 or ammo_in_weapon == AMMO_IN_MAG:
+		can_reload = false
+
+	if can_reload == true:
+		var ammo_needed = AMMO_IN_MAG - ammo_in_weapon
+
+		if spare_ammo >= ammo_needed:
+			spare_ammo -= ammo_needed
+			ammo_in_weapon = AMMO_IN_MAG
+		else:
+			ammo_in_weapon += spare_ammo
+			spare_ammo = 0
+
+		player_node.animation_manager.set_animation(RELOADING_ANIM_NAME)
+
+		return true
+
+	return false
 
 func equip_weapon():
 	if player_node.animation_manager.current_state == IDLE_ANIM_NAME:
