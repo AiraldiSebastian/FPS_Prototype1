@@ -1,4 +1,4 @@
-[gd_scene load_steps=328 format=2]
+[gd_scene load_steps=331 format=2]
 
 [ext_resource path="res://assets/plain.vox" type="ArrayMesh" id=1]
 [ext_resource path="res://assets/road_blocker.vox" type="ArrayMesh" id=2]
@@ -31,6 +31,9 @@
 [ext_resource path="res://assets/water.vox" type="ArrayMesh" id=29]
 [ext_resource path="res://assets/grass_plain.vox" type="ArrayMesh" id=30]
 [ext_resource path="res://assets/grass.vox" type="ArrayMesh" id=31]
+[ext_resource path="res://Ammo_Pickup.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Health_Pickup.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Target.tscn" type="PackedScene" id=34]
 
 [sub_resource type="ConvexPolygonShape" id=1]
 points = PoolVector3Array( -0.741618, 2.12265, 3.32948, -0.741618, 2.62207, 3.32948, -0.741618, 2.62207, 3.8288, -0.698395, 2.18507, 3.8, -0.575014, 2.78833, 3.07977, -0.575014, 2.78833, 4.07861, -0.575014, 3.20452, 3.07977, -0.575014, 3.20452, 4.07861, -0.325474, 2.12265, 3.16317, -0.325474, 2.12265, 4.07861, -0.159017, 2.37236, 3.07977, -0.101574, 2.17054, 3.2, -0.1, 3.15955, 3.12128, -0.1, 3.15955, 4.0371, -0.0757878, 2.12265, 4.07861, -0.0305408, 3, 3.13051, -0.0305408, 3, 4.02787, -0.0280352, 2.4, 3.12717, -0.0280352, 2.4, 4.03121 )
@@ -4660,3 +4663,21 @@ omni_range = 13.4264
 
 [node name="Player" parent="." instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5585, 5.73752, 18.383 )
+
+[node name="Health_Pickup" parent="." instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 63.641, 1.63207, 33.4623 )
+
+[node name="Health_Pickup2" parent="." instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 62.311, 2.5516, 25.6175 )
+
+[node name="Ammo_Pickup" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 75.9168, 2.28672, 16.533 )
+
+[node name="Ammo_Pickup2" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 67.7797, 1.85882, 14.4944 )
+
+[node name="Target_Whole" parent="." instance=ExtResource( 34 )]
+transform = Transform( -8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 36.246, 9.68257, 53.789 )
+
+[node name="Target_Whole2" parent="." instance=ExtResource( 34 )]
+transform = Transform( -8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 36.4144, 5.84561, 53.7961 )
