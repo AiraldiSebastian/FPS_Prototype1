@@ -45,6 +45,7 @@ var simple_audio_player = preload("res://Simple_Audio_Player.tscn")
 var mouse_scroll_value = 0
 const MOUSE_SENSITIVITY_SCROLL_WHEEL = 0.08
 
+
 func _ready():
 	camera = $Rotation_Helper/Camera
 	rotation_helper = $Rotation_Helper
@@ -200,6 +201,7 @@ func process_input(_delta):
 							reloading_weapon = true
 	# ----------------------------------
 
+
 func process_movement(delta):
 	dir.y = 0
 	dir = dir.normalized()
@@ -228,6 +230,7 @@ func process_movement(delta):
 	vel.x = hvel.x
 	vel.z = hvel.z
 	vel = move_and_slide(vel, Vector3(0, 1, 0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE))
+
 
 func process_changing_weapons(_delta):
 	if changing_weapon == true:
@@ -261,6 +264,7 @@ func process_changing_weapons(_delta):
 				current_weapon_name = changing_weapon_name
 				changing_weapon_name = ""
 
+
 func fire_bullet():
 	if changing_weapon == true:
 		return
@@ -276,12 +280,14 @@ func process_UI(_delta):
 		UI_status_label.text = "HEALTH: " + str(health) + \
 				"\nAMMO: " + str(current_weapon.ammo_in_weapon) + "/" + str(current_weapon.spare_ammo)
 
+
 func process_reloading(_delta):
 	if reloading_weapon == true:
 		var current_weapon = weapons[current_weapon_name]
 		if current_weapon != null:
 			current_weapon.reload_weapon()
 		reloading_weapon = false
+
 
 func create_sound(sound_name, position=null):
 	var audio_clone = simple_audio_player.instance()
@@ -299,6 +305,11 @@ func add_ammo(additional_ammo):
 	if (current_weapon_name != "UNARMED"):
 		if (weapons[current_weapon_name].CAN_REFILL == true):
 			weapons[current_weapon_name].spare_ammo += weapons[current_weapon_name].AMMO_IN_MAG * additional_ammo
+
+
+func bullet_hit(damage, bullet_hit_pos):
+	health -= damage
+
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
