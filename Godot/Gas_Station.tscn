@@ -4659,4 +4659,4 @@ light_energy = 9.18
 omni_range = 13.4264
 
 [node name="Player" parent="." instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5721, 4.00426, 16.8896 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0154, 3.90831, 13.0752 )

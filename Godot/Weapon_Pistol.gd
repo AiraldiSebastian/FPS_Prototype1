@@ -20,7 +20,7 @@ func fire_weapon():
 	scene_root.add_child(clone)
 
 	clone.global_transform = self.global_transform
-	clone.scale = Vector3(4, 4, 4)
+	clone.scale = Vector3(1, 1, 1)
 	clone.BULLET_DAMAGE = DAMAGE
 
 func equip_weapon():

@@ -66,6 +66,11 @@ config/name="Godot"
 run/main_scene="res://Gas_Station.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1280
+window/size/height=720
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/VoxImporter/plugin.cfg" )
