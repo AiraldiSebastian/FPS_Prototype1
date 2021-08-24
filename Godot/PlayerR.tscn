@@ -14,20 +14,20 @@
 [ext_resource path="res://Weapon_Rifle.gd" type="Script" id=12]
 [ext_resource path="res://Weapon_Knife.gd" type="Script" id=13]
 
-[sub_resource type="CapsuleShape" id=1]
+[sub_resource type="CapsuleShape" id=26]
 radius = 1.2
 height = 9.0
 
-[sub_resource type="BoxShape" id=2]
+[sub_resource type="BoxShape" id=27]
 extents = Vector3( 0.8, 0.2, 0.8 )
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=28]
 resource_name = "GunMaterial.001"
 albedo_texture = ExtResource( 3 )
 metallic = 0.5
 roughness = 0.542695
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=29]
 resource_name = "MuzzleFlash.001"
 albedo_color = Color( 0.639282, 0.566701, 0, 1 )
 metallic = 0.5
@@ -38,7 +38,7 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=30]
 resource_name = "Gun_Emission.001"
 albedo_color = Color( 0, 0.226627, 0.64, 1 )
 metallic = 0.5
@@ -49,7 +49,7 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 
-[sub_resource type="ArrayMesh" id=6]
+[sub_resource type="ArrayMesh" id=31]
 resource_name = "Cube.012"
 surfaces/0 = {
 "aabb": AABB( -3.96959, 5.73446, -1.01509, 7.93918, 6.85044, 1.57805 ),
@@ -84,7 +84,7 @@ surfaces/2 = {
 "blend_shape_data": [  ],
 "format": 98263,
 "index_count": 10518,
-"material": SubResource( 3 ),
+"material": SubResource( 28 ),
 "name": "GunMaterial.001",
 "primitive": 4,
 "skeleton_aabb": [  ],
@@ -97,7 +97,7 @@ surfaces/3 = {
 "blend_shape_data": [  ],
 "format": 98263,
 "index_count": 240,
-"material": SubResource( 4 ),
+"material": SubResource( 29 ),
 "name": "MuzzleFlash.001",
 "primitive": 4,
 "skeleton_aabb": [  ],
@@ -110,14 +110,14 @@ surfaces/4 = {
 "blend_shape_data": [  ],
 "format": 98263,
 "index_count": 612,
-"material": SubResource( 5 ),
+"material": SubResource( 30 ),
 "name": "Gun_Emission.001",
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 392
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=32]
 resource_name = "Idle_unarmed"
 length = 0.0416667
 tracks/0/type = "transform"
@@ -366,7 +366,7 @@ tracks/34/imported = true
 tracks/34/enabled = true
 tracks/34/keys = PoolRealArray( 0, 1, 1.19209e-07, -1.14739e-06, -1.04308e-07, 1.11759e-08, 2.23517e-08, -9.31323e-10, 1, 1, 1, 1, 0.0416667, 1, 1.19209e-07, -1.14739e-06, -1.04308e-07, 1.11759e-08, 2.23517e-08, -9.31323e-10, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=33]
 resource_name = "Knife_equip"
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Armature")
@@ -614,7 +614,7 @@ tracks/34/imported = true
 tracks/34/enabled = true
 tracks/34/keys = PoolRealArray( 0, 1, 1.19209e-07, -1.14739e-06, -1.04308e-07, -0.546097, 0.0503074, 0.0508105, 0.834665, 1, 1, 1, 1, 1, 5.96046e-08, 1.86265e-08, 1.3411e-07, -0.546097, 0.0503074, 0.0508105, 0.834665, 1, 1, 1 )
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=34]
 resource_name = "Knife_fire"
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Armature")
@@ -876,7 +876,7 @@ tracks/35/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=35]
 resource_name = "Knife_idle"
 length = 0.0416667
 tracks/0/type = "transform"
@@ -1125,7 +1125,7 @@ tracks/34/imported = true
 tracks/34/enabled = true
 tracks/34/keys = PoolRealArray( 0, 1, 5.96046e-08, 1.86265e-08, 1.3411e-07, -0.546097, 0.0503074, 0.0508105, 0.834665, 1, 1, 1, 0.0416667, 1, 5.96046e-08, 1.86265e-08, 1.3411e-07, -0.546097, 0.0503074, 0.0508105, 0.834665, 1, 1, 1 )
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=36]
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Armature")
 tracks/0/interp = 1
@@ -1372,7 +1372,7 @@ tracks/34/imported = true
 tracks/34/enabled = true
 tracks/34/keys = PoolRealArray( 0, 1, 5.96046e-08, 1.86265e-08, 1.3411e-07, -0.546097, 0.0503074, 0.0508105, 0.834665, 1, 1, 1, 1, 1, 1.19209e-07, -1.14739e-06, -1.04308e-07, -0.546097, 0.0503074, 0.0508105, 0.834665, 1, 1, 1 )
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=37]
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Armature")
 tracks/0/interp = 1
@@ -1619,7 +1619,7 @@ tracks/34/imported = true
 tracks/34/enabled = true
 tracks/34/keys = PoolRealArray( 0, 1, 1.19209e-07, -1.14739e-06, -1.04308e-07, -0.464198, -0.0110808, 0.0350262, 0.884969, 1, 1, 1, 0.0666667, 1, 3.57628e-07, -9.62988e-07, 5.81145e-07, -0.453919, -0.0128823, 0.0426151, 0.88993, 1, 1, 1, 0.133333, 1, -1.19209e-07, -4.45172e-07, -4.61936e-07, -0.425073, -0.0177621, 0.0630534, 0.902786, 1, 1, 1, 0.2, 1, 1.19209e-07, -9.31323e-07, 0, -0.376256, -0.0255307, 0.0952957, 0.921248, 1, 1, 1, 0.333333, 1, -8.9407e-08, -8.41916e-07, -3.27826e-07, -0.244281, -0.0436953, 0.168615, 0.953932, 1, 1, 1, 0.4, 1, 1.78814e-07, -8.12113e-07, -6.70552e-08, -0.183104, -0.0503933, 0.193678, 0.962508, 1, 1, 1, 0.466667, 1, -5.96046e-07, -8.19564e-07, -7.59959e-07, -0.13508, -0.0544186, 0.206564, 0.967535, 1, 1, 1, 0.533333, 1, -5.06639e-07, -9.20147e-07, 1.2666e-07, -0.10143, -0.0559365, 0.207606, 0.97133, 1, 1, 1, 0.6, 1, -3.8743e-07, -8.97795e-07, -2.38419e-07, -0.0726117, -0.0568782, 0.203426, 0.974736, 1, 1, 1, 0.666667, 1, 2.38419e-07, -1.08033e-06, 7.45058e-08, -0.0471333, -0.0576499, 0.195989, 0.977775, 1, 1, 1, 0.733333, 1, 5.06639e-07, -9.05246e-07, -1.78814e-07, -0.0269602, -0.0582081, 0.186015, 0.980451, 1, 1, 1, 0.8, 1, 1.2517e-06, -7.69272e-07, -4.54485e-07, -0.0120728, -0.0585821, 0.175686, 0.982628, 1, 1, 1, 0.866667, 1, -6.25849e-07, -9.76026e-07, -1.11759e-07, -0.00278706, -0.0587898, 0.166945, 0.984208, 1, 1, 1, 0.933333, 1, 3.8743e-07, -1.03936e-06, 1.04308e-07, 0.00187241, -0.0588819, 0.161387, 0.985131, 1, 1, 1, 1, 1, 1.54972e-06, -9.574e-07, -5.1409e-07, 0.00332353, -0.0589074, 0.159316, 0.985463, 1, 1, 1 )
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=38]
 length = 0.666667
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Armature")
@@ -1881,7 +1881,7 @@ tracks/35/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=39]
 length = 0.0416667
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Armature")
@@ -2129,7 +2129,7 @@ tracks/34/imported = true
 tracks/34/enabled = true
 tracks/34/keys = PoolRealArray( 0, 1, 1.54972e-06, -9.574e-07, -5.1409e-07, 0.00332353, -0.0589074, 0.159316, 0.985463, 1, 1, 1, 0.0416667, 1, 1.54972e-06, -9.574e-07, -5.1409e-07, 0.00332353, -0.0589074, 0.159316, 0.985463, 1, 1, 1 )
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=40]
 length = 2.41667
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Armature")
@@ -2377,7 +2377,7 @@ tracks/34/imported = true
 tracks/34/enabled = true
 tracks/34/keys = PoolRealArray( 0, 1, 1.54972e-06, -9.574e-07, -5.1409e-07, 0.00332353, -0.0589074, 0.159316, 0.985463, 1, 1, 1, 0.0666667, 1, 6.55651e-07, -8.04663e-07, -3.50177e-07, 0.0070024, -0.0604414, 0.15306, 0.986342, 1, 1, 1, 0.133333, 1, 9.53674e-07, -8.58679e-07, -5.06639e-07, 0.0162858, -0.0647791, 0.137226, 0.988285, 1, 1, 1, 0.2, 1, 6.85453e-07, -9.98378e-07, -5.96046e-08, 0.0283661, -0.0717045, 0.116518, 0.990191, 1, 1, 1, 0.266667, 1, -2.98023e-08, -8.53091e-07, -8.19564e-08, 0.0376281, -0.0796383, 0.100537, 0.991027, 1, 1, 1, 0.333333, 1, -5.96046e-08, -1.00769e-06, -8.9407e-08, 0.0412787, -0.0872247, 0.0941563, 0.99087, 1, 1, 1, 0.4, 1, -2.08616e-07, -9.0152e-07, -2.90573e-07, 0.0302892, -0.0975865, 0.0985218, 0.989875, 1, 1, 1, 0.466667, 1, 7.45058e-07, -8.15839e-07, -2.45869e-07, 0.00840686, -0.107135, 0.111921, 0.987889, 1, 1, 1, 0.533333, 1, 1.2517e-06, -1.20327e-06, 7.45058e-08, -0.00983485, -0.103833, 0.135114, 0.985326, 1, 1, 1, 0.6, 1, 1.3113e-06, -6.6869e-07, -6.63102e-07, -0.0270089, -0.0793311, 0.171358, 0.981638, 1, 1, 1, 0.666667, 1, -4.47035e-07, -8.15839e-07, 3.8743e-07, -0.0348421, -0.062158, 0.190797, 0.97904, 1, 1, 1, 0.733333, 1, -6.55651e-07, -8.47504e-07, 4.47035e-07, -0.0319193, -0.0608453, 0.188411, 0.979684, 1, 1, 1, 0.8, 1, -7.7486e-07, -7.0408e-07, 1.63913e-07, -0.0243497, -0.05986, 0.182196, 0.981136, 1, 1, 1, 0.933333, 1, -3.57628e-07, -9.6485e-07, 2.68221e-07, -0.00388182, -0.0589957, 0.165295, 0.98447, 1, 1, 1, 1, 1, 1.49012e-06, -8.04663e-07, -5.36442e-07, 0.00227814, -0.0589128, 0.160184, 0.985325, 1, 1, 1, 1.06667, 1, 2.98023e-08, -9.03383e-07, -1.71363e-07, 0.00332355, -0.0589073, 0.159316, 0.985463, 1, 1, 1, 1.33333, 1, 2.08616e-07, -1.02632e-06, 2.16067e-07, 0.00332355, -0.0589074, 0.159316, 0.985463, 1, 1, 1, 1.4, 1, -2.68221e-07, -1.06543e-06, 4.32134e-07, 0.0026963, -0.0589106, 0.159837, 0.98538, 1, 1, 1, 1.46667, 1, -3.8743e-07, -7.72998e-07, 1.71363e-07, -0.00186657, -0.0589613, 0.163625, 0.984757, 1, 1, 1, 1.66667, 1, -3.27826e-07, -9.22009e-07, -1.19209e-07, -0.0306659, -0.0605481, 0.187384, 0.979939, 1, 1, 1, 1.73333, 1, -1.19209e-07, -8.49366e-07, 8.9407e-08, -0.034425, -0.0618112, 0.190458, 0.979143, 1, 1, 1, 1.8, 1, 8.04663e-07, -7.02217e-07, -1.78814e-07, -0.0136042, -0.0743638, 0.174221, 0.9818, 1, 1, 1, 1.86667, 1, 8.64267e-07, -7.35745e-07, -2.75671e-07, 0.0449681, -0.105703, 0.125506, 0.98542, 1, 1, 1, 1.93333, 1, 1.16229e-06, -7.09668e-07, -4.84288e-07, 0.0652172, -0.115493, 0.101192, 0.985986, 1, 1, 1, 2, 1, -9.53674e-07, -1.22003e-06, 3.57628e-07, 0.0568778, -0.105058, 0.0952694, 0.988257, 1, 1, 1, 2.06667, 1, -4.17233e-07, -9.574e-07, 1.56462e-07, 0.0440503, -0.0902301, 0.0941908, 0.990478, 1, 1, 1, 2.13333, 1, -7.7486e-07, -9.23872e-07, 3.42727e-07, 0.0341783, -0.0807304, 0.0978433, 0.991333, 1, 1, 1, 2.2, 1, 3.8743e-07, -1.12876e-06, 2.23517e-08, 0.0236689, -0.072327, 0.111825, 0.99081, 1, 1, 1, 2.26667, 1, 6.25849e-07, -6.4075e-07, -9.83477e-07, 0.0137302, -0.0653661, 0.13208, 0.988986, 1, 1, 1, 2.33333, 1, 7.7486e-07, -6.64964e-07, -4.24683e-07, 0.00643121, -0.0607268, 0.150386, 0.98674, 1, 1, 1, 2.4, 1, 9.53674e-07, -9.35048e-07, -3.8743e-07, 0.00362303, -0.0590779, 0.158421, 0.985596, 1, 1, 1, 2.41667, 1, 1.54972e-06, -9.574e-07, -5.1409e-07, 0.00332353, -0.0589074, 0.159316, 0.985463, 1, 1, 1 )
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=41]
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Armature")
 tracks/0/interp = 1
@@ -2624,7 +2624,7 @@ tracks/34/imported = true
 tracks/34/enabled = true
 tracks/34/keys = PoolRealArray( 0, 1, 1.54972e-06, -9.574e-07, -5.1409e-07, 0.00332353, -0.0589074, 0.159316, 0.985463, 1, 1, 1, 0.0666667, 1, -2.98023e-07, -1.00397e-06, 1.19209e-07, 0.00187242, -0.0588818, 0.161387, 0.985131, 1, 1, 1, 0.133333, 1, 6.55651e-07, -8.28877e-07, -3.57628e-07, -0.00278706, -0.0587897, 0.166945, 0.984208, 1, 1, 1, 0.2, 1, -7.45058e-07, -9.62988e-07, 1.2666e-07, -0.0120728, -0.0585821, 0.175686, 0.982628, 1, 1, 1, 0.266667, 1, 8.04663e-07, -7.09668e-07, -3.05474e-07, -0.0269602, -0.0582081, 0.186015, 0.980451, 1, 1, 1, 0.333333, 1, -4.17233e-07, -9.68575e-07, 4.17233e-07, -0.0471333, -0.0576498, 0.195989, 0.977775, 1, 1, 1, 0.4, 1, 0, -9.25735e-07, -3.72529e-08, -0.0726117, -0.0568781, 0.203426, 0.974736, 1, 1, 1, 0.466667, 1, -6.85453e-07, -9.20147e-07, -8.9407e-08, -0.10143, -0.0559365, 0.207606, 0.97133, 1, 1, 1, 0.533333, 1, 0, -8.9407e-07, 2.38419e-07, -0.13508, -0.0544187, 0.206564, 0.967535, 1, 1, 1, 0.6, 1, -5.96046e-08, -9.05246e-07, 5.96046e-08, -0.183104, -0.0503934, 0.193678, 0.962508, 1, 1, 1, 0.666667, 1, 0, -7.56234e-07, -6.03497e-07, -0.244281, -0.0436953, 0.168615, 0.953932, 1, 1, 1, 0.8, 1, -2.38419e-07, -7.0408e-07, -5.1409e-07, -0.376256, -0.0255307, 0.0952957, 0.921248, 1, 1, 1, 0.866667, 1, -2.38419e-07, -4.82425e-07, -3.72529e-07, -0.425073, -0.0177621, 0.0630534, 0.902786, 1, 1, 1, 0.933333, 1, 3.57628e-07, -1.0021e-06, 5.06639e-07, -0.453919, -0.0128823, 0.0426151, 0.88993, 1, 1, 1, 1, 1, 1.19209e-07, -1.14739e-06, -1.04308e-07, -0.464198, -0.0110808, 0.0350262, 0.884969, 1, 1, 1 )
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=42]
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Armature")
 tracks/0/interp = 1
@@ -2871,7 +2871,7 @@ tracks/34/imported = true
 tracks/34/enabled = true
 tracks/34/keys = PoolRealArray( 0, 1, 1.78814e-07, -8.34465e-07, -7.45058e-08, 0.112565, -0.112277, -0.0567911, 0.985646, 1, 1, 1, 0.0666667, 1, 1.49012e-07, -1.14925e-06, 1.56462e-07, 0.107596, -0.112858, -0.0592147, 0.985992, 1, 1, 1, 0.133333, 1, 2.98023e-07, -1.11759e-06, 3.12924e-07, 0.094239, -0.114407, -0.0657173, 0.986768, 1, 1, 1, 0.4, 1, 0, -7.99075e-07, -2.08616e-07, 0.00647115, -0.124201, -0.108103, 0.98633, 1, 1, 1, 0.466667, 1, 1.49012e-07, -9.10833e-07, -7.45058e-09, -0.00302533, -0.125353, -0.112772, 0.985677, 1, 1, 1, 0.533333, 1, -6.25849e-07, -9.03383e-07, 9.68575e-08, -0.00093918, -0.124052, -0.113293, 0.985786, 1, 1, 1, 0.6, 1, 2.68221e-07, -8.40053e-07, -2.90573e-07, 0.0223063, -0.113243, -0.110969, 0.987099, 1, 1, 1, 0.666667, 1, -5.96046e-08, -7.1153e-07, -4.47035e-08, 0.0657927, -0.0925844, -0.106222, 0.987834, 1, 1, 1, 0.8, 1, 8.9407e-08, -8.54954e-07, -5.21541e-08, 0.186382, -0.0334757, -0.0913883, 0.977645, 1, 1, 1, 0.866667, 1, 6.85453e-07, -7.45058e-07, -2.23517e-07, 0.236928, -0.00795406, -0.0844881, 0.967814, 1, 1, 1, 0.933333, 1, -5.06639e-07, -7.82311e-07, 8.19564e-08, 0.268242, 0.00808504, -0.0800044, 0.95999, 1, 1, 1, 1, 1, 1.01328e-06, -7.3202e-07, -4.39584e-07, 0.279726, 0.0140126, -0.0783186, 0.956778, 1, 1, 1 )
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=43]
 length = 0.666667
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Armature")
@@ -3133,7 +3133,7 @@ tracks/35/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=44]
 length = 0.0416667
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Armature")
@@ -3381,7 +3381,7 @@ tracks/34/imported = true
 tracks/34/enabled = true
 tracks/34/keys = PoolRealArray( 0, 1, 1.01328e-06, -7.3202e-07, -4.39584e-07, 0.279726, 0.0140126, -0.0783186, 0.956778, 1, 1, 1, 0.0416667, 1, 1.01328e-06, -7.3202e-07, -4.39584e-07, 0.279726, 0.0140126, -0.0783186, 0.956778, 1, 1, 1 )
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=45]
 length = 3.125
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Armature")
@@ -3629,7 +3629,7 @@ tracks/34/imported = true
 tracks/34/enabled = true
 tracks/34/keys = PoolRealArray( 0, 1, 1.01328e-06, -7.3202e-07, -4.39584e-07, 0.279726, 0.0140126, -0.0783186, 0.956778, 1, 1, 1, 3.125, 1, 1.01328e-06, -7.3202e-07, -4.39584e-07, 0.279726, 0.0140126, -0.0783186, 0.956778, 1, 1, 1 )
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=46]
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Armature")
 tracks/0/interp = 1
@@ -3876,10 +3876,10 @@ tracks/34/imported = true
 tracks/34/enabled = true
 tracks/34/keys = PoolRealArray( 0, 1, 1.01328e-06, -7.3202e-07, -4.39584e-07, 0.279726, 0.0140126, -0.0783186, 0.956778, 1, 1, 1, 0.0666667, 1, 2.38419e-07, -7.00355e-07, -7.45058e-09, 0.268242, 0.00808504, -0.0800044, 0.95999, 1, 1, 1, 0.133333, 1, -2.38419e-07, -9.18284e-07, -8.9407e-08, 0.236928, -0.00795409, -0.0844881, 0.967814, 1, 1, 1, 0.266667, 1, -1.78814e-07, -6.78003e-07, -1.3411e-07, 0.125284, -0.0637347, -0.0991885, 0.985091, 1, 1, 1, 0.333333, 1, -1.01328e-06, -9.18284e-07, -1.11759e-07, 0.0657928, -0.0925845, -0.106222, 0.987834, 1, 1, 1, 0.4, 1, 6.85453e-07, -8.71718e-07, 2.30968e-07, 0.0223062, -0.113243, -0.110969, 0.987099, 1, 1, 1, 0.466667, 1, -1.78814e-07, -1.06357e-06, 3.35276e-07, -0.000939186, -0.124052, -0.113293, 0.985786, 1, 1, 1, 0.533333, 1, -2.08616e-07, -8.64267e-07, -8.9407e-08, -0.00302535, -0.125353, -0.112772, 0.985678, 1, 1, 1, 0.6, 1, -2.38419e-07, -8.28877e-07, -2.75671e-07, 0.00647114, -0.124201, -0.108103, 0.98633, 1, 1, 1, 0.666667, 1, -5.96046e-08, -8.23289e-07, -4.61936e-07, 0.0241089, -0.12224, -0.0995919, 0.987197, 1, 1, 1, 0.866667, 1, 1.78814e-07, -8.69855e-07, 5.96046e-08, 0.094239, -0.114407, -0.0657173, 0.986768, 1, 1, 1, 0.933333, 1, 2.08616e-07, -1.02073e-06, 1.56462e-07, 0.107596, -0.112858, -0.0592147, 0.985992, 1, 1, 1, 1, 1, 1.78814e-07, -8.34465e-07, -7.45058e-08, 0.112565, -0.112277, -0.0567911, 0.985646, 1, 1, 1 )
 
-[sub_resource type="BoxShape" id=22]
+[sub_resource type="BoxShape" id=47]
 extents = Vector3( 1.5, 2, 1.5 )
 
-[sub_resource type="SphereMesh" id=23]
+[sub_resource type="SphereMesh" id=48]
 
 [sub_resource type="StyleBoxFlat" id=24]
 bg_color = Color( 0.158587, 0.106689, 0.179688, 1 )
@@ -3888,7 +3888,7 @@ corner_radius_top_right = 70
 corner_detail = 3
 anti_aliasing = false
 
-[sub_resource type="DynamicFont" id=26]
+[sub_resource type="DynamicFont" id=49]
 size = 40
 use_filter = true
 font_data = ExtResource( 8 )
@@ -3903,11 +3903,11 @@ script = ExtResource( 9 )
 
 [node name="Body_CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -4.38657, 5.81098, -0.448426 )
-shape = SubResource( 1 )
+shape = SubResource( 26 )
 
 [node name="Feet_CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.493176, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 27 )
 
 [node name="Rotation_Helper" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1716, 11.1916, 0 )
@@ -4091,7 +4091,7 @@ bones/33/bound_children = [  ]
 
 [node name="GodotBattleBot" type="MeshInstance" parent="Rotation_Helper/Model/Armature/Skeleton"]
 cast_shadow = 0
-mesh = SubResource( 6 )
+mesh = SubResource( 31 )
 material/0 = ExtResource( 1 )
 material/1 = ExtResource( 2 )
 material/2 = ExtResource( 4 )
@@ -4100,21 +4100,21 @@ material/4 = ExtResource( 6 )
 
 [node name="Animation_Player" type="AnimationPlayer" parent="Rotation_Helper/Model"]
 autoplay = "Idle_unarmed"
-anims/Idle_unarmed = SubResource( 7 )
-anims/Knife_equip = SubResource( 8 )
-anims/Knife_fire = SubResource( 9 )
-anims/Knife_idle = SubResource( 10 )
-anims/Knife_unequip = SubResource( 11 )
-anims/Pistol_equip = SubResource( 12 )
-anims/Pistol_fire = SubResource( 13 )
-anims/Pistol_idle = SubResource( 14 )
-anims/Pistol_reload = SubResource( 15 )
-anims/Pistol_unequip = SubResource( 16 )
-anims/Rifle_equip = SubResource( 17 )
-anims/Rifle_fire = SubResource( 18 )
-anims/Rifle_idle = SubResource( 19 )
-anims/Rifle_reload = SubResource( 20 )
-anims/Rifle_unequip = SubResource( 21 )
+anims/Idle_unarmed = SubResource( 32 )
+anims/Knife_equip = SubResource( 33 )
+anims/Knife_fire = SubResource( 34 )
+anims/Knife_idle = SubResource( 35 )
+anims/Knife_unequip = SubResource( 36 )
+anims/Pistol_equip = SubResource( 37 )
+anims/Pistol_fire = SubResource( 38 )
+anims/Pistol_idle = SubResource( 39 )
+anims/Pistol_reload = SubResource( 40 )
+anims/Pistol_unequip = SubResource( 41 )
+anims/Rifle_equip = SubResource( 42 )
+anims/Rifle_fire = SubResource( 43 )
+anims/Rifle_idle = SubResource( 44 )
+anims/Rifle_reload = SubResource( 45 )
+anims/Rifle_unequip = SubResource( 46 )
 script = ExtResource( 10 )
 
 [node name="Camera" type="Camera" parent="Rotation_Helper"]
@@ -4144,7 +4144,7 @@ angular_damp = 1.0
 
 [node name="Collision_Shape" type="CollisionShape" parent="Rotation_Helper/Gun_Fire_Points/Knife_Point/Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.300034 )
-shape = SubResource( 22 )
+shape = SubResource( 47 )
 
 [node name="Pistol_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.436506, 11.3604, 4.77607 )
@@ -4155,7 +4155,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.307539, 20.0487 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Rotation_Helper/Gun_Aim_Point"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
-mesh = SubResource( 23 )
+mesh = SubResource( 48 )
 material/0 = null
 
 [node name="Flashlight" type="SpotLight" parent="Rotation_Helper"]
@@ -4262,7 +4262,7 @@ margin_left = 10.0
 margin_top = 20.0
 margin_right = 380.0
 margin_bottom = 109.0
-custom_fonts/font = SubResource( 26 )
+custom_fonts/font = SubResource( 49 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Health: 100
 Ammo: 000/000"

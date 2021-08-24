@@ -26,6 +26,8 @@ func fire_weapon():
 	var ray = $Ray_Cast
 	ray.force_raycast_update()
 	ammo_in_weapon -= 1
+	player_node.create_sound("Rifle_shot", ray.global_transform.origin)
+
 
 	if ray.is_colliding():
 		var body = ray.get_collider()
@@ -55,6 +57,7 @@ func reload_weapon():
 			spare_ammo = 0
 
 		player_node.animation_manager.set_animation(RELOADING_ANIM_NAME)
+		player_node.create_sound("Gun_cock", player_node.camera.global_transform.origin)
 
 		return true
 

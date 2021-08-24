@@ -34,6 +34,7 @@ func fire_weapon():
 	clone.scale = Vector3(1, 1, 1)
 	clone.BULLET_DAMAGE = DAMAGE
 	ammo_in_weapon -= 1
+	player_node.create_sound("Pistol_shot", self.global_transform.origin)
 
 
 func reload_weapon():
@@ -56,6 +57,7 @@ func reload_weapon():
 			spare_ammo = 0
 
 		player_node.animation_manager.set_animation(RELOADING_ANIM_NAME)
+		player_node.create_sound("Gun_cock", player_node.camera.global_transform.origin)
 
 		return true
 
