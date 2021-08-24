@@ -15,7 +15,7 @@
 [ext_resource path="res://assets/stone_wall.vox" type="ArrayMesh" id=13]
 [ext_resource path="res://assets/oil.vox" type="ArrayMesh" id=14]
 [ext_resource path="res://assets/curb.vox" type="ArrayMesh" id=15]
-[ext_resource path="res://Player2.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/glass_door.vox" type="ArrayMesh" id=17]
 [ext_resource path="res://assets/blocker.vox" type="ArrayMesh" id=18]
 [ext_resource path="res://assets/cupboard.vox" type="ArrayMesh" id=19]
@@ -4659,4 +4659,4 @@ light_energy = 9.18
 omni_range = 13.4264
 
 [node name="Player" parent="." instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0154, 3.90831, 13.0752 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5585, 5.73752, 18.383 )
