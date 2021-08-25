@@ -1,4 +1,4 @@
-[gd_scene load_steps=331 format=2]
+[gd_scene load_steps=332 format=2]
 
 [ext_resource path="res://assets/plain.vox" type="ArrayMesh" id=1]
 [ext_resource path="res://assets/road_blocker.vox" type="ArrayMesh" id=2]
@@ -34,6 +34,7 @@
 [ext_resource path="res://Ammo_Pickup.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Health_Pickup.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Target.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Respawn_Point_Setter.gd" type="Script" id=35]
 
 [sub_resource type="ConvexPolygonShape" id=1]
 points = PoolVector3Array( -0.741618, 2.12265, 3.32948, -0.741618, 2.62207, 3.32948, -0.741618, 2.62207, 3.8288, -0.698395, 2.18507, 3.8, -0.575014, 2.78833, 3.07977, -0.575014, 2.78833, 4.07861, -0.575014, 3.20452, 3.07977, -0.575014, 3.20452, 4.07861, -0.325474, 2.12265, 3.16317, -0.325474, 2.12265, 4.07861, -0.159017, 2.37236, 3.07977, -0.101574, 2.17054, 3.2, -0.1, 3.15955, 3.12128, -0.1, 3.15955, 4.0371, -0.0757878, 2.12265, 4.07861, -0.0305408, 3, 3.13051, -0.0305408, 3, 4.02787, -0.0280352, 2.4, 3.12717, -0.0280352, 2.4, 4.03121 )
@@ -4660,6 +4661,15 @@ omni_range = 13.4264
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 67.0334, 3.66651, 54.0511 )
 light_energy = 9.18
 omni_range = 13.4264
+
+[node name="Spawn_Points" type="Spatial" parent="."]
+script = ExtResource( 35 )
+
+[node name="Position3D" type="Position3D" parent="Spawn_Points"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7875, 1.61182, 8.17233 )
+
+[node name="Position3D2" type="Position3D" parent="Spawn_Points"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.255, 1.61182, 8.17233 )
 
 [node name="Player" parent="." instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5585, 5.73752, 18.383 )

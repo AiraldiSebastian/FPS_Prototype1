@@ -30,6 +30,8 @@ func fire_weapon():
 
 
 	if ray.is_colliding():
+		print(ray.get_collider())
+		print("Colliding");
 		var body = ray.get_collider()
 
 		if body == player_node:
@@ -74,7 +76,6 @@ func equip_weapon():
 	return false
 
 func unequip_weapon():
-
 	if player_node.animation_manager.current_state == IDLE_ANIM_NAME:
 		if player_node.animation_manager.current_state != "Rifle_unequip":
 			player_node.animation_manager.set_animation("Rifle_unequip")
@@ -84,3 +85,8 @@ func unequip_weapon():
 		return true
 
 	return false
+
+
+func reset_weapon():
+	ammo_in_weapon = 50
+	spare_ammo = 100
