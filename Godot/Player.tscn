@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/GunTextures.png" type="Texture" id=2]
@@ -3887,10 +3887,6 @@ tracks/34/imported = true
 tracks/34/enabled = true
 tracks/34/keys = PoolRealArray( 0, 1, 1.01328e-06, -7.3202e-07, -4.39584e-07, 0.279726, 0.0140126, -0.0783186, 0.956778, 1, 1, 1, 0.0666667, 1, 2.38419e-07, -7.00355e-07, -7.45058e-09, 0.268242, 0.00808504, -0.0800044, 0.95999, 1, 1, 1, 0.133333, 1, -2.38419e-07, -9.18284e-07, -8.9407e-08, 0.236928, -0.00795409, -0.0844881, 0.967814, 1, 1, 1, 0.266667, 1, -1.78814e-07, -6.78003e-07, -1.3411e-07, 0.125284, -0.0637347, -0.0991885, 0.985091, 1, 1, 1, 0.333333, 1, -1.01328e-06, -9.18284e-07, -1.11759e-07, 0.0657928, -0.0925845, -0.106222, 0.987834, 1, 1, 1, 0.4, 1, 6.85453e-07, -8.71718e-07, 2.30968e-07, 0.0223062, -0.113243, -0.110969, 0.987099, 1, 1, 1, 0.466667, 1, -1.78814e-07, -1.06357e-06, 3.35276e-07, -0.000939186, -0.124052, -0.113293, 0.985786, 1, 1, 1, 0.533333, 1, -2.08616e-07, -8.64267e-07, -8.9407e-08, -0.00302535, -0.125353, -0.112772, 0.985678, 1, 1, 1, 0.6, 1, -2.38419e-07, -8.28877e-07, -2.75671e-07, 0.00647114, -0.124201, -0.108103, 0.98633, 1, 1, 1, 0.666667, 1, -5.96046e-08, -8.23289e-07, -4.61936e-07, 0.0241089, -0.12224, -0.0995919, 0.987197, 1, 1, 1, 0.866667, 1, 1.78814e-07, -8.69855e-07, 5.96046e-08, 0.094239, -0.114407, -0.0657173, 0.986768, 1, 1, 1, 0.933333, 1, 2.08616e-07, -1.02073e-06, 1.56462e-07, 0.107596, -0.112858, -0.0592147, 0.985992, 1, 1, 1, 1, 1, 1.78814e-07, -8.34465e-07, -7.45058e-08, 0.112565, -0.112277, -0.0567911, 0.985646, 1, 1, 1 )
 
-[sub_resource type="SphereMesh" id=25]
-radius = 2.0
-height = 3.0
-
 [sub_resource type="BoxShape" id=21]
 extents = Vector3( 0.3, 0.4, 0.3 )
 
@@ -4129,6 +4125,11 @@ script = ExtResource( 8 )
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.45908, 0.0278857 )
 fov = 90.1069
 
+[node name="RayCast" type="RayCast" parent="Rotation_Helper/Camera"]
+transform = Transform( 1, -8.74228e-08, 8.74228e-08, -8.74228e-08, -1, 0, 8.74228e-08, -7.64274e-15, -1, 0, 0, -0.5 )
+enabled = true
+cast_to = Vector3( 0, 0, 200 )
+
 [node name="Flashlight" type="SpotLight" parent="Rotation_Helper"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.5, 0 )
 visible = false
@@ -4139,15 +4140,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.18069 )
 [node name="Rifle_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028361, 2.10891, 1.36841 )
 script = ExtResource( 9 )
-
-[node name="Ray_Cast" type="RayCast" parent="Rotation_Helper/Gun_Fire_Points/Rifle_Point"]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
-cast_to = Vector3( 0, 0, 1400 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Rotation_Helper/Gun_Fire_Points/Rifle_Point/Ray_Cast"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 87.2277 )
-mesh = SubResource( 25 )
-material/0 = null
 
 [node name="Knife_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.88128, 0.770777 )

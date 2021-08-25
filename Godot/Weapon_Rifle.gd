@@ -23,7 +23,7 @@ func _ready():
 	pass
 
 func fire_weapon():
-	var ray = $Ray_Cast
+	var ray = $"../../Camera/RayCast"
 	ray.force_raycast_update()
 	ammo_in_weapon -= 1
 	player_node.create_sound("Rifle_shot", ray.global_transform.origin)
