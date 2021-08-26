@@ -4,8 +4,8 @@ var start_menu
 var level_select_menu
 var options_menu
 
-#export (String, FILE) var testing_area_scene
 export (String, FILE) var gas_station
+#export (String, FILE) var testing_area_scene
 
 func _ready():
 	start_menu = $Start_Menu
@@ -18,8 +18,8 @@ func _ready():
 	$Start_Menu/Button_Quit.connect("pressed", self, "start_menu_button_pressed", ["quit"])
 
 	$Level_Select_Menu/Button_Back.connect("pressed", self, "level_select_menu_button_pressed", ["back"])
-#	$Level_Select_Menu/Button_Level_Testing_Area.connect("pressed", self, "level_select_menu_button_pressed", ["testing_scene"])
 	$Level_Select_Menu/Button_Level_Gas_Station.connect("pressed", self, "level_select_menu_button_pressed", ["gas_station"])
+#	$Level_Select_Menu/Button_Level_Testing_Area.connect("pressed", self, "level_select_menu_button_pressed", ["testing_scene"])
 #	$Level_Select_Menu/Button_Level_Ruins.connect("pressed", self, "level_select_menu_button_pressed", ["ruins_level"])
 
 	$Options_Menu/Button_Back.connect("pressed", self, "options_menu_button_pressed", ["back"])
@@ -51,12 +51,12 @@ func level_select_menu_button_pressed(button_name):
 	if button_name == "back":
 		start_menu.visible = true
 		level_select_menu.visible = false
-#	elif button_name == "testing_scene":
-#		set_mouse_and_joypad_sensitivity()
-#		get_node("/root/Globals").load_new_scene(testing_area_scene)
 	elif button_name == "gas_station":
 		set_mouse_and_joypad_sensitivity()
 		get_node("/root/Globals").load_new_scene(gas_station)
+#	elif button_name == "testing_scene":
+#		set_mouse_and_joypad_sensitivity()
+#		get_node("/root/Globals").load_new_scene(testing_area_scene)
 #	elif button_name == "ruins_level":
 #		set_mouse_and_joypad_sensitivity()
 #		get_node("/root/Globals").load_new_scene(ruins_level_scene)

@@ -1,7 +1,7 @@
 extends StaticBody
 
-const TARGET_HEALTH = 40
-var current_health = 40
+const TARGET_HEALTH = 4000
+var current_health = 4000
 
 var broken_target_holder
 

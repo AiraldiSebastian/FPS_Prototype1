@@ -39,7 +39,7 @@ const MAX_HEALTH = 150
 var UI_status_label
 
 # Audio
-var simple_audio_player = preload("res://Simple_Audio_Player.tscn")
+var simple_audio_player = preload("res://scenes/Audio/Simple_Audio_Player.tscn")
 
 # Scroll wheel input
 var mouse_scroll_value = 0
@@ -66,13 +66,15 @@ func _ready():
 	weapons["PISTOL"] = $Rotation_Helper/Gun_Fire_Points/Pistol_Point
 	weapons["RIFLE"] = $Rotation_Helper/Gun_Fire_Points/Rifle_Point
 
-	var gun_aim_point_pos = $Rotation_Helper/Gun_Aim_Point.global_transform.origin
+	# This seems to be useless. Check "Part 2 - FPS Tutorial"
+	#var gun_aim_point_pos = $Rotation_Helper/Gun_Aim_Point.global_transform.origin
 
 	for weapon in weapons:
 		var weapon_node = weapons[weapon]
 		if weapon_node != null:
 			weapon_node.player_node = self
-			weapon_node.look_at(gun_aim_point_pos, Vector3(0, 1, 0))
+			# This seems to be useless. Check "Part 2 - FPS Tutorial"
+			#weapon_node.look_at(gun_aim_point_pos, Vector3(0, 1, 0))
 			weapon_node.rotate_object_local(Vector3(0, 1, 0), deg2rad(180))
 
 	current_weapon_name = "UNARMED"

@@ -1,18 +1,18 @@
 [gd_scene load_steps=38 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Units/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/GunTextures.png" type="Texture" id=2]
 [ext_resource path="res://assets/MuzzleFlash.material" type="Material" id=3]
 [ext_resource path="res://assets/Gun_Emission.material" type="Material" id=4]
 [ext_resource path="res://assets/Colors.material" type="Material" id=5]
 [ext_resource path="res://assets/Emission.material" type="Material" id=6]
 [ext_resource path="res://assets/GunMaterial.material" type="Material" id=7]
-[ext_resource path="res://AnimationPlayer_Manager.gd" type="Script" id=8]
-[ext_resource path="res://Weapon_Rifle.gd" type="Script" id=9]
-[ext_resource path="res://Weapon_Pistol.gd" type="Script" id=10]
+[ext_resource path="res://scenes/Animations/AnimationPlayer_Manager.gd" type="Script" id=8]
+[ext_resource path="res://scenes/Weapons/Weapon_Rifle.gd" type="Script" id=9]
+[ext_resource path="res://scenes/Weapons/Weapon_Pistol.gd" type="Script" id=10]
 [ext_resource path="res://assets/32-32_white.png" type="Texture" id=11]
 [ext_resource path="res://assets/Titillium-Regular.otf" type="DynamicFontData" id=12]
-[ext_resource path="res://Weapon_Knife.gd" type="Script" id=13]
+[ext_resource path="res://scenes/Weapons/Weapon_Knife.gd" type="Script" id=13]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.2
@@ -4154,9 +4154,6 @@ shape = SubResource( 21 )
 [node name="Pistol_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0830518, 2.27818, 0.774599 )
 script = ExtResource( 10 )
-
-[node name="Gun_Aim_Point" type="Spatial" parent="Rotation_Helper"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.083, 2.278, 3.846 )
 
 [node name="HUD" type="Control" parent="."]
 anchor_right = 1.0

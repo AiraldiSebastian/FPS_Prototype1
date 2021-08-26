@@ -7,12 +7,10 @@ const FIRE_ANIM_NAME = "Pistol_fire"
 
 var is_weapon_enabled = false
 
-var bullet_scene = preload("Bullet_Scene.tscn")
-
 var player_node = null
 
 # Ammo
-var ammo_in_weapon = 10
+var ammo_in_weapon = 1000
 var spare_ammo = 20
 const AMMO_IN_MAG = 10
 
@@ -26,16 +24,21 @@ func _ready():
 	pass
 
 func fire_weapon():
-	var clone = bullet_scene.instance()
-	var scene_root = get_tree().root.get_children()[0]
-	scene_root.add_child(clone)
 
-	clone.global_transform = self.global_transform
-	clone.scale = Vector3(1, 1, 1)
-	clone.BULLET_DAMAGE = DAMAGE
+	var ray = $"../../Camera/RayCast"
+	ray.force_raycast_update()
 	ammo_in_weapon -= 1
-	player_node.create_sound("Pistol_shot", self.global_transform.origin)
+	player_node.create_sound("Pistol_shot", ray.global_transform.origin)
+	
+	if ray.is_colliding():
+		print(ray.get_collider())
+		print("Colliding");
+		var body = ray.get_collider()
 
+		if body == player_node:
+			pass
+		elif body.has_method("bullet_hit"):
+			body.bullet_hit(DAMAGE, ray.global_transform)
 
 func reload_weapon():
 	var can_reload = false

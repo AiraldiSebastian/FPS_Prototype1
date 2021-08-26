@@ -8,13 +8,13 @@ var joypad_sensitivity = 2
 
 var canvas_layer = null
 
-const DEBUG_DISPLAY_SCENE = preload("res://Debug_Display.tscn")
+const DEBUG_DISPLAY_SCENE = preload("res://scenes/Menu/Debug_Display.tscn")
 var debug_display = null
 # ------------------------------------
 
 
-const MAIN_MENU_PATH = "res://Main_Menu.tscn"
-const POPUP_SCENE = preload("res://Pause_Popup.tscn")
+const MAIN_MENU_PATH = "res://scenes/Menu/Main_Menu.tscn"
+const POPUP_SCENE = preload("res://scenes/Menu/Pause_Popup.tscn")
 var popup = null
 
 # Respawn
@@ -30,7 +30,7 @@ var audio_clips = {
 	"Gun_cock": preload("res://assets/sounds/gun_semi_reload_01.wav")
 }
 
-const SIMPLE_AUDIO_PLAYER_SCENE = preload("res://Simple_Audio_Player.tscn")
+const SIMPLE_AUDIO_PLAYER_SCENE = preload("res://scenes/Audio/Simple_Audio_Player.tscn")
 var created_audio = []
 
 func _ready():

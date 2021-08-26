@@ -48,6 +48,11 @@ _global_script_classes=[ {
 "class": "VoxelTool",
 "language": "GDScript",
 "path": "res://addons/voxel-core/classes/voxel_tool.gd"
+}, {
+"base": "Node",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://scenes/Weapons/Weapon.gd"
 } ]
 _global_script_class_icons={
 "GPLReader": "",
@@ -57,18 +62,19 @@ _global_script_class_icons={
 "Voxel": "res://addons/voxel-core/assets/classes/voxel.png",
 "VoxelMesh": "res://addons/voxel-core/assets/classes/voxel_mesh.png",
 "VoxelSet": "res://addons/voxel-core/assets/classes/voxel_set.png",
-"VoxelTool": ""
+"VoxelTool": "",
+"Weapon": ""
 }
 
 [application]
 
 config/name="Godot"
-run/main_scene="res://Main_Menu.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://scenes/Menu/Main_Menu.tscn"
+config/icon="res://assets/icon.png"
 
 [autoload]
 
-Globals="*res://Globals.gd"
+Globals="*res://scenes/Globals.gd"
 
 [display]
 

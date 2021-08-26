@@ -1,9 +1,9 @@
 extends Spatial
 
-var BULLET_SPEED = 50
+var BULLET_SPEED = 200
 var BULLET_DAMAGE = 15
 
-const KILL_TIMER = 4
+const KILL_TIMER = 10
 var timer = 0
 
 var hit_something = false
@@ -24,6 +24,7 @@ func _physics_process(delta):
 func collided(body):
 	if hit_something == false:
 		if body.has_method("bullet_hit"):
+			print(body)
 			body.bullet_hit(BULLET_DAMAGE, global_transform)
 
 	hit_something = true
