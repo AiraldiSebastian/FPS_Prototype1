@@ -120,6 +120,9 @@ margin_right = 155.0
 margin_bottom = -200.0
 custom_fonts/font = SubResource( 5 )
 text = "Start game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button_Open_Godot" type="Button" parent="Start_Menu"]
 anchor_left = 0.5
