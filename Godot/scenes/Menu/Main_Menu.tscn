@@ -105,6 +105,9 @@ custom_constants/shadow_offset_y = 3
 text = "FPS_Prototype"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button_Start" type="Button" parent="Start_Menu"]
 anchor_left = 0.5

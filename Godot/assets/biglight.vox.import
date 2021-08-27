@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/biglight.vox-cf9d21ae5fe36b1644ab3342907d04b7.mesh"
+
+[deps]
+
+source_file="res://assets/biglight.vox"
+dest_files=[ "res://.import/biglight.vox-cf9d21ae5fe36b1644ab3342907d04b7.mesh" ]
+
+[params]
+
+Scale=0.1
