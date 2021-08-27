@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/blocker_4_4_22.vox-c369e189a5832fb7b9fc2afe69417d1f.mesh"
+
+[deps]
+
+source_file="res://assets/blocker_4_4_22.vox"
+dest_files=[ "res://.import/blocker_4_4_22.vox-c369e189a5832fb7b9fc2afe69417d1f.mesh" ]
+
+[params]
+
+Scale=0.1

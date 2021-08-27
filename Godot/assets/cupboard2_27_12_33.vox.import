@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/cupboard2_27_12_33.vox-cd24910a25603580b3c8ec6f51e1b91e.mesh"
+
+[deps]
+
+source_file="res://assets/cupboard2_27_12_33.vox"
+dest_files=[ "res://.import/cupboard2_27_12_33.vox-cd24910a25603580b3c8ec6f51e1b91e.mesh" ]
+
+[params]
+
+Scale=0.1

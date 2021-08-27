@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/curb_2_10_3.vox-c769ccac4671f26196b4cd879d30f1a3.mesh"
+
+[deps]
+
+source_file="res://assets/curb_2_10_3.vox"
+dest_files=[ "res://.import/curb_2_10_3.vox-c769ccac4671f26196b4cd879d30f1a3.mesh" ]
+
+[params]
+
+Scale=0.1

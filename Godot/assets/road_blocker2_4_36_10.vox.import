@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/road_blocker2_4_36_10.vox-43dbdf01d96f4941a7f172330cc7cdfc.mesh"
+
+[deps]
+
+source_file="res://assets/road_blocker2_4_36_10.vox"
+dest_files=[ "res://.import/road_blocker2_4_36_10.vox-43dbdf01d96f4941a7f172330cc7cdfc.mesh" ]
+
+[params]
+
+Scale=0.1

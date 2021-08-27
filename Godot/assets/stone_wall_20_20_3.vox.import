@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/stone_wall_20_20_3.vox-bcb4f1134096cf363017f036d0f33c4b.mesh"
+
+[deps]
+
+source_file="res://assets/stone_wall_20_20_3.vox"
+dest_files=[ "res://.import/stone_wall_20_20_3.vox-bcb4f1134096cf363017f036d0f33c4b.mesh" ]
+
+[params]
+
+Scale=0.1

@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/oil_4_6_4.vox-1e500bde87e76bf4c139ed6cfaa8f785.mesh"
+
+[deps]
+
+source_file="res://assets/oil_4_6_4.vox"
+dest_files=[ "res://.import/oil_4_6_4.vox-1e500bde87e76bf4c139ed6cfaa8f785.mesh" ]
+
+[params]
+
+Scale=0.1

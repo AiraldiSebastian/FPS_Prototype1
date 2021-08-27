@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/spruce_23_23_34.vox-edc1f2452c787bca837705c5f8e8bf70.mesh"
+
+[deps]
+
+source_file="res://assets/spruce_23_23_34.vox"
+dest_files=[ "res://.import/spruce_23_23_34.vox-edc1f2452c787bca837705c5f8e8bf70.mesh" ]
+
+[params]
+
+Scale=0.1

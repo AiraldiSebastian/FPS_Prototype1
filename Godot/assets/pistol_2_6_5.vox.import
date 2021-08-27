@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/pistol_2_6_5.vox-7863412a94915f6aa409f9a54a143c7a.mesh"
+
+[deps]
+
+source_file="res://assets/pistol_2_6_5.vox"
+dest_files=[ "res://.import/pistol_2_6_5.vox-7863412a94915f6aa409f9a54a143c7a.mesh" ]
+
+[params]
+
+Scale=0.1

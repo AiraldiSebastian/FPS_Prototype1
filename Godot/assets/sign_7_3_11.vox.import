@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/sign_7_3_11.vox-b10281947f00f327f07b007724acabab.mesh"
+
+[deps]
+
+source_file="res://assets/sign_7_3_11.vox"
+dest_files=[ "res://.import/sign_7_3_11.vox-b10281947f00f327f07b007724acabab.mesh" ]
+
+[params]
+
+Scale=0.1

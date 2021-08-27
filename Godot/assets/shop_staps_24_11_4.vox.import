@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/shop_staps_24_11_4.vox-189807c5ddf097f06a95912da3e048d5.mesh"
+
+[deps]
+
+source_file="res://assets/shop_staps_24_11_4.vox"
+dest_files=[ "res://.import/shop_staps_24_11_4.vox-189807c5ddf097f06a95912da3e048d5.mesh" ]
+
+[params]
+
+Scale=0.1

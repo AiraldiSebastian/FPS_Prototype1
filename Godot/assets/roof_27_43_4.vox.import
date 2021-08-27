@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/roof_27_43_4.vox-624737599d156d95fea8b4970f676126.mesh"
+
+[deps]
+
+source_file="res://assets/roof_27_43_4.vox"
+dest_files=[ "res://.import/roof_27_43_4.vox-624737599d156d95fea8b4970f676126.mesh" ]
+
+[params]
+
+Scale=0.1
