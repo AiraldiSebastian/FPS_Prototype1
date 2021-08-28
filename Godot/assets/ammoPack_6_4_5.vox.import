@@ -1,0 +1,14 @@
+[remap]
+
+importer="Vox.Importer"
+type="Mesh"
+path="res://.import/ammoPack_6_4_5.vox-ddccd18170745968c61b4140aff75112.mesh"
+
+[deps]
+
+source_file="res://assets/ammoPack_6_4_5.vox"
+dest_files=[ "res://.import/ammoPack_6_4_5.vox-ddccd18170745968c61b4140aff75112.mesh" ]
+
+[params]
+
+Scale=0.1
