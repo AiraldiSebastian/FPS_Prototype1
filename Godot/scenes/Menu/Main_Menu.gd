@@ -13,12 +13,11 @@ func _ready():
 	options_menu = $Options_Menu
 
 	$Start_Menu/Button_Start.connect("pressed", self, "start_menu_button_pressed", ["start"])
-	$Start_Menu/Button_Open_Godot.connect("pressed", self, "start_menu_button_pressed", ["open_godot"])
 	$Start_Menu/Button_Options.connect("pressed", self, "start_menu_button_pressed", ["options"])
 	$Start_Menu/Button_Quit.connect("pressed", self, "start_menu_button_pressed", ["quit"])
 
-	$Level_Select_Menu/Button_Back.connect("pressed", self, "level_select_menu_button_pressed", ["back"])
-	$Level_Select_Menu/Button_Level_Gas_Station.connect("pressed", self, "level_select_menu_button_pressed", ["gas_station"])
+#	$Level_Select_Menu/Button_Back.connect("pressed", self, "level_select_menu_button_pressed", ["back"])
+#	$Level_Select_Menu/Button_Level_Gas_Station.connect("pressed", self, "level_select_menu_button_pressed", ["gas_station"])
 #	$Level_Select_Menu/Button_Level_Testing_Area.connect("pressed", self, "level_select_menu_button_pressed", ["testing_scene"])
 #	$Level_Select_Menu/Button_Level_Ruins.connect("pressed", self, "level_select_menu_button_pressed", ["ruins_level"])
 
@@ -36,10 +35,10 @@ func _ready():
 
 func start_menu_button_pressed(button_name):
 	if button_name == "start":
-		level_select_menu.visible = true
-		start_menu.visible = false
-	elif button_name == "open_godot":
-		OS.shell_open("https://godotengine.org/")
+#       level_select_menu.visible = true
+#       start_menu.visible = false
+		set_mouse_and_joypad_sensitivity()
+		get_node("/root/Globals").load_new_scene(gas_station)
 	elif button_name == "options":
 		options_menu.visible = true
 		start_menu.visible = false
@@ -47,13 +46,13 @@ func start_menu_button_pressed(button_name):
 		get_tree().quit()
 
 
-func level_select_menu_button_pressed(button_name):
-	if button_name == "back":
-		start_menu.visible = true
-		level_select_menu.visible = false
-	elif button_name == "gas_station":
-		set_mouse_and_joypad_sensitivity()
-		get_node("/root/Globals").load_new_scene(gas_station)
+#func level_select_menu_button_pressed(button_name):
+#	if button_name == "back":
+#		start_menu.visible = true
+#		level_select_menu.visible = false
+#	elif button_name == "gas_station":
+#		set_mouse_and_joypad_sensitivity()
+#		get_node("/root/Globals").load_new_scene(gas_station)
 #	elif button_name == "testing_scene":
 #		set_mouse_and_joypad_sensitivity()
 #		get_node("/root/Globals").load_new_scene(testing_area_scene)
