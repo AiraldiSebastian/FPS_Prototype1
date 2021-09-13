@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/Emission.material" type="Material" id=6]
 [ext_resource path="res://assets/GunMaterial.material" type="Material" id=7]
 [ext_resource path="res://scenes/Animations/AnimationPlayer_Manager.gd" type="Script" id=8]
-[ext_resource path="res://scenes/Weapons/Weapon_Rifle.gd" type="Script" id=9]
+[ext_resource path="res://scenes/Weapons/FireWeapon.gd" type="Script" id=9]
 [ext_resource path="res://scenes/Weapons/Weapon_Pistol.gd" type="Script" id=10]
 [ext_resource path="res://assets/32-32_white.png" type="Texture" id=11]
 [ext_resource path="res://assets/Titillium-Regular.otf" type="DynamicFontData" id=12]
@@ -3907,9 +3907,7 @@ size = 40
 use_filter = true
 font_data = ExtResource( 12 )
 
-[node name="Player" type="KinematicBody" groups=[
-"Player",
-]]
+[node name="Player" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, 0 )
 script = ExtResource( 1 )
 
@@ -3918,7 +3916,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 shape = SubResource( 1 )
 
 [node name="Rotation_Helper" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.75162, 0 )
+transform = Transform( 1, 0, 0, 0, 0.999956, 0.00938973, 0, -0.00938973, 0.999956, 0, -1.34092, 0 )
 
 [node name="Model" type="Spatial" parent="Rotation_Helper"]
 
@@ -4130,10 +4128,9 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.45
 fov = 90.1069
 
 [node name="RayCast" type="RayCast" parent="Rotation_Helper/Camera"]
-transform = Transform( 1, -8.74228e-08, 8.74228e-08, -8.74228e-08, -1, 0, 8.74228e-08, -7.64274e-15, -1, 0, 0, -0.5 )
+transform = Transform( 1, -8.74228e-08, 8.74228e-08, -8.74228e-08, -1, 0, 8.74228e-08, 0, -1, 1.07371e-08, -0.00115335, -0.622818 )
 enabled = true
 cast_to = Vector3( 0, 0, 200 )
-collision_mask = 2
 
 [node name="Flashlight" type="SpotLight" parent="Rotation_Helper"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.5, 0 )
@@ -4144,6 +4141,11 @@ visible = false
 [node name="Rifle_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028361, 2.10891, 1.36841 )
 script = ExtResource( 9 )
+WEAPON_NAME = "Rifle"
+DAMAGE = 40
+MAX_AMMO = 300
+MAX_MAG_AMMO = 50
+ray = NodePath("../../Camera/RayCast")
 
 [node name="Knife_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 0.75 )

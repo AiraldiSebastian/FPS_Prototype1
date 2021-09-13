@@ -1,56 +1,78 @@
 extends KinematicBody
 
-const GRAVITY = -24.8
+# ----------------------------------
+# Physics
+
+export (float) var GRAVITY;
+
+# Kinematic
+export (int) var MAX_SPEED;
+export (int) var JUMP_SPEED;
+export (int) var MAX_SPRINT_SPEED;
+export (float) var ACCEL;
+export (float) var DEACCEL;
+export (float) var SPRINT_ACCEL;
 var vel = Vector3()
-const MAX_SPEED = 20
-const JUMP_SPEED = 18
-const ACCEL = 4.5
-
 var dir = Vector3()
+var is_sprinting : bool = false
+# ----------------------------------
 
-const DEACCEL= 16
-const MAX_SLOPE_ANGLE = 40
+# ----------------------------------
+# Others
+
+const MAX_SLOPE_ANGLE = 45
 
 var camera
 var rotation_helper
 
+# Mouse
 var MOUSE_SENSITIVITY = 0.05
+var mouse_scroll_value = 0
+const MOUSE_SENSITIVITY_SCROLL_WHEEL = 0.08
 
-const MAX_SPRINT_SPEED = 30
-const SPRINT_ACCEL = 18
-var is_sprinting = false
 
 var flashlight
 
-# Weapons and Health
 var animation_manager
 
-var current_weapon_name = "UNARMED"
+var globals
+# ----------------------------------
+
+# ----------------------------------
+# Weapons
+
+var curr_weap_name = "UNARMED"
 var weapons = {"UNARMED":null, "KNIFE":null, "PISTOL":null, "RIFLE":null}
 const WEAPON_NUMBER_TO_NAME = {0:"UNARMED", 1:"KNIFE", 2:"PISTOL", 3:"RIFLE"}
 const WEAPON_NAME_TO_NUMBER = {"UNARMED":0, "KNIFE":1, "PISTOL":2, "RIFLE":3}
 var changing_weapon = false
 var changing_weapon_name = "UNARMED"
 var reloading_weapon = false
+# ----------------------------------
 
-var health = 100
-const MAX_HEALTH = 150
+# ----------------------------------
+# Health
 
-var UI_status_label
-
-# Audio
-var simple_audio_player = preload("res://scenes/Audio/Simple_Audio_Player.tscn")
-
-# Scroll wheel input
-var mouse_scroll_value = 0
-const MOUSE_SENSITIVITY_SCROLL_WHEEL = 0.08
+export (int) var MAX_HEALTH;
+var health : int = 100
 
 # Respawn
 const RESPAWN_TIME = 4
 var dead_time = 0
 var is_dead = false
+# ----------------------------------
 
-var globals
+# ----------------------------------
+# UI
+
+var UI_status_label
+# ----------------------------------
+
+# ----------------------------------
+# Audio
+
+var simple_audio_player = preload("res://scenes/Audio/Simple_Audio_Player.tscn")
+# ----------------------------------
 
 
 func _ready():
@@ -77,7 +99,7 @@ func _ready():
 			#weapon_node.look_at(gun_aim_point_pos, Vector3(0, 1, 0))
 			weapon_node.rotate_object_local(Vector3(0, 1, 0), deg2rad(180))
 
-	current_weapon_name = "UNARMED"
+	curr_weap_name = "UNARMED"
 	changing_weapon_name = "UNARMED"
 
 	UI_status_label = $HUD/Panel/Gun_label
@@ -155,7 +177,7 @@ func process_input(_delta):
 	
 	# ----------------------------------
 	# Changing weapons.
-	var weapon_change_number = WEAPON_NAME_TO_NUMBER[current_weapon_name]
+	var weapon_change_number = WEAPON_NAME_TO_NUMBER[curr_weap_name]
 
 	if Input.is_key_pressed(KEY_1):
 		weapon_change_number = 0
@@ -176,7 +198,7 @@ func process_input(_delta):
 	if changing_weapon == false:
 		# New line of code here!
 		if reloading_weapon == false:
-			if WEAPON_NUMBER_TO_NAME[weapon_change_number] != current_weapon_name:
+			if WEAPON_NUMBER_TO_NAME[weapon_change_number] != curr_weap_name:
 				changing_weapon_name = WEAPON_NUMBER_TO_NAME[weapon_change_number]
 				changing_weapon = true
 				mouse_scroll_value = weapon_change_number
@@ -187,11 +209,12 @@ func process_input(_delta):
 	if Input.is_action_pressed("fire"):
 		if reloading_weapon == false:
 			if changing_weapon == false:
-				var current_weapon = weapons[current_weapon_name]
+				var current_weapon = weapons[curr_weap_name]
 				if current_weapon != null:
-					if current_weapon.ammo_in_weapon > 0:
-						if animation_manager.current_state == current_weapon.IDLE_ANIM_NAME:
-							animation_manager.set_animation(current_weapon.FIRE_ANIM_NAME)
+					if(current_weapon.is_usable()):
+						if animation_manager.current_state == current_weapon.ANIM_IDLE():
+							print("Shooting");
+							animation_manager.set_animation(current_weapon.ANIM_USE())
 					else:
 						reloading_weapon = true
 	# ----------------------------------
@@ -201,15 +224,16 @@ func process_input(_delta):
 	if reloading_weapon == false:
 		if changing_weapon == false:
 			if Input.is_action_just_pressed("reload"):
-				var current_weapon = weapons[current_weapon_name]
+				var current_weapon = weapons[curr_weap_name]
 				if current_weapon != null:
-					if current_weapon.CAN_RELOAD == true:
+					print(current_weapon.get_class());
+					if current_weapon.get_class() == "FireWeapon":
 						var current_anim_state = animation_manager.current_state
 						var is_reloading = false
 						for weapon in weapons:
 							var weapon_node = weapons[weapon]
 							if weapon_node != null:
-								if current_anim_state == weapon_node.RELOADING_ANIM_NAME:
+								if current_anim_state == weapon_node.ANIM_RELOAD():
 									is_reloading = true
 						if is_reloading == false:
 							reloading_weapon = true
@@ -250,7 +274,7 @@ func process_changing_weapons(_delta):
 	if changing_weapon == true:
 
 		var weapon_unequipped = false
-		var current_weapon = weapons[current_weapon_name]
+		var current_weapon = weapons[curr_weap_name]
 
 		if current_weapon == null:
 			weapon_unequipped = true
@@ -275,7 +299,7 @@ func process_changing_weapons(_delta):
 
 			if weapon_equipped == true:
 				changing_weapon = false
-				current_weapon_name = changing_weapon_name
+				curr_weap_name = changing_weapon_name
 				changing_weapon_name = ""
 
 
@@ -283,21 +307,21 @@ func fire_bullet():
 	if changing_weapon == true:
 		return
 
-	weapons[current_weapon_name].fire_weapon()
+	weapons[curr_weap_name].fire_weapon()
 
 
 func process_UI(_delta):
-	if current_weapon_name == "UNARMED" or current_weapon_name == "KNIFE":
+	if curr_weap_name == "UNARMED" or curr_weap_name == "KNIFE":
 		UI_status_label.text = "HEALTH: " + str(health)
 	else:
-		var current_weapon = weapons[current_weapon_name]
+		var current_weapon = weapons[curr_weap_name]
 		UI_status_label.text = "HEALTH: " + str(health) + \
-				"\nAMMO: " + str(current_weapon.ammo_in_weapon) + "/" + str(current_weapon.spare_ammo)
+				"\nAMMO: " + str(current_weapon.ammo_in_mag) + "/" + str(current_weapon.spare_ammo)
 
 
 func process_reloading(_delta):
 	if reloading_weapon == true:
-		var current_weapon = weapons[current_weapon_name]
+		var current_weapon = weapons[curr_weap_name]
 		if current_weapon != null:
 			current_weapon.reload_weapon()
 		reloading_weapon = false
@@ -313,12 +337,12 @@ func add_health(additional_health):
 
 
 func add_ammo(additional_ammo):
-	if (current_weapon_name != "UNARMED"):
-		if (weapons[current_weapon_name].CAN_REFILL == true):
-			weapons[current_weapon_name].spare_ammo += weapons[current_weapon_name].AMMO_IN_MAG * additional_ammo
+	if (curr_weap_name != "UNARMED"):
+		if (weapons[curr_weap_name].CAN_REFILL == true):
+			weapons[curr_weap_name].spare_ammo += weapons[curr_weap_name].AMMO_IN_MAG * additional_ammo
 
 
-func bullet_hit(damage, bullet_hit_pos):
+func bullet_hit(damage, _bullet_hit_pos):
 	health -= damage
 
 
@@ -402,7 +426,7 @@ func _input(event):
 			if changing_weapon == false:
 				if reloading_weapon == false:
 					var round_mouse_scroll_value = int(round(mouse_scroll_value))
-					if WEAPON_NUMBER_TO_NAME[round_mouse_scroll_value] != current_weapon_name:
+					if WEAPON_NUMBER_TO_NAME[round_mouse_scroll_value] != curr_weap_name:
 						changing_weapon_name = WEAPON_NUMBER_TO_NAME[round_mouse_scroll_value]
 						changing_weapon = true
 						mouse_scroll_value = round_mouse_scroll_value
