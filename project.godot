@@ -57,6 +57,7 @@ singletons=[  ]
 [global]
 
 general=false
+undo=true
 
 [input]
 
