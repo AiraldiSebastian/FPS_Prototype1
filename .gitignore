@@ -1,2 +1,12 @@
-#ignore all .import files
+
+# Godot-specific ignores
 *.import
+.import/
+export.cfg
+export_presets.cfg
+
+# Mono-specific ignores
+.mono/
+
+.vscode
+**/.DS_STORE
