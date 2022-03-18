@@ -67,9 +67,6 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 gas_station = "res://scenes/Gas_Station.tscn"
 
 [node name="Background_Animation" type="Spatial" parent="."]
@@ -99,10 +96,10 @@ margin_top = 10.0
 margin_right = 227.0
 margin_bottom = 77.0
 rect_scale = Vector2( 1.4, 1.4 )
-custom_fonts/font = SubResource( 5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
+custom_fonts/font = SubResource( 5 )
 text = "ProtoFPS"
 align = 1
 valign = 1
@@ -165,10 +162,10 @@ margin_top = 10.0
 margin_right = 227.0
 margin_bottom = 53.0
 rect_scale = Vector2( 1.4, 1.4 )
-custom_fonts/font = SubResource( 5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
+custom_fonts/font = SubResource( 5 )
 text = "Options"
 align = 1
 valign = 1
