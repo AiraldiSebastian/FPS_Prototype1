@@ -25,8 +25,11 @@ const MAX_SLOPE_ANGLE = 45
 var rot_horiz = 0
 var rot_verti = 0
 
+var counterFrames = 0
+
 var camera
 var rotation_helper
+var skel
 
 # Mouse
 var MOUSE_SENSITIVITY = 0.005
@@ -46,10 +49,51 @@ var globals
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	camera = $Camera
+	skel = $Armature/Skeleton
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
+#func _process():
 #	pass
+
+func _physics_process(delta):
+#	process_input(delta)
+#	process_view_input(delta)
+	process_movement(delta)
+		
+#	if (grabbed_object == null):
+#		process_changing_weapons(delta)
+#		process_reloading(delta)
+
+#	process_UI(delta)
+#	process_respawn(delta)
+	
+
+func process_movement(delta):
+	
+	# Method 1
+	# ----------------------------------------------------------------------------------------------
+	dir = Vector3()
+	if Input.is_action_pressed("movement_forward"):
+		dir += transform.basis.z
+	if Input.is_action_pressed("movement_backward"):
+		dir -= transform.basis.z
+	if Input.is_action_pressed("movement_left"):
+		dir += transform.basis.x
+	if Input.is_action_pressed("movement_right"):
+		dir -= transform.basis.x
+		
+	dir.normalized()
+	vel = vel.linear_interpolate(dir * MAX_SPEED, delta * 10)
+	
+	if vel.length() > MAX_SPEED:
+		vel = vel.normalized() * MAX_SPEED
+		
+	if !is_on_floor():
+		vel.y = -GRAVITY
+	
+	move_and_slide_with_snap(vel, Vector3(0, -0.1, 0), Vector3.UP, true, 1, deg2rad(60), true)
+	# ----------------------------------------------------------------------------------------------	
 
 func _input(event):
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
