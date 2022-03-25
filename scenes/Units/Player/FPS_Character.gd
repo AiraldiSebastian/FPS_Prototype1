@@ -39,7 +39,8 @@ const MOUSE_SENSITIVITY_SCROLL_WHEEL = 0.08
 
 var flashlight
 
-var animation_manager
+var animationPlayer
+var animationDir
 
 var globals
 # ----------------------------------
@@ -50,6 +51,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	camera = $Camera
 	skel = $Armature/Skeleton
+	animationPlayer = $AnimationPlayer
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -60,6 +62,7 @@ func _physics_process(delta):
 #	process_input(delta)
 #	process_view_input(delta)
 	process_movement(delta)
+	process_animation(animationDir)
 		
 #	if (grabbed_object == null):
 #		process_changing_weapons(delta)
@@ -70,20 +73,45 @@ func _physics_process(delta):
 	
 
 func process_movement(delta):
+	counterFrames += 1
 	
 	# Method 1
 	# ----------------------------------------------------------------------------------------------
+	animationDir = Vector3()
+	
+	if counterFrames == 30:
+		print("===================================================================================")
 	dir = Vector3()
 	if Input.is_action_pressed("movement_forward"):
+		if counterFrames == 30:
+			print("Basis Z: ", transform.basis.z)
 		dir += transform.basis.z
+		animationDir.z += 1
 	if Input.is_action_pressed("movement_backward"):
+		if counterFrames == 30:
+			print("Basis Z: ", transform.basis.z)
 		dir -= transform.basis.z
+		animationDir.z -= 1
 	if Input.is_action_pressed("movement_left"):
+		if counterFrames == 30:
+			print("Basis X: ", transform.basis.x)
 		dir += transform.basis.x
+		animationDir.x += 1
 	if Input.is_action_pressed("movement_right"):
+		if counterFrames == 30:
+			print("Basis X: ", transform.basis.x)
 		dir -= transform.basis.x
-		
-	dir.normalized()
+		animationDir.x -= 1
+
+	if counterFrames == 30:
+		print("Dir Befor: ", dir)
+
+	dir = dir.normalized()
+	
+	if counterFrames == 30:
+		print("Dir After: ", dir)
+		counterFrames = 0
+
 	vel = vel.linear_interpolate(dir * MAX_SPEED, delta * 10)
 	
 	if vel.length() > MAX_SPEED:
@@ -91,9 +119,40 @@ func process_movement(delta):
 		
 	if !is_on_floor():
 		vel.y = -GRAVITY
+		animationDir.y = -1
 	
 	move_and_slide_with_snap(vel, Vector3(0, -0.1, 0), Vector3.UP, true, 1, deg2rad(60), true)
 	# ----------------------------------------------------------------------------------------------	
+
+
+func process_animation(animationDir):
+		
+	# Method 1
+	# ----------------------------------------------------------------------------------------------
+	# Currently when player falls animation will not play, since Vectors have the Y-Axis set to 0
+	# and when player falls Y-Axis is set to -1. We could set to test both cases if we want 
+	# animations to keep playing whe player is fallin.
+	
+	if animationDir == Vector3(0, 0, 0):
+		animationPlayer.play("unarmed_idle", 0.1)
+	if animationDir == Vector3(1, 0, 1):
+		animationPlayer.play("unarmed_left", 0.1)
+	if animationDir == Vector3(-1, 0, 1):
+		animationPlayer.play("unarmed_right", 0.1)
+	if animationDir == Vector3(1, 0, -1):
+		animationPlayer.play("unarmed_right", 0.1)
+	if animationDir == Vector3(-1, 0, -1):
+		animationPlayer.play("unarmed_left", 0.1)
+	if animationDir == Vector3(0, 0, 1):
+		animationPlayer.play("unarmed_forward", 0.1)
+	if animationDir == Vector3(0, 0, -1):
+		animationPlayer.play("unarmed_backwards", 0.1)
+	if animationDir == Vector3(1, 0, 0):
+		animationPlayer.play("unarmed_left", 0.1)
+	if animationDir == Vector3(-1, 0, 0):
+		animationPlayer.play("unarmed_right", 0.1)
+	# ----------------------------------------------------------------------------------------------
+
 
 func _input(event):
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
