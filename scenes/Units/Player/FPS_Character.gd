@@ -26,6 +26,10 @@ var rot_horiz = 0
 var rot_verti = 0
 
 var counterFrames = 0
+var counterFrames2 = 0
+var counterFrames3 = 0
+var counterFrames4 = 0
+var counterFrames5 = 0
 
 var camera
 var rotation_helper
@@ -48,10 +52,15 @@ var globals
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	# Getters
 	camera = $Camera
 	skel = $Armature/Skeleton
 	animationPlayer = $AnimationPlayer
+	
+	# Setters
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	camera.translation = skel.get_bone_global_pose(skel.find_bone("head")).origin
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -169,6 +178,7 @@ func _input(event):
 
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		
+		counterFrames2 += 1
 		# Method 1
 		# ------------------------------------------------------------------------------------
 		rot_horiz += event.relative.x * MOUSE_SENSITIVITY
@@ -186,6 +196,12 @@ func _input(event):
 		camera.transform.basis = Basis()
 		camera.rotate_y(deg2rad(180))		# So camera looks at same dir than character
 		camera.rotate_x(rot_verti)
+		
+		# Rotate arms and head on X-Axis (Vertically) as well
+#		var headBoneIndex = skel.find_bone("head")
+#		var headBoneTransform = skel.get_bone_custom_pose(headBoneIndex)
+#
+#		skel.set_bone_pose(headBoneIndex, headBoneTransform.rotated(Vector3(1, 0, 0), rot_verti))
 		# ------------------------------------------------------------------------------------
 		
 		# Method 2
