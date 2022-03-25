@@ -133,7 +133,7 @@ func process_animation(animationDir):
 	# and when player falls Y-Axis is set to -1. We could set to test both cases if we want 
 	# animations to keep playing whe player is fallin.
 	
-	if animationDir == Vector3(0, 0, 0):
+	if animationDir == Vector3(0, 0, 0) or animationDir == Vector3(0, -1, 0):
 		animationPlayer.play("unarmed_idle", 0.1)
 	if animationDir == Vector3(1, 0, 1):
 		animationPlayer.play("unarmed_left", 0.1)
