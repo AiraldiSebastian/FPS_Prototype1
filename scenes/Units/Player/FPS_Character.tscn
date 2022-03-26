@@ -1,6 +1,10 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/Units/Player/FPS_Character.gd" type="Script" id=1]
+[ext_resource path="res://assets/Weapons/ak_without_mag.vox" type="ArrayMesh" id=2]
+[ext_resource path="res://scenes/Units/Player/Weapons.gd" type="Script" id=3]
+[ext_resource path="res://assets/sounds/ak47-1.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/32-32_white.png" type="Texture" id=5]
 
 [sub_resource type="CapsuleShape" id=14]
 radius = 0.6
@@ -873,6 +877,9 @@ albedo_color = Color( 0, 0, 1, 1 )
 material = SubResource( 22 )
 size = Vector3( 0.01, 0.01, 0.5 )
 
+[sub_resource type="CubeMesh" id=24]
+size = Vector3( 0.01, 0.01, 0.01 )
+
 [node name="FPS_Character" type="KinematicBody"]
 script = ExtResource( 1 )
 
@@ -978,3 +985,97 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25 )
 mesh = SubResource( 23 )
 material/0 = null
+
+[node name="Weapons" type="Spatial" parent="."]
+script = ExtResource( 3 )
+
+[node name="ak_without_mag" type="MeshInstance" parent="Weapons"]
+transform = Transform( -0.997609, 0, -0.0691122, 0, 1, 0, 0.0691122, 0, -0.997609, -0.538439, 0.483945, 0.59846 )
+mesh = ExtResource( 2 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="BarrelBushing" type="Spatial" parent="Weapons"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.318983, 1.42429, 1.15595 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Weapons/BarrelBushing"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0101826 )
+mesh = SubResource( 24 )
+material/0 = null
+
+[node name="RayCast" type="RayCast" parent="Weapons"]
+enabled = true
+debug_shape_custom_color = Color( 1, 0, 0, 1 )
+
+[node name="RayCast2" type="RayCast" parent="."]
+enabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="HUD" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Crosshair" type="Control" parent="HUD"]
+modulate = Color( 1, 1, 1, 0.705882 )
+anchor_left = 16.0
+anchor_top = 9.0
+anchor_right = 16.0
+anchor_bottom = 9.0
+margin_left = -21.0
+margin_top = -21.0
+margin_right = 21.0
+margin_bottom = 21.0
+
+[node name="Bottom_IMG" type="TextureRect" parent="HUD/Crosshair"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -2.5
+margin_top = 4.5
+margin_right = 2.5
+margin_bottom = 20.5
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Top_IMG" type="TextureRect" parent="HUD/Crosshair"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -2.5
+margin_top = -20.5
+margin_right = 2.5
+margin_bottom = -4.5
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Left_IMG" type="TextureRect" parent="HUD/Crosshair"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -4.5
+margin_top = -2.5
+margin_right = 0.5
+margin_bottom = 12.5
+rect_rotation = 90.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Right_IMG" type="TextureRect" parent="HUD/Crosshair"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 19.5
+margin_top = -2.5
+margin_right = 24.5
+margin_bottom = 12.5
+rect_rotation = 90.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Camera2" type="Camera" parent="."]

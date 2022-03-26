@@ -13,38 +13,46 @@ export (float) var ACCEL;
 export (float) var DEACCEL;
 export (float) var SPRINT_ACCEL;
 var vel = Vector3()
-var dir = Vector3()
+var playerDir = Vector3()
 var is_sprinting : bool = false
 # ----------------------------------
 
 # ----------------------------------
 # Others
 
+var isPlayerArmed: bool
+
 const MAX_SLOPE_ANGLE = 45
 
 var rot_horiz = 0
 var rot_verti = 0
 
+# For debugging
 var counterFrames = 0
 var counterFrames2 = 0
 var counterFrames3 = 0
 var counterFrames4 = 0
 var counterFrames5 = 0
 
-var camera
-var rotation_helper
+# Variables based on nodes
+var camera: Camera
+var camera2: Camera
 var skel
+var audioPlayer: AudioStreamPlayer
+var animationPlayer: AnimationPlayer
+var animationDir
 
 # Mouse
 var MOUSE_SENSITIVITY = 0.005
 var mouse_scroll_value = 0
 const MOUSE_SENSITIVITY_SCROLL_WHEEL = 0.08
 
+var playerWeapon
+
+var rayCast
+var rayCast2
 
 var flashlight
-
-var animationPlayer
-var animationDir
 
 var globals
 # ----------------------------------
@@ -55,20 +63,30 @@ func _ready():
 	
 	# Getters
 	camera = $Camera
+	camera2 = $Camera2
 	skel = $Armature/Skeleton
 	animationPlayer = $AnimationPlayer
+	audioPlayer = $AudioStreamPlayer
+	rayCast = $Weapons/RayCast
+	rayCast2 = $RayCast2
+	isPlayerArmed = true
+	
 	
 	# Setters
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	camera.translation = skel.get_bone_global_pose(skel.find_bone("head")).origin
-	
+	rayCast.transform = camera.transform
+	rayCast.cast_to = Vector3(0, 0, -20)
+	rayCast2.transform = camera.transform
+	rayCast2.cast_to = Vector3(10, 0, 0)
+	playerWeapon = load("res://scenes/Units/Player/Weapons.gd").new()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process():
 #	pass
 
 func _physics_process(delta):
-#	process_input(delta)
+	process_input(delta)
 #	process_view_input(delta)
 	process_movement(delta)
 	process_animation(animationDir)
@@ -81,47 +99,37 @@ func _physics_process(delta):
 #	process_respawn(delta)
 	
 
+func process_input(delta):
+	if Input.is_action_just_pressed("fire"):
+#		print("RayCast ")
+		playerWeapon.fire_weapon(self, camera, camera2, rayCast2, get_world().direct_space_state)
+		audioPlayer.set_stream(load("res://assets/sounds/ak47-1.wav"))
+		audioPlayer.set_volume_db(-30.0)
+		audioPlayer.play()
+
 func process_movement(delta):
-	counterFrames += 1
 	
 	# Method 1
 	# ----------------------------------------------------------------------------------------------
-	animationDir = Vector3()
+	animationDir = Vector3()	
+	playerDir = Vector3()
 	
-	if counterFrames == 30:
-		print("===================================================================================")
-	dir = Vector3()
 	if Input.is_action_pressed("movement_forward"):
-		if counterFrames == 30:
-			print("Basis Z: ", transform.basis.z)
-		dir += transform.basis.z
+		playerDir += transform.basis.z
 		animationDir.z += 1
 	if Input.is_action_pressed("movement_backward"):
-		if counterFrames == 30:
-			print("Basis Z: ", transform.basis.z)
-		dir -= transform.basis.z
+		playerDir -= transform.basis.z
 		animationDir.z -= 1
 	if Input.is_action_pressed("movement_left"):
-		if counterFrames == 30:
-			print("Basis X: ", transform.basis.x)
-		dir += transform.basis.x
+		playerDir += transform.basis.x
 		animationDir.x += 1
 	if Input.is_action_pressed("movement_right"):
-		if counterFrames == 30:
-			print("Basis X: ", transform.basis.x)
-		dir -= transform.basis.x
+		playerDir -= transform.basis.x
 		animationDir.x -= 1
 
-	if counterFrames == 30:
-		print("Dir Befor: ", dir)
-
-	dir = dir.normalized()
+	playerDir = playerDir.normalized()
 	
-	if counterFrames == 30:
-		print("Dir After: ", dir)
-		counterFrames = 0
-
-	vel = vel.linear_interpolate(dir * MAX_SPEED, delta * 10)
+	vel = vel.linear_interpolate(playerDir * MAX_SPEED, delta * 10)
 	
 	if vel.length() > MAX_SPEED:
 		vel = vel.normalized() * MAX_SPEED
@@ -136,46 +144,76 @@ func process_movement(delta):
 
 func process_animation(animationDir):
 		
-	# Method 1
-	# ----------------------------------------------------------------------------------------------
-	# Currently when player falls animation will not play, since Vectors have the Y-Axis set to 0
-	# and when player falls Y-Axis is set to -1. We could set to test both cases if we want 
-	# animations to keep playing whe player is fallin.
+#	Method 1
+#	------------------------------------------------------------------------------------------------
+#	Currently when player falls animation will not play, since Vectors have the Y-Axis set to 0
+#	and when player falls Y-Axis is set to -1. We could set to test both cases if we want 
+#	animations to keep playing whe player is fallin.
+#
+#	if animationDir == Vector3(0, 0, 0) or animationDir == Vector3(0, -1, 0):
+#		animationPlayer.play("unarmed_idle", 0.1)
+#	if animationDir == Vector3(1, 0, 1):
+#		animationPlayer.play("unarmed_left", 0.1)
+#	if animationDir == Vector3(-1, 0, 1):
+#		animationPlayer.play("unarmed_right", 0.1)
+#	if animationDir == Vector3(1, 0, -1):
+#		animationPlayer.play("unarmed_right", 0.1)
+#	if animationDir == Vector3(-1, 0, -1):
+#		animationPlayer.play("unarmed_left", 0.1)
+#	if animationDir == Vector3(0, 0, 1):
+#		animationPlayer.play("unarmed_forward", 0.1)
+#	if animationDir == Vector3(0, 0, -1):
+#		animationPlayer.play("unarmed_backwards", 0.1)
+#	if animationDir == Vector3(1, 0, 0):
+#		animationPlayer.play("unarmed_left", 0.1)
+#	if animationDir == Vector3(-1, 0, 0):
+#		animationPlayer.play("unarmed_right", 0.1)
+#	------------------------------------------------------------------------------------------------
 	
-	if animationDir == Vector3(0, 0, 0) or animationDir == Vector3(0, -1, 0):
-		animationPlayer.play("unarmed_idle", 0.1)
-	if animationDir == Vector3(1, 0, 1):
-		animationPlayer.play("unarmed_left", 0.1)
-	if animationDir == Vector3(-1, 0, 1):
-		animationPlayer.play("unarmed_right", 0.1)
-	if animationDir == Vector3(1, 0, -1):
-		animationPlayer.play("unarmed_right", 0.1)
-	if animationDir == Vector3(-1, 0, -1):
-		animationPlayer.play("unarmed_left", 0.1)
-	if animationDir == Vector3(0, 0, 1):
-		animationPlayer.play("unarmed_forward", 0.1)
-	if animationDir == Vector3(0, 0, -1):
-		animationPlayer.play("unarmed_backwards", 0.1)
-	if animationDir == Vector3(1, 0, 0):
-		animationPlayer.play("unarmed_left", 0.1)
-	if animationDir == Vector3(-1, 0, 0):
-		animationPlayer.play("unarmed_right", 0.1)
-	# ----------------------------------------------------------------------------------------------
-
+#	Method 2
+#	------------------------------------------------------------------------------------------------
+	if isPlayerArmed:
+		if animationDir == Vector3(0, 0, 0) or animationDir == Vector3(0, -1, 0):
+			animationPlayer.play("armed_idle", 0.1)
+		if animationDir == Vector3(1, 0, 1):
+			animationPlayer.play("armed_left", 0.1)
+		if animationDir == Vector3(-1, 0, 1):
+			animationPlayer.play("armed_right", 0.1)
+		if animationDir == Vector3(1, 0, -1):
+			animationPlayer.play("armed_right", 0.1)
+		if animationDir == Vector3(-1, 0, -1):
+			animationPlayer.play("armed_left", 0.1)
+		if animationDir == Vector3(0, 0, 1):
+			animationPlayer.play("armed_forward", 0.1)
+		if animationDir == Vector3(0, 0, -1):
+			animationPlayer.play("armed_backwards", 0.1)
+		if animationDir == Vector3(1, 0, 0):
+			animationPlayer.play("armed_left", 0.1)
+		if animationDir == Vector3(-1, 0, 0):
+			animationPlayer.play("armed_right", 0.1)
+	else:
+		if animationDir == Vector3(0, 0, 0) or animationDir == Vector3(0, -1, 0):
+			animationPlayer.play("unarmed_idle", 0.1)
+		if animationDir == Vector3(1, 0, 1):
+			animationPlayer.play("unarmed_left", 0.1)
+		if animationDir == Vector3(-1, 0, 1):
+			animationPlayer.play("unarmed_right", 0.1)
+		if animationDir == Vector3(1, 0, -1):
+			animationPlayer.play("unarmed_right", 0.1)
+		if animationDir == Vector3(-1, 0, -1):
+			animationPlayer.play("unarmed_left", 0.1)
+		if animationDir == Vector3(0, 0, 1):
+			animationPlayer.play("unarmed_forward", 0.1)
+		if animationDir == Vector3(0, 0, -1):
+			animationPlayer.play("unarmed_backwards", 0.1)
+		if animationDir == Vector3(1, 0, 0):
+			animationPlayer.play("unarmed_left", 0.1)
+		if animationDir == Vector3(-1, 0, 0):
+			animationPlayer.play("unarmed_right", 0.1)
+#	------------------------------------------------------------------------------------------------
 
 func _input(event):
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-#	if is_dead:
-#		return
-		
-#	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-#		rotation_helper.rotate_x(deg2rad(event.relative.y * MOUSE_SENSITIVITY * 1))
-#		self.rotate_y(deg2rad(event.relative.x * MOUSE_SENSITIVITY * -1))
-#
-#		var camera_rot = rotation_helper.rotation_degrees
-#		camera_rot.x = clamp(camera_rot.x, -70, 70)
-#		rotation_helper.rotation_degrees = camera_rot
-
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		
 		counterFrames2 += 1
@@ -196,6 +234,8 @@ func _input(event):
 		camera.transform.basis = Basis()
 		camera.rotate_y(deg2rad(180))		# So camera looks at same dir than character
 		camera.rotate_x(rot_verti)
+		
+#		rayCast.transform = camera.transform
 		
 		# Rotate arms and head on X-Axis (Vertically) as well
 #		var headBoneIndex = skel.find_bone("head")
