@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/Weapons/MeleeWeapon.gd"
 }, {
+"base": "Reference",
+"class": "PickDropSystem",
+"language": "GDScript",
+"path": "res://scripts/PickDropSystem.gd"
+}, {
 "base": "Spatial",
 "class": "Weapon",
 "language": "GDScript",
@@ -38,6 +43,7 @@ _global_script_class_icons={
 "FireWeapon": "",
 "HealthSystem": "",
 "MeleeWeapon": "",
+"PickDropSystem": "",
 "Weapon": "",
 "WeaponSystem": ""
 }
