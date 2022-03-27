@@ -1,13 +1,27 @@
-class_name HealthSystem
+class_name HealthSystem extends Spatial
 
 # Member invariables
-export var MAX_HEALTH: int
+var MAX_HEALTH: int
+var currentHealth: int
 
-# Member variables
-export var currentHealth: int
+func _init(arg_MAX_HEALTH, arg_currentHealth):
+	MAX_HEALTH = arg_MAX_HEALTH
+	currentHealth = arg_currentHealth
 
-# Called when the node enters the scene tree for the first time.
-#func _ready():
+
+func get_MAX_HEALTH():
+	return MAX_HEALTH
+
+
+func take_damage(points):
+	currentHealth -= points
+
+
+func take_health(points):
+	currentHealth += points
+	if currentHealth > MAX_HEALTH:
+		currentHealth = MAX_HEALTH
+
 
 func set_health(points):
 #	Method 1
@@ -24,9 +38,10 @@ func set_health(points):
 #	elif currentHealth > MAX_HEALTH:
 #		currentHealth = MAX_HEALTH
 #	---------------------------------------------------------------------------------------------
+	print("Current health: ", currentHealth)
 
 func get_health():
 	return currentHealth
 
 func is_health_zero():
-	return currentHealth == 0
+	return currentHealth <= 0

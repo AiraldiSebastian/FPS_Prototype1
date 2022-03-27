@@ -1,10 +1,9 @@
 [gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/Units/Player/FPS_Character.gd" type="Script" id=1]
-[ext_resource path="res://assets/Weapons/ak_without_mag.vox" type="ArrayMesh" id=2]
-[ext_resource path="res://scenes/Units/Player/Weapons.gd" type="Script" id=3]
 [ext_resource path="res://assets/sounds/ak47-1.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/32-32_white.png" type="Texture" id=5]
+[ext_resource path="res://assets/Titillium-Regular.otf" type="DynamicFontData" id=7]
 
 [sub_resource type="CapsuleShape" id=14]
 radius = 0.6
@@ -67,6 +66,27 @@ bind/10/pose = Transform( -0.999996, -0.00179566, -0.00215998, 0.00179566, -0.99
 bind/11/name = "leg2.r"
 bind/11/bone = -1
 bind/11/pose = Transform( -0.999998, -1.2062e-10, -0.00215951, 2.34668e-10, -1, 5.20196e-14, -0.00215951, -2.6048e-13, 0.999998, -0.171487, 0.387864, -0.000370338 )
+
+[sub_resource type="SpatialMaterial" id=18]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="CubeMesh" id=19]
+material = SubResource( 18 )
+size = Vector3( 0.5, 0.01, 0.01 )
+
+[sub_resource type="SpatialMaterial" id=20]
+albedo_color = Color( 0, 1, 0, 1 )
+
+[sub_resource type="CubeMesh" id=21]
+material = SubResource( 20 )
+size = Vector3( 0.01, 0.5, 0.01 )
+
+[sub_resource type="SpatialMaterial" id=22]
+albedo_color = Color( 0, 0, 1, 1 )
+
+[sub_resource type="CubeMesh" id=23]
+material = SubResource( 22 )
+size = Vector3( 0.01, 0.01, 0.5 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "armed_backwards"
@@ -856,32 +876,23 @@ tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = PoolRealArray( 0, 1, 0, 0, 0, -1.067e-08, 0.499999, -0.000828266, 0.866025, 1, 1, 1, 1, 1, 0, 0, 0, -1.067e-08, 0.499999, -0.000828266, 0.866025, 1, 1, 1 )
 
-[sub_resource type="SpatialMaterial" id=18]
-albedo_color = Color( 1, 0, 0, 1 )
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0.158587, 0.106689, 0.179688, 1 )
+border_color = Color( 0.277183, 0.201141, 0.304688, 1 )
+corner_radius_top_right = 70
+corner_detail = 3
+anti_aliasing = false
 
-[sub_resource type="CubeMesh" id=19]
-material = SubResource( 18 )
-size = Vector3( 0.5, 0.01, 0.01 )
-
-[sub_resource type="SpatialMaterial" id=20]
-albedo_color = Color( 0, 1, 0, 1 )
-
-[sub_resource type="CubeMesh" id=21]
-material = SubResource( 20 )
-size = Vector3( 0.01, 0.5, 0.01 )
-
-[sub_resource type="SpatialMaterial" id=22]
-albedo_color = Color( 0, 0, 1, 1 )
-
-[sub_resource type="CubeMesh" id=23]
-material = SubResource( 22 )
-size = Vector3( 0.01, 0.01, 0.5 )
-
-[sub_resource type="CubeMesh" id=24]
-size = Vector3( 0.01, 0.01, 0.01 )
+[sub_resource type="DynamicFont" id=26]
+size = 40
+use_filter = true
+font_data = ExtResource( 7 )
 
 [node name="FPS_Character" type="KinematicBody"]
 script = ExtResource( 1 )
+GRAVITY = 10
+MAX_SPEED = 5
+ACCEL = 10
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.975, 0 )
@@ -956,18 +967,6 @@ mesh = SubResource( 2 )
 skin = SubResource( 3 )
 material/0 = null
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/armed_backwards = SubResource( 4 )
-anims/armed_forward = SubResource( 5 )
-anims/armed_idle = SubResource( 6 )
-anims/armed_left = SubResource( 7 )
-anims/armed_right = SubResource( 8 )
-anims/unarmed_backwards = SubResource( 9 )
-anims/unarmed_forward = SubResource( 10 )
-anims/unarmed_idle = SubResource( 11 )
-anims/unarmed_left = SubResource( 12 )
-anims/unarmed_right = SubResource( 13 )
-
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.12302, 0.032 )
 
@@ -986,32 +985,34 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25 )
 mesh = SubResource( 23 )
 material/0 = null
 
-[node name="Weapons" type="Spatial" parent="."]
-script = ExtResource( 3 )
+[node name="Systems" type="Spatial" parent="."]
 
-[node name="ak_without_mag" type="MeshInstance" parent="Weapons"]
-transform = Transform( -0.997609, 0, -0.0691122, 0, 1, 0, 0.0691122, 0, -0.997609, -0.538439, 0.483945, 0.59846 )
-mesh = ExtResource( 2 )
-skeleton = NodePath("../..")
-material/0 = null
+[node name="WeaponSystem" type="Spatial" parent="Systems"]
 
-[node name="BarrelBushing" type="Spatial" parent="Weapons"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.318983, 1.42429, 1.15595 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Weapons/BarrelBushing"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0101826 )
-mesh = SubResource( 24 )
-material/0 = null
-
-[node name="RayCast" type="RayCast" parent="Weapons"]
+[node name="RayCast" type="RayCast" parent="Systems/WeaponSystem"]
+visible = false
 enabled = true
 debug_shape_custom_color = Color( 1, 0, 0, 1 )
 
-[node name="RayCast2" type="RayCast" parent="."]
-enabled = true
+[node name="AudioSystem" type="Spatial" parent="Systems"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Systems/AudioSystem"]
 stream = ExtResource( 4 )
+
+[node name="AnimationSystem" type="Spatial" parent="Systems"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Systems/AnimationSystem"]
+root_node = NodePath("../../..")
+anims/armed_backwards = SubResource( 4 )
+anims/armed_forward = SubResource( 5 )
+anims/armed_idle = SubResource( 6 )
+anims/armed_left = SubResource( 7 )
+anims/armed_right = SubResource( 8 )
+anims/unarmed_backwards = SubResource( 9 )
+anims/unarmed_forward = SubResource( 10 )
+anims/unarmed_idle = SubResource( 11 )
+anims/unarmed_left = SubResource( 12 )
+anims/unarmed_right = SubResource( 13 )
 
 [node name="HUD" type="Control" parent="."]
 margin_right = 40.0
@@ -1078,4 +1079,28 @@ rect_rotation = 90.0
 texture = ExtResource( 5 )
 expand = true
 
-[node name="Camera2" type="Camera" parent="."]
+[node name="Panel" type="Panel" parent="HUD"]
+modulate = Color( 1, 1, 1, 0.705882 )
+margin_top = 560.0
+margin_right = 370.0
+margin_bottom = 720.0
+custom_styles/panel = SubResource( 25 )
+
+[node name="Panel_border" type="Panel" parent="HUD/Panel"]
+modulate = Color( 0.679688, 0.679688, 0.679688, 1 )
+show_behind_parent = true
+margin_top = -10.0
+margin_right = 380.0
+margin_bottom = 160.0
+custom_styles/panel = SubResource( 25 )
+
+[node name="Gun_label" type="Label" parent="HUD/Panel"]
+self_modulate = Color( 1, 1, 1, 0.705882 )
+margin_left = 10.0
+margin_top = 20.0
+margin_right = 380.0
+margin_bottom = 109.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 26 )
+text = "Health: 100
+Ammo: 000/000"

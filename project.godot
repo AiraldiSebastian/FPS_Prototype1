@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/Weapons/FireWeapon.gd"
 }, {
-"base": "Reference",
+"base": "Spatial",
 "class": "HealthSystem",
 "language": "GDScript",
 "path": "res://scripts/HealthSystem.gd"
@@ -30,16 +30,16 @@ _global_script_classes=[ {
 "path": "res://scenes/Weapons/Weapon.gd"
 }, {
 "base": "Spatial",
-"class": "Weapons",
+"class": "WeaponSystem",
 "language": "GDScript",
-"path": "res://scenes/Units/Player/Weapons.gd"
+"path": "res://scenes/Units/Player/WeaponSystem.gd"
 } ]
 _global_script_class_icons={
 "FireWeapon": "",
 "HealthSystem": "",
 "MeleeWeapon": "",
 "Weapon": "",
-"Weapons": ""
+"WeaponSystem": ""
 }
 
 [application]
@@ -129,6 +129,21 @@ shift_weapon_negative={
 change_camera={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":67,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+key_1={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":49,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+key_2={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":50,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+key_3={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":51,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 
