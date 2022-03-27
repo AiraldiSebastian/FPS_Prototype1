@@ -59,7 +59,7 @@ var isPlayerArmed: bool
 var weaponsList = {}
 
 var scene_AssaultRifle_A =	preload("res://scenes/Weapons/WeaponTSCN/AssaultRifle_A.tscn")
-var scene_Shotgun =		preload("res://scenes/Weapons/WeaponTSCN/Shotgun.tscn")
+var scene_Shotgun =			preload("res://scenes/Weapons/WeaponTSCN/Shotgun.tscn")
 # ----------------------------------
 
 

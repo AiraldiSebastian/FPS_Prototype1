@@ -13,7 +13,6 @@ var current_ammo:	int
 
 
 func _ready():
-	print("Weapons READY!")
 	transform.origin = POSITION
 	current_ammo = MAX_AMMO
 
@@ -21,29 +20,20 @@ func _ready():
 func fire(camera, direct_space_state, audioPlayer):
 	if current_ammo == 0:
 		audioPlayer.set_stream(AUDIO_EMPTY)
-		audioPlayer.set_volume_db(-30.0)
-		audioPlayer.play()
-		return
-	
-	current_ammo -= 1
-	audioPlayer.set_stream(AUDIO_FIRE)
-	audioPlayer.set_volume_db(-30.0)
-	audioPlayer.play()
-	var collision = direct_space_state.intersect_ray(camera.global_transform.origin, camera.global_transform.origin + camera.global_transform.basis.z * -20)
-	if collision:
-		print(collision.position)
-		print(collision.collider.get_parent().to_string())
-		if collision.collider:
+	else:
+		current_ammo -= 1
+		audioPlayer.set_stream(AUDIO_FIRE)
+		var collision = direct_space_state.intersect_ray(camera.global_transform.origin, camera.global_transform.origin + camera.global_transform.basis.z * -20)
+		if collision and collision.collider:
+			print(collision.collider.get_parent().to_string())
 			if "healthSystem" in collision.collider.get_parent():
 				collision.collider.get_parent().healthSystem.take_damage(DAMAGE)
 				print(collision.collider.get_parent().healthSystem.get_health())
-	
-	return true
-
+				
+	audioPlayer.play()
 
 func reload(audioPlayer):
 	audioPlayer.set_stream(AUDIO_RELOAD)
-	audioPlayer.set_volume_db(-30.0)
 	audioPlayer.play()
 	current_ammo = MAX_AMMO
 
@@ -58,6 +48,5 @@ func get_max_ammo():
 
 func equip(audioPlayer):
 	audioPlayer.set_stream(AUDIO_EQUIP)
-	audioPlayer.set_volume_db(-30.0)
 	audioPlayer.play()
 	return self
