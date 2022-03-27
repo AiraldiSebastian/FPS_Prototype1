@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/Zeds-0-Zed_1.vox" type="ArrayMesh" id=1]
+[ext_resource path="res://assets/Gas_Station/Zeds-0-Zed_1.vox" type="ArrayMesh" id=1]
 [ext_resource path="res://scenes/Units/Enemies/Zombie.gd" type="Script" id=2]
 [ext_resource path="res://scenes/Units/Enemies/CollisionShape.gd" type="Script" id=3]
 
