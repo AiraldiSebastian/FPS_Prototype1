@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/Weapons/FireWeapon.gd"
 }, {
-"base": "Spatial",
+"base": "Reference",
 "class": "HealthSystem",
 "language": "GDScript",
 "path": "res://scripts/HealthSystem.gd"

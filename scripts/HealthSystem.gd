@@ -1,4 +1,4 @@
-class_name HealthSystem extends Spatial
+class_name HealthSystem
 
 # Member invariables
 var MAX_HEALTH: int
