@@ -1,9 +1,8 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/Units/Player/FPS_Character.gd" type="Script" id=1]
-[ext_resource path="res://assets/sounds/ak47-1.wav" type="AudioStream" id=4]
-[ext_resource path="res://assets/32-32_white.png" type="Texture" id=5]
-[ext_resource path="res://assets/Titillium-Regular.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/UI/32-32_white.png" type="Texture" id=5]
+[ext_resource path="res://assets/UI/Titillium-Regular.otf" type="DynamicFontData" id=7]
 
 [sub_resource type="CapsuleShape" id=14]
 radius = 0.6
@@ -999,7 +998,6 @@ debug_shape_custom_color = Color( 1, 0, 0, 1 )
 [node name="AudioSystem" type="Spatial" parent="Systems"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Systems/AudioSystem"]
-stream = ExtResource( 4 )
 
 [node name="AnimationSystem" type="Spatial" parent="Systems"]
 
