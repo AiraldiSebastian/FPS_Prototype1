@@ -9,20 +9,10 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Weapon",
-"class": "FireWeapon",
-"language": "GDScript",
-"path": "res://scenes/Weapons/FireWeapon.gd"
-}, {
 "base": "Reference",
 "class": "HealthSystem",
 "language": "GDScript",
 "path": "res://scripts/HealthSystem.gd"
-}, {
-"base": "Weapon",
-"class": "MeleeWeapon",
-"language": "GDScript",
-"path": "res://scenes/Weapons/MeleeWeapon.gd"
 }, {
 "base": "Reference",
 "class": "PickDropSystem",
@@ -30,29 +20,19 @@ _global_script_classes=[ {
 "path": "res://scripts/PickDropSystem.gd"
 }, {
 "base": "Spatial",
-"class": "Weapon",
-"language": "GDScript",
-"path": "res://scenes/Weapons/Weapon.gd"
-}, {
-"base": "Spatial",
 "class": "WeaponSystem",
 "language": "GDScript",
 "path": "res://scenes/Units/Player/WeaponSystem.gd"
 } ]
 _global_script_class_icons={
-"FireWeapon": "",
 "HealthSystem": "",
-"MeleeWeapon": "",
 "PickDropSystem": "",
-"Weapon": "",
 "WeaponSystem": ""
 }
 
 [application]
 
 config/name="Godot"
-run/main_scene="res://scenes/Menu/Main_Menu.tscn"
-config/icon="res://assets/Gas_Station/icon.png"
 
 [autoload]
 
