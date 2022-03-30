@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Weapons/Weapon/M_Weapons.material" type="Material" id=1]
 [ext_resource path="res://scenes/Weapons/WeaponTSCN/HeavyWeapon_F.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/sounds/HeavyWeapon_F/negev-1.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/sounds/HeavyWeapon_F/negev_boxin.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/sounds/HeavyWeapon_F/auto_semiauto_switch.wav" type="AudioStream" id=6]
+[ext_resource path="res://scenes/Weapons/Weapon/HeavyGun.png" type="Texture" id=7]
 
 [sub_resource type="ArrayMesh" id=1]
 blend_shape_mode = 0
@@ -28,6 +29,7 @@ script = ExtResource( 2 )
 NAME = "HeavyWeapon"
 DAMAGE = 2
 MAX_AMMO = 200
+ICON = ExtResource( 7 )
 AUDIO_FIRE = ExtResource( 4 )
 AUDIO_RELOAD = ExtResource( 5 )
 AUDIO_EMPTY = ExtResource( 6 )

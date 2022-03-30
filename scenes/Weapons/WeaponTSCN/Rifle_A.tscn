@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Weapons/Weapon/M_Weapons.material" type="Material" id=1]
 [ext_resource path="res://scenes/Weapons/WeaponTSCN/Rifle_A.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/sounds/Rifle_A/awp_clipin.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/sounds/Rifle_A/clipempty_rifle.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/sounds/Rifle_A/awp_draw.wav" type="AudioStream" id=6]
+[ext_resource path="res://scenes/Weapons/Weapon/Rifle.png" type="Texture" id=7]
 
 [sub_resource type="ArrayMesh" id=1]
 blend_shape_mode = 0
@@ -28,6 +29,7 @@ script = ExtResource( 2 )
 NAME = "Rifle_A"
 DAMAGE = 10
 MAX_AMMO = 10
+ICON = ExtResource( 7 )
 AUDIO_FIRE = ExtResource( 3 )
 AUDIO_RELOAD = ExtResource( 4 )
 AUDIO_EMPTY = ExtResource( 5 )

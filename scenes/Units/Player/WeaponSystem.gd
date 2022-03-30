@@ -4,6 +4,7 @@ export var NAME:			String
 export var DAMAGE:			int
 export var MAX_AMMO:		int
 export var POSITION:		Vector3
+export var ICON:			StreamTexture
 export var AUDIO_FIRE:		AudioStream
 export var AUDIO_RELOAD:	AudioStream
 export var AUDIO_EMPTY:		AudioStream

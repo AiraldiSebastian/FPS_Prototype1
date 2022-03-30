@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Weapons/Weapon/M_Weapons.material" type="Material" id=1]
 [ext_resource path="res://scenes/Weapons/WeaponTSCN/AssaultRifle_A.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/sounds/AssaultRifle_A/clipempty_rifle.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/sounds/AssaultRifle_A/ak47_draw.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/sounds/AssaultRifle_A/ak47_clipin.wav" type="AudioStream" id=6]
+[ext_resource path="res://scenes/Weapons/Weapon/AssaultRifle_A.png" type="Texture" id=7]
 
 [sub_resource type="ArrayMesh" id=1]
 blend_shape_mode = 0
@@ -29,6 +30,7 @@ NAME = "AssaultRifle_A"
 DAMAGE = 5
 MAX_AMMO = 30
 POSITION = Vector3( -0.3, 1.45, 0.5 )
+ICON = ExtResource( 7 )
 AUDIO_FIRE = ExtResource( 3 )
 AUDIO_RELOAD = ExtResource( 6 )
 AUDIO_EMPTY = ExtResource( 4 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Weapons/Weapon/M_Weapons.material" type="Material" id=1]
 [ext_resource path="res://scenes/Weapons/WeaponTSCN/Shotgun.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/sounds/Shotgun/auto_semiauto_switch.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/sounds/Shotgun/nova_draw.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/sounds/Shotgun/nova_pump.wav" type="AudioStream" id=6]
+[ext_resource path="res://scenes/Weapons/Weapon/Shotgun.png" type="Texture" id=7]
 
 [sub_resource type="ArrayMesh" id=1]
 blend_shape_mode = 0
@@ -29,6 +30,7 @@ NAME = "Shotgun"
 DAMAGE = 10
 MAX_AMMO = 2
 POSITION = Vector3( -0.36, 1.45, 0.5 )
+ICON = ExtResource( 7 )
 AUDIO_FIRE = ExtResource( 3 )
 AUDIO_RELOAD = ExtResource( 6 )
 AUDIO_EMPTY = ExtResource( 4 )
