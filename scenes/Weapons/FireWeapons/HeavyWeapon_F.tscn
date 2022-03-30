@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/Weapons/FireWeapons/M_Weapons.material" type="Material" id=1]
-[ext_resource path="res://scenes/Weapons/WeaponTSCN/HeavyWeapon_F.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Weapons/FireWeapons/HeavyWeapon_F.gd" type="Script" id=2]
 [ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/negev_draw.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/negev-1.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/negev_boxin.wav" type="AudioStream" id=5]

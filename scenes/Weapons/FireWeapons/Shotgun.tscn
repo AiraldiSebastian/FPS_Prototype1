@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://assets/Weapons/FireWeapons/M_Weapons.material" type="Material" id=1]
-[ext_resource path="res://scenes/Weapons/WeaponTSCN/Shotgun.gd" type="Script" id=2]
-[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/nova-1.wav" type="AudioStream" id=3]
-[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/auto_semiauto_switch.wav" type="AudioStream" id=4]
-[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/nova_draw.wav" type="AudioStream" id=5]
-[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/nova_pump.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/Shotgun.png" type="Texture" id=7]
+[ext_resource path="res://scenes/Weapons/FireWeapons/Shotgun.gd" type="Script" id=1]
+[ext_resource path="res://assets/Weapons/FireWeapons/M_Weapons.material" type="Material" id=2]
+[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/Shotgun.png" type="Texture" id=3]
+[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/nova_pump.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/auto_semiauto_switch.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/nova_draw.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/nova-1.wav" type="AudioStream" id=7]
 
 [sub_resource type="ArrayMesh" id=1]
 blend_shape_mode = 0
@@ -17,7 +17,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 3684,
-"material": ExtResource( 1 ),
+"material": ExtResource( 2 ),
 "name": "M_Weapons",
 "primitive": 4,
 "skeleton_aabb": [  ],
@@ -25,16 +25,16 @@ surfaces/0 = {
 }
 
 [node name="Shotgun_I" type="Spatial"]
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 NAME = "Shotgun"
 DAMAGE = 10
 MAX_AMMO = 2
 POSITION = Vector3( -0.36, 1.45, 0.5 )
-ICON = ExtResource( 7 )
-AUDIO_FIRE = ExtResource( 3 )
-AUDIO_RELOAD = ExtResource( 6 )
-AUDIO_EMPTY = ExtResource( 4 )
-AUDIO_EQUIP = ExtResource( 5 )
+ICON = ExtResource( 3 )
+AUDIO_FIRE = ExtResource( 7 )
+AUDIO_RELOAD = ExtResource( 4 )
+AUDIO_EMPTY = ExtResource( 5 )
+AUDIO_EQUIP = ExtResource( 6 )
 
 [node name="RootNode" type="Spatial" parent="."]
 
