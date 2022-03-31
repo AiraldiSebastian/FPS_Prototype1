@@ -1,12 +1,12 @@
 extends Panel
 
-var default_tex		=	preload("res://scenes/InventorySystem/item_slot_default_background.png")
-var empty_tex		=	preload("res://scenes/InventorySystem/item_slot_empty_background.png")
+var default_tex		=	preload("res://scenes/InventorySystem/Other/item_slot_default_background.png")
+var empty_tex		=	preload("res://scenes/InventorySystem/Other/item_slot_empty_background.png")
 
 var default_style: StyleBoxTexture	=	null
 var empty_style: StyleBoxTexture	=	null
 
-var itemClass = preload("res://scenes/InventorySystem/Item.tscn")
+var itemClass = preload("res://scenes/InventorySystem/Other/Item.tscn")
 var item = null
 
 # Called when the node enters the scene tree for the first time.

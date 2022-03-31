@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://scenes/InventorySystem/default_inventory_background.png" type="Texture" id=1]
-[ext_resource path="res://scenes/InventorySystem/item_slot_default_background.png" type="Texture" id=2]
-[ext_resource path="res://scenes/InventorySystem/Slot.gd" type="Script" id=3]
-[ext_resource path="res://scenes/InventorySystem/Inventory.gd" type="Script" id=4]
+[ext_resource path="res://scenes/InventorySystem/Other/default_inventory_background.png" type="Texture" id=1]
+[ext_resource path="res://scenes/InventorySystem/Other/item_slot_default_background.png" type="Texture" id=2]
+[ext_resource path="res://scenes/InventorySystem/Other/Slot.gd" type="Script" id=3]
+[ext_resource path="res://scenes/InventorySystem/Other/Inventory.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 2 )

@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes/Units/Player/FPS_Character.gd" type="Script" id=1]
 [ext_resource path="res://scenes/InventorySystem/Hotbar/hotbar_background.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Units/Player/Hotbar.gd" type="Script" id=3]
-[ext_resource path="res://scenes/InventorySystem/SlotHBar.gd" type="Script" id=4]
+[ext_resource path="res://scenes/InventorySystem/Hotbar/SlotHBar.gd" type="Script" id=4]
 [ext_resource path="res://assets/UI/32-32_white.png" type="Texture" id=5]
 [ext_resource path="res://assets/UI/Titillium-Regular.otf" type="DynamicFontData" id=7]
 
