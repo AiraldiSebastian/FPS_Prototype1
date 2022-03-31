@@ -14,8 +14,28 @@ var current_ammo:	int
 
 
 func _ready():
-	transform.origin = POSITION
+#	transform.origin = POSITION
 	current_ammo = MAX_AMMO
+
+
+func set_player_position(player):
+	transform.origin = POSITION
+	global_transform.basis = player.global_transform.basis
+
+func pick(audioPlayer):
+	print(get_parent())
+	get_parent().remove_child(self)
+	audioPlayer.set_stream(AUDIO_EQUIP)
+	audioPlayer.play()
+	return self
+
+
+func get_type():
+	return "WeaponSystem"
+
+
+func get_icon():
+	return ICON
 
 
 func fire(camera, direct_space_state, audioPlayer):
@@ -32,6 +52,7 @@ func fire(camera, direct_space_state, audioPlayer):
 				print(collision.collider.get_parent().healthSystem.get_health())
 				
 	audioPlayer.play()
+
 
 func reload(audioPlayer):
 	audioPlayer.set_stream(AUDIO_RELOAD)

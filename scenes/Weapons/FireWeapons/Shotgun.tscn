@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/Weapons/FireWeapons/Shotgun.gd" type="Script" id=1]
 [ext_resource path="res://assets/Weapons/FireWeapons/M_Weapons.material" type="Material" id=2]
-[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/Shotgun.png" type="Texture" id=3]
+[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/Shotgun_Icon.png" type="Texture" id=3]
 [ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/nova_pump.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/auto_semiauto_switch.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/nova_draw.wav" type="AudioStream" id=6]
@@ -24,6 +24,9 @@ surfaces/0 = {
 "vertex_count": 2815
 }
 
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.05, 0.06, 0.4 )
+
 [node name="Shotgun_I" type="Spatial"]
 script = ExtResource( 1 )
 NAME = "Shotgun"
@@ -42,3 +45,9 @@ AUDIO_EQUIP = ExtResource( 6 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.248342, -0.08125, 6.33373 )
 mesh = SubResource( 1 )
 material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 2 )

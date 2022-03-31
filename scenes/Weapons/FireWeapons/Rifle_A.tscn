@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/Weapons/FireWeapons/M_Weapons.material" type="Material" id=1]
 [ext_resource path="res://scenes/Weapons/FireWeapons/Rifle_A.gd" type="Script" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/Weapons/FireWeapons/Rifle/awp_clipin.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/Weapons/FireWeapons/Rifle/clipempty_rifle.wav" type="AudioStream" id=5]
 [ext_resource path="res://assets/Weapons/FireWeapons/Rifle/awp_draw.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/Weapons/FireWeapons/Rifle/Rifle.png" type="Texture" id=7]
+[ext_resource path="res://assets/Weapons/FireWeapons/Rifle/Rifle_Icon.png" type="Texture" id=7]
 
 [sub_resource type="ArrayMesh" id=1]
 blend_shape_mode = 0
@@ -24,11 +24,15 @@ surfaces/0 = {
 "vertex_count": 5751
 }
 
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.05, 0.06, 0.6 )
+
 [node name="Riffle_A" type="Spatial"]
 script = ExtResource( 2 )
 NAME = "Rifle_A"
 DAMAGE = 10
 MAX_AMMO = 10
+POSITION = Vector3( -0.36, 1.45, 0.5 )
 ICON = ExtResource( 7 )
 AUDIO_FIRE = ExtResource( 3 )
 AUDIO_RELOAD = ExtResource( 4 )
@@ -41,3 +45,10 @@ AUDIO_EQUIP = ExtResource( 6 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01084, -0.1625, 10.19 )
 mesh = SubResource( 1 )
 material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0299152, 0 )
+shape = SubResource( 2 )

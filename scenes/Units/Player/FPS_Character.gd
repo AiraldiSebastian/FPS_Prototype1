@@ -43,23 +43,18 @@ var camera: Camera
 var rayCast: RayCast
 var skel: Skeleton
 var UI_GunLabel: Label
+var UI_Hotbar: TextureRect
 
 # Variables based on scripts
 var healthSystem: HealthSystem
 
 # Mouse
 var MOUSE_SENSITIVITY:float = 0.005
-var mouse_scroll_value:int = 0
-const MOUSE_SENSITIVITY_SCROLL_WHEEL:float = 0.08
 
 # Weapon related
 var weaponNode
 var playerCurrentWeapon: WeaponSystem
-var isPlayerArmed: bool
-var weaponsList = {}
-
-var scene_AssaultRifle_A =	preload("res://scenes/Weapons/FireWeapons/AssaultRifle_A.tscn")
-var scene_Shotgun =			preload("res://scenes/Weapons/FireWeapons/Shotgun.tscn")
+#var weaponsList = {}
 # ----------------------------------
 
 
@@ -71,33 +66,22 @@ func _ready():
 	skel = $Armature/Skeleton
 	animationPlayer = $Systems/AnimationSystem/AnimationPlayer
 	audioPlayer = $Systems/AudioSystem/AudioStreamPlayer
-	rayCast = $Systems/WeaponSystem/RayCast
+	rayCast = $Camera/RayCast
 	UI_GunLabel = $HUD/Panel/Gun_label
-	weaponNode = $Systems/WeaponSystem
+	UI_Hotbar = $HUD/Hotbar
+	weaponNode = $Systems/WeaponNode
 	
 	# Getters Script based
 	healthSystem = load("res://scripts/HealthSystem.gd").new(MAX_HEALTH, MAX_HEALTH)
 	
 	
-	# Others
-	isPlayerArmed = true
-	
-	
 	# Setters
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	camera.translation = skel.get_bone_global_pose(skel.find_bone("head")).origin
-	rayCast.transform = camera.transform
-	rayCast.cast_to = Vector3(0, 0, -20)
+	camera.transform.origin = skel.get_bone_global_pose(skel.find_bone("head")).origin
+#	rayCast.translation = camera.translation
+	rayCast.cast_to = Vector3(0, 0, 20)
+	rayCast.set_collision_mask_bit(4, true)
 	
-	# Set weapons
-	weaponsList["AssaultRifle_A"] = scene_AssaultRifle_A.instance()
-	weaponsList["Shotgun"] = scene_Shotgun.instance()
-	
-	weaponsList["AssaultRifle_A"].set_visible(false)
-	weaponsList["Shotgun"].set_visible(false)
-	
-	weaponNode.add_child(weaponsList["AssaultRifle_A"])
-	weaponNode.add_child(weaponsList["Shotgun"])
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process():
@@ -121,6 +105,7 @@ func _physics_process(delta):
 	
 
 
+# This should be implemented as a signal from the HealthSystem to which the UI connects to
 func process_UI(_delta):
 	if playerCurrentWeapon:
 		UI_GunLabel.text = "HEALTH: " + str(healthSystem.get_health()) + \
@@ -156,6 +141,7 @@ func process_movement(delta):
 
 	playerDir = playerDir.normalized()
 	
+	
 	playerVel = playerVel.linear_interpolate(playerDir * MAX_SPEED, delta * ACCEL)
 	
 	if playerVel.length() > MAX_SPEED:
@@ -165,7 +151,7 @@ func process_movement(delta):
 		playerVel.y = -GRAVITY
 		animationDir.y = -1
 	
-	move_and_slide_with_snap(playerVel, Vector3(0, -0.1, 0), Vector3.UP, true, 1, deg2rad(60), true)
+	playerVel = move_and_slide_with_snap(playerVel, Vector3(0, -0.1, 0), Vector3.UP, true, 1, deg2rad(60), true)
 	# ----------------------------------------------------------------------------------------------	
 
 
@@ -217,7 +203,6 @@ func process_animation(_delta):
 #	------------------------------------------------------------------------------------------------
 
 func _input(event):
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		
 		# Method 1
@@ -238,7 +223,7 @@ func _input(event):
 		camera.rotate_y(deg2rad(180))		# So camera looks at same dir than character
 		camera.rotate_x(rot_verti)
 		
-		rayCast.transform = camera.transform
+#		rayCast.transform = camera.transform
 		
 		# Rotate arms and head on X-Axis (Vertically) as well
 #		var headBoneIndex = skel.find_bone("head")
@@ -262,19 +247,59 @@ func _unhandled_input(event):
 		if event.is_action_pressed("change_camera"):
 			get_viewport().get_camera().clear_current();
 		if event.is_action_pressed("key_1"):
-			if playerCurrentWeapon:
-				playerCurrentWeapon.set_visible(false)
-			playerCurrentWeapon = null
+			change_weapon(UI_Hotbar.select_item(0))
 		if event.is_action_pressed("key_2"):
-			change_weapon("AssaultRifle_A")
+			change_weapon(UI_Hotbar.select_item(1))
 		if event.is_action_pressed("key_3"):
-			change_weapon("Shotgun")
+			change_weapon(UI_Hotbar.select_item(2))
+		if event.is_action_pressed("key_4"):
+			change_weapon(UI_Hotbar.select_item(3))
+		if event.is_action_pressed("key_5"):
+			change_weapon(UI_Hotbar.select_item(4))
 		if event.is_action_pressed("reload"):
 			if playerCurrentWeapon:
 				playerCurrentWeapon.reload(audioPlayer)
+		if event.is_action_pressed("interact"):
+			var collider = rayCast.get_collider()
+			if collider:
+				if collider.get_parent():
+					if collider.get_parent() is WeaponSystem:
+						if !UI_Hotbar.is_full():
+							var index = UI_Hotbar.put_item(collider.get_parent().pick(audioPlayer))
+							if UI_Hotbar.selectedSlot == index:
+								change_weapon(UI_Hotbar.select_item(index))
+		if event.is_action_pressed("drop"):
+			if playerCurrentWeapon:
+				UI_Hotbar.drop_item(playerCurrentWeapon, self, get_parent())
+				playerCurrentWeapon = null
+				
 
-func change_weapon(var weaponName: String):
+
+func change_weapon(weapon: WeaponSystem):
+#	Method 1
+#	------------------------------------------------------------------------------------------------
 	if playerCurrentWeapon:
-		playerCurrentWeapon.set_visible(false)
-	playerCurrentWeapon = weaponsList[weaponName].equip(audioPlayer)
-	playerCurrentWeapon.set_visible(true)
+		weaponNode.remove_child(playerCurrentWeapon)
+	if weapon:
+		playerCurrentWeapon = weapon.equip(audioPlayer)
+		weaponNode.add_child(playerCurrentWeapon)
+		playerCurrentWeapon.set_player_position(self)
+	else:
+		playerCurrentWeapon = null
+#	------------------------------------------------------------------------------------------------
+
+#	playerCurrentWeapon.set_visible(true)
+#	if playerCurrentWeapon == weapon:
+#		print("Same weapon!")
+#		return
+#	if playerCurrentWeapon:
+##		playerCurrentWeapon.set_visible(false)
+#		weaponNode.remove_child(playerCurrentWeapon)
+#	if weapon:
+#		playerCurrentWeapon = weapon.equip(audioPlayer)
+#		weaponNode.add_child(playerCurrentWeapon)
+#		playerCurrentWeapon.set_player_position()
+##		playerCurrentWeapon.set_visible(true)
+#		print(playerCurrentWeapon)
+#	else:
+#		playerCurrentWeapon = weapon

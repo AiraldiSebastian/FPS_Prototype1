@@ -1,6 +1,9 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scenes/Units/Player/FPS_Character.gd" type="Script" id=1]
+[ext_resource path="res://scenes/InventorySystem/Hotbar/hotbar_background.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Units/Player/Hotbar.gd" type="Script" id=3]
+[ext_resource path="res://scenes/InventorySystem/SlotHBar.gd" type="Script" id=4]
 [ext_resource path="res://assets/UI/32-32_white.png" type="Texture" id=5]
 [ext_resource path="res://assets/UI/Titillium-Regular.otf" type="DynamicFontData" id=7]
 
@@ -888,6 +891,7 @@ use_filter = true
 font_data = ExtResource( 7 )
 
 [node name="FPS_Character" type="KinematicBody"]
+collision_layer = 2
 script = ExtResource( 1 )
 GRAVITY = 10
 MAX_SPEED = 5
@@ -986,14 +990,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.25 )
 mesh = SubResource( 23 )
 material/0 = null
 
-[node name="Systems" type="Spatial" parent="."]
-
-[node name="WeaponSystem" type="Spatial" parent="Systems"]
-
-[node name="RayCast" type="RayCast" parent="Systems/WeaponSystem"]
+[node name="RayCast" type="RayCast" parent="Camera"]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0 )
 visible = false
 enabled = true
 debug_shape_custom_color = Color( 1, 0, 0, 1 )
+
+[node name="Systems" type="Spatial" parent="."]
+
+[node name="WeaponNode" type="Spatial" parent="Systems"]
 
 [node name="AudioSystem" type="Spatial" parent="Systems"]
 
@@ -1104,3 +1109,55 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 26 )
 text = "Health: 100
 Ammo: 000/000"
+
+[node name="Hotbar" type="TextureRect" parent="HUD"]
+margin_left = 388.0
+margin_top = 623.0
+margin_right = 1036.0
+margin_bottom = 711.0
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="HotbarSlots" type="GridContainer" parent="HUD/Hotbar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 4.0
+margin_right = 16.0
+margin_bottom = 4.0
+custom_constants/hseparation = 6
+columns = 5
+
+[node name="Slot1" type="Panel" parent="HUD/Hotbar/HotbarSlots"]
+margin_right = 118.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 4 )
+
+[node name="Slot2" type="Panel" parent="HUD/Hotbar/HotbarSlots"]
+margin_left = 124.0
+margin_right = 242.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 4 )
+
+[node name="Slot3" type="Panel" parent="HUD/Hotbar/HotbarSlots"]
+margin_left = 248.0
+margin_right = 366.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 4 )
+
+[node name="Slot4" type="Panel" parent="HUD/Hotbar/HotbarSlots"]
+margin_left = 372.0
+margin_right = 490.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 4 )
+
+[node name="Slot5" type="Panel" parent="HUD/Hotbar/HotbarSlots"]
+margin_left = 496.0
+margin_right = 614.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 4 )
