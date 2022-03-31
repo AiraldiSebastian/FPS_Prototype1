@@ -22,6 +22,7 @@ func set_player_position(player):
 	transform.origin = POSITION
 	global_transform.basis = player.global_transform.basis
 
+
 func pick(audioPlayer):
 	print(get_parent())
 	get_parent().remove_child(self)
@@ -44,12 +45,12 @@ func fire(camera, direct_space_state, audioPlayer):
 	else:
 		current_ammo -= 1
 		audioPlayer.set_stream(AUDIO_FIRE)
-		var collision = direct_space_state.intersect_ray(camera.global_transform.origin, camera.global_transform.origin + camera.global_transform.basis.z * -20)
-		if collision and collision.collider:
-			print(collision.collider.get_parent().to_string())
-			if "healthSystem" in collision.collider.get_parent():
-				collision.collider.get_parent().healthSystem.take_damage(DAMAGE)
-				print(collision.collider.get_parent().healthSystem.get_health())
+		var collision = direct_space_state.intersect_ray(camera.global_transform.origin, camera.global_transform.origin + camera.global_transform.basis.z * -20, [], 4, true)
+		if collision:
+			print(collision.collider)
+			if "healthSystem" in collision.collider:
+				collision.collider.healthSystem.take_damage(DAMAGE)
+				print(collision.collider.healthSystem.get_health())
 				
 	audioPlayer.play()
 

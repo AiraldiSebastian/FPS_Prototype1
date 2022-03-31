@@ -12,14 +12,13 @@ size = Vector3( 2, 2, 0.1 )
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 1, 1, 0.05 )
 
-[node name="Target_Type_1" type="Spatial"]
+[node name="Target_Type_1" type="StaticBody"]
 script = ExtResource( 1 )
 
-[node name="StaticBody" type="StaticBody" parent="."]
-
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+[node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = SubResource( 2 )
+skeleton = NodePath("")
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 3 )

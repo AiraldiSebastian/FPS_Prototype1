@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Units/Zombies/Zeds-0-Zed_1.vox" type="ArrayMesh" id=1]
+[ext_resource path="res://scenes/Units/Enemies/Zombie.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.25
+height = 1.1
+
+[sub_resource type="CylinderShape" id=1]
+radius = 10.0
+height = 1.0
+
+[node name="Zombie" type="KinematicBody"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource( 2 )
+MAX_SPEED = 5
+ACCEL = 10
+GRAVITY = 10
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.8, 0 )
+shape = SubResource( 2 )
+
+[node name="Zeds-0-Zed_1" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="Area" type="Area" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+shape = SubResource( 1 )

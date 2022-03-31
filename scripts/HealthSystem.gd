@@ -1,5 +1,7 @@
 class_name HealthSystem
 
+signal isDead
+
 # Member invariables
 var MAX_HEALTH: int
 var currentHealth: int
@@ -15,6 +17,8 @@ func get_MAX_HEALTH():
 
 func take_damage(points):
 	currentHealth -= points
+	if is_health_zero():
+		emit_signal("isDead")
 
 
 func take_health(points):

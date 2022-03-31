@@ -1,4 +1,4 @@
-extends KinematicBody
+class_name FPS_Character extends KinematicBody
 
 # ----------------------------------
 # Physics
