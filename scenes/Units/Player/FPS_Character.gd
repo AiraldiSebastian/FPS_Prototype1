@@ -151,7 +151,7 @@ func process_movement(delta):
 		playerVel.y = -GRAVITY
 		animationDir.y = -1
 	
-	playerVel = move_and_slide_with_snap(playerVel, Vector3(0, -0.1, 0), Vector3.UP, true, 1, deg2rad(60), true)
+	playerVel = move_and_slide_with_snap(playerVel, Vector3(0, -0.1, 0), Vector3.UP, true, 1, deg2rad(MAX_SLOPE_ANGLE), true)
 	# ----------------------------------------------------------------------------------------------	
 
 
