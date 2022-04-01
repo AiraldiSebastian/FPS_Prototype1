@@ -43,7 +43,8 @@ var camera: Camera
 var rayCast: RayCast
 var skel: Skeleton
 var UI_GunLabel: Label
-var UI_Hotbar: TextureRect
+var UI_Inventory
+var UI_Hotbar
 
 # Variables based on scripts
 var healthSystem: HealthSystem
@@ -68,7 +69,8 @@ func _ready():
 	audioPlayer = $Systems/AudioSystem/AudioStreamPlayer
 	rayCast = $Camera/RayCast
 	UI_GunLabel = $HUD/Panel/Gun_label
-	UI_Hotbar = $HUD/Hotbar
+	UI_Inventory = $HUD/Inventory/Inventory
+	UI_Hotbar = $HUD/Inventory/Hotbar
 	weaponNode = $Systems/WeaponNode
 	
 	# Getters Script based
@@ -82,6 +84,8 @@ func _ready():
 	rayCast.cast_to = Vector3(0, 0, 20)
 	rayCast.set_collision_mask_bit(4, true)
 	
+	UI_Inventory.playerOwner = self
+	UI_Hotbar.playerOwner = self
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process():
@@ -270,9 +274,15 @@ func _unhandled_input(event):
 								change_weapon(UI_Hotbar.select_item(index))
 		if event.is_action_pressed("drop"):
 			if playerCurrentWeapon:
-				UI_Hotbar.drop_item(playerCurrentWeapon, self, get_parent())
+				UI_Hotbar.drop_item(playerCurrentWeapon, self)
 				playerCurrentWeapon = null
-				
+		if event.is_action_pressed("inventory"):
+			if UI_Inventory.is_visible():
+				UI_Inventory.set_visible(false)
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			else:
+				UI_Inventory.set_visible(true)
+				Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 
 
 func change_weapon(weapon: WeaponSystem):

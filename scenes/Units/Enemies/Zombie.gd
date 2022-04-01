@@ -30,7 +30,7 @@ func _physics_process(delta):
 		zombieVel = zombieVel.linear_interpolate(-global_transform.basis.z * MAX_SPEED, delta * ACCEL)
 	else:
 		zombieVel = Vector3(0, 0, 0)
-	move_and_slide(zombieVel, Vector3(0, 1, 0))
+	zombieVel = move_and_slide(zombieVel, Vector3(0, 1, 0))
 
 func add_bodyInArea(player):
 	bodyInArea = player

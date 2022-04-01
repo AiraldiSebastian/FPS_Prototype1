@@ -1,11 +1,14 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scenes/Units/Player/FPS_Character.gd" type="Script" id=1]
 [ext_resource path="res://scenes/InventorySystem/Hotbar/hotbar_background.png" type="Texture" id=2]
-[ext_resource path="res://scenes/Units/Player/Hotbar.gd" type="Script" id=3]
-[ext_resource path="res://scenes/InventorySystem/Hotbar/SlotHBar.gd" type="Script" id=4]
+[ext_resource path="res://scenes/InventorySystem/Hotbar/SlotHBarTest.gd" type="Script" id=3]
+[ext_resource path="res://scenes/InventorySystem/Inventory/inventory_background.png" type="Texture" id=4]
 [ext_resource path="res://assets/UI/32-32_white.png" type="Texture" id=5]
+[ext_resource path="res://scenes/InventorySystem/Inventory/Inventory.gd" type="Script" id=6]
 [ext_resource path="res://assets/UI/Titillium-Regular.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://scenes/InventorySystem/Inventory/Slot.gd" type="Script" id=8]
+[ext_resource path="res://scenes/InventorySystem/Hotbar/Hotbar-Test.gd" type="Script" id=10]
 
 [sub_resource type="CapsuleShape" id=14]
 radius = 0.6
@@ -1020,15 +1023,15 @@ anims/unarmed_left = SubResource( 12 )
 anims/unarmed_right = SubResource( 13 )
 
 [node name="HUD" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="Crosshair" type="Control" parent="HUD"]
 modulate = Color( 1, 1, 1, 0.705882 )
-anchor_left = 16.0
-anchor_top = 9.0
-anchor_right = 16.0
-anchor_bottom = 9.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 margin_left = -21.0
 margin_top = -21.0
 margin_right = 21.0
@@ -1110,54 +1113,249 @@ custom_fonts/font = SubResource( 26 )
 text = "Health: 100
 Ammo: 000/000"
 
-[node name="Hotbar" type="TextureRect" parent="HUD"]
-margin_left = 388.0
-margin_top = 623.0
-margin_right = 1036.0
-margin_bottom = 711.0
-texture = ExtResource( 2 )
-script = ExtResource( 3 )
-
-[node name="HotbarSlots" type="GridContainer" parent="HUD/Hotbar"]
+[node name="Inventory" type="Control" parent="HUD"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 16.0
-margin_top = 4.0
-margin_right = 16.0
-margin_bottom = 4.0
-custom_constants/hseparation = 6
+
+[node name="Hotbar" type="TextureRect" parent="HUD/Inventory"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -324.0
+margin_top = -88.0
+margin_right = 324.0
+texture = ExtResource( 2 )
+script = ExtResource( 10 )
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD/Inventory/Hotbar"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -309.0
+margin_top = -40.0
+margin_right = 309.0
+margin_bottom = 40.0
+
+[node name="SlotContainer" type="GridContainer" parent="HUD/Inventory/Hotbar/CenterContainer"]
+margin_right = 618.0
+margin_bottom = 80.0
+custom_constants/hseparation = 7
 columns = 5
 
-[node name="Slot1" type="Panel" parent="HUD/Hotbar/HotbarSlots"]
+[node name="Slot1" type="Panel" parent="HUD/Inventory/Hotbar/CenterContainer/SlotContainer"]
 margin_right = 118.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 118, 80 )
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 
-[node name="Slot2" type="Panel" parent="HUD/Hotbar/HotbarSlots"]
+[node name="Slot2" type="Panel" parent="HUD/Inventory/Hotbar/CenterContainer/SlotContainer"]
+margin_left = 125.0
+margin_right = 243.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 3 )
+
+[node name="Slot3" type="Panel" parent="HUD/Inventory/Hotbar/CenterContainer/SlotContainer"]
+margin_left = 250.0
+margin_right = 368.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 3 )
+
+[node name="Slot4" type="Panel" parent="HUD/Inventory/Hotbar/CenterContainer/SlotContainer"]
+margin_left = 375.0
+margin_right = 493.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 3 )
+
+[node name="Slot5" type="Panel" parent="HUD/Inventory/Hotbar/CenterContainer/SlotContainer"]
+margin_left = 500.0
+margin_right = 618.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 3 )
+
+[node name="Inventory" type="TextureRect" parent="HUD/Inventory"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -324.0
+margin_top = -200.0
+margin_right = 324.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 648, 400 )
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD/Inventory/Inventory"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -307.0
+margin_top = -178.0
+margin_right = 307.0
+margin_bottom = 178.0
+
+[node name="SlotContainer" type="GridContainer" parent="HUD/Inventory/Inventory/CenterContainer"]
+margin_right = 614.0
+margin_bottom = 356.0
+custom_constants/vseparation = 12
+custom_constants/hseparation = 6
+columns = 5
+
+[node name="Slot1" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
+margin_right = 118.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 8 )
+
+[node name="Slot2" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
 margin_left = 124.0
 margin_right = 242.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 118, 80 )
-script = ExtResource( 4 )
+script = ExtResource( 8 )
 
-[node name="Slot3" type="Panel" parent="HUD/Hotbar/HotbarSlots"]
+[node name="Slot3" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
 margin_left = 248.0
 margin_right = 366.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 118, 80 )
-script = ExtResource( 4 )
+script = ExtResource( 8 )
 
-[node name="Slot4" type="Panel" parent="HUD/Hotbar/HotbarSlots"]
+[node name="Slot4" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
 margin_left = 372.0
 margin_right = 490.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 118, 80 )
-script = ExtResource( 4 )
+script = ExtResource( 8 )
 
-[node name="Slot5" type="Panel" parent="HUD/Hotbar/HotbarSlots"]
+[node name="Slot5" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
 margin_left = 496.0
 margin_right = 614.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 118, 80 )
-script = ExtResource( 4 )
+script = ExtResource( 8 )
+
+[node name="Slot6" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
+margin_top = 92.0
+margin_right = 118.0
+margin_bottom = 172.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 8 )
+
+[node name="Slot7" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
+margin_left = 124.0
+margin_top = 92.0
+margin_right = 242.0
+margin_bottom = 172.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 8 )
+
+[node name="Slot8" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
+margin_left = 248.0
+margin_top = 92.0
+margin_right = 366.0
+margin_bottom = 172.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 8 )
+
+[node name="Slot9" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
+margin_left = 372.0
+margin_top = 92.0
+margin_right = 490.0
+margin_bottom = 172.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 8 )
+
+[node name="Slot10" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
+margin_left = 496.0
+margin_top = 92.0
+margin_right = 614.0
+margin_bottom = 172.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 8 )
+
+[node name="Slot11" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
+margin_top = 184.0
+margin_right = 118.0
+margin_bottom = 264.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 8 )
+
+[node name="Slot12" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
+margin_left = 124.0
+margin_top = 184.0
+margin_right = 242.0
+margin_bottom = 264.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 8 )
+
+[node name="Slot13" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
+margin_left = 248.0
+margin_top = 184.0
+margin_right = 366.0
+margin_bottom = 264.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 8 )
+
+[node name="Slot14" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
+margin_left = 372.0
+margin_top = 184.0
+margin_right = 490.0
+margin_bottom = 264.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 8 )
+
+[node name="Slot15" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
+margin_left = 496.0
+margin_top = 184.0
+margin_right = 614.0
+margin_bottom = 264.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 8 )
+
+[node name="Slot16" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
+margin_top = 276.0
+margin_right = 118.0
+margin_bottom = 356.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 8 )
+
+[node name="Slot17" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
+margin_left = 124.0
+margin_top = 276.0
+margin_right = 242.0
+margin_bottom = 356.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 8 )
+
+[node name="Slot18" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
+margin_left = 248.0
+margin_top = 276.0
+margin_right = 366.0
+margin_bottom = 356.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 8 )
+
+[node name="Slot19" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
+margin_left = 372.0
+margin_top = 276.0
+margin_right = 490.0
+margin_bottom = 356.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 8 )
+
+[node name="Slot20" type="Panel" parent="HUD/Inventory/Inventory/CenterContainer/SlotContainer"]
+margin_left = 496.0
+margin_top = 276.0
+margin_right = 614.0
+margin_bottom = 356.0
+rect_min_size = Vector2( 118, 80 )
+script = ExtResource( 8 )

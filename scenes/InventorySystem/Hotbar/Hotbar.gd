@@ -13,7 +13,7 @@ func put_item(new_item):
 		for i in arraySlots.size():
 			if !arraySlots[i]:
 				arraySlots[i] = new_item
-				get_child(0).get_child(i).put_item(new_item)
+				get_child(0).get_child(i).add_item(new_item)
 				return i
 	else:
 		print("Hotbar is full!")
@@ -22,7 +22,7 @@ func put_item(new_item):
 func drop_item(playerItem, player, world):
 	var index = get_itemIndex(playerItem)
 	if index >= 0:
-		get_child(0).get_child(index).drop_item()
+		get_node("CenterContainer/TextureRect/CenterContainer/SlotContainer").get_child(index).remove_item()
 	arraySlots[index] = null
 	playerItem.get_parent().remove_child(playerItem)
 	world.add_child(playerItem)
