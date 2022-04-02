@@ -15,10 +15,13 @@ var bodyInArea
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	AREA = $Area
+	# warning-ignore:return_value_discarded
 	AREA.connect("body_entered", self, "add_bodyInArea")
+	# warning-ignore:return_value_discarded
 	AREA.connect("body_exited", self, "remove_bodyInArea")
 	
 	healthSystem = HealthSystem.new(100, 100)
+	# warning-ignore:return_value_discarded
 	healthSystem.connect("isDead", self, "is_dead")
 	
 	

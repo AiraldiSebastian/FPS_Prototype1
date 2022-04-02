@@ -12,8 +12,8 @@ radius = 10.0
 height = 1.0
 
 [node name="Zombie" type="KinematicBody"]
-collision_layer = 4
-collision_mask = 3
+collision_layer = 4096
+collision_mask = 256
 script = ExtResource( 2 )
 MAX_SPEED = 5
 ACCEL = 10
@@ -28,8 +28,8 @@ mesh = ExtResource( 1 )
 material/0 = null
 
 [node name="Area" type="Area" parent="."]
-collision_layer = 4
-collision_mask = 2
+collision_layer = 8192
+collision_mask = 256
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )

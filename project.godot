@@ -19,6 +19,21 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/HealthSystem.gd"
 }, {
+"base": "Inventory",
+"class": "Hotbar",
+"language": "GDScript",
+"path": "res://scenes/InventorySystem/Hotbar/Hotbar.gd"
+}, {
+"base": "Reference",
+"class": "HotbarMarker",
+"language": "GDScript",
+"path": "res://scenes/InventorySystem/Hotbar/HotbarMarker.gd"
+}, {
+"base": "Slot",
+"class": "HotbarSlot",
+"language": "GDScript",
+"path": "res://scenes/InventorySystem/Hotbar/HotbarSlot.gd"
+}, {
 "base": "TextureRect",
 "class": "Inventory",
 "language": "GDScript",
@@ -34,11 +49,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/InventorySystem/Inventory/Slot.gd"
 }, {
-"base": "Slot",
-"class": "SlotHBarTest",
-"language": "GDScript",
-"path": "res://scenes/InventorySystem/Hotbar/SlotHBarTest.gd"
-}, {
 "base": "Spatial",
 "class": "WeaponSystem",
 "language": "GDScript",
@@ -47,10 +57,12 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "FPS_Character": "",
 "HealthSystem": "",
+"Hotbar": "",
+"HotbarMarker": "",
+"HotbarSlot": "",
 "Inventory": "",
 "PickDropSystem": "",
 "Slot": "",
-"SlotHBarTest": "",
 "WeaponSystem": ""
 }
 

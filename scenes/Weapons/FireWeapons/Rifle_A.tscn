@@ -30,8 +30,10 @@ extents = Vector3( 0.05, 0.06, 0.6 )
 [node name="Riffle_A" type="Spatial"]
 script = ExtResource( 2 )
 NAME = "Rifle_A"
-DAMAGE = 10
-MAX_AMMO = 10
+DAMAGE = 40
+MAX_AMMO = 20
+MAG_MAX_AMMO = 1
+DISTANCE = 150
 POSITION = Vector3( -0.36, 1.45, 0.5 )
 ICON = ExtResource( 7 )
 AUDIO_FIRE = ExtResource( 3 )
