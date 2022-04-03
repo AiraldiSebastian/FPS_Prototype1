@@ -100,8 +100,14 @@ func _physics_process(delta):
 	# Processes
 	process_movement(delta)
 	process_animation(delta)
+	process_input(delta)
 	
 	process_UI(delta)
+
+
+func process_input(_delta):
+		if Input.is_action_pressed("fire") and playerCurrentWeapon:
+			playerCurrentWeapon.fire(weaponRaycast)
 
 
 # This should be implemented as a signal from the HealthSystem to which the UI connects to
@@ -199,9 +205,9 @@ func process_animation(_delta):
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		camera_controll(event) 
-	if event is InputEventMouseButton:
-		if event.is_pressed() and playerCurrentWeapon:
-			playerCurrentWeapon.fire(weaponRaycast, audioPlayer)
+#	if event is InputEventMouseButton:
+#		if event.is_pressed() and playerCurrentWeapon:
+#			playerCurrentWeapon.fire(weaponRaycast)
 	if event is InputEventKey:
 		if event.is_action_pressed("change_camera"):
 			get_viewport().get_camera().clear_current();
@@ -222,12 +228,12 @@ func _unhandled_input(event):
 			UI_HotbarMarker.select_slot(4)
 		if event.is_action_pressed("reload"):
 			if playerCurrentWeapon:
-				playerCurrentWeapon.reload(audioPlayer)
+				playerCurrentWeapon.reload()
 		if event.is_action_pressed("interact"):
 			var collider = handsRaycast.get_collider()
 			if collider and collider.get_parent() and collider.get_parent() is WeaponSystem:
 				if !UI_Hotbar.is_full(UI_Inventory):
-					UI_Hotbar.put_item(collider.get_parent().pick(audioPlayer), UI_Inventory)
+					UI_Hotbar.put_item(collider.get_parent().pick(), UI_Inventory)
 		if event.is_action_pressed("drop"):
 			UI_Hotbar.drop_item(playerCurrentWeapon, self)
 		if event.is_action_pressed("inventory"):
@@ -251,7 +257,7 @@ func change_weapon(weapon: WeaponSystem):
 	if playerCurrentWeapon:
 		weaponNode.remove_child(playerCurrentWeapon)
 	if weapon:
-		playerCurrentWeapon = weapon.equip(audioPlayer)
+		playerCurrentWeapon = weapon.equip()
 		weaponNode.add_child(playerCurrentWeapon)
 		weaponRaycast.cast_to = Vector3(0, 0, -weapon.get_distance())
 		playerCurrentWeapon.set_player_position(self)
