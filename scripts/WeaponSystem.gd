@@ -86,13 +86,19 @@ func equip():
 	
 	return self
 
+func add_ammo(ammo: int):
+	if ammo:
+		current_ammo += ammo
+
 
 func reload():
 	if !timer.is_stopped():
-		return
+		return "USING"
 	if current_mag_ammo == MAG_MAX_AMMO:
-		return
-
+		return "FULL"
+	if current_ammo == 0:
+		return "EMPTY"
+	
 	timer.start(RELOAD_TIME)
 	
 	var reload_ammo_needed = MAG_MAX_AMMO - current_mag_ammo
@@ -109,6 +115,7 @@ func reload():
 	add_child(audioPlayer)
 	audioPlayer.play_sound()
 	# ----------
+
 
 func get_current_mag_ammo():
 	return current_mag_ammo

@@ -29,7 +29,9 @@ surfaces/0 = {
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.05, 0.06, 0.5 )
 
-[node name="AssaultRiffle_A" type="Spatial"]
+[node name="AssaultRiffle_A" type="RigidBody"]
+collision_layer = 16
+collision_mask = 4113
 script = ExtResource( 3 )
 NAME = "AssaultRifle_A"
 DAMAGE = 10
@@ -55,9 +57,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27959, -0.19375, 5.31498 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="."]
-collision_layer = 16
-
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0111833, 0 )
 shape = SubResource( 2 )

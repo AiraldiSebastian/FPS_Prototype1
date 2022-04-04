@@ -1,20 +1,20 @@
 class_name Slot extends Panel
 
 signal itemChanged
-var ItemTextureClass = preload("res://scenes/InventorySystem/Inventory/ItemTexture.gd")
 
 
-func add_item(item):
+func add_ItemTexture(item):
 	if get_child_count() > 0:
 		return false
 	
 	# Create the Texture for the item being added
-	var nodeIcon = ItemTextureClass.new()
+	var nodeIcon:ItemTexture = ItemTexture.new()
 	nodeIcon.itemRef = item
 	nodeIcon.texture = item.get_icon()
 	
 	add_child(nodeIcon)
 	
+	# Center our item's texture
 	nodeIcon.set_anchors_preset(Control.PRESET_CENTER)
 	nodeIcon.set_margins_preset(Control.PRESET_CENTER)
 	
@@ -23,7 +23,7 @@ func add_item(item):
 	return true
 
 
-func remove_item():
+func remove_ItemTexture():
 	if get_child_count() == 0:
 		return null
 	
@@ -35,21 +35,39 @@ func remove_item():
 	return retNode
 
 
+func delete_ItemTexture():
+	if get_child_count() == 0:
+		return
+	
+	var itemTexture = get_child(0)
+	remove_child(itemTexture)
+	itemTexture.queue_free()
+	
+	# Communicate the signal
+	emit_signal("itemChanged", get_itemRef())
+
+
+func get_itemRef():
+	return get_child(0).itemRef if get_child_count() > 0 else null
+
+
+# Functions specifically for draggin the item's texture
+# --------------------------------------------------------------------------------------------------
 func get_drag_data(_position):
 	if get_child_count() == 0:
 		return null
 	
-	# Create the Texture that will be previewed when moving the item
-	var copyIconNode = ItemTextureClass.new()
-	copyIconNode.itemRef = get_child(0).itemRef
-	copyIconNode.texture = get_child(0).texture
+	# Create the texture that will be previewed when draggin the item around
+	var copyIconNode = ItemTexture.new()
+	copyIconNode.set_itemRef(get_child(0).get_itemRef())
+	copyIconNode.set_texture(get_child(0).get_texture())
 	set_drag_preview(copyIconNode)
 	
 	return get_child(0)
 
 
 func can_drop_data(_position, data):
-	if !data is TextureRect:
+	if !data is ItemTexture:
 		return false
 	
 	# Check if drop position is same as the picked-up position
@@ -62,10 +80,10 @@ func drop_data(_position, data):
 	# Store a reference to data's parent
 	var dataParent = data.get_parent()
 	
-	# Remove data from its parent Slot
+	# Remove data from its parent slot
 	dataParent.remove_child(data)
 	
-	# If this slot has a child, add it to the other slot and remove it from this
+	# If this slot has a child, remove it and add it to the other slot
 	if get_child_count() > 0:
 		var ourChild = get_child(0)
 		remove_child(ourChild)
@@ -74,10 +92,7 @@ func drop_data(_position, data):
 	# Add the data as a child of this slot
 	add_child(data)
 	
-	# Communicate the signal
+	# Communicate signal on bot slots
 	dataParent.emit_signal("itemChanged", dataParent.get_itemRef())
 	emit_signal("itemChanged", get_itemRef())
-
-
-func get_itemRef():
-	return get_child(0).itemRef if get_child_count() > 0 else null
+# --------------------------------------------------------------------------------------------------

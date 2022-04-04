@@ -1,12 +1,12 @@
-extends TextureRect
+class_name ItemTexture extends TextureRect
 
-var itemRef
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var itemRef setget set_itemRef, get_itemRef
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+# Setters
+func set_itemRef(newItemRef):
+	itemRef = newItemRef
+
+# Getters
+func get_itemRef():
+	return itemRef

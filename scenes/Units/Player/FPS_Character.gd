@@ -18,6 +18,7 @@ var is_sprinting: bool = false
 # ----------------------------------
 # Health
 export var MAX_HEALTH: int
+export var START_HEALTH: int
 # ----------------------------------
 
 
@@ -47,7 +48,6 @@ var UI_HUD: Control
 var UI_GunLabel: Label
 var UI_Inventory: Inventory
 var UI_Hotbar: Hotbar
-var Class_HotbarMarker = preload("res://scenes/InventorySystem/Hotbar/HotbarMarker.gd")
 var UI_HotbarMarker: HotbarMarker
 
 # Variables based on scripts
@@ -58,7 +58,7 @@ var MOUSE_SENSITIVITY:float = 0.005
 
 # Weapon related
 var weaponNode
-var playerCurrentWeapon: WeaponSystem
+var playerCurrentWeapon
 # ----------------------------------
 
 
@@ -76,11 +76,11 @@ func _ready():
 	UI_GunLabel = $HUD/Panel/Gun_label
 	UI_Inventory = $HUD/Inventory/Inventory
 	UI_Hotbar = $HUD/Inventory/Hotbar
-	UI_HotbarMarker = Class_HotbarMarker.new(UI_Hotbar)
+	UI_HotbarMarker = HotbarMarker.new(UI_Hotbar)
 	weaponNode = $Systems/WeaponNode
 	
 	# Getters Script based
-	healthSystem = load("res://scripts/HealthSystem.gd").new(MAX_HEALTH, MAX_HEALTH)
+	healthSystem = load("res://scripts/HealthSystem.gd").new(MAX_HEALTH, START_HEALTH)
 	
 	
 	# Setters
@@ -106,17 +106,24 @@ func _physics_process(delta):
 
 
 func process_input(_delta):
-		if Input.is_action_pressed("fire") and playerCurrentWeapon:
-			playerCurrentWeapon.fire(weaponRaycast)
+	if !UI_Inventory.is_visible():
+		if Input.is_action_pressed("fire"):
+			if playerCurrentWeapon is WeaponSystem:
+				playerCurrentWeapon.fire(weaponRaycast)
+			elif playerCurrentWeapon is MedicKit:
+				healthSystem.take_health(UI_HotbarMarker.use_item())
 
 
 # This should be implemented as a signal from the HealthSystem to which the UI connects to
 func process_UI(_delta):
-	if playerCurrentWeapon:
-		UI_GunLabel.text = "HEALTH: " + str(healthSystem.get_health()) + \
+	if playerCurrentWeapon is WeaponSystem:
+		UI_GunLabel.text = "HEALTH: " + str(healthSystem.get_health()) + "/" + str(healthSystem.get_MAX_HEALTH()) + \
 				"\nAMMO: " + str(playerCurrentWeapon.get_current_mag_ammo()) + "/" + str(playerCurrentWeapon.get_current_ammo())
+	elif playerCurrentWeapon is MedicKit:
+		UI_GunLabel.text = "HEALTH: " + str(healthSystem.get_health()) + "/" + str(healthSystem.get_MAX_HEALTH()) + \
+				"\nHealing: " + str(playerCurrentWeapon.get_healing())
 	else:
-		UI_GunLabel.text = "HEALTH: " + str(healthSystem.get_health())
+		UI_GunLabel.text = "HEALTH: " + str(healthSystem.get_health()) + "/" + str(healthSystem.get_MAX_HEALTH())
 
 
 func process_movement(delta):
@@ -212,33 +219,57 @@ func _unhandled_input(event):
 		if event.is_action_pressed("change_camera"):
 			get_viewport().get_camera().clear_current();
 		if event.is_action_pressed("key_1"):
-#			change_weapon(UI_Hotbar.select_item(0))
 			UI_HotbarMarker.select_slot(0)
 		if event.is_action_pressed("key_2"):
-#			change_weapon(UI_Hotbar.select_item(1))
 			UI_HotbarMarker.select_slot(1)
 		if event.is_action_pressed("key_3"):
-#			change_weapon(UI_Hotbar.select_item(2))
 			UI_HotbarMarker.select_slot(2)
 		if event.is_action_pressed("key_4"):
-#			change_weapon(UI_Hotbar.select_item(3))
 			UI_HotbarMarker.select_slot(3)
 		if event.is_action_pressed("key_5"):
-#			change_weapon(UI_Hotbar.select_item(4))
 			UI_HotbarMarker.select_slot(4)
 		if event.is_action_pressed("reload"):
-			if playerCurrentWeapon:
-				playerCurrentWeapon.reload()
+			reload()
 		if event.is_action_pressed("interact"):
 			var collider = handsRaycast.get_collider()
-			if collider and collider.get_parent() and collider.get_parent() is WeaponSystem:
-				if !UI_Hotbar.is_full(UI_Inventory):
-					UI_Hotbar.put_item(collider.get_parent().pick(), UI_Inventory)
+			if collider:
+				if collider is WeaponSystem or collider is MedicKit or collider is Ammo:
+					if !UI_Hotbar.is_full(UI_Inventory):
+						UI_Hotbar.add_item(collider.pick(), UI_Inventory)
 		if event.is_action_pressed("drop"):
+			# This is very dangerous, because the weapon will be assigned as a child of world
+			# but the weapon is already being hold by the player. The player should drop
+			# the weapon because of the emited signal by the slot, when we remove it from it.
+			# But if the signal arrives later, the method "drop_item()" will try to add this weapon
+			# as a child of the world, before the player had the chance to drop it in "change_weapons()" 
 			UI_Hotbar.drop_item(playerCurrentWeapon, self)
 		if event.is_action_pressed("inventory"):
 			open_inventory()
 
+
+func interact():
+	pass
+
+func reload():
+	if playerCurrentWeapon is WeaponSystem:
+		if playerCurrentWeapon.reload() == "EMPTY":
+			var ammoItem = null
+			var ammo = null
+			# First search in Hotbar
+			ammoItem = UI_Hotbar.get_first_item_of_type("Ammo")
+			if ammoItem:
+				ammo = UI_Hotbar.get_item_usage(ammoItem)
+				if ammo:
+					playerCurrentWeapon.add_ammo(ammo)
+					return
+			
+			# Second search in Inventory
+			ammoItem = UI_Inventory.get_first_item_of_type("Ammo")
+			if ammoItem:
+				ammo = UI_Inventory.get_item_usage(ammoItem)
+				if ammo:
+					playerCurrentWeapon.add_ammo(ammo)
+					return
 
 func open_inventory():
 	if UI_Inventory.is_visible():
@@ -251,7 +282,7 @@ func open_inventory():
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 
 
-func change_weapon(weapon: WeaponSystem):
+func change_weapon(weapon):
 #	Method 1
 #	------------------------------------------------------------------------------------------------
 	if playerCurrentWeapon:
@@ -259,7 +290,8 @@ func change_weapon(weapon: WeaponSystem):
 	if weapon:
 		playerCurrentWeapon = weapon.equip()
 		weaponNode.add_child(playerCurrentWeapon)
-		weaponRaycast.cast_to = Vector3(0, 0, -weapon.get_distance())
+		if weapon is WeaponSystem:
+			weaponRaycast.cast_to = Vector3(0, 0, -weapon.get_distance())
 		playerCurrentWeapon.set_player_position(self)
 	else:
 		playerCurrentWeapon = null

@@ -4,14 +4,23 @@ signal itemChanged
 
 var slotContainer: GridContainer
 var connectedSlot: HotbarSlot
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var connectedHotbar: Hotbar
 
 
 func _init(hotbar: Hotbar):
+	connectedHotbar = hotbar
 	slotContainer = hotbar.get_slot_container()
+
+
+func use_item():
+	if connectedSlot.get_itemRef() is WeaponSystem:
+		pass
+	# This operation with MedicKit is extremely dangerous! If the emited signal doesnt arrive first
+	# player will have a reference to a deleted object and program will crash!!!
+	elif connectedSlot.get_itemRef() is MedicKit:
+		var retHealth = connectedHotbar.get_item_usage(connectedSlot.get_itemRef())
+		return retHealth
+
 
 func select_slot(index: int):
 	# Check if index is invalid
