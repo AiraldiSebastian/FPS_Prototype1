@@ -1,0 +1,593 @@
+class_name Character extends KinematicBody
+
+
+# Global dictionary containing layers and mask bits reference for all classes
+#var layerReference
+
+# Movement related
+# ----------------------------------
+# Physics
+export var GRAVITY:	int
+
+# Kinematic
+export var MAX_SPEED:		int
+export var ACCEL:			int
+export var MAX_SLOPE_ANGLE:	int
+
+var playerVel:		Vector3
+var playerDir:		Vector3
+var animationDir: 	Vector3
+
+var is_sprinting: 	bool
+# ----------------------------------
+
+
+# Health related
+# ----------------------------------
+# Health
+var healthSystem:		HealthSystem
+
+export var MAX_HEALTH:		int
+export var START_HEALTH:	int
+# ----------------------------------
+
+
+# Camera control
+# ----------------------------------
+# Rotation holder
+var rot_horiz:	float
+var rot_verti:	float
+
+# Camera and Skeleton nodes
+var perspCamera:		Camera
+var skel:				Skeleton
+var perspSkel:			Skeleton
+# ----------------------------------
+
+
+# Animation & Audio
+# ----------------------------------
+var characterAnim:		AnimationPlayer
+var perspectiveAnim:	AnimationPlayer
+var charMoveState:		AnimationTree
+var audioPlayer:		AudioStreamPlayer
+var audioPlayerContinuous: AudioStreamPlayer
+#var audio_default_fire: AudioStream
+var playerState:		BaseState
+# ----------------------------------
+
+
+# Weapons
+# ----------------------------------
+var playerCurrentItem
+var perspCurrentItem
+var weaponRaycast:			RayCast
+
+var handRight:				BoneAttachment
+var perspHandRight:			BoneAttachment
+# ----------------------------------
+
+
+# Interaction
+# ----------------------------------
+var handRaycast:		RayCast
+# ----------------------------------
+
+
+# User Interface
+# ----------------------------------
+var UI_HUD:				Control
+var UI_InfoLabel:		Label
+var UI_Inventory:		Inventory
+var UI_Hotbar:			Hotbar
+var UI_HotbarMarker:	HotbarMarker
+# ----------------------------------
+
+
+# Others
+# ----------------------------------
+# For debugging
+var counterFrames:	int = 0
+var counterFrames2:	int = 0
+var counterFrames3:	int = 0
+var counterFrames4:	int = 0
+var counterFrames5:	int = 0
+
+# Mouse
+var MOUSE_SENSITIVITY:	float
+# ----------------------------------
+
+
+func _ready():
+	
+	# Movement related
+	# ----------------------------------
+	playerVel		= Vector3()
+	playerDir		= Vector3()
+	animationDir	= Vector3()
+
+	is_sprinting	= false
+	# ----------------------------------
+
+
+	# Health related
+	# ----------------------------------
+	healthSystem = HealthSystem.new(MAX_HEALTH, START_HEALTH)
+	# ----------------------------------
+
+
+	# Camera control
+	# ----------------------------------
+	# Rotation holder
+	rot_horiz = 0
+	rot_verti = 0
+
+	# Camera and Skeleton nodes
+	perspCamera		= $Perspective/Armature/Skeleton/CameraAttachment/Camera
+	skel			= $Armature/Skeleton
+	perspSkel		= $Perspective/Armature/Skeleton
+	# ----------------------------------
+
+
+	# Animation & Audio
+	# ----------------------------------
+	characterAnim	= $CharacterAnimation
+	perspectiveAnim	= $Perspective/PerspectiveAnimation
+	charMoveState	= $AnimationTree
+	charMoveState.set_active(true)
+	audioPlayer	= $AudioStreamPlayer
+	audioPlayerContinuous = $AudioManager
+	playerState		= UnequipItemState.new(self, audioPlayer, audioPlayerContinuous)
+	playerState.play_state()
+	
+#	audio_default_fire = load("res://assets/Weapons/FireWeapons/AssaultRifle_A/fire_assault_rifle.tres")
+	# ----------------------------------
+
+
+	# Weapons
+	# ----------------------------------
+	playerCurrentItem	= null
+	perspCurrentItem	= null
+	
+	handRight		= $Armature/Skeleton/RightHand
+	perspHandRight	= $Perspective/Armature/Skeleton/RightHand
+	
+	weaponRaycast	= $Perspective/Armature/Skeleton/CameraAttachment/Camera/WeaponRaycast
+	weaponRaycast.set_collision_mask_bit(12, true)
+	# ----------------------------------
+
+
+	# Interaction
+	# ----------------------------------
+	handRaycast		= $Perspective/Armature/Skeleton/CameraAttachment/Camera/HandRaycast
+	
+	handRaycast.set_cast_to(Vector3(0, 0, -4))
+	handRaycast.set_collision_mask_bit(4, true)
+	# ----------------------------------
+
+
+	# User Interface
+	# ----------------------------------
+	UI_HUD			= $HUD
+	UI_InfoLabel	= $HUD/Panel/Info_Label
+	UI_Inventory	= $HUD/Inventory/Inventory
+	UI_Hotbar		= $HUD/Inventory/Hotbar
+	UI_HotbarMarker = HotbarMarker.new(UI_Hotbar)
+	
+	# warning-ignore:return_value_discarded
+	UI_HUD.connect("drop_item", self, "hud_event")
+	# warning-ignore:return_value_discarded
+	UI_HotbarMarker.connect("itemChanged", self, "hotbar_event")
+	# ----------------------------------
+
+
+	# Mouse
+	# ----------------------------------
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	MOUSE_SENSITIVITY	= 0.005
+	# ----------------------------------
+	
+	
+	# warning-ignore:return_value_discarded
+	characterAnim.connect("animation_started", self, "print_animation_info", ["Character"])
+
+
+func hud_event(item):
+	# This is generated by an item drop on the HUD
+	# ----------------------------------------------------------------------------------------------
+	if !UI_Hotbar.drop_item(item, self):
+		UI_Inventory.drop_item(item, self)
+	# ----------------------------------------------------------------------------------------------
+
+
+func hotbar_event(item):
+	# This is generated by an item switch between slots
+	# ----------------------------------------------------------------------------------------------
+	var event = InputEventAction.new()
+	event.pressed = true
+	if item:
+		event.action = "equip_item"
+	else:
+		event.action = "unequip_item"
+	handle_input(event)
+	# ----------------------------------------------------------------------------------------------
+
+
+func print_animation_info(animationPlaying: String, animationPlayer: String):
+	if animationPlaying != "idle":
+		print(animationPlayer, " is playing: \"", animationPlaying, "\"")
+
+
+func _physics_process(delta):
+	# Processes
+	# -----------------------
+	process_input(delta)
+	process_ui(delta)
+	process_movement(delta)
+#	print(get_child_count())
+#	# Play sound
+#	audioPlayer = AudioManager.new(AUDIO_EQUIP)
+#	add_child(audioPlayer)
+#	audioPlayer.play_sound()
+#	# ----------
+
+	# -----------------------
+
+
+func handle_input(event: InputEvent):
+#	print("========================")
+#	print("===== handle_input =====")
+#	print("Input is: ", event.as_text())
+	var new_state: BaseState = playerState.handle_input(event)
+#	if playerState:
+#		print("PlayerState: ", playerState.get_name())
+#	else:
+#		print("PlayerState: ", null)
+#	if new_state:
+#		print("NewState: ", new_state.get_name())
+#	else:
+#		print("NewState: ", null)
+	if new_state:
+		playerState = new_state
+		new_state.play_state()
+		return true
+	return false
+	
+
+
+func update():
+	pass
+
+
+func process_input(_delta):
+	if !UI_Inventory.is_visible():
+		if Input.is_action_pressed("use_item") and playerCurrentItem is FireWeapon:
+			# This event is exclusively emited if and only if the current item
+			# is a FireWeapon, otherwise it should be handled in _unhandled_input
+			var event = InputEventAction.new()
+			event.action = "use_item"
+			event.pressed = true
+			handle_input(event)
+
+
+
+# This should maybe be implemented as a signal from the HealthSystem and Weapon to which the UI connects to
+func process_ui(_delta):
+	# Method 1
+	# ----------------------------------------------------------------------------------------------
+	if playerCurrentItem is FireWeapon:
+		UI_InfoLabel.text = "HEALTH: " + str(healthSystem.get_health()) + "/" + str(healthSystem.get_MAX_HEALTH()) + \
+				"\nAMMO: " + str(playerCurrentItem.get_current_mag_ammo()) + "/" + str(playerCurrentItem.get_current_ammo())
+	elif playerCurrentItem is MedicKit:
+		UI_InfoLabel.text = "HEALTH: " + str(healthSystem.get_health()) + "/" + str(healthSystem.get_MAX_HEALTH()) + \
+				"\nHealing: " + str(playerCurrentItem.get_heal_effect())
+	else:
+		UI_InfoLabel.text = "HEALTH: " + str(healthSystem.get_health()) + "/" + str(healthSystem.get_MAX_HEALTH())
+	# ----------------------------------------------------------------------------------------------
+
+
+func process_movement(delta):
+	# Method 1
+	# ----------------------------------------------------------------------------------------------
+	animationDir = Vector3()
+	playerDir = Vector3()
+	
+	if Input.is_action_pressed("movement_forward"):
+		playerDir += transform.basis.z
+		animationDir.z += 1
+	if Input.is_action_pressed("movement_backward"):
+		playerDir -= transform.basis.z
+		animationDir.z -= 1
+	if Input.is_action_pressed("movement_left"):
+		playerDir += transform.basis.x
+		animationDir.x += 1
+	if Input.is_action_pressed("movement_right"):
+		playerDir -= transform.basis.x
+		animationDir.x -= 1
+
+	playerDir = playerDir.normalized()
+	
+	
+	playerVel = playerVel.linear_interpolate(playerDir * MAX_SPEED, delta * ACCEL)
+	
+	if playerVel.length() > MAX_SPEED:
+		playerVel = playerVel.normalized() * MAX_SPEED
+		
+	if !is_on_floor():
+		playerVel.y = -GRAVITY
+		animationDir.y = -1
+	
+	charMoveState.set("parameters/blend_position", Vector2(animationDir.x, animationDir.z))
+	playerVel = move_and_slide_with_snap(playerVel, Vector3(0, -0.1, 0), Vector3.UP, true, 1, deg2rad(MAX_SLOPE_ANGLE), true)
+	# ----------------------------------------------------------------------------------------------
+
+
+func _unhandled_input(event):
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		camera_control(event)
+	if event is InputEventKey:
+		# Keynums input
+		# ----------------------------------------------------------------------
+		if event.is_action_pressed("key_1"):
+			UI_HotbarMarker.select_slot(0)
+		if event.is_action_pressed("key_2"):
+			UI_HotbarMarker.select_slot(1)
+		if event.is_action_pressed("key_3"):
+			UI_HotbarMarker.select_slot(2)
+		if event.is_action_pressed("key_4"):
+			UI_HotbarMarker.select_slot(3)
+		if event.is_action_pressed("key_5"):
+			UI_HotbarMarker.select_slot(4)
+		# ----------------------------------------------------------------------
+		
+		# Keyletters input
+		# ----------------------------------------------------------------------
+		if event.is_action_pressed("interact"):
+			interact()
+		if event.is_action_pressed("drop"):
+			UI_Hotbar.drop_item(playerCurrentItem, self)
+		if event.is_action_pressed("inventory"):
+			use_inventory()
+		# ----------------------------------------------------------------------
+		
+		# Others
+		# ----------------------------------------------------------------------
+		if event.is_action_pressed("change_camera"):
+			get_viewport().get_camera().clear_current();
+		# ----------------------------------------------------------------------
+	handle_input(event)
+
+
+func camera_control(event):
+	# Update our rotations variables in function of mouse movement
+	# ----------------------------------------------------------------------------------------------
+	rot_horiz += event.relative.x * MOUSE_SENSITIVITY
+	rot_verti += event.relative.y * MOUSE_SENSITIVITY
+	# ----------------------------------------------------------------------------------------------
+
+
+	# Clamp the values to the allowed degree of motion 
+	# ----------------------------------------------------------------------------------------------
+	rot_horiz += clamp(rot_horiz, deg2rad(0), deg2rad(360))
+	rot_verti = clamp(rot_verti, deg2rad(-70), deg2rad(70))
+	# ----------------------------------------------------------------------------------------------
+
+
+	# Rotate on Y-Axis (Horizontally)
+	# ----------------------------------------------------------------------------------------------
+	transform.basis = Basis()
+	rotate_object_local(Vector3(0, 1, 0), -rot_horiz)
+	# ----------------------------------------------------------------------------------------------
+
+
+	# Rotate first on characters skeleton
+	# ----------------------------------------------------------------------------------------------
+	# Rotate Head on X-Axis (Vertically)
+	var headBoneIndex = skel.find_bone("head")
+	var headBoneTransform = skel.get_bone_custom_pose(headBoneIndex)
+	skel.set_bone_pose(headBoneIndex, headBoneTransform.rotated(Vector3(1, 0, 0), rot_verti))
+	
+	# Rotate arms on X-Axis (Vertically)
+	if playerCurrentItem:
+		var armsIndex = skel.find_bone("arm_control")
+		var armsTransform = skel.get_bone_custom_pose(armsIndex)
+		skel.set_bone_pose(armsIndex, armsTransform.rotated(Vector3(1, 0, 0), rot_verti))
+	# ----------------------------------------------------------------------------------------------
+	
+	
+	# Rotate now on the perspective skeleton
+	# ----------------------------------------------------------------------------------------------
+	# Rotate Head on X-Axis (Vertically)
+	var perspHeadBoneIndex = perspSkel.find_bone("head")
+	var perspHeadBoneTransform = perspSkel.get_bone_custom_pose(perspHeadBoneIndex)
+	perspSkel.set_bone_pose(perspHeadBoneIndex, perspHeadBoneTransform.rotated(Vector3(1, 0, 0), rot_verti))
+	
+	# Rotate arms on X-Axis (Vertically)
+	if playerCurrentItem:
+		var perspArmsIndex = perspSkel.find_bone("arm_control")
+		var perspArmsTransform = perspSkel.get_bone_custom_pose(perspArmsIndex)
+		perspSkel.set_bone_pose(perspArmsIndex, perspArmsTransform.rotated(Vector3(1, 0, 0), rot_verti))
+	# ----------------------------------------------------------------------------------------------
+
+
+func interact():
+	var object = handRaycast.get_collider()
+	print(object)
+	if object:
+		if object is FireWeapon or object is MedicKit or object is Ammo:
+			if !UI_Hotbar.is_full(UI_Inventory):
+				UI_Hotbar.add_item(object.pick(audioPlayer.get_path()), UI_Inventory)
+
+
+func reload():
+	if playerCurrentItem is FireWeapon:
+		if playerCurrentItem.reload() == "EMPTY":
+			var item = null
+			var ammo = null
+			
+			# First search in Hotbar
+			# --------------------------------------------------------------------------------------
+			item = UI_Hotbar.get_first_item_of_type("Ammo")
+			if item:
+				ammo = UI_Hotbar.get_item_usage(item)
+				if ammo:
+					playerCurrentItem.add_ammo(ammo)
+					perspCurrentItem.add_ammo(ammo)
+					return
+			# --------------------------------------------------------------------------------------
+			
+			# Second search in Inventory
+			# --------------------------------------------------------------------------------------
+			item = UI_Inventory.get_first_item_of_type("Ammo")
+			if item:
+				ammo = UI_Inventory.get_item_usage(item)
+				if ammo:
+					playerCurrentItem.add_ammo(ammo)
+					perspCurrentItem.add_ammo(ammo)
+					return
+			# --------------------------------------------------------------------------------------
+	return true
+
+
+func use_inventory():
+	if UI_Inventory.is_visible():
+		UI_HUD.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
+		UI_Inventory.set_visible(false)
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	else:
+		UI_HUD.set_mouse_filter(Control.MOUSE_FILTER_STOP)
+		UI_Inventory.set_visible(true)
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+
+
+func reset_arms():
+	# Set the arm_control to its rest position as well as the arms
+	# ----------------------------------------------------------------------------------------------
+	# Rotate first on the characters skeleton
+	var armsIndex = skel.find_bone("arm_control")
+	skel.set_bone_pose(armsIndex, Transform.IDENTITY)
+	
+	# Rotate now on the perspective skeleton
+	var perspArmsIndex = perspSkel.find_bone("arm_control")
+	perspSkel.set_bone_pose(perspArmsIndex, Transform.IDENTITY)
+	# ----------------------------------------------------------------------------------------------
+
+
+func unequip_items():
+	remove_items()
+	reset_arms()
+
+
+func remove_items():
+	if !playerCurrentItem:
+		return 
+
+
+	# Remove characters weapon and delete the perspective weapon
+	# ----------------------------------------------------------------------------------------------
+	handRight.remove_child(playerCurrentItem)
+	
+	var perspItem = perspHandRight.get_child(0)
+	perspHandRight.remove_child(perspItem)
+	perspItem.queue_free()
+	# ----------------------------------------------------------------------------------------------
+	
+	
+	# Set the initial collision layers and masks for the characters weapon
+	# This only needs to be made for the characters weapon, since the other will be deleted
+	# ----------------------------------------------------------------------------------------------
+	playerCurrentItem.set_mode(RigidBody.MODE_RIGID)
+	playerCurrentItem.set_initial_layers()
+	playerCurrentItem.set_initial_masks()
+	# ----------------------------------------------------------------------------------------------
+	
+	
+	# Reset the layer mask bits from the characters weapon mesh
+	# ----------------------------------------------------------------------------------------------
+	var weaponMesh = playerCurrentItem.get_item_mesh()
+	weaponMesh.set_layer_mask_bit(4, true)
+	weaponMesh.set_layer_mask_bit(5, false)
+	# ----------------------------------------------------------------------------------------------
+	
+	
+	# Set the curren items to null
+	# ----------------------------------------------------------------------------------------------
+	playerCurrentItem = null
+	perspCurrentItem = null
+	weaponRaycast.cast_to = Vector3(0, 0, 0)
+	# ----------------------------------------------------------------------------------------------
+
+
+func equip_items():
+	# Remove current items
+	# ----------------------------------------------------------------------------------------------
+	remove_items()
+	# ----------------------------------------------------------------------------------------------
+	
+	
+	# Get the new Item
+	# ----------------------------------------------------------------------------------------------
+	var item = UI_HotbarMarker.get_item()
+	if !item:
+		return
+	# ----------------------------------------------------------------------------------------------
+	
+	
+	# First of all set the arm_control rotation to the heads rotation
+	# Only if the player didnt had any item equipped
+	# ----------------------------------------------------------------------------------------------
+	if !playerCurrentItem:
+		# Rotate first on the characters skeleton	
+		var armsIndex = skel.find_bone("arm_control")
+		var armsTransform = skel.get_bone_custom_pose(armsIndex)
+		skel.set_bone_pose(armsIndex, armsTransform.rotated(Vector3(1, 0, 0), rot_verti))
+
+		# Rotate now on the perspective skeleton
+		var perspArmsIndex = perspSkel.find_bone("arm_control")
+		var perspArmsTransform = perspSkel.get_bone_custom_pose(perspArmsIndex)
+		perspSkel.set_bone_pose(perspArmsIndex, perspArmsTransform.rotated(Vector3(1, 0, 0), rot_verti))
+	# ----------------------------------------------------------------------------------------------
+	
+	
+	# Change the item type from rigid to static and turn off collisions
+	# ----------------------------------------------------------------------------------------------
+	playerCurrentItem = item.equip()
+	playerCurrentItem.set_mode(RigidBody.MODE_STATIC)
+	playerCurrentItem.clear_all_layers()
+	playerCurrentItem.clear_all_masks()
+	playerCurrentItem.set_identity()
+	
+	perspCurrentItem = playerCurrentItem.clone()
+	perspCurrentItem.set_mode(RigidBody.MODE_STATIC)
+	perspCurrentItem.clear_all_layers()
+	perspCurrentItem.clear_all_masks()
+	perspCurrentItem.set_identity()
+	# ----------------------------------------------------------------------------------------------
+	
+	
+	# Make the characters item mesh invisible for our camera perspective 8, 10 | 6, 7, 9
+	# ----------------------------------------------------------------------------------------------
+	var itemMesh = playerCurrentItem.get_item_mesh()
+	itemMesh.set_layer_mask_bit(4, false)
+	itemMesh.set_layer_mask_bit(5, true)
+	
+	itemMesh = perspCurrentItem.get_item_mesh()
+	itemMesh.set_layer_mask_bit(4, false)
+	itemMesh.set_layer_mask_bit(7, true)
+	# ----------------------------------------------------------------------------------------------
+	
+	
+	# Add the items to the hands
+	# ----------------------------------------------------------------------------------------------
+	handRight.add_child(playerCurrentItem)
+	handRight.get_child(0).translate_object_local(handRight.get_child(0).get_hand_position())
+	perspHandRight.add_child(perspCurrentItem)
+	perspHandRight.get_child(0).translate_object_local(perspHandRight.get_child(0).get_hand_position())
+	# ----------------------------------------------------------------------------------------------
+	
+	
+	# If the item is a fire weapon, adjust the weaponsRaycast to the weapons range
+	# ----------------------------------------------------------------------------------------------
+	if item is FireWeapon:
+		item.set_raycast(weaponRaycast)
+	# ----------------------------------------------------------------------------------------------

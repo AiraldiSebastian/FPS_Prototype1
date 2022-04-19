@@ -1,40 +1,38 @@
 class_name MedicKit extends Consumable
 
-export var HEAL_EFFECT: int
-export var POSITION: Vector3
-export var ICON: StreamTexture
+# Export member variables
+#-------------------------------------------------------------------------------
+export var HEAL_EFFECT: int setget ,get_heal_effect
+export var ANIMATION_USE: Animation setget ,get_animation_use
+#-------------------------------------------------------------------------------
 
-#var charges: int setget set_charges, get_charges
 
+# Constructors/Initializers
+#-------------------------------------------------------------------------------
+func _init(audioPlayerPath = null).(audioPlayerPath):
+	pass
+
+
+func _ready():
+	charges = MAX_CHARGES
+#-------------------------------------------------------------------------------
+
+
+# Getters
+#-------------------------------------------------------------------------------
+func get_heal_effect():
+	return HEAL_EFFECT
+
+
+func get_animation_use():
+	return ANIMATION_USE
+#-------------------------------------------------------------------------------
+
+
+# Others
+# ------------------------------------------------------------------------------
 func use():
-	return HEAL_EFFECT
-
-
-func get_icon():
-	return ICON
-
-
-func equip():
-	return self
-
-
-func get_healing():
-	return HEAL_EFFECT
-
-
-func set_player_position(player):
-	transform.origin = POSITION
-	global_transform.basis = player.global_transform.basis
-
-
-func pick():
-	print(get_parent())
-	get_parent().remove_child(self)
-	
-#	# Play sound
-#	audioPlayer = AudioManager.new(AUDIO_EQUIP)
-#	add_child(audioPlayer)
-#	audioPlayer.play_sound()
-#	# ----------
-	
-	return self
+	if get_charges() > 0:
+		reduce_charges()
+		return get_heal_effect()
+# ------------------------------------------------------------------------------

@@ -1,38 +1,44 @@
 class_name Ammo extends Consumable
 
-export var AMMO: int
-export var POSITION: Vector3
-export var ICON: StreamTexture
 
-func use():
-	return AMMO
-
-
-func get_icon():
-	return ICON
+# Export member variables
+#-------------------------------------------------------------------------------
+export var AMMO: int setget ,get_ammo
+export var ANIMATION_USE: Animation setget ,get_animation_use
+#-------------------------------------------------------------------------------
 
 
-func equip():
-	return self
+# Constructors/Initializers
+#-------------------------------------------------------------------------------
+func _init(audioPlayerPath = null).(audioPlayerPath):
+	pass
 
 
+func _ready():
+	pass
+#-------------------------------------------------------------------------------
+
+
+# Getters
+#-------------------------------------------------------------------------------
 func get_ammo():
 	return AMMO
 
 
-func set_player_position(player):
-	transform.origin = POSITION
-	global_transform.basis = player.global_transform.basis
+func get_animation_use():
+	return ANIMATION_USE
+#-------------------------------------------------------------------------------
 
 
-func pick():
-	print(get_parent())
-	get_parent().remove_child(self)
-	
-#	# Play sound
-#	audioPlayer = AudioManager.new(AUDIO_EQUIP)
-#	add_child(audioPlayer)
-#	audioPlayer.play_sound()
-#	# ----------
-	
-	return self
+# Setters
+#-------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
+
+
+# Others
+#-------------------------------------------------------------------------------
+func use():
+	if get_charges() > 0:
+		reduce_charges()
+		return get_ammo()
+#-------------------------------------------------------------------------------

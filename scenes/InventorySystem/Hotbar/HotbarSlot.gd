@@ -14,7 +14,3 @@ func selected(selected: bool):
 		emit_signal("itemChanged", get_itemRef())
 	else:
 		set('custom_styles/panel', null)
-
-
-func get_type():
-	return "SlotHBarTest"

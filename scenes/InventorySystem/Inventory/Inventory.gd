@@ -56,6 +56,7 @@ func get_item_usage(playerItem):
 	var index = get_item_index(playerItem)
 	
 	if index < 0:
+		print("Inventory - get_item_usage() : MASSIVE ERROR: Player current item does not exist in the inventory!")
 		return null
 	
 	var itemRef = refSlotCntr.get_child(index).get_itemRef()
@@ -63,13 +64,10 @@ func get_item_usage(playerItem):
 	
 	# Check if item is a consumable
 	if itemRef is Consumable:
+		print("Yes item is a Consumable")
 		# If item has only one charge, after using it, it should be deleted
-		if itemRef.get_charges() == 1:
+		if itemRef.get_charges() == 0:
 			delete_item(itemRef)
-		
-		# If item has many charges left, reduce it charges
-		else:
-			itemRef.reduce_charges()
 	
 	return retUsage
 
@@ -78,9 +76,9 @@ func drop_item(item, player):
 	var itemRef = remove_item(item)
 	
 	if !itemRef:
-		return
+		return false
 	
-	# Set where the weapon should spawn (players mid body for now)
+	# Set where the item should spawn (players mid body for now)
 	var newTransform: Transform = player.transform
 	newTransform.origin.y += player.transform.origin.y / 2
 	itemRef.set_global_transform(Transform.IDENTITY)
@@ -90,6 +88,7 @@ func drop_item(item, player):
 	# Add item to the player's parent (the world for now)
 	player.get_parent().add_child(itemRef)
 	itemRef.set_sleeping(false)
+	return true
 
 
 func delete_item(item):

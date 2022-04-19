@@ -1,6 +1,14 @@
 extends FireWeapon
 
 
+# Export member variables
+#-------------------------------------------------------------------------------
+export var AUDIO_CLIPIN: AudioStream
+export var AUDIO_CLIPOUT: AudioStream
+export var AUDIO_BOLTPULL: AudioStream
+#-------------------------------------------------------------------------------
+
+
 # Constructors/Initializers
 #-------------------------------------------------------------------------------
 func _init(audioPlayerPath = null).(audioPlayerPath):
@@ -25,7 +33,11 @@ func set_reload_audio():
 		ANIMATION_RELOAD.track_set_path(track_idx, AUDIO_PLAYER_PATH)
 		
 		# warning-ignore:return_value_discarded
-		ANIMATION_RELOAD.audio_track_insert_key(track_idx, 1.8, AUDIO_RELOAD)
+		ANIMATION_RELOAD.audio_track_insert_key(track_idx, 0.5, AUDIO_CLIPOUT)
+		# warning-ignore:return_value_discarded
+		ANIMATION_RELOAD.audio_track_insert_key(track_idx, 1.08, AUDIO_CLIPIN)
+		# warning-ignore:return_value_discarded
+		ANIMATION_RELOAD.audio_track_insert_key(track_idx, 1.8, AUDIO_BOLTPULL)
 #-------------------------------------------------------------------------------
 
 

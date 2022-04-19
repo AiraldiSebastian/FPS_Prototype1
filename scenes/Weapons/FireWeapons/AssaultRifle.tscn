@@ -1,14 +1,17 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle_A/clipempty_rifle.wav" type="AudioStream" id=1]
+[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle/assault_rifle_fire.wav" type="AudioStream" id=1]
 [ext_resource path="res://assets/Weapons/FireWeapons/M_Weapons.material" type="Material" id=2]
-[ext_resource path="res://scenes/Weapons/FireWeapons/AssaultRifle_A.gd" type="Script" id=3]
-[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle_A/ak47-1.wav" type="AudioStream" id=4]
-[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle_A/AssaultRifle_A_Icon.png" type="Texture" id=5]
-[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle_A/ak47_draw.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle_A/ak47_clipin.wav" type="AudioStream" id=7]
-[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle_A/ak47_clipout.wav" type="AudioStream" id=8]
-[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle_A/ak47_boltpull.wav" type="AudioStream" id=9]
+[ext_resource path="res://scenes/Weapons/FireWeapons/AssaultRifle.gd" type="Script" id=3]
+[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle/assault_rifle_equip.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle/AssaultRifle_Icon.png" type="Texture" id=5]
+[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle/assault_rifle_reload_empty.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle/assault_rifle_reload_clipin.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle/assault_rifle_reload_clipout.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle/assault_rifle_reload_boltpull.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle/assault_rifle_equip.tres" type="Animation" id=10]
+[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle/assault_rifle_fire.tres" type="Animation" id=11]
+[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle/assault_rifle_reload.tres" type="Animation" id=12]
 
 [sub_resource type="ArrayMesh" id=1]
 blend_shape_mode = 0
@@ -29,34 +32,40 @@ surfaces/0 = {
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.05, 0.06, 0.5 )
 
-[node name="AssaultRiffle_A" type="RigidBody"]
+[node name="AssaultRiffle" type="RigidBody"]
 collision_layer = 16
-collision_mask = 4113
+collision_mask = 17
 script = ExtResource( 3 )
-NAME = "AssaultRifle_A"
+ICON = ExtResource( 5 )
+COLLISION_LAYERS = [ 5 ]
+COLLISION_MASKS = [ 1, 5 ]
+HAND_POSITION = Vector3( 0, 0.3, 0.185 )
+ANIMATION_EQUIP = ExtResource( 10 )
+AUDIO_EQUIP = ExtResource( 4 )
 DAMAGE = 10
-FIRE_RATE = 0.1
-RELOAD_TIME = 2.4
 MAX_AMMO = 90
 MAG_MAX_AMMO = 30
-DISTANCE = 75
-POSITION = Vector3( -0.3, 1.45, 0.5 )
-ICON = ExtResource( 5 )
-AUDIO_FIRE = ExtResource( 4 )
+current_ammo = 30
+current_mag_ammo = 30
+RANGE = 25
+FIRE_RATE = 0.1
+RELOAD_TIME = 2.4
+ANIMATION_RELOAD = ExtResource( 12 )
+ANIMATION_FIRE = ExtResource( 11 )
+AUDIO_FIRE = ExtResource( 1 )
 AUDIO_RELOAD = ExtResource( 9 )
-AUDIO_EMPTY = ExtResource( 1 )
-AUDIO_EQUIP = ExtResource( 6 )
+AUDIO_EMPTY = ExtResource( 6 )
 AUDIO_CLIPIN = ExtResource( 7 )
 AUDIO_CLIPOUT = ExtResource( 8 )
 AUDIO_BOLTPULL = ExtResource( 9 )
 
-[node name="RootNode" type="Spatial" parent="."]
-
-[node name="AssaultRiffle_A" type="MeshInstance" parent="RootNode"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27959, -0.19375, 5.31498 )
+[node name="AssaultRiffle" type="MeshInstance" parent="."]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -4.55918, -0.3875, 10.63 )
+layers = 16
 mesh = SubResource( 1 )
+skeleton = NodePath("")
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0111833, 0 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 shape = SubResource( 2 )

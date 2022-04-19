@@ -1,12 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/Weapons/FireWeapons/M_Weapons.material" type="Material" id=1]
-[ext_resource path="res://scenes/Weapons/FireWeapons/HeavyWeapon_F.gd" type="Script" id=2]
-[ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/negev_draw.wav" type="AudioStream" id=3]
-[ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/negev-1.wav" type="AudioStream" id=4]
-[ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/negev_boxin.wav" type="AudioStream" id=5]
-[ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/auto_semiauto_switch.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/HeavyGun_A_Icon.png" type="Texture" id=7]
+[ext_resource path="res://scenes/Weapons/FireWeapons/HeavyWeapon.gd" type="Script" id=2]
+[ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/heavy_gun_equip.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/heavy_gun_fire.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/heavy_gun_reload.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/heavy_gun_reload_empty.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/HeavyGunIcon.png" type="Texture" id=7]
+[ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/heavy_gun_fire.tres" type="Animation" id=8]
+[ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/heavy_gun_reload.tres" type="Animation" id=9]
+[ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/heavy_gun_equip.tres" type="Animation" id=10]
 
 [sub_resource type="ArrayMesh" id=1]
 blend_shape_mode = 0
@@ -27,31 +30,38 @@ surfaces/0 = {
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.05, 0.05, 0.5 )
 
-[node name="HeavyWeapon_F" type="RigidBody"]
+[node name="HeavyWeapon" type="RigidBody"]
 collision_layer = 16
 collision_mask = 17
 script = ExtResource( 2 )
 NAME = "HeavyWeapon"
-DAMAGE = 5
-FIRE_RATE = 0.075
-RELOAD_TIME = 5.5
+ICON = ExtResource( 7 )
+COLLISION_LAYERS = [ 5 ]
+COLLISION_MASKS = [ 1, 5 ]
+HAND_POSITION = Vector3( 0, 0.3, 0.185 )
+ANIMATION_EQUIP = ExtResource( 10 )
+AUDIO_EQUIP = ExtResource( 3 )
+DAMAGE = 10
 MAX_AMMO = 200
 MAG_MAX_AMMO = 100
-DISTANCE = 75
-POSITION = Vector3( -0.36, 1.45, 0.5 )
-ICON = ExtResource( 7 )
+current_ammo = 100
+current_mag_ammo = 100
+RANGE = 25
+FIRE_RATE = 0.075
+RELOAD_TIME = 5.5
+ANIMATION_RELOAD = ExtResource( 9 )
+ANIMATION_FIRE = ExtResource( 8 )
 AUDIO_FIRE = ExtResource( 4 )
 AUDIO_RELOAD = ExtResource( 5 )
 AUDIO_EMPTY = ExtResource( 6 )
-AUDIO_EQUIP = ExtResource( 3 )
 
-[node name="RootNode" type="Spatial" parent="."]
-
-[node name="HeavyWeapon_F" type="MeshInstance" parent="RootNode"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.19834, -0.14375, 4.08373 )
+[node name="HeavyWeapon" type="MeshInstance" parent="."]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -12.396, -0.288, 8.168 )
+layers = 16
 mesh = SubResource( 1 )
+skeleton = NodePath("")
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0492385, 0 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.098, 0 )
 shape = SubResource( 2 )

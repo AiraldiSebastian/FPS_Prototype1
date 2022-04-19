@@ -1,5 +1,7 @@
 extends Control
 
+signal drop_item
+
 var hotbar: TextureRect
 var inventory: TextureRect
 
@@ -17,5 +19,4 @@ func can_drop_data(_position, data):
 	return true
 
 func drop_data(_position, data):
-	hotbar.drop_item(data.itemRef, get_parent())
-	inventory.drop_item(data.itemRef, get_parent())
+	emit_signal("drop_item", data.itemRef)

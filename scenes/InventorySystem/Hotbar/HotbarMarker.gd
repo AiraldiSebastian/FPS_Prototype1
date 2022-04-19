@@ -12,11 +12,15 @@ func _init(hotbar: Hotbar):
 	slotContainer = hotbar.get_slot_container()
 
 
+func get_item():
+	if connectedSlot:
+		return connectedSlot.get_itemRef()
+	return null
+
+
 func use_item():
-	if connectedSlot.get_itemRef() is WeaponSystem:
+	if connectedSlot.get_itemRef() is FireWeapon:
 		pass
-	# This operation with MedicKit is extremely dangerous! If the emited signal doesnt arrive first
-	# player will have a reference to a deleted object and program will crash!!!
 	elif connectedSlot.get_itemRef() is MedicKit:
 		var retHealth = connectedHotbar.get_item_usage(connectedSlot.get_itemRef())
 		return retHealth
@@ -42,5 +46,7 @@ func select_slot(index: int):
 	connectedSlot.connect("itemChanged", self, "communicate")
 	connectedSlot.selected(true)
 
+
 func communicate(newItem):
 	emit_signal("itemChanged", newItem)
+

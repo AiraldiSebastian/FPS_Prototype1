@@ -1,12 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/Weapons/FireWeapons/Shotgun.gd" type="Script" id=1]
 [ext_resource path="res://assets/Weapons/FireWeapons/M_Weapons.material" type="Material" id=2]
-[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/Shotgun_Icon.png" type="Texture" id=3]
-[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/nova_pump.wav" type="AudioStream" id=4]
-[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/auto_semiauto_switch.wav" type="AudioStream" id=5]
-[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/nova_draw.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/nova-1.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/ShotgunIcon.png" type="Texture" id=3]
+[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/shotgun_reload.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/shotgun_reload_empty.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/shotgun_equip.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/shotgun_fire.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/shotgun_reload.tres" type="Animation" id=8]
+[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/shotgun_equip.tres" type="Animation" id=9]
+[ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/shotgun_fire.tres" type="Animation" id=10]
 
 [sub_resource type="ArrayMesh" id=1]
 blend_shape_mode = 0
@@ -27,30 +30,38 @@ surfaces/0 = {
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.05, 0.06, 0.4 )
 
-[node name="Shotgun_I" type="RigidBody"]
+[node name="Shotgun" type="RigidBody"]
 collision_layer = 16
 collision_mask = 17
 script = ExtResource( 1 )
 NAME = "Shotgun"
+ICON = ExtResource( 3 )
+COLLISION_LAYERS = [ 5 ]
+COLLISION_MASKS = [ 1, 5 ]
+HAND_POSITION = Vector3( 0, 0.3, 0.185 )
+ANIMATION_EQUIP = ExtResource( 9 )
+AUDIO_EQUIP = ExtResource( 6 )
 DAMAGE = 40
-FIRE_RATE = 0.35
-RELOAD_TIME = 2.8
 MAX_AMMO = 24
 MAG_MAX_AMMO = 2
-DISTANCE = 20
-POSITION = Vector3( -0.36, 1.45, 0.5 )
-ICON = ExtResource( 3 )
+current_ammo = 24
+current_mag_ammo = 2
+RANGE = 10
+FIRE_RATE = 0.35
+RELOAD_TIME = 2.8
+ANIMATION_RELOAD = ExtResource( 8 )
+ANIMATION_FIRE = ExtResource( 10 )
 AUDIO_FIRE = ExtResource( 7 )
 AUDIO_RELOAD = ExtResource( 4 )
 AUDIO_EMPTY = ExtResource( 5 )
-AUDIO_EQUIP = ExtResource( 6 )
 
-[node name="RootNode" type="Spatial" parent="."]
-
-[node name="Shotgun_I" type="MeshInstance" parent="RootNode"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.248342, -0.08125, 6.33373 )
+[node name="Shotgun" type="MeshInstance" parent="."]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -0.496, -0.162, 12.668 )
+layers = 16
 mesh = SubResource( 1 )
+skeleton = NodePath("")
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 shape = SubResource( 2 )
