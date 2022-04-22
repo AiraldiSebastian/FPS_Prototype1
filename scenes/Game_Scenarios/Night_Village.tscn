@@ -4689,7 +4689,7 @@ mesh = SubResource( 22 )
 material/0 = null
 
 [node name="Big crown2" type="MeshInstance" parent="Forest/Bunch of trees95"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.83893, 2.75249, -2.14847 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.77515, 2.75249, -2.14847 )
 mesh = SubResource( 22 )
 material/0 = null
 
