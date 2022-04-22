@@ -1,0 +1,2020 @@
+[gd_scene load_steps=21 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 100, 0.5, 100 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.92549, 0.807843, 0.52549, 1 )
+
+[sub_resource type="CubeMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.333333, 0.25098, 0.0823529, 1 )
+
+[sub_resource type="CubeMesh" id=5]
+material = SubResource( 4 )
+size = Vector3( 8, 0.2, 6 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.333333, 0.25098, 0.0823529, 1 )
+
+[sub_resource type="CylinderMesh" id=7]
+material = SubResource( 6 )
+top_radius = 0.2
+bottom_radius = 0.2
+height = 8.5
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0.333333, 0.25098, 0.0823529, 1 )
+
+[sub_resource type="CylinderMesh" id=9]
+material = SubResource( 8 )
+top_radius = 0.2
+bottom_radius = 0.2
+height = 6.5
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 0.333333, 0.25098, 0.0823529, 1 )
+
+[sub_resource type="CubeMesh" id=11]
+material = SubResource( 10 )
+size = Vector3( 10, 0.2, 4.5 )
+
+[sub_resource type="CubeMesh" id=12]
+size = Vector3( 0.1, 1.25, 0.1 )
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_color = Color( 0.333333, 0.25098, 0.0823529, 1 )
+
+[sub_resource type="SpatialMaterial" id=14]
+albedo_color = Color( 0.333333, 0.25098, 0.0823529, 1 )
+
+[sub_resource type="CubeMesh" id=15]
+size = Vector3( 1.5, 0.1, 0.1 )
+
+[sub_resource type="SpatialMaterial" id=16]
+albedo_color = Color( 0.333333, 0.25098, 0.0823529, 1 )
+
+[sub_resource type="SpatialMaterial" id=17]
+albedo_color = Color( 0.341176, 0.227451, 0.0352941, 1 )
+
+[sub_resource type="CubeMesh" id=18]
+material = SubResource( 17 )
+size = Vector3( 0.25, 2, 0.25 )
+
+[sub_resource type="SpatialMaterial" id=19]
+albedo_color = Color( 0.172549, 0.329412, 0.231373, 1 )
+
+[sub_resource type="CubeMesh" id=20]
+material = SubResource( 19 )
+size = Vector3( 1, 3, 1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Ground" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Ground"]
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="Ground"]
+
+[node name="SpawnPoints" type="Spatial" parent="."]
+visible = false
+
+[node name="First" type="MeshInstance" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.3061, 2.30685, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="First2" type="MeshInstance" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47122, 2.30685, -49.7962 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="First3" type="MeshInstance" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.2229, 2.30685, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="First4" type="MeshInstance" parent="SpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55741, 2.30685, 50.1894 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Cabin" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.3983, 1.62072, -37.3285 )
+
+[node name="Floor" type="MeshInstance" parent="Cabin"]
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="Wall_1" type="Spatial" parent="Cabin"]
+
+[node name="Log_8h" type="MeshInstance" parent="Cabin/Wall_1"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.231539, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h2" type="MeshInstance" parent="Cabin/Wall_1"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.549194, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h3" type="MeshInstance" parent="Cabin/Wall_1"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.866848, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h4" type="MeshInstance" parent="Cabin/Wall_1"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 1.1608, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h5" type="MeshInstance" parent="Cabin/Wall_1"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 1.45949, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h6" type="MeshInstance" parent="Cabin/Wall_1"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 1.7487, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h7" type="MeshInstance" parent="Cabin/Wall_1"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 2.05687, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h8" type="MeshInstance" parent="Cabin/Wall_1"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 2.34608, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h9" type="MeshInstance" parent="Cabin/Wall_1"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 2.66847, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h10" type="MeshInstance" parent="Cabin/Wall_1"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 2.9719, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Wall_2" type="Spatial" parent="Cabin"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.61348 )
+
+[node name="Log_8h" type="MeshInstance" parent="Cabin/Wall_2"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.231539, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h2" type="MeshInstance" parent="Cabin/Wall_2"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.549194, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h3" type="MeshInstance" parent="Cabin/Wall_2"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.866848, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h4" type="MeshInstance" parent="Cabin/Wall_2"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 1.1608, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h5" type="MeshInstance" parent="Cabin/Wall_2"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 1.45949, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h6" type="MeshInstance" parent="Cabin/Wall_2"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 1.7487, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h7" type="MeshInstance" parent="Cabin/Wall_2"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 2.05687, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h8" type="MeshInstance" parent="Cabin/Wall_2"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 2.34608, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h9" type="MeshInstance" parent="Cabin/Wall_2"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 2.66847, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Log_8h10" type="MeshInstance" parent="Cabin/Wall_2"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 2.9719, -2.81038 )
+mesh = SubResource( 7 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Wall_3" type="Spatial" parent="Cabin"]
+
+[node name="Log_6h" type="MeshInstance" parent="Cabin/Wall_3"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 0.229623, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h2" type="MeshInstance" parent="Cabin/Wall_3"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 0.550738, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h3" type="MeshInstance" parent="Cabin/Wall_3"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 0.871853, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h4" type="MeshInstance" parent="Cabin/Wall_3"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 1.15232, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h5" type="MeshInstance" parent="Cabin/Wall_3"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 1.44498, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h6" type="MeshInstance" parent="Cabin/Wall_3"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 1.74984, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h7" type="MeshInstance" parent="Cabin/Wall_3"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 2.05876, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h8" type="MeshInstance" parent="Cabin/Wall_3"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 2.38394, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h9" type="MeshInstance" parent="Cabin/Wall_3"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 2.66847, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h10" type="MeshInstance" parent="Cabin/Wall_3"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 3.00991, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Wall_4" type="Spatial" parent="Cabin"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.71329, 0, 0 )
+
+[node name="Log_6h" type="MeshInstance" parent="Cabin/Wall_4"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 0.229623, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h2" type="MeshInstance" parent="Cabin/Wall_4"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 0.550738, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h3" type="MeshInstance" parent="Cabin/Wall_4"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 0.871853, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h4" type="MeshInstance" parent="Cabin/Wall_4"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 1.15232, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h5" type="MeshInstance" parent="Cabin/Wall_4"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 1.44498, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h6" type="MeshInstance" parent="Cabin/Wall_4"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 1.74984, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h7" type="MeshInstance" parent="Cabin/Wall_4"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 2.05876, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h8" type="MeshInstance" parent="Cabin/Wall_4"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 2.38394, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h9" type="MeshInstance" parent="Cabin/Wall_4"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 2.66847, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Log_6h10" type="MeshInstance" parent="Cabin/Wall_4"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.79698, 3.00991, -0.000849426 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../../../Logs")
+material/0 = null
+
+[node name="Roof" type="MeshInstance" parent="Cabin"]
+transform = Transform( 1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, 3.77343, 1.701 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="Roof2" type="MeshInstance" parent="Cabin"]
+transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 3.77343, -1.80919 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="Logs" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.54056, 0 )
+visible = false
+
+[node name="FenceLine" type="Spatial" parent="."]
+
+[node name="Part1" type="Spatial" parent="FenceLine"]
+
+[node name="Fence_1T" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.4522, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_1T"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_1T"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_1T"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_1T"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T2" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.4464, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_1T2"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_1T2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_1T2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_1T2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T3" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.4527, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_1T3"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_1T3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_1T3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_1T3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T4" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.45, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_1T4"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_1T4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_1T4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_1T4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.9442, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_2T"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_2T"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_2T"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_2T"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part1/Fence_2T"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T2" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.9524, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_2T2"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_2T2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_2T2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_2T2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part1/Fence_2T2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T3" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.9468, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_2T3"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_2T3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_2T3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_2T3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part1/Fence_2T3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T4" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9374, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_2T4"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_2T4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_2T4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_2T4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part1/Fence_2T4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T5" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.4445, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_1T5"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_1T5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_1T5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_1T5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T6" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.4387, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_1T6"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_1T6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_1T6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_1T6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T7" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.445, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_1T7"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_1T7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_1T7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_1T7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T8" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.4424, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_1T8"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_1T8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_1T8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_1T8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T5" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.9365, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_2T5"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_2T5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_2T5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_2T5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part1/Fence_2T5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T6" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.9448, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_2T6"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_2T6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_2T6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_2T6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part1/Fence_2T6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T7" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9391, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_2T7"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_2T7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_2T7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_2T7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part1/Fence_2T7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T8" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9297, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_2T8"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_2T8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_2T8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_2T8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part1/Fence_2T8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T9" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4145, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_1T9"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_1T9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_1T9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_1T9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T9" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9019, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_2T9"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_2T9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_2T9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_2T9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part1/Fence_2T9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T10" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3996, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_1T10"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_1T10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_1T10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_1T10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T10" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.887, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_2T10"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_2T10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_2T10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_2T10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part1/Fence_2T10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T11" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4002, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_1T11"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_1T11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_1T11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_1T11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T11" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8876, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_2T11"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_2T11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_2T11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_2T11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part1/Fence_2T11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T12" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3801, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_1T12"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_1T12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_1T12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_1T12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T12" type="Spatial" parent="FenceLine/Part1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8675, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part1/Fence_2T12"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part1/Fence_2T12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part1/Fence_2T12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part1/Fence_2T12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part1/Fence_2T12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Part2" type="Spatial" parent="FenceLine"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0398726, 0, 0 )
+
+[node name="Fence_1T" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.4522, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_1T"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_1T"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_1T"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_1T"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T2" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.4464, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_1T2"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_1T2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_1T2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_1T2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T3" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.4527, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_1T3"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_1T3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_1T3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_1T3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T4" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.45, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_1T4"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_1T4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_1T4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_1T4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 46.9442, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_2T"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_2T"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_2T"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_2T"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part2/Fence_2T"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T2" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.9524, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_2T2"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_2T2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_2T2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_2T2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part2/Fence_2T2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T3" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.9468, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_2T3"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_2T3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_2T3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_2T3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part2/Fence_2T3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T4" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9374, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_2T4"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_2T4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_2T4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_2T4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part2/Fence_2T4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T5" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.4445, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_1T5"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_1T5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_1T5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_1T5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T6" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.4387, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_1T6"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_1T6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_1T6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_1T6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T7" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.445, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_1T7"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_1T7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_1T7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_1T7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T8" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.4424, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_1T8"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_1T8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_1T8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_1T8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T5" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.9365, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_2T5"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_2T5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_2T5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_2T5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part2/Fence_2T5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T6" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.9448, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_2T6"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_2T6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_2T6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_2T6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part2/Fence_2T6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T7" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9391, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_2T7"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_2T7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_2T7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_2T7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part2/Fence_2T7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T8" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9297, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_2T8"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_2T8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_2T8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_2T8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part2/Fence_2T8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T9" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4145, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_1T9"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_1T9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_1T9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_1T9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T9" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9019, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_2T9"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_2T9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_2T9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_2T9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part2/Fence_2T9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T10" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3996, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_1T10"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_1T10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_1T10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_1T10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T10" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.887, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_2T10"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_2T10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_2T10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_2T10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part2/Fence_2T10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T11" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4002, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_1T11"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_1T11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_1T11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_1T11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T11" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8876, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_2T11"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_2T11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_2T11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_2T11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part2/Fence_2T11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T12" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3801, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_1T12"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_1T12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_1T12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_1T12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T12" type="Spatial" parent="FenceLine/Part2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8675, 0.622118, -0.0602751 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part2/Fence_2T12"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part2/Fence_2T12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part2/Fence_2T12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part2/Fence_2T12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part2/Fence_2T12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Part3" type="Spatial" parent="FenceLine"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8922, 0, 0.702683 )
+
+[node name="Fence_1T13" type="Spatial" parent="FenceLine/Part3"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204045, 0.622118, -11.2896 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part3/Fence_1T13"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part3/Fence_1T13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part3/Fence_1T13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part3/Fence_1T13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T14" type="Spatial" parent="FenceLine/Part3"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204044, 0.622118, -8.28375 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part3/Fence_1T14"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part3/Fence_1T14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part3/Fence_1T14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part3/Fence_1T14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T15" type="Spatial" parent="FenceLine/Part3"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204043, 0.622118, -5.29005 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part3/Fence_1T15"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part3/Fence_1T15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part3/Fence_1T15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part3/Fence_1T15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T16" type="Spatial" parent="FenceLine/Part3"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204042, 0.622118, -2.2874 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part3/Fence_1T16"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part3/Fence_1T16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part3/Fence_1T16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part3/Fence_1T16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T13" type="Spatial" parent="FenceLine/Part3"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204045, 0.622118, -9.78155 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part3/Fence_2T13"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part3/Fence_2T13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part3/Fence_2T13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part3/Fence_2T13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part3/Fence_2T13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T17" type="Spatial" parent="FenceLine/Part3"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204048, 0.622118, -12.875 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part3/Fence_2T17"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part3/Fence_2T17"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part3/Fence_2T17"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part3/Fence_2T17"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part3/Fence_2T17"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T14" type="Spatial" parent="FenceLine/Part3"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204044, 0.622118, -6.78983 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part3/Fence_2T14"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part3/Fence_2T14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part3/Fence_2T14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part3/Fence_2T14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part3/Fence_2T14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T15" type="Spatial" parent="FenceLine/Part3"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204042, 0.622118, -3.78419 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part3/Fence_2T15"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part3/Fence_2T15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part3/Fence_2T15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part3/Fence_2T15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part3/Fence_2T15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T16" type="Spatial" parent="FenceLine/Part3"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204041, 0.622118, -0.774754 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part3/Fence_2T16"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part3/Fence_2T16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part3/Fence_2T16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part3/Fence_2T16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part3/Fence_2T16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Part4" type="Spatial" parent="FenceLine"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.8807, 0, -13.8242 )
+
+[node name="Fence_1T13" type="Spatial" parent="FenceLine/Part4"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204045, 0.622118, -11.2896 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part4/Fence_1T13"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part4/Fence_1T13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part4/Fence_1T13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part4/Fence_1T13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T14" type="Spatial" parent="FenceLine/Part4"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204044, 0.622118, -8.28375 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part4/Fence_1T14"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part4/Fence_1T14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part4/Fence_1T14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part4/Fence_1T14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T15" type="Spatial" parent="FenceLine/Part4"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204043, 0.622118, -5.29005 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part4/Fence_1T15"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part4/Fence_1T15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part4/Fence_1T15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part4/Fence_1T15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T16" type="Spatial" parent="FenceLine/Part4"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204042, 0.622118, -2.2874 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part4/Fence_1T16"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part4/Fence_1T16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part4/Fence_1T16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part4/Fence_1T16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_1T17" type="Spatial" parent="FenceLine/Part4"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204039, 0.622118, 0.830128 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part4/Fence_1T17"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part4/Fence_1T17"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part4/Fence_1T17"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.2, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part4/Fence_1T17"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.3, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T13" type="Spatial" parent="FenceLine/Part4"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204045, 0.622118, -9.78155 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part4/Fence_2T13"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part4/Fence_2T13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part4/Fence_2T13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part4/Fence_2T13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part4/Fence_2T13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T14" type="Spatial" parent="FenceLine/Part4"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204044, 0.622118, -6.78983 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part4/Fence_2T14"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part4/Fence_2T14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part4/Fence_2T14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part4/Fence_2T14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part4/Fence_2T14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T15" type="Spatial" parent="FenceLine/Part4"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204042, 0.622118, -3.78419 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part4/Fence_2T15"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part4/Fence_2T15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part4/Fence_2T15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part4/Fence_2T15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part4/Fence_2T15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Fence_2T16" type="Spatial" parent="FenceLine/Part4"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0204041, 0.622118, -0.774754 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FenceLine/Part4/Fence_2T16"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="FenceLine/Part4/Fence_2T16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="FenceLine/Part4/Fence_2T16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.336156, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 16 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="FenceLine/Part4/Fence_2T16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.0496494, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="FenceLine/Part4/Fence_2T16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.427372, 0 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 14 )
+
+[node name="Forest" type="Spatial" parent="."]
+
+[node name="Tree" type="Spatial" parent="Forest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02894, 0 )
+
+[node name="Log" type="MeshInstance" parent="Forest/Tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.901338, 0 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Crown" type="MeshInstance" parent="Forest/Tree"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00933, 0 )
+mesh = SubResource( 20 )
+material/0 = null
