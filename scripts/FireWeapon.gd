@@ -33,6 +33,12 @@ enum WeaponState {
 	NOT_FULL,
 	FULL,
 }
+
+
+enum {
+	RELOAD = Item.UNEQUIP + 1,
+	EMPTY
+}
 #-------------------------------------------------------------------------------
 
 
@@ -45,6 +51,10 @@ func _init(audioPlayerPath = null).(audioPlayerPath):
 
 # Getters
 #-------------------------------------------------------------------------------
+func get_class():
+	return "Medkit"
+
+
 func get_damage():
 	return DAMAGE
 
@@ -75,6 +85,20 @@ func get_fire_rate():
 
 func get_reload_time():
 	return RELOAD_TIME
+
+
+func get_animation(animationName):
+	var retAnim = .get_animation(animationName)
+	if !retAnim:
+		match animationName:
+			RELOAD:
+				return get_animation_reload()
+			EMPTY:
+				return get_animation_equip()
+			_:
+				return null
+	else:
+		return retAnim
 
 
 func get_animation_reload():

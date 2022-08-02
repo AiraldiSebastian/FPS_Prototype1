@@ -4,7 +4,6 @@ class_name Ammo extends Consumable
 # Export member variables
 #-------------------------------------------------------------------------------
 export var AMMO: int setget ,get_ammo
-export var ANIMATION_USE: Animation setget ,get_animation_use
 #-------------------------------------------------------------------------------
 
 
@@ -21,6 +20,10 @@ func _ready():
 
 # Getters
 #-------------------------------------------------------------------------------
+func get_class():
+	return "Medkit"
+
+
 func get_ammo():
 	return AMMO
 

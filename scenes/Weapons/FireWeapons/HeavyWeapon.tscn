@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/Weapons/FireWeapons/M_Weapons.material" type="Material" id=1]
 [ext_resource path="res://scenes/Weapons/FireWeapons/HeavyWeapon.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/heavy_gun_fire.tres" type="Animation" id=8]
 [ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/heavy_gun_reload.tres" type="Animation" id=9]
 [ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/heavy_gun_equip.tres" type="Animation" id=10]
+[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle/assault_rifle_fire.tres" type="Animation" id=11]
 
 [sub_resource type="ArrayMesh" id=1]
 blend_shape_mode = 0
@@ -39,6 +40,8 @@ ICON = ExtResource( 7 )
 COLLISION_LAYERS = [ 5 ]
 COLLISION_MASKS = [ 1, 5 ]
 HAND_POSITION = Vector3( 0, 0.3, 0.185 )
+ANIMATION_USE = ExtResource( 11 )
+AUDIO_USE = ExtResource( 4 )
 ANIMATION_EQUIP = ExtResource( 10 )
 AUDIO_EQUIP = ExtResource( 3 )
 DAMAGE = 10

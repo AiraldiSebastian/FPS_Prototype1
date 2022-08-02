@@ -88,7 +88,6 @@ func _ready():
 	camera.transform.origin = skel.get_bone_global_pose(skel.find_bone("head")).origin
 	handsRaycast.cast_to = Vector3(0, 0, -4)
 	handsRaycast.set_collision_mask_bit(4, true)
-	print("HandsRaycast: get_collision_mask_bit: ", handsRaycast.get_collision_mask_bit(4))
 	weaponRaycast.set_collision_mask_bit(12, true)
 	
 	# warning-ignore:return_value_discarded

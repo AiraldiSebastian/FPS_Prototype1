@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/Weapons/FireWeapons/M_Weapons.material" type="Material" id=1]
 [ext_resource path="res://scenes/Weapons/FireWeapons/Rifle.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/Weapons/FireWeapons/Rifle/awp_boltback.wav" type="AudioStream" id=13]
 [ext_resource path="res://assets/Weapons/FireWeapons/Rifle/awp_clipout.wav" type="AudioStream" id=14]
 [ext_resource path="res://assets/Weapons/FireWeapons/Rifle/awp_clipin.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle/assault_rifle_fire.tres" type="Animation" id=16]
 
 [sub_resource type="ArrayMesh" id=1]
 blend_shape_mode = 0
@@ -44,6 +45,8 @@ ICON = ExtResource( 7 )
 COLLISION_LAYERS = [ 5 ]
 COLLISION_MASKS = [ 1, 5 ]
 HAND_POSITION = Vector3( 0, 0.3, 0.65 )
+ANIMATION_USE = ExtResource( 16 )
+AUDIO_USE = ExtResource( 3 )
 ANIMATION_EQUIP = ExtResource( 9 )
 AUDIO_EQUIP = ExtResource( 6 )
 DAMAGE = 40

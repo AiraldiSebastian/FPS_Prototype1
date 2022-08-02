@@ -1,21 +1,41 @@
 class_name HealthSystem
 
+
+# Signals
+# ------------------------------------------------------------------------------
 signal isDead
 signal healthChange
+# ------------------------------------------------------------------------------
 
-# Member invariables
+
+# Member variables
+# ------------------------------------------------------------------------------
 var MAX_HEALTH: int
 var currentHealth: int
+# ------------------------------------------------------------------------------
 
+
+# Constructors / Initializers
+# ------------------------------------------------------------------------------
 func _init(arg_MAX_HEALTH, arg_currentHealth):
 	MAX_HEALTH = arg_MAX_HEALTH
 	currentHealth = arg_currentHealth
+# ------------------------------------------------------------------------------
 
 
+# Getters
+# ------------------------------------------------------------------------------
 func get_MAX_HEALTH():
 	return MAX_HEALTH
 
 
+func get_health():
+	return currentHealth
+# ------------------------------------------------------------------------------
+
+
+# Class related methods
+# ------------------------------------------------------------------------------
 func take_damage(points):
 	currentHealth -= points
 	
@@ -32,9 +52,7 @@ func take_health(points):
 	
 	emit_signal("healthChange")
 
-func get_health():
-	return currentHealth
-
 
 func is_health_zero():
 	return currentHealth <= 0
+# ------------------------------------------------------------------------------

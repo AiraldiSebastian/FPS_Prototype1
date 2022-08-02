@@ -1,4 +1,13 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=42 format=2]
+
+[ext_resource path="res://scenes/Units/Player/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Weapons/FireWeapons/HeavyWeapon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Weapons/FireWeapons/Shotgun.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Weapons/FireWeapons/AssaultRifle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Weapons/FireWeapons/Rifle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Units/Enemies/Zombie.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Objects/Pickables/Medkit.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Objects/Pickables/Ammo.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SpatialMaterial" id=10]
 albedo_color = Color( 1, 0.909804, 0.466667, 1 )
@@ -116,7 +125,43 @@ size = Vector3( 3, 4, 3 )
 [sub_resource type="BoxShape" id=38]
 extents = Vector3( 1.5, 2, 1.5 )
 
-[node name="Spatial" type="Spatial"]
+[node name="World" type="Spatial"]
+
+[node name="MedicKit" parent="." instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 34.6476, 12.1838, -29.5171 )
+
+[node name="MedicKit2" parent="." instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 34.3896, 1.79487, -29.5171 )
+
+[node name="MedicKit3" parent="." instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 34.1031, 1.79487, -29.5171 )
+
+[node name="MedicKit4" parent="." instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 33.7984, 1.79487, -29.5171 )
+
+[node name="AssaultRiffle" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.3131, 2.053, -28.9213 )
+
+[node name="AssaultRiffle2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5417, 2.053, -28.9213 )
+
+[node name="HeavyWeapon" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3115, 2.13755, -29.0445 )
+
+[node name="HeavyWeapon2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5603, 2.13755, -29.0445 )
+
+[node name="Riffle" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3655, 2.05435, -28.8927 )
+
+[node name="Riffle2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6972, 2.05435, -28.8927 )
+
+[node name="Shotgun" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34337, 1.98953, -28.9549 )
+
+[node name="Shotgun2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.60287, 1.98953, -28.9549 )
 
 [node name="Floor" type="StaticBody" parent="."]
 
@@ -1782,3 +1827,94 @@ material/0 = null
 [node name="CollisionShape2" type="CollisionShape" parent="Test-3/Trees/Tree-15"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 shape = SubResource( 38 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -0.0843387, -0.253005, 0.963782, 0, 0.967228, 0.25391, -0.996437, 0.0214144, -0.0815748, 32.209, 2.89931, -31.951 )
+cull_mask = 1047935
+
+[node name="Zombie" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22194, 0.713015, -34.2692 )
+
+[node name="Zombie15" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4764, 0.713015, -31.9312 )
+
+[node name="Zombie16" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.3007, 0.713015, -33.5053 )
+
+[node name="Zombie17" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5681, 0.713015, -33.5053 )
+
+[node name="Zombie18" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5681, 0.713015, -36.8197 )
+
+[node name="Ammo" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.6166, 14.7202, -29.2576 )
+
+[node name="Ammo2" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.1181, 1.75, -29.2576 )
+
+[node name="Ammo3" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.6429, 1.75, -29.2576 )
+
+[node name="Character" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0258, 0.500008, -32.9119 )
+GRAVITY = 10
+MAX_SPEED = 10
+ACCEL = 10
+MAX_SLOPE_ANGLE = 75
+MAX_HEALTH = 100
+START_HEALTH = 5
+
+[node name="Skeleton" parent="Character/Armature" index="0"]
+bones/7/bound_children = [ NodePath("RightHand") ]
+
+[node name="RightHand" parent="Character/Armature/Skeleton" index="1"]
+transform = Transform( 1, 2.78535e-08, 1.50996e-07, -2.78537e-08, 1, 2.78546e-08, -1.50996e-07, -2.78547e-08, 1, -1.46223, 0.867817, 1.54225e-07 )
+
+[node name="Skeleton" parent="Character/Perspective/Armature" index="0"]
+bones/0/bound_children = [ NodePath("CameraAttachment") ]
+bones/3/bound_children = [ NodePath("RightHand") ]
+
+[node name="RightHand" parent="Character/Perspective/Armature/Skeleton" index="1"]
+transform = Transform( 1, -1.17021e-13, 0, -4.21776e-14, 1, 0, -9.9476e-13, -1.02318e-12, 1, -1.46223, -0.158267, -4.55626e-08 )
+
+[node name="Zombie2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0236, 0.638412, 28.1994 )
+
+[node name="Zombie3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0616, 0.638412, 28.1994 )
+
+[node name="Zombie4" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.4515, 0.638412, 28.1994 )
+
+[node name="Zombie5" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.2583, 0.638412, 28.1994 )
+
+[node name="Zombie6" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.0733, 0.61818, 14.0811 )
+
+[node name="Zombie7" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.0138, 0.61818, 14.0811 )
+
+[node name="Zombie8" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7746, 0.61818, 14.0811 )
+
+[node name="Zombie9" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72245, 0.61818, 14.0811 )
+
+[node name="Zombie10" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5671, 0.61818, 14.0811 )
+
+[node name="Zombie11" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63964, 0.61818, 14.0811 )
+
+[node name="Zombie12" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.63573, 0.61818, 14.0811 )
+
+[node name="Zombie13" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.2098, 0.61818, 14.0811 )
+
+[node name="Zombie14" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2152, 0.61818, 14.0811 )
+
+[editable path="Character"]

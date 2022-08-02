@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://scripts/AudioManager.gd" type="Script" id=1]
 [ext_resource path="res://scenes/InventorySystem/Inventory/Inventory.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://scenes/Units/Player/HUD.gd" type="Script" id=10]
 [ext_resource path="res://scenes/Units/Player/Character.gd" type="Script" id=11]
 [ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle/assault_rifle_fire.wav" type="AudioStream" id=12]
+[ext_resource path="res://scenes/Units/Player/Label.gd" type="Script" id=13]
 
 [sub_resource type="CapsuleShape" id=13]
 radius = 0.4
@@ -559,6 +560,7 @@ use_filter = true
 font_data = ExtResource( 9 )
 
 [node name="Character" type="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3748, 0, 0 )
 collision_layer = 256
 collision_mask = 61953
 script = ExtResource( 11 )
@@ -724,6 +726,8 @@ anims/weapon_idle = SubResource( 22 )
 [node name="AudioManager" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 script = ExtResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="HUD" type="Control" parent="."]
 anchor_right = 1.0
@@ -1098,4 +1102,9 @@ rect_min_size = Vector2( 118, 80 )
 mouse_filter = 1
 script = ExtResource( 3 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Label" type="Label" parent="HUD"]
+margin_left = 1075.0
+margin_top = 16.0
+margin_right = 1260.0
+margin_bottom = 84.0
+script = ExtResource( 13 )

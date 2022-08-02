@@ -1,0 +1,474 @@
+[gd_scene load_steps=78 format=2]
+
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-65.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-26.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-41.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-5.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-6.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-8.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-28.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-21.obj" type="ArrayMesh" id=8]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-72.obj" type="ArrayMesh" id=9]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-24.obj" type="ArrayMesh" id=10]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-16.obj" type="ArrayMesh" id=11]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-73.obj" type="ArrayMesh" id=12]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-56.obj" type="ArrayMesh" id=13]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-34.obj" type="ArrayMesh" id=14]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-62.obj" type="ArrayMesh" id=15]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-63.obj" type="ArrayMesh" id=16]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-11.obj" type="ArrayMesh" id=17]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-64.obj" type="ArrayMesh" id=18]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-59.obj" type="ArrayMesh" id=19]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-14.obj" type="ArrayMesh" id=20]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-36.obj" type="ArrayMesh" id=21]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-3.obj" type="ArrayMesh" id=22]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-39.obj" type="ArrayMesh" id=23]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-54.obj" type="ArrayMesh" id=24]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-68.obj" type="ArrayMesh" id=25]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-70.obj" type="ArrayMesh" id=26]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-35.obj" type="ArrayMesh" id=27]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-37.obj" type="ArrayMesh" id=28]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-32.obj" type="ArrayMesh" id=29]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-57.obj" type="ArrayMesh" id=30]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-0.obj" type="ArrayMesh" id=31]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-7.obj" type="ArrayMesh" id=32]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-10.obj" type="ArrayMesh" id=33]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-48.obj" type="ArrayMesh" id=34]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-74.obj" type="ArrayMesh" id=35]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-18.obj" type="ArrayMesh" id=36]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-46.obj" type="ArrayMesh" id=37]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-45.obj" type="ArrayMesh" id=38]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-22.obj" type="ArrayMesh" id=39]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-51.obj" type="ArrayMesh" id=40]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-30.obj" type="ArrayMesh" id=41]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-15.obj" type="ArrayMesh" id=42]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-23.obj" type="ArrayMesh" id=43]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-4.obj" type="ArrayMesh" id=44]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-12.obj" type="ArrayMesh" id=45]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-38.obj" type="ArrayMesh" id=46]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-17.obj" type="ArrayMesh" id=47]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-9.obj" type="ArrayMesh" id=48]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-55.obj" type="ArrayMesh" id=49]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-69.obj" type="ArrayMesh" id=50]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-50.obj" type="ArrayMesh" id=51]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-71.obj" type="ArrayMesh" id=52]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-66.obj" type="ArrayMesh" id=53]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-53.obj" type="ArrayMesh" id=54]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-25.obj" type="ArrayMesh" id=55]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-60.obj" type="ArrayMesh" id=56]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-27.obj" type="ArrayMesh" id=57]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-33.obj" type="ArrayMesh" id=58]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-13.obj" type="ArrayMesh" id=59]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-47.obj" type="ArrayMesh" id=60]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-67.obj" type="ArrayMesh" id=61]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-44.obj" type="ArrayMesh" id=62]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-29.obj" type="ArrayMesh" id=63]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-2.obj" type="ArrayMesh" id=64]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-1.obj" type="ArrayMesh" id=65]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-43.obj" type="ArrayMesh" id=66]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-42.obj" type="ArrayMesh" id=67]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-49.obj" type="ArrayMesh" id=68]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-31.obj" type="ArrayMesh" id=69]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-20.obj" type="ArrayMesh" id=70]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-58.obj" type="ArrayMesh" id=71]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-61.obj" type="ArrayMesh" id=72]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-40.obj" type="ArrayMesh" id=73]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-52.obj" type="ArrayMesh" id=74]
+[ext_resource path="res://scenes/Game_Scenarios/GasStation/gsp/gas station project-19.obj" type="ArrayMesh" id=75]
+[ext_resource path="res://scenes/Units/Player/Character.tscn" type="PackedScene" id=76]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 80, 1, 80 )
+
+[node name="Spatial" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.7682, 0 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.8, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 1 )
+
+[node name="Character" parent="." instance=ExtResource( 76 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.7, -13.5682, -23 )
+GRAVITY = 10
+MAX_SPEED = 15
+ACCEL = 5
+MAX_SLOPE_ANGLE = 75
+MAX_HEALTH = 100
+START_HEALTH = 50
+
+[node name="gas station project-0" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 31 )
+material/0 = null
+
+[node name="gas station project-1" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 65 )
+material/0 = null
+
+[node name="gas station project-2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 64 )
+material/0 = null
+
+[node name="gas station project-3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 22 )
+material/0 = null
+
+[node name="gas station project-4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 44 )
+material/0 = null
+
+[node name="gas station project-5" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="gas station project-6" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 5 )
+material/0 = null
+
+[node name="gas station project-7" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 32 )
+material/0 = null
+
+[node name="gas station project-8" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 6 )
+material/0 = null
+
+[node name="gas station project-9" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 48 )
+material/0 = null
+
+[node name="gas station project-10" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 33 )
+material/0 = null
+
+[node name="gas station project-11" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 17 )
+material/0 = null
+
+[node name="gas station project-12" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 45 )
+material/0 = null
+
+[node name="gas station project-13" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 59 )
+material/0 = null
+
+[node name="gas station project-14" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 20 )
+material/0 = null
+
+[node name="gas station project-15" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 42 )
+material/0 = null
+
+[node name="gas station project-16" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 11 )
+material/0 = null
+
+[node name="gas station project-17" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 47 )
+material/0 = null
+
+[node name="gas station project-18" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 36 )
+material/0 = null
+
+[node name="gas station project-19" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 75 )
+material/0 = null
+
+[node name="gas station project-20" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 70 )
+material/0 = null
+
+[node name="gas station project-21" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 8 )
+material/0 = null
+
+[node name="gas station project-22" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 39 )
+material/0 = null
+
+[node name="gas station project-23" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 43 )
+material/0 = null
+
+[node name="gas station project-24" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 10 )
+material/0 = null
+
+[node name="gas station project-25" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 55 )
+material/0 = null
+
+[node name="gas station project-26" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="gas station project-27" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 57 )
+material/0 = null
+
+[node name="gas station project-28" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 7 )
+material/0 = null
+
+[node name="gas station project-29" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 63 )
+material/0 = null
+
+[node name="gas station project-30" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 41 )
+material/0 = null
+
+[node name="gas station project-31" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 69 )
+material/0 = null
+
+[node name="gas station project-32" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 29 )
+material/0 = null
+
+[node name="gas station project-33" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 58 )
+material/0 = null
+
+[node name="gas station project-34" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 14 )
+material/0 = null
+
+[node name="gas station project-35" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 27 )
+material/0 = null
+
+[node name="gas station project-36" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 21 )
+material/0 = null
+
+[node name="gas station project-37" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 28 )
+material/0 = null
+
+[node name="gas station project-38" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 46 )
+material/0 = null
+
+[node name="gas station project-39" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 23 )
+material/0 = null
+
+[node name="gas station project-40" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 73 )
+material/0 = null
+
+[node name="gas station project-41" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="gas station project-42" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 67 )
+material/0 = null
+
+[node name="gas station project-43" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 66 )
+material/0 = null
+
+[node name="gas station project-44" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 62 )
+material/0 = null
+
+[node name="gas station project-45" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 38 )
+material/0 = null
+
+[node name="gas station project-46" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 37 )
+material/0 = null
+
+[node name="gas station project-47" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 60 )
+material/0 = null
+
+[node name="gas station project-48" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 34 )
+material/0 = null
+
+[node name="gas station project-49" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 68 )
+material/0 = null
+
+[node name="gas station project-50" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 51 )
+material/0 = null
+
+[node name="gas station project-51" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 40 )
+material/0 = null
+
+[node name="gas station project-52" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 74 )
+material/0 = null
+
+[node name="gas station project-53" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 54 )
+material/0 = null
+
+[node name="gas station project-54" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 24 )
+material/0 = null
+
+[node name="gas station project-55" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 49 )
+material/0 = null
+
+[node name="gas station project-56" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 13 )
+material/0 = null
+
+[node name="gas station project-57" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 30 )
+material/0 = null
+
+[node name="gas station project-58" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 71 )
+material/0 = null
+
+[node name="gas station project-59" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 19 )
+material/0 = null
+
+[node name="gas station project-60" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 56 )
+material/0 = null
+
+[node name="gas station project-61" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 72 )
+material/0 = null
+
+[node name="gas station project-62" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 15 )
+material/0 = null
+
+[node name="gas station project-63" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 16 )
+material/0 = null
+
+[node name="gas station project-64" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 18 )
+material/0 = null
+
+[node name="gas station project-65" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="gas station project-66" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 53 )
+material/0 = null
+
+[node name="gas station project-67" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 61 )
+material/0 = null
+
+[node name="gas station project-68" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 25 )
+material/0 = null
+
+[node name="gas station project-69" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 50 )
+material/0 = null
+
+[node name="gas station project-70" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 26 )
+material/0 = null
+
+[node name="gas station project-71" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 52 )
+material/0 = null
+
+[node name="gas station project-72" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 9 )
+material/0 = null
+
+[node name="gas station project-73" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 12 )
+material/0 = null
+
+[node name="gas station project-74" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5572, -15.0555, -37.8071 )
+mesh = ExtResource( 35 )
+material/0 = null

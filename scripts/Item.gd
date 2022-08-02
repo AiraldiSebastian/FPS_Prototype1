@@ -11,6 +11,8 @@ export var COLLISION_MASKS: Array  setget ,get_collision_masks
 
 export var HAND_POSITION: Vector3  setget ,get_hand_position
 
+export var ANIMATION_USE: Animation     setget ,get_animation_use
+export var AUDIO_USE: AudioStream       setget ,get_audio_use
 export var ANIMATION_EQUIP: Animation   setget ,get_animation_equip
 export var AUDIO_EQUIP: AudioStream     setget ,get_audio_equip
 export var ANIMATION_UNEQUIP: Animation setget ,get_animation_unequip
@@ -22,6 +24,13 @@ export var AUDIO_UNEQUIP: AudioStream   setget ,get_audio_unequip
 #-------------------------------------------------------------------------------
 var AUDIO_PLAYER_PATH: String setget ,get_audio_player_path
 #-------------------------------------------------------------------------------
+
+
+enum {
+	USE,
+	EQUIP,
+	UNEQUIP
+}
 
 
 # Constructors/Initializers
@@ -38,6 +47,10 @@ func _ready():
 
 # Getters
 #-------------------------------------------------------------------------------
+func get_class():
+	return "Item"
+
+
 func get_name():
 	return NAME
 
@@ -55,12 +68,23 @@ func get_collision_masks():
 
 
 func get_hand_position():
-	print("Hand Position: ", HAND_POSITION)
 	return HAND_POSITION
 
 
-func get_animation(_animationName):
-	return "hello"
+func get_animation(animationName):
+	match animationName:
+		USE:
+			return get_animation_use()
+		EQUIP:
+			return get_animation_equip()
+		UNEQUIP:
+			return get_animation_unequip()
+		_:
+			return null
+
+
+func get_audio_use():
+	return AUDIO_USE
 
 
 func get_animation_equip():
@@ -87,7 +111,6 @@ func get_item_mesh():
 	return get_child(0)
 
 
-# This method should be called generally on the item being used.
 # The derived items from this class, should always implement this method!
 func get_animation_use(): # Pure virtual
 	pass
@@ -144,7 +167,6 @@ func set_initial_layers():
 
 func set_initial_masks():
 	for index in COLLISION_MASKS.size():
-		print(index)
 		set_collision_mask_bit(COLLISION_MASKS[index] - 1, true)
 
 

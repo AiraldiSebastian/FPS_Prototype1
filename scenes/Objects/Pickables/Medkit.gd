@@ -1,9 +1,8 @@
-class_name MedicKit extends Consumable
+class_name Medkit extends Consumable
 
 # Export member variables
 #-------------------------------------------------------------------------------
 export var HEAL_EFFECT: int setget ,get_heal_effect
-export var ANIMATION_USE: Animation setget ,get_animation_use
 #-------------------------------------------------------------------------------
 
 
@@ -20,12 +19,11 @@ func _ready():
 
 # Getters
 #-------------------------------------------------------------------------------
+func get_class():
+	return "Medkit"
+
 func get_heal_effect():
 	return HEAL_EFFECT
-
-
-func get_animation_use():
-	return ANIMATION_USE
 #-------------------------------------------------------------------------------
 
 
