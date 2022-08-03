@@ -4491,7 +4491,517 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.70921, 1.56277, -4.33484 )
 mesh = SubResource( 26 )
 material/0 = null
 
+<<<<<<< HEAD
 [node name="Bunch of trees97" type="Spatial" parent="Map/Forest"]
+||||||| 2f750a1
+[node name="Bunch of trees93" type="Spatial" parent="Forest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.7109, 2.38419e-07, -10.0347 )
+
+[node name="Big trunk" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47714, 1.50821, 0.601317 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Big trunk2" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.80811, 1.50821, -2.11559 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Big trunk3" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53561, 1.50821, -3.96036 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Small trunk XD" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.71262, 1.05331, -4.29588 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Small trunk XD2" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0864, 1.05331, -1.76598 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Small trunk XD3" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.86903, 1.05331, -1.4185 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Big crown" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.51704, 3.16908, 0.616163 )
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="Big crown2" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.83893, 2.75249, -2.14847 )
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="Big crown3 (unique)" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5654, 2.53319, -3.92542 )
+mesh = SubResource( 23 )
+material/0 = null
+
+[node name="Small crown" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1272, 1.58482, -1.78098 )
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="Small crown2" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.89514, 1.83631, -1.48368 )
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="Small crown3 (unique)" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.70921, 1.56277, -4.33484 )
+mesh = SubResource( 26 )
+material/0 = null
+
+[node name="Bunch of trees94" type="Spatial" parent="Forest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.9301, 2.38419e-07, -16.9059 )
+
+[node name="Big trunk" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47714, 1.50821, 0.601317 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Big trunk2" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.80811, 1.50821, -2.11559 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Big trunk3" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53561, 1.50821, -3.96036 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Small trunk XD" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.71262, 1.05331, -4.29588 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Small trunk XD2" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0864, 1.05331, -1.76598 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Small trunk XD3" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.86903, 1.05331, -1.4185 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Big crown" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.51704, 3.16908, 0.616163 )
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="Big crown2" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.83893, 2.75249, -2.14847 )
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="Big crown3 (unique)" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5654, 2.53319, -3.92542 )
+mesh = SubResource( 23 )
+material/0 = null
+
+[node name="Small crown" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1272, 1.58482, -1.78098 )
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="Small crown2" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.89514, 1.83631, -1.48368 )
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="Small crown3 (unique)" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.70921, 1.56277, -4.33484 )
+mesh = SubResource( 26 )
+material/0 = null
+
+[node name="Bunch of trees95" type="Spatial" parent="Forest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8566, 2.38419e-07, -34.8646 )
+
+[node name="Big trunk" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47714, 1.50821, 0.601317 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Big trunk2" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.80811, 1.50821, -2.11559 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Big trunk3" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53561, 1.50821, -3.96036 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Small trunk XD" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.71262, 1.05331, -4.29588 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Small trunk XD2" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0864, 1.05331, -1.76598 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Small trunk XD3" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.86903, 1.05331, -1.4185 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Big crown" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.51704, 3.16908, 0.616163 )
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="Big crown2" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.83893, 2.75249, -2.14847 )
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="Big crown3 (unique)" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5654, 2.53319, -3.92542 )
+mesh = SubResource( 23 )
+material/0 = null
+
+[node name="Small crown" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1272, 1.58482, -1.78098 )
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="Small crown2" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.89514, 1.83631, -1.48368 )
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="Small crown3 (unique)" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.70921, 1.56277, -4.33484 )
+mesh = SubResource( 26 )
+material/0 = null
+
+[node name="Bunch of trees96" type="Spatial" parent="Forest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5688, 2.38419e-07, -3.16359 )
+
+[node name="Big trunk" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47714, 1.50821, 0.601317 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Big trunk2" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.80811, 1.50821, -2.11559 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Big trunk3" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53561, 1.50821, -3.96036 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Small trunk XD" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.71262, 1.05331, -4.29588 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Small trunk XD2" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0864, 1.05331, -1.76598 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Small trunk XD3" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.86903, 1.05331, -1.4185 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Big crown" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.51704, 3.16908, 0.616163 )
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="Big crown2" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.83893, 2.75249, -2.14847 )
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="Big crown3 (unique)" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5654, 2.53319, -3.92542 )
+mesh = SubResource( 23 )
+material/0 = null
+
+[node name="Small crown" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1272, 1.58482, -1.78098 )
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="Small crown2" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.89514, 1.83631, -1.48368 )
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="Small crown3 (unique)" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.70921, 1.56277, -4.33484 )
+mesh = SubResource( 26 )
+material/0 = null
+
+[node name="Bunch of trees97" type="Spatial" parent="Forest"]
+=======
+[node name="Bunch of trees93" type="Spatial" parent="Forest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.7109, 2.38419e-07, -10.0347 )
+
+[node name="Big trunk" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47714, 1.50821, 0.601317 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Big trunk2" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.80811, 1.50821, -2.11559 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Big trunk3" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53561, 1.50821, -3.96036 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Small trunk XD" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.71262, 1.05331, -4.29588 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Small trunk XD2" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0864, 1.05331, -1.76598 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Small trunk XD3" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.86903, 1.05331, -1.4185 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Big crown" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.51704, 3.16908, 0.616163 )
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="Big crown2" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.83893, 2.75249, -2.14847 )
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="Big crown3 (unique)" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5654, 2.53319, -3.92542 )
+mesh = SubResource( 23 )
+material/0 = null
+
+[node name="Small crown" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1272, 1.58482, -1.78098 )
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="Small crown2" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.89514, 1.83631, -1.48368 )
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="Small crown3 (unique)" type="MeshInstance" parent="Forest/Bunch of trees93"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.70921, 1.56277, -4.33484 )
+mesh = SubResource( 26 )
+material/0 = null
+
+[node name="Bunch of trees94" type="Spatial" parent="Forest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.9301, 2.38419e-07, -16.9059 )
+
+[node name="Big trunk" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47714, 1.50821, 0.601317 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Big trunk2" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.80811, 1.50821, -2.11559 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Big trunk3" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53561, 1.50821, -3.96036 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Small trunk XD" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.71262, 1.05331, -4.29588 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Small trunk XD2" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0864, 1.05331, -1.76598 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Small trunk XD3" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.86903, 1.05331, -1.4185 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Big crown" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.51704, 3.16908, 0.616163 )
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="Big crown2" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.83893, 2.75249, -2.14847 )
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="Big crown3 (unique)" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5654, 2.53319, -3.92542 )
+mesh = SubResource( 23 )
+material/0 = null
+
+[node name="Small crown" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1272, 1.58482, -1.78098 )
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="Small crown2" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.89514, 1.83631, -1.48368 )
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="Small crown3 (unique)" type="MeshInstance" parent="Forest/Bunch of trees94"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.70921, 1.56277, -4.33484 )
+mesh = SubResource( 26 )
+material/0 = null
+
+[node name="Bunch of trees95" type="Spatial" parent="Forest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8566, 2.38419e-07, -34.8646 )
+
+[node name="Big trunk" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47714, 1.50821, 0.601317 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Big trunk2" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.80811, 1.50821, -2.11559 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Big trunk3" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53561, 1.50821, -3.96036 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Small trunk XD" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.71262, 1.05331, -4.29588 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Small trunk XD2" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0864, 1.05331, -1.76598 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Small trunk XD3" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.86903, 1.05331, -1.4185 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Big crown" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.51704, 3.16908, 0.616163 )
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="Big crown2" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.77515, 2.75249, -2.14847 )
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="Big crown3 (unique)" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5654, 2.53319, -3.92542 )
+mesh = SubResource( 23 )
+material/0 = null
+
+[node name="Small crown" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1272, 1.58482, -1.78098 )
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="Small crown2" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.89514, 1.83631, -1.48368 )
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="Small crown3 (unique)" type="MeshInstance" parent="Forest/Bunch of trees95"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.70921, 1.56277, -4.33484 )
+mesh = SubResource( 26 )
+material/0 = null
+
+[node name="Bunch of trees96" type="Spatial" parent="Forest"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5688, 2.38419e-07, -3.16359 )
+
+[node name="Big trunk" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47714, 1.50821, 0.601317 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Big trunk2" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.80811, 1.50821, -2.11559 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Big trunk3" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53561, 1.50821, -3.96036 )
+mesh = SubResource( 18 )
+material/0 = null
+
+[node name="Small trunk XD" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.71262, 1.05331, -4.29588 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Small trunk XD2" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0864, 1.05331, -1.76598 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Small trunk XD3" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.86903, 1.05331, -1.4185 )
+mesh = SubResource( 20 )
+material/0 = null
+
+[node name="Big crown" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.51704, 3.16908, 0.616163 )
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="Big crown2" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.83893, 2.75249, -2.14847 )
+mesh = SubResource( 22 )
+material/0 = null
+
+[node name="Big crown3 (unique)" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5654, 2.53319, -3.92542 )
+mesh = SubResource( 23 )
+material/0 = null
+
+[node name="Small crown" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1272, 1.58482, -1.78098 )
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="Small crown2" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.89514, 1.83631, -1.48368 )
+mesh = SubResource( 25 )
+material/0 = null
+
+[node name="Small crown3 (unique)" type="MeshInstance" parent="Forest/Bunch of trees96"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.70921, 1.56277, -4.33484 )
+mesh = SubResource( 26 )
+material/0 = null
+
+[node name="Bunch of trees97" type="Spatial" parent="Forest"]
+>>>>>>> refs/remotes/origin/main
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.4644, 2.38419e-07, 10.7349 )
 
 [node name="Big trunk" type="MeshInstance" parent="Map/Forest/Bunch of trees97"]
