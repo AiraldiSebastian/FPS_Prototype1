@@ -19,7 +19,7 @@ func _ready():
 func get_first_item_of_type(itemType: String):
 	for index in get_size():
 		if get_slot(index).get_itemRef():
-			if  get_slot(index).get_class() == itemType:
+			if get_slot(index).get_itemRef().get_class() == itemType:
 				return get_slot(index).get_itemRef()
 	return null
 

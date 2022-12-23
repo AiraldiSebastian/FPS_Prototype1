@@ -628,7 +628,6 @@ bones/9/bound_children = [  ]
 layers = 256
 mesh = SubResource( 2 )
 skin = SubResource( 3 )
-material/0 = null
 
 [node name="RightHand" type="BoneAttachment" parent="Armature/Skeleton"]
 transform = Transform( 1, 2.78535e-08, 1.50996e-07, -2.78537e-08, 1, 2.78546e-08, -1.50996e-07, -2.78547e-08, 1, -1.46223, 0.867817, 1.54225e-07 )
@@ -692,7 +691,6 @@ bones/5/bound_children = [  ]
 layers = 512
 mesh = SubResource( 15 )
 skin = SubResource( 16 )
-material/0 = null
 
 [node name="RightHand" type="BoneAttachment" parent="Perspective/Armature/Skeleton"]
 transform = Transform( 1, -1.17021e-13, 0, -4.21776e-14, 1, 0, -9.9476e-13, -1.02318e-12, 1, -1.46223, -0.158267, -4.55626e-08 )

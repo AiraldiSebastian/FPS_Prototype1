@@ -430,7 +430,10 @@ func interact():
 
 func reload():
 	if playerCurrentItem is FireWeapon:
-		if playerCurrentItem.reload() == "EMPTY":
+		# Reload, in case reload() returns empty, search if an AMMO
+		# Pack is available in the inventory and reload using it.
+		# ------------------------------------------------------------------------------------------
+		if playerCurrentItem.reload() == FireWeapon.WeaponState.EMPTY:
 			var item = null
 			var ammo = null
 			
@@ -438,22 +441,24 @@ func reload():
 			# --------------------------------------------------------------------------------------
 			item = UI_Hotbar.get_first_item_of_type("Ammo")
 			if item:
-				ammo = UI_Hotbar.get_item_usage(item)
-				if ammo:
-					playerCurrentItem.add_ammo(ammo)
-					perspCurrentItem.add_ammo(ammo)
-					return
+				ammo = item.use()
+				if item.get_charges() == 0:
+					delete_item(item)
+				playerCurrentItem.add_ammo(ammo)
+				perspCurrentItem.add_ammo(ammo)
+				return
 			# --------------------------------------------------------------------------------------
 			
 			# Second search in Inventory
 			# --------------------------------------------------------------------------------------
 			item = UI_Inventory.get_first_item_of_type("Ammo")
 			if item:
-				ammo = UI_Inventory.get_item_usage(item)
-				if ammo:
-					playerCurrentItem.add_ammo(ammo)
-					perspCurrentItem.add_ammo(ammo)
-					return
+				ammo = item.use()
+				if item.get_charges() == 0:
+					delete_item(item)
+				playerCurrentItem.add_ammo(ammo)
+				perspCurrentItem.add_ammo(ammo)
+				return
 			# --------------------------------------------------------------------------------------
 	return true
 

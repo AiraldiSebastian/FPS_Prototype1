@@ -21,7 +21,7 @@ func _ready():
 # Getters
 #-------------------------------------------------------------------------------
 func get_class():
-	return "Medkit"
+	return "Ammo"
 
 
 func get_ammo():
