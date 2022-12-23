@@ -1,6 +1,6 @@
 [gd_scene load_steps=42 format=2]
 
-[ext_resource path="res://scenes/Units/Player/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Units/Player/Character_Alpha.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Weapons/FireWeapons/HeavyWeapon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Weapons/FireWeapons/Shotgun.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Weapons/FireWeapons/AssaultRifle.tscn" type="PackedScene" id=4]
@@ -1673,6 +1673,14 @@ shape = SubResource( 38 )
 transform = Transform( -0.0843387, -0.253005, 0.963782, 0, 0.967228, 0.25391, -0.996437, 0.0214144, -0.0815748, 32.209, 2.89931, -31.951 )
 cull_mask = 1047935
 
+[node name="Character" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.975, 0.500031, -35.3428 )
+GRAVITY = 10
+MAX_SPEED = 10
+ACCEL = 5
+MAX_HEALTH = 100
+START_HEALTH = 10
+
 [node name="Zombie" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22194, 0.713015, -34.2692 )
 
@@ -1687,21 +1695,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5681, 0.713015, -33.5053 )
 
 [node name="Zombie18" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5681, 0.713015, -36.8197 )
-
-[node name="Character" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0258, 0.500008, -32.9119 )
-GRAVITY = 10
-MAX_SPEED = 10
-ACCEL = 10
-MAX_SLOPE_ANGLE = 75
-MAX_HEALTH = 100
-START_HEALTH = 5
-
-[node name="RightHand" parent="Character/Armature/Skeleton" index="1"]
-transform = Transform( 1, 2.78535e-08, 1.50996e-07, -2.78537e-08, 1, 2.78546e-08, -1.50996e-07, -2.78547e-08, 1, -1.46223, 0.867817, 1.54225e-07 )
-
-[node name="RightHand" parent="Character/Perspective/Armature/Skeleton" index="1"]
-transform = Transform( 1, -1.17021e-13, 0, -4.21776e-14, 1, 0, -9.9476e-13, -1.02318e-12, 1, -1.46223, -0.158267, -4.55626e-08 )
 
 [node name="Zombie2" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0236, 0.638412, 28.1994 )
@@ -1741,5 +1734,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.2098, 0.61818, 14.0811 )
 
 [node name="Zombie14" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2152, 0.61818, 14.0811 )
-
-[editable path="Character"]
