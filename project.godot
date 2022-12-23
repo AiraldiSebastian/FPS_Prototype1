@@ -49,11 +49,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/HealthSystem.gd"
 }, {
-"base": "Inventory",
-"class": "Hotbar",
-"language": "GDScript",
-"path": "res://scenes/InventorySystem/Hotbar/Hotbar.gd"
-}, {
 "base": "Reference",
 "class": "HotbarMarker",
 "language": "GDScript",
@@ -118,7 +113,6 @@ _global_script_class_icons={
 "EquipItemState": "",
 "FireWeapon": "",
 "HealthSystem": "",
-"Hotbar": "",
 "HotbarMarker": "",
 "HotbarSlot": "",
 "Inventory": "",

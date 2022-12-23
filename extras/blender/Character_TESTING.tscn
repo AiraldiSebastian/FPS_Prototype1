@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/Weapons/FireWeapons/AssaultRifle/assault_rifle_reload_boltpull.wav" type="AudioStream" id=2]
 [ext_resource path="res://assets/Weapons/FireWeapons/Shotgun/shotgun_reload.tres" type="Animation" id=3]
 [ext_resource path="res://assets/Weapons/FireWeapons/HeavyGun/heavy_gun_equip.tres" type="Animation" id=4]
-[ext_resource path="res://scenes/Objects/Pickables/Ammo.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Objects/Old/Ammo.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpatialMaterial" id=1]
 vertex_color_use_as_albedo = true

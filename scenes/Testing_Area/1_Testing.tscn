@@ -6,8 +6,8 @@
 [ext_resource path="res://scenes/Weapons/FireWeapons/AssaultRifle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Weapons/FireWeapons/Rifle.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Units/Enemies/Zombie.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/Objects/Pickables/Medkit.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Objects/Pickables/Ammo.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Objects/Pickables/MedKit.tscn" type="PackedScene" id=9]
 
 [sub_resource type="SpatialMaterial" id=10]
 albedo_color = Color( 1, 0.909804, 0.466667, 1 )
@@ -127,17 +127,20 @@ extents = Vector3( 1.5, 2, 1.5 )
 
 [node name="World" type="Spatial"]
 
-[node name="MedicKit" parent="." instance=ExtResource( 7 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 34.6476, 12.1838, -29.5171 )
+[node name="MedKit" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.7458, 2.02259, -29.4443 )
 
-[node name="MedicKit2" parent="." instance=ExtResource( 7 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 34.3896, 1.79487, -29.5171 )
+[node name="MedKit2" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1907, 2.03096, -29.4572 )
 
-[node name="MedicKit3" parent="." instance=ExtResource( 7 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 34.1031, 1.79487, -29.5171 )
+[node name="MedKit3" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6458, 2.04371, -29.4667 )
 
-[node name="MedicKit4" parent="." instance=ExtResource( 7 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 33.7984, 1.79487, -29.5171 )
+[node name="Ammo" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.4269, 1.93547, -29.5272 )
+
+[node name="Ammo2" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8735, 1.93766, -29.5436 )
 
 [node name="AssaultRiffle" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.3131, 2.053, -28.9213 )
@@ -1685,15 +1688,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5681, 0.713015, -33.5053 )
 [node name="Zombie18" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5681, 0.713015, -36.8197 )
 
-[node name="Ammo" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.6166, 14.7202, -29.2576 )
-
-[node name="Ammo2" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.1181, 1.75, -29.2576 )
-
-[node name="Ammo3" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.6429, 1.75, -29.2576 )
-
 [node name="Character" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0258, 0.500008, -32.9119 )
 GRAVITY = 10
@@ -1702,6 +1696,12 @@ ACCEL = 10
 MAX_SLOPE_ANGLE = 75
 MAX_HEALTH = 100
 START_HEALTH = 5
+
+[node name="RightHand" parent="Character/Armature/Skeleton" index="1"]
+transform = Transform( 1, 2.78535e-08, 1.50996e-07, -2.78537e-08, 1, 2.78546e-08, -1.50996e-07, -2.78547e-08, 1, -1.46223, 0.867817, 1.54225e-07 )
+
+[node name="RightHand" parent="Character/Perspective/Armature/Skeleton" index="1"]
+transform = Transform( 1, -1.17021e-13, 0, -4.21776e-14, 1, 0, -9.9476e-13, -1.02318e-12, 1, -1.46223, -0.158267, -4.55626e-08 )
 
 [node name="Zombie2" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0236, 0.638412, 28.1994 )
