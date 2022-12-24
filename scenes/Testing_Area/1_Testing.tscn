@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/Weapons/FireWeapons/Shotgun.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Weapons/FireWeapons/AssaultRifle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Weapons/FireWeapons/Rifle.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/Units/Enemies/Zombie.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Units/Enemies/Zombie_Alpha.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Objects/Pickables/Ammo.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Objects/Pickables/MedKit.tscn" type="PackedScene" id=9]
 
@@ -1681,56 +1681,8 @@ ACCEL = 5
 MAX_HEALTH = 100
 START_HEALTH = 10
 
-[node name="Zombie" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22194, 0.713015, -34.2692 )
-
-[node name="Zombie15" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4764, 0.713015, -31.9312 )
-
-[node name="Zombie16" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.3007, 0.713015, -33.5053 )
-
-[node name="Zombie17" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5681, 0.713015, -33.5053 )
-
-[node name="Zombie18" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5681, 0.713015, -36.8197 )
-
-[node name="Zombie2" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0236, 0.638412, 28.1994 )
-
-[node name="Zombie3" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0616, 0.638412, 28.1994 )
-
-[node name="Zombie4" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.4515, 0.638412, 28.1994 )
-
-[node name="Zombie5" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.2583, 0.638412, 28.1994 )
-
-[node name="Zombie6" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.0733, 0.61818, 14.0811 )
-
-[node name="Zombie7" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.0138, 0.61818, 14.0811 )
-
-[node name="Zombie8" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7746, 0.61818, 14.0811 )
-
-[node name="Zombie9" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72245, 0.61818, 14.0811 )
-
-[node name="Zombie10" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5671, 0.61818, 14.0811 )
-
-[node name="Zombie11" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63964, 0.61818, 14.0811 )
-
-[node name="Zombie12" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.63573, 0.61818, 14.0811 )
-
-[node name="Zombie13" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.2098, 0.61818, 14.0811 )
-
-[node name="Zombie14" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2152, 0.61818, 14.0811 )
+[node name="Zombie_UV_export" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.760809, 0.77978, -35.4583 )
+MAX_SPEED = 5
+ACCEL = 2
+GRAVITY = 10

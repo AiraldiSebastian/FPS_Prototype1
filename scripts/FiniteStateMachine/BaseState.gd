@@ -76,7 +76,6 @@ func play_animation(animationName):
 			perspAnim.add_animation(animation.get_name(), animation)
 		charAnim.play(animation.get_name())
 		perspAnim.play(animation.get_name())
-		print("SpecificAnimation")
 		return true
 	else:
 		return false

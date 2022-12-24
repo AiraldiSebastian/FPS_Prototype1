@@ -143,7 +143,7 @@ func _ready():
 	charMoveState.set_active(true)
 	audioPlayer	= $AudioStreamPlayer
 	audioPlayerContinuous = $AudioManager
-	playerState		= UnequipItemState.new(self, audioPlayer, audioPlayerContinuous)
+	playerState	= UnequipItemState.new(self, audioPlayer, audioPlayerContinuous)
 	playerState.play_state()
 	# ----------------------------------
 
