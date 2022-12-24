@@ -119,6 +119,7 @@ func _ready():
 	# Health related
 	# ----------------------------------
 	healthSystem = HealthSystem.new(MAX_HEALTH, START_HEALTH)
+	# warning-ignore:return_value_discarded
 	healthSystem.connect("isDead", self, "die")
 	# ----------------------------------
 

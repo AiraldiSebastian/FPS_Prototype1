@@ -1,11 +1,11 @@
 [gd_scene load_steps=42 format=2]
 
-[ext_resource path="res://scenes/Units/Player/Character_Alpha.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Units/Player/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Weapons/FireWeapons/HeavyWeapon.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Weapons/FireWeapons/Shotgun.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Weapons/FireWeapons/AssaultRifle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Weapons/FireWeapons/Rifle.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/Units/Enemies/Zombie_Alpha.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Units/Enemies/Zombie.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Objects/Pickables/Ammo.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Objects/Pickables/MedKit.tscn" type="PackedScene" id=9]
 
@@ -1673,13 +1673,8 @@ shape = SubResource( 38 )
 transform = Transform( -0.0843387, -0.253005, 0.963782, 0, 0.967228, 0.25391, -0.996437, 0.0214144, -0.0815748, 32.209, 2.89931, -31.951 )
 cull_mask = 1047935
 
-[node name="Character" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.975, 0.500031, -35.3428 )
-GRAVITY = 10
-MAX_SPEED = 10
-ACCEL = 5
-MAX_HEALTH = 100
-START_HEALTH = 10
-
 [node name="Zombie_UV_export" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.760809, 0.77978, -35.4583 )
+
+[node name="Character" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.273, 0.500112, -34.5084 )
