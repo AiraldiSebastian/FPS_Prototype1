@@ -1683,6 +1683,3 @@ START_HEALTH = 10
 
 [node name="Zombie_UV_export" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.760809, 0.77978, -35.4583 )
-MAX_SPEED = 5
-ACCEL = 2
-GRAVITY = 10

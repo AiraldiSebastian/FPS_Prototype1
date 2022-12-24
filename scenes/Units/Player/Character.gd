@@ -119,6 +119,7 @@ func _ready():
 	# Health related
 	# ----------------------------------
 	healthSystem = HealthSystem.new(MAX_HEALTH, START_HEALTH)
+	healthSystem.connect("isDead", self, "die")
 	# ----------------------------------
 
 
@@ -705,3 +706,6 @@ func adapt_item_invisibility(argPlayerCurrentItem, argPerspCurrentItem):
 	itemMesh.set_layer_mask_bit(7, true)
 	# ----------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------
+
+func die():
+	queue_free()
