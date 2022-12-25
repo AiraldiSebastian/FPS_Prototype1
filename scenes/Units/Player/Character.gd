@@ -643,9 +643,18 @@ func remove_items():
 	
 	# Reset the layer mask bits from the characters weapon mesh
 	# ----------------------------------------------------------------------------------------------
-	var weaponMesh = playerCurrentItem.get_item_mesh()
-	weaponMesh.set_layer_mask_bit(4, true)
-	weaponMesh.set_layer_mask_bit(5, false)
+#	var weaponMesh = playerCurrentItem.get_item_mesh()
+#	weaponMesh.set_layer_mask_bit(4, true)
+#	weaponMesh.set_layer_mask_bit(5, false)
+	var itemMesh = playerCurrentItem.get_item_mesh()
+	if itemMesh is Skeleton:
+		var childrenMesh = itemMesh.get_children()
+		for mesh in childrenMesh:
+			mesh.set_layer_mask_bit(4, true)
+			mesh.set_layer_mask_bit(5, false)
+	else:
+		itemMesh.set_layer_mask_bit(4, true)
+		itemMesh.set_layer_mask_bit(5, false)
 	# ----------------------------------------------------------------------------------------------
 	
 	
@@ -699,12 +708,24 @@ func adapt_item_invisibility(argPlayerCurrentItem, argPerspCurrentItem):
 	# Make the characters item mesh invisible for our camera perspective 8, 10 | 6, 7, 9
 	# ----------------------------------------------------------------------------------------------
 	var itemMesh = argPlayerCurrentItem.get_item_mesh()
-	itemMesh.set_layer_mask_bit(4, false)
-	itemMesh.set_layer_mask_bit(5, true)
-	
-	itemMesh = argPerspCurrentItem.get_item_mesh()
-	itemMesh.set_layer_mask_bit(4, false)
-	itemMesh.set_layer_mask_bit(7, true)
+	if itemMesh is Skeleton:
+		var childrenMesh = itemMesh.get_children()
+		for mesh in childrenMesh:
+			mesh.set_layer_mask_bit(4, false)
+			mesh.set_layer_mask_bit(5, true)
+			
+		itemMesh = argPerspCurrentItem.get_item_mesh()
+		childrenMesh = itemMesh.get_children()
+		for mesh in childrenMesh:
+			mesh.set_layer_mask_bit(4, false)
+			mesh.set_layer_mask_bit(7, true)
+	else:
+		itemMesh.set_layer_mask_bit(4, false)
+		itemMesh.set_layer_mask_bit(5, true)
+		
+		itemMesh = argPerspCurrentItem.get_item_mesh()
+		itemMesh.set_layer_mask_bit(4, false)
+		itemMesh.set_layer_mask_bit(7, true)
 	# ----------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------
 

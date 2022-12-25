@@ -1,10 +1,9 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://scenes/Units/Player/Character.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/Weapons/FireWeapons/HeavyWeapon.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Weapons/FireWeapons/Shotgun.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/Weapons/FireWeapons/AssaultRifle.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/Weapons/FireWeapons/Rifle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Weapons/FireWeapons/mossberg_patriot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Weapons/FireWeapons/ks-23.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Weapons/FireWeapons/aa_.50_beowulf.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Units/Enemies/Zombie.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Objects/Pickables/Ammo.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Objects/Pickables/MedKit.tscn" type="PackedScene" id=9]
@@ -142,31 +141,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.4269, 1.93547, -29.5272 )
 [node name="Ammo2" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8735, 1.93766, -29.5436 )
 
-[node name="AssaultRiffle" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.3131, 2.053, -28.9213 )
-current_ammo = 0
-current_mag_ammo = 1
+[node name="aa_50_beowulf" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.3859, 2.09497, -29.1291 )
 
-[node name="AssaultRiffle2" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5417, 2.053, -28.9213 )
+[node name="ks-23" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6319, 1.96176, -29.4317 )
 
-[node name="HeavyWeapon" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3115, 2.13755, -29.0445 )
-
-[node name="HeavyWeapon2" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5603, 2.13755, -29.0445 )
-
-[node name="Riffle" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3655, 2.05435, -28.8927 )
-
-[node name="Riffle2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6972, 2.05435, -28.8927 )
-
-[node name="Shotgun" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34337, 1.98953, -28.9549 )
-
-[node name="Shotgun2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.60287, 1.98953, -28.9549 )
+[node name="mossberg_patriot" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3258, 1.89396, -29.3913 )
 
 [node name="Floor" type="StaticBody" parent="."]
 
