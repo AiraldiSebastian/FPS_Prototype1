@@ -49,6 +49,7 @@ var perspSkel: Skeleton3D
 var characterAnim: AnimationPlayer
 var perspectiveAnim: AnimationPlayer
 var charMoveState: AnimationTree
+var charLegsAnim: AnimationPlayer
 var audioPlayer: AudioStreamPlayer
 var audioPlayerContinuous: AudioStreamPlayer
 # ----------------------------------
@@ -143,6 +144,7 @@ func _ready():
 	characterAnim	= $CharacterAnimation
 	perspectiveAnim	= $Character_Aim/PerspectiveAnimation
 	charMoveState	= $AnimationTree
+	charLegsAnim = $LowerBodyAnimation
 #	The line below is the one causing the problem of the CharacterAnimation not playing.
 #	Read AnimationTree to understand. Basically, an active AnimationTree will disable all
 #	basic functions of an AnimationPlayer.
@@ -206,13 +208,10 @@ func _physics_process(delta):
 	# -----------------------
 #	print_animation_info(characterAnim.get_current_animation(), characterAnim.get_name())
 #	print_animation_info(perspectiveAnim.get_current_animation(), perspectiveAnim.get_name())
-	if !characterAnim.is_playing():
-		characterAnim.play("equip_fire_weapon")
-	else:
-		print("PLAYING LOL: " + characterAnim.current_animation)
 	process_input(delta)
 	process_ui(delta)
 	process_movement(delta)
+	process_animation(delta)
 	# -----------------------
 
 
@@ -282,6 +281,36 @@ func process_movement(delta):
 	# ----------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------
 
+func process_animation(delta):
+	process_animation_lowerBody(delta)
+	process_animation_upperBody(delta)
+
+
+func process_animation_lowerBody(_delta):
+	animationDir = Vector3()
+	if Input.is_action_pressed("movement_forward"):
+		animationDir.z += 1
+	if Input.is_action_pressed("movement_backward"):
+		animationDir.z -= 1
+	if Input.is_action_pressed("movement_left"):
+		animationDir.x += 1
+	if Input.is_action_pressed("movement_right"):
+		animationDir.x -= 1
+	
+	if animationDir == Vector3() and charLegsAnim.get_current_animation() != "legs_idle":
+		charLegsAnim.play("legs_idle")
+	else:
+		if animationDir.x > 0:
+			charLegsAnim.play("left")
+		elif animationDir.x < 0:
+			charLegsAnim.play("right")
+		elif animationDir.z > 0:
+			charLegsAnim.play("forward")
+		elif animationDir.z < 0:
+			charLegsAnim.play("backward")
+
+func process_animation_upperBody(_delta):
+	var x
 
 # Print / Info related methods
 #---------------------------------------------------------------------------------------------------
