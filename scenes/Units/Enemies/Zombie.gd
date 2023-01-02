@@ -1,39 +1,39 @@
-extends KinematicBody
+extends CharacterBody3D
 
-export var MAX_SPEED:	int
-export var ACCEL:		int
-export var GRAVITY:		int
+@export var MAX_SPEED:	int
+@export var ACCEL:		int
+@export var GRAVITY:		int
 
 var zombieVel: Vector3 = Vector3()
 
 var healthSystem: HealthSystem
 
-var AREA_DETECTION: Area
-var AREA_ATTACK: Area
-var SPACE_ATTACK: Area
+var AREA_DETECTION: Area3D
+var AREA_ATTACK: Area3D
+var SPACE_ATTACK: Area3D
 
 var bodyInAttackArea
 var bodyInDetectionArea
 
 var zombieAnim: AnimationPlayer
 
-export var DAMAGE: int
+@export var DAMAGE: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Area of detection/attack
+	# Area3D of detection/attack
 	# ----------------------------------
 	AREA_DETECTION = $DetectionArea
 	# warning-ignore:return_value_discarded
-	AREA_DETECTION.connect("body_entered", self, "add_bodyInDetectionArea")
+	AREA_DETECTION.connect("body_entered",Callable(self,"add_bodyInDetectionArea"))
 	# warning-ignore:return_value_discarded
-	AREA_DETECTION.connect("body_exited", self, "remove_bodyInDetectionArea")
+	AREA_DETECTION.connect("body_exited",Callable(self,"remove_bodyInDetectionArea"))
 	
 	AREA_ATTACK = $AttackArea
 	# warning-ignore:return_value_discarded
-	AREA_ATTACK.connect("body_entered", self, "add_bodyInAttackArea")
+	AREA_ATTACK.connect("body_entered",Callable(self,"add_bodyInAttackArea"))
 	# warning-ignore:return_value_discarded
-	AREA_ATTACK.connect("body_exited", self, "remove_bodyInAttackArea")
+	AREA_ATTACK.connect("body_exited",Callable(self,"remove_bodyInAttackArea"))
 	
 	SPACE_ATTACK = $SpaceAttack
 	# ----------------------------------
@@ -48,7 +48,7 @@ func _ready():
 	
 	healthSystem = HealthSystem.new(100, 100)
 	# warning-ignore:return_value_discarded
-	healthSystem.connect("isDead", self, "is_dead")
+	healthSystem.connect("isDead",Callable(self,"is_dead"))
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,12 +61,15 @@ func _physics_process(delta):
 	elif bodyInDetectionArea:
 		look_at(bodyInDetectionArea.global_transform.origin, Vector3(0, 1, 0))
 		zombieAnim.play("chase")
-		zombieVel = zombieVel.linear_interpolate(-global_transform.basis.z * MAX_SPEED, delta * ACCEL)
+		zombieVel = zombieVel.lerp(-global_transform.basis.z * MAX_SPEED, delta * ACCEL)
 	else:
 		zombieVel = Vector3(0, 0, 0)
 		zombieAnim.play("idle")
 	
-	zombieVel = move_and_slide(zombieVel, Vector3(0, 1, 0))
+	set_velocity(zombieVel)
+	set_up_direction(Vector3(0, 1, 0))
+	move_and_slide()
+	zombieVel = velocity
 
 func add_bodyInDetectionArea(player):
 	bodyInDetectionArea = player

@@ -3,7 +3,8 @@ extends FireWeapon
 
 # Constructors/Initializers
 #-------------------------------------------------------------------------------
-func _init(audioPlayerPath = null).(audioPlayerPath):
+func _init(audioPlayerPath = null):
+	super(audioPlayerPath)
 	pass
 
 
@@ -32,7 +33,7 @@ func set_reload_audio():
 # Others
 #-------------------------------------------------------------------------------
 func pick(audioPlayerPath = null):
-	.pick(audioPlayerPath)
+	super.pick(audioPlayerPath)
 	set_reload_audio()
 	return self
 #-------------------------------------------------------------------------------

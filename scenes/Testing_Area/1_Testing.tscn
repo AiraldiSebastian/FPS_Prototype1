@@ -1,1662 +1,1650 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=37 format=3 uid="uid://chnx7j887fv4m"]
 
-[ext_resource path="res://scenes/Units/Player/Character.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/Weapons/FireWeapons/mossberg_patriot.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Weapons/FireWeapons/ks-23.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/Weapons/FireWeapons/aa_.50_beowulf.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/Units/Enemies/Zombie.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/Objects/Pickables/Ammo.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/Objects/Pickables/MedKit.tscn" type="PackedScene" id=9]
+[ext_resource type="PackedScene" uid="uid://biiqv5fipc37w" path="res://scenes/Weapons/FireWeapons/aa_50_beowulf.tscn" id="4_popji"]
+[ext_resource type="PackedScene" uid="uid://cep7dypcjn0gc" path="res://scenes/Units/Player/Character_Alpha.tscn" id="6_26wo4"]
+[ext_resource type="PackedScene" uid="uid://cfs0hahfmti7s" path="res://scenes/Objects/Pickables/Ammo.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://3mv5l4q3uqgj" path="res://scenes/Objects/Pickables/MedKit.tscn" id="9"]
 
-[sub_resource type="SpatialMaterial" id=10]
-albedo_color = Color( 1, 0.909804, 0.466667, 1 )
+[sub_resource type="StandardMaterial3D" id="10"]
+albedo_color = Color(1, 0.909804, 0.466667, 1)
 
-[sub_resource type="CubeMesh" id=11]
-material = SubResource( 10 )
-size = Vector3( 80, 1, 80 )
+[sub_resource type="BoxMesh" id="11"]
+material = SubResource("10")
+size = Vector3(80, 1, 80)
 
-[sub_resource type="BoxShape" id=2]
-extents = Vector3( 40, 0.5, 40 )
+[sub_resource type="BoxShape3D" id="2"]
+size = Vector3(80, 1, 80)
 
-[sub_resource type="SpatialMaterial" id=16]
-albedo_color = Color( 0.960784, 0.737255, 0.329412, 1 )
+[sub_resource type="StandardMaterial3D" id="16"]
+albedo_color = Color(0.960784, 0.737255, 0.329412, 1)
 
-[sub_resource type="CubeMesh" id=12]
-material = SubResource( 16 )
-size = Vector3( 80, 10, 1 )
+[sub_resource type="BoxMesh" id="12"]
+material = SubResource("16")
+size = Vector3(80, 10, 1)
 
-[sub_resource type="BoxShape" id=13]
-extents = Vector3( 40, 5, 0.5 )
+[sub_resource type="BoxShape3D" id="13"]
+size = Vector3(80, 10, 1)
 
-[sub_resource type="SpatialMaterial" id=17]
-albedo_color = Color( 0.960784, 0.737255, 0.329412, 1 )
+[sub_resource type="StandardMaterial3D" id="17"]
+albedo_color = Color(0.960784, 0.737255, 0.329412, 1)
 
-[sub_resource type="CubeMesh" id=14]
-material = SubResource( 17 )
-size = Vector3( 1, 10, 80 )
+[sub_resource type="BoxMesh" id="14"]
+material = SubResource("17")
+size = Vector3(1, 10, 80)
 
-[sub_resource type="BoxShape" id=15]
-extents = Vector3( 0.5, 5, 40 )
+[sub_resource type="BoxShape3D" id="15"]
+size = Vector3(1, 10, 80)
 
-[sub_resource type="SpatialMaterial" id=30]
-albedo_color = Color( 0.454902, 0.317647, 0.239216, 1 )
+[sub_resource type="StandardMaterial3D" id="30"]
+albedo_color = Color(0.454902, 0.317647, 0.239216, 1)
 
-[sub_resource type="CylinderMesh" id=18]
-material = SubResource( 30 )
+[sub_resource type="CylinderMesh" id="18"]
+material = SubResource("30")
 height = 6.0
 
-[sub_resource type="CylinderShape" id=20]
+[sub_resource type="CylinderShape3D" id="20"]
 height = 6.0
 
-[sub_resource type="SpatialMaterial" id=19]
-albedo_color = Color( 0.454902, 0.317647, 0.239216, 1 )
+[sub_resource type="StandardMaterial3D" id="31"]
+albedo_color = Color(0.454902, 0.317647, 0.239216, 1)
 
-[sub_resource type="SpatialMaterial" id=31]
-albedo_color = Color( 0.454902, 0.317647, 0.239216, 1 )
+[sub_resource type="BoxMesh" id="21"]
+material = SubResource("31")
+size = Vector3(1.5, 1.5, 1.5)
 
-[sub_resource type="CubeMesh" id=21]
-material = SubResource( 31 )
-size = Vector3( 1.5, 1.5, 1.5 )
+[sub_resource type="BoxShape3D" id="32"]
+size = Vector3(1.5, 1.5, 1.5)
 
-[sub_resource type="BoxShape" id=32]
-extents = Vector3( 0.75, 0.75, 0.75 )
-
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="StandardMaterial3D" id="6"]
 resource_local_to_scene = true
-albedo_color = Color( 0.403922, 0.278431, 0.180392, 1 )
+albedo_color = Color(0.403922, 0.278431, 0.180392, 1)
 
-[sub_resource type="CubeMesh" id=7]
+[sub_resource type="BoxMesh" id="7"]
 resource_local_to_scene = true
-material = SubResource( 6 )
-size = Vector3( 10, 1, 10 )
+material = SubResource("6")
+size = Vector3(10, 1, 10)
 
-[sub_resource type="BoxShape" id=5]
-extents = Vector3( 5, 0.5, 5 )
+[sub_resource type="BoxShape3D" id="5"]
+size = Vector3(10, 1, 10)
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="StandardMaterial3D" id="8"]
 resource_local_to_scene = true
-albedo_color = Color( 0.403922, 0.278431, 0.180392, 1 )
+albedo_color = Color(0.403922, 0.278431, 0.180392, 1)
 
-[sub_resource type="CubeMesh" id=9]
-material = SubResource( 8 )
-size = Vector3( 10, 1, 10 )
+[sub_resource type="BoxMesh" id="9"]
+material = SubResource("8")
+size = Vector3(10, 1, 10)
 
-[sub_resource type="SpatialMaterial" id=24]
-albedo_color = Color( 0.454902, 0.317647, 0.239216, 1 )
+[sub_resource type="StandardMaterial3D" id="24"]
+albedo_color = Color(0.454902, 0.317647, 0.239216, 1)
 
-[sub_resource type="CylinderMesh" id=25]
-material = SubResource( 24 )
+[sub_resource type="CylinderMesh" id="25"]
+material = SubResource("24")
 height = 7.0
 
-[sub_resource type="CylinderShape" id=26]
+[sub_resource type="CylinderShape3D" id="26"]
 height = 7.0
 
-[sub_resource type="SpatialMaterial" id=27]
-albedo_color = Color( 0.403922, 0.278431, 0.180392, 1 )
+[sub_resource type="StandardMaterial3D" id="27"]
+albedo_color = Color(0.403922, 0.278431, 0.180392, 1)
 
-[sub_resource type="CylinderMesh" id=28]
-material = SubResource( 27 )
+[sub_resource type="CylinderMesh" id="28"]
+material = SubResource("27")
 top_radius = 0.75
 bottom_radius = 0.75
 height = 11.0
 
-[sub_resource type="CylinderShape" id=29]
+[sub_resource type="CylinderShape3D" id="29"]
 height = 11.0
 radius = 0.75
 
-[sub_resource type="SpatialMaterial" id=33]
-albedo_color = Color( 0.403922, 0.278431, 0.180392, 1 )
+[sub_resource type="StandardMaterial3D" id="33"]
+albedo_color = Color(0.403922, 0.278431, 0.180392, 1)
 
-[sub_resource type="CubeMesh" id=34]
-material = SubResource( 33 )
-size = Vector3( 1, 4, 1 )
+[sub_resource type="BoxMesh" id="34"]
+material = SubResource("33")
+size = Vector3(1, 4, 1)
 
-[sub_resource type="BoxShape" id=35]
-extents = Vector3( 0.5, 2, 0.5 )
+[sub_resource type="BoxShape3D" id="35"]
+size = Vector3(1, 4, 1)
 
-[sub_resource type="SpatialMaterial" id=36]
-albedo_color = Color( 0.392157, 0.592157, 0.388235, 1 )
+[sub_resource type="StandardMaterial3D" id="36"]
+albedo_color = Color(0.392157, 0.592157, 0.388235, 1)
 
-[sub_resource type="CubeMesh" id=37]
-material = SubResource( 36 )
-size = Vector3( 3, 4, 3 )
+[sub_resource type="BoxMesh" id="37"]
+material = SubResource("36")
+size = Vector3(3, 4, 3)
 
-[sub_resource type="BoxShape" id=38]
-extents = Vector3( 1.5, 2, 1.5 )
+[sub_resource type="BoxShape3D" id="38"]
+size = Vector3(3, 4, 3)
 
-[node name="World" type="Spatial"]
+[node name="World" type="Node3D"]
 
-[node name="MedKit" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.7458, 2.02259, -29.4443 )
+[node name="MedKit" parent="." instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.7458, 2.02259, -29.4443)
 
-[node name="MedKit2" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1907, 2.03096, -29.4572 )
+[node name="MedKit2" parent="." instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1907, 2.03096, -29.4572)
 
-[node name="MedKit3" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6458, 2.04371, -29.4667 )
+[node name="MedKit3" parent="." instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6458, 2.04371, -29.4667)
 
-[node name="Ammo" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.4269, 1.93547, -29.5272 )
+[node name="Ammo" parent="." instance=ExtResource("8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.4269, 1.93547, -29.5272)
+collision_layer = 16
+collision_mask = 17
 
-[node name="Ammo2" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8735, 1.93766, -29.5436 )
+[node name="Ammo2" parent="." instance=ExtResource("8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8735, 1.93766, -29.5436)
+collision_layer = 16
+collision_mask = 17
 
-[node name="aa_50_beowulf" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.3859, 2.09497, -29.1291 )
+[node name="Floor" type="StaticBody3D" parent="."]
 
-[node name="ks-23" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6319, 1.96176, -29.4317 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("11")
 
-[node name="mossberg_patriot" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3258, 1.89396, -29.3913 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("2")
 
-[node name="Floor" type="StaticBody" parent="."]
+[node name="Walls" type="Node3D" parent="."]
 
-[node name="MeshInstance" type="MeshInstance" parent="Floor"]
-mesh = SubResource( 11 )
+[node name="Wall-North" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 39.5)
 
-[node name="CollisionShape" type="CollisionShape" parent="Floor"]
-shape = SubResource( 2 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall-North"]
+mesh = SubResource("12")
 
-[node name="Walls" type="Spatial" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall-North"]
+shape = SubResource("13")
 
-[node name="Wall-North" type="StaticBody" parent="Walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 39.5 )
+[node name="Wall-East" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.5, 5, 0)
 
-[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall-North"]
-mesh = SubResource( 12 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall-East"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00273132, -0.0142784, -0.000686646)
+mesh = SubResource("14")
 
-[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall-North"]
-shape = SubResource( 13 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall-East"]
+shape = SubResource("15")
 
-[node name="Wall-East" type="StaticBody" parent="Walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.5, 5, 0 )
+[node name="Wall-South" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -39.5)
 
-[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall-East"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00273132, -0.0142784, -0.000686646 )
-mesh = SubResource( 14 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall-South"]
+mesh = SubResource("12")
 
-[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall-East"]
-shape = SubResource( 15 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall-South"]
+shape = SubResource("13")
 
-[node name="Wall-South" type="StaticBody" parent="Walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -39.5 )
+[node name="Wall-West" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 0)
 
-[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall-South"]
-mesh = SubResource( 12 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall-West"]
+mesh = SubResource("14")
 
-[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall-South"]
-shape = SubResource( 13 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall-West"]
+shape = SubResource("15")
 
-[node name="Wall-West" type="StaticBody" parent="Walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 0 )
+[node name="Wood-Separators-Front" type="Node3D" parent="."]
 
-[node name="MeshInstance" type="MeshInstance" parent="Walls/Wall-West"]
-mesh = SubResource( 14 )
+[node name="Wood_Column-1" type="StaticBody3D" parent="Wood-Separators-Front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.272, 3.5, -29)
 
-[node name="CollisionShape" type="CollisionShape" parent="Walls/Wall-West"]
-shape = SubResource( 15 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Front/Wood_Column-1"]
+mesh = SubResource("18")
 
-[node name="Wood-Separators-Front" type="Spatial" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Front/Wood_Column-1"]
+shape = SubResource("20")
 
-[node name="Wood_Column-1" type="StaticBody" parent="Wood-Separators-Front"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.272, 3.5, -29 )
+[node name="Wood_Column-2" type="StaticBody3D" parent="Wood-Separators-Front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8437, 3.5, -29)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Front/Wood_Column-1"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Front/Wood_Column-2"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Front/Wood_Column-1"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Front/Wood_Column-2"]
+shape = SubResource("20")
 
-[node name="Wood_Column-2" type="StaticBody" parent="Wood-Separators-Front"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8437, 3.5, -29 )
+[node name="Wood_Separator-1" type="StaticBody3D" parent="Wood-Separators-Front"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 36.1575, 1, -29)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Front/Wood_Column-2"]
-mesh = SubResource( 18 )
-material/0 = SubResource( 19 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Front/Wood_Separator-1"]
+mesh = SubResource("21")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Front/Wood_Column-2"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Front/Wood_Separator-1"]
+shape = SubResource("32")
 
-[node name="Wood_Separator-1" type="StaticBody" parent="Wood-Separators-Front"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 36.1575, 1, -29 )
+[node name="Wood_Separator-2" type="StaticBody3D" parent="Wood-Separators-Front"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 34.2344, 1, -29)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Front/Wood_Separator-1"]
-mesh = SubResource( 21 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Front/Wood_Separator-2"]
+mesh = SubResource("21")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Front/Wood_Separator-1"]
-shape = SubResource( 32 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Front/Wood_Separator-2"]
+shape = SubResource("32")
 
-[node name="Wood_Separator-2" type="StaticBody" parent="Wood-Separators-Front"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 34.2344, 1, -29 )
+[node name="Wood_Separator-3" type="StaticBody3D" parent="Wood-Separators-Front"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 28.9269, 1, -29)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Front/Wood_Separator-2"]
-mesh = SubResource( 21 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Front/Wood_Separator-3"]
+mesh = SubResource("21")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Front/Wood_Separator-2"]
-shape = SubResource( 32 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Front/Wood_Separator-3"]
+shape = SubResource("32")
 
-[node name="Wood_Separator-3" type="StaticBody" parent="Wood-Separators-Front"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 28.9269, 1, -29 )
+[node name="Wood_Separator-4" type="StaticBody3D" parent="Wood-Separators-Front"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 26.9082, 1, -29)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Front/Wood_Separator-3"]
-mesh = SubResource( 21 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Front/Wood_Separator-4"]
+mesh = SubResource("21")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Front/Wood_Separator-3"]
-shape = SubResource( 32 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Front/Wood_Separator-4"]
+shape = SubResource("32")
 
-[node name="Wood_Separator-4" type="StaticBody" parent="Wood-Separators-Front"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 26.9082, 1, -29 )
+[node name="Wood_Separator-9" type="StaticBody3D" parent="Wood-Separators-Front"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -27.1173, 1, -29)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Front/Wood_Separator-4"]
-mesh = SubResource( 21 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Front/Wood_Separator-9"]
+mesh = SubResource("21")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Front/Wood_Separator-4"]
-shape = SubResource( 32 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Front/Wood_Separator-9"]
+shape = SubResource("32")
 
-[node name="Wood_Separator-9" type="StaticBody" parent="Wood-Separators-Front"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -27.1173, 1, -29 )
+[node name="Wood_Separator-10" type="StaticBody3D" parent="Wood-Separators-Front"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -29.0403, 1, -29)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Front/Wood_Separator-9"]
-mesh = SubResource( 21 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Front/Wood_Separator-10"]
+mesh = SubResource("21")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Front/Wood_Separator-9"]
-shape = SubResource( 32 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Front/Wood_Separator-10"]
+shape = SubResource("32")
 
-[node name="Wood_Separator-10" type="StaticBody" parent="Wood-Separators-Front"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -29.0403, 1, -29 )
+[node name="Wood_Separator-11" type="StaticBody3D" parent="Wood-Separators-Front"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -33.7889, 1, -29)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Front/Wood_Separator-10"]
-mesh = SubResource( 21 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Front/Wood_Separator-11"]
+mesh = SubResource("21")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Front/Wood_Separator-10"]
-shape = SubResource( 32 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Front/Wood_Separator-11"]
+shape = SubResource("32")
 
-[node name="Wood_Separator-11" type="StaticBody" parent="Wood-Separators-Front"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -33.7889, 1, -29 )
+[node name="Wood_Separator-12" type="StaticBody3D" parent="Wood-Separators-Front"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -35.8076, 1, -29)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Front/Wood_Separator-11"]
-mesh = SubResource( 21 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Front/Wood_Separator-12"]
+mesh = SubResource("21")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Front/Wood_Separator-11"]
-shape = SubResource( 32 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Front/Wood_Separator-12"]
+shape = SubResource("32")
 
-[node name="Wood_Separator-12" type="StaticBody" parent="Wood-Separators-Front"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -35.8076, 1, -29 )
+[node name="Wood_Separator-5" type="StaticBody3D" parent="Wood-Separators-Front"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 12.9577, 1, -29)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Front/Wood_Separator-12"]
-mesh = SubResource( 21 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Front/Wood_Separator-5"]
+mesh = SubResource("21")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Front/Wood_Separator-12"]
-shape = SubResource( 32 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Front/Wood_Separator-5"]
+shape = SubResource("32")
 
-[node name="Wood_Separator-5" type="StaticBody" parent="Wood-Separators-Front"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 12.9577, 1, -29 )
+[node name="Wood_Separator-6" type="StaticBody3D" parent="Wood-Separators-Front"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 6.86682, 1, -29)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Front/Wood_Separator-5"]
-mesh = SubResource( 21 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Front/Wood_Separator-6"]
+mesh = SubResource("21")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Front/Wood_Separator-5"]
-shape = SubResource( 32 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Front/Wood_Separator-6"]
+shape = SubResource("32")
 
-[node name="Wood_Separator-6" type="StaticBody" parent="Wood-Separators-Front"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 6.86682, 1, -29 )
+[node name="Wood_Separator-7" type="StaticBody3D" parent="Wood-Separators-Front"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -7.11817, 1, -29)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Front/Wood_Separator-6"]
-mesh = SubResource( 21 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Front/Wood_Separator-7"]
+mesh = SubResource("21")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Front/Wood_Separator-6"]
-shape = SubResource( 32 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Front/Wood_Separator-7"]
+shape = SubResource("32")
 
-[node name="Wood_Separator-7" type="StaticBody" parent="Wood-Separators-Front"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -7.11817, 1, -29 )
+[node name="Wood_Separator-8" type="StaticBody3D" parent="Wood-Separators-Front"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -13.121, 1, -29)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Front/Wood_Separator-7"]
-mesh = SubResource( 21 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Front/Wood_Separator-8"]
+mesh = SubResource("21")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Front/Wood_Separator-7"]
-shape = SubResource( 32 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Front/Wood_Separator-8"]
+shape = SubResource("32")
 
-[node name="Wood_Separator-8" type="StaticBody" parent="Wood-Separators-Front"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -13.121, 1, -29 )
+[node name="Wood-Separators-Back" type="Node3D" parent="."]
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Front/Wood_Separator-8"]
-mesh = SubResource( 21 )
+[node name="Wood_Column-1" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.272, 3.5, 18.1265)
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Front/Wood_Separator-8"]
-shape = SubResource( 32 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-1"]
+mesh = SubResource("18")
 
-[node name="Wood-Separators-Back" type="Spatial" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-1"]
+shape = SubResource("20")
 
-[node name="Wood_Column-1" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.272, 3.5, 18.1265 )
+[node name="Wood_Column-2" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.94, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-1"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-2"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-1"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-2"]
+shape = SubResource("20")
 
-[node name="Wood_Column-2" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.94, 3.5, 18.1265 )
+[node name="Wood_Column-3" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6875, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-2"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-3"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-2"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-3"]
+shape = SubResource("20")
 
-[node name="Wood_Column-3" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6875, 3.5, 18.1265 )
+[node name="Wood_Column-4" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.4033, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-3"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-4"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-3"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-4"]
+shape = SubResource("20")
 
-[node name="Wood_Column-4" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.4033, 3.5, 18.1265 )
+[node name="Wood_Column-5" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.0769, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-4"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-5"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-4"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-5"]
+shape = SubResource("20")
 
-[node name="Wood_Column-5" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.0769, 3.5, 18.1265 )
+[node name="Wood_Column-6" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.745, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-5"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-6"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-5"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-6"]
+shape = SubResource("20")
 
-[node name="Wood_Column-6" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.745, 3.5, 18.1265 )
+[node name="Wood_Column-7" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4925, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-6"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-7"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-6"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-7"]
+shape = SubResource("20")
 
-[node name="Wood_Column-7" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4925, 3.5, 18.1265 )
+[node name="Wood_Column-8" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2082, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-7"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-8"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-7"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-8"]
+shape = SubResource("20")
 
-[node name="Wood_Column-8" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2082, 3.5, 18.1265 )
+[node name="Wood_Column-9" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9508, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-8"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-9"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-8"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-9"]
+shape = SubResource("20")
 
-[node name="Wood_Column-9" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9508, 3.5, 18.1265 )
+[node name="Wood_Column-10" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6189, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-9"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-10"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-9"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-10"]
+shape = SubResource("20")
 
-[node name="Wood_Column-10" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6189, 3.5, 18.1265 )
+[node name="Wood_Column-11" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3664, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-10"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-11"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-10"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-11"]
+shape = SubResource("20")
 
-[node name="Wood_Column-11" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3664, 3.5, 18.1265 )
+[node name="Wood_Column-12" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0821, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-11"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-12"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-11"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-12"]
+shape = SubResource("20")
 
-[node name="Wood_Column-12" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0821, 3.5, 18.1265 )
+[node name="Wood_Column-13" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7558, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-12"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-13"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-12"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-13"]
+shape = SubResource("20")
 
-[node name="Wood_Column-13" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7558, 3.5, 18.1265 )
+[node name="Wood_Column-14" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.42381, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-13"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-14"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-13"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-14"]
+shape = SubResource("20")
 
-[node name="Wood_Column-14" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.42381, 3.5, 18.1265 )
+[node name="Wood_Column-15" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17131, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-14"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-15"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-14"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-15"]
+shape = SubResource("20")
 
-[node name="Wood_Column-15" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17131, 3.5, 18.1265 )
+[node name="Wood_Column-16" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.88707, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-15"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-16"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-15"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-16"]
+shape = SubResource("20")
 
-[node name="Wood_Column-16" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.88707, 3.5, 18.1265 )
+[node name="Wood_Column-17" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.37176, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-16"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-17"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-16"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-17"]
+shape = SubResource("20")
 
-[node name="Wood_Column-17" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.37176, 3.5, 18.1265 )
+[node name="Wood_Column-18" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.70371, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-17"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-18"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-17"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-18"]
+shape = SubResource("20")
 
-[node name="Wood_Column-18" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.70371, 3.5, 18.1265 )
+[node name="Wood_Column-19" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.95621, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-18"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-19"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-18"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-19"]
+shape = SubResource("20")
 
-[node name="Wood_Column-19" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.95621, 3.5, 18.1265 )
+[node name="Wood_Column-20" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2405, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-19"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-20"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-19"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-20"]
+shape = SubResource("20")
 
-[node name="Wood_Column-20" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2405, 3.5, 18.1265 )
+[node name="Wood_Column-21" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5668, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-20"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-21"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-20"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-21"]
+shape = SubResource("20")
 
-[node name="Wood_Column-21" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5668, 3.5, 18.1265 )
+[node name="Wood_Column-22" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8988, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-21"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-22"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-21"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-22"]
+shape = SubResource("20")
 
-[node name="Wood_Column-22" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8988, 3.5, 18.1265 )
+[node name="Wood_Column-23" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1513, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-22"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-23"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-22"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-23"]
+shape = SubResource("20")
 
-[node name="Wood_Column-23" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1513, 3.5, 18.1265 )
+[node name="Wood_Column-24" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4355, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-23"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-24"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-23"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-24"]
+shape = SubResource("20")
 
-[node name="Wood_Column-24" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4355, 3.5, 18.1265 )
+[node name="Wood_Column-25" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.6929, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-24"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-25"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-24"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-25"]
+shape = SubResource("20")
 
-[node name="Wood_Column-25" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.6929, 3.5, 18.1265 )
+[node name="Wood_Column-26" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.0249, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-25"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-26"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-25"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-26"]
+shape = SubResource("20")
 
-[node name="Wood_Column-26" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.0249, 3.5, 18.1265 )
+[node name="Wood_Column-27" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.2774, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-26"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-27"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-26"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-27"]
+shape = SubResource("20")
 
-[node name="Wood_Column-27" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.2774, 3.5, 18.1265 )
+[node name="Wood_Column-28" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5616, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-27"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-28"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-27"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-28"]
+shape = SubResource("20")
 
-[node name="Wood_Column-28" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5616, 3.5, 18.1265 )
+[node name="Wood_Column-29" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.888, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-28"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-29"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-28"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-29"]
+shape = SubResource("20")
 
-[node name="Wood_Column-29" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.888, 3.5, 18.1265 )
+[node name="Wood_Column-30" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2199, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-29"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-30"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-29"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-30"]
+shape = SubResource("20")
 
-[node name="Wood_Column-30" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2199, 3.5, 18.1265 )
+[node name="Wood_Column-31" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.4725, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-30"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-31"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-30"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-31"]
+shape = SubResource("20")
 
-[node name="Wood_Column-31" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.4725, 3.5, 18.1265 )
+[node name="Wood_Column-32" type="StaticBody3D" parent="Wood-Separators-Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.7567, 3.5, 18.1265)
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-31"]
-mesh = SubResource( 18 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wood-Separators-Back/Wood_Column-32"]
+mesh = SubResource("18")
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-31"]
-shape = SubResource( 20 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wood-Separators-Back/Wood_Column-32"]
+shape = SubResource("20")
 
-[node name="Wood_Column-32" type="StaticBody" parent="Wood-Separators-Back"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.7567, 3.5, 18.1265 )
+[node name="Test-1" type="Node3D" parent="."]
 
-[node name="MeshInstance" type="MeshInstance" parent="Wood-Separators-Back/Wood_Column-32"]
-mesh = SubResource( 18 )
+[node name="Slope-1" type="StaticBody3D" parent="Test-1"]
+transform = Transform3D(-1, -4.37114e-08, -7.57103e-08, 0, 0.866025, -0.5, 8.74228e-08, -0.5, -0.866025, 19.7815, 2.5, -21.946)
 
-[node name="CollisionShape" type="CollisionShape" parent="Wood-Separators-Back/Wood_Column-32"]
-shape = SubResource( 20 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/Slope-1"]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("7")
 
-[node name="Test-1" type="Spatial" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/Slope-1"]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("5")
 
-[node name="Slope-1" type="StaticBody" parent="Test-1"]
-transform = Transform( -1, -4.37114e-08, -7.57103e-08, 0, 0.866025, -0.5, 8.74228e-08, -0.5, -0.866025, 19.7815, 2.5, -21.946 )
+[node name="Platform-1" type="StaticBody3D" parent="Test-1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7815, 4.933, -12.866)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/Slope-1"]
-transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-mesh = SubResource( 7 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/Platform-1"]
+mesh = SubResource("9")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/Slope-1"]
-transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 5 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/Platform-1"]
+shape = SubResource("5")
 
-[node name="Platform-1" type="StaticBody" parent="Test-1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7815, 4.933, -12.866 )
+[node name="WoodWall-Left" type="Node3D" parent="Test-1"]
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/Platform-1"]
-mesh = SubResource( 9 )
+[node name="Column-1" type="StaticBody3D" parent="Test-1/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -27)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/Platform-1"]
-shape = SubResource( 5 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Left/Column-1"]
+mesh = SubResource("25")
 
-[node name="WoodWall-Left" type="Spatial" parent="Test-1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Left/Column-1"]
+shape = SubResource("26")
 
-[node name="Column-1" type="StaticBody" parent="Test-1/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -27 )
+[node name="Column-2" type="StaticBody3D" parent="Test-1/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -24.4841)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Left/Column-1"]
-mesh = SubResource( 25 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Left/Column-2"]
+shape = SubResource("26")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Left/Column-1"]
-shape = SubResource( 26 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Left/Column-2"]
+mesh = SubResource("25")
 
-[node name="Column-2" type="StaticBody" parent="Test-1/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -24.4841 )
+[node name="Column-3" type="StaticBody3D" parent="Test-1/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -22.2079)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Left/Column-2"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Left/Column-3"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Left/Column-2"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Left/Column-3"]
+mesh = SubResource("25")
 
-[node name="Column-3" type="StaticBody" parent="Test-1/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -22.2079 )
+[node name="Column-4" type="StaticBody3D" parent="Test-1/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -19.8974)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Left/Column-3"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Left/Column-4"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Left/Column-3"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Left/Column-4"]
+mesh = SubResource("25")
 
-[node name="Column-4" type="StaticBody" parent="Test-1/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -19.8974 )
+[node name="Column-5" type="StaticBody3D" parent="Test-1/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -17.6175)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Left/Column-4"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Left/Column-5"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Left/Column-4"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Left/Column-5"]
+mesh = SubResource("25")
 
-[node name="Column-5" type="StaticBody" parent="Test-1/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -17.6175 )
+[node name="Column-6" type="StaticBody3D" parent="Test-1/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -15.1017)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Left/Column-5"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Left/Column-6"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Left/Column-5"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Left/Column-6"]
+mesh = SubResource("25")
 
-[node name="Column-6" type="StaticBody" parent="Test-1/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -15.1017 )
+[node name="Column-7" type="StaticBody3D" parent="Test-1/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -12.8254)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Left/Column-6"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Left/Column-7"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Left/Column-6"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Left/Column-7"]
+mesh = SubResource("25")
 
-[node name="Column-7" type="StaticBody" parent="Test-1/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -12.8254 )
+[node name="Column-8" type="StaticBody3D" parent="Test-1/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -10.5149)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Left/Column-7"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Left/Column-8"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Left/Column-7"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Left/Column-8"]
+mesh = SubResource("25")
 
-[node name="Column-8" type="StaticBody" parent="Test-1/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -10.5149 )
+[node name="Column-9" type="StaticBody3D" parent="Test-1/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -8.03549)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Left/Column-8"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Left/Column-9"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Left/Column-8"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Left/Column-9"]
+mesh = SubResource("25")
 
-[node name="Column-9" type="StaticBody" parent="Test-1/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -8.03549 )
+[node name="Column-10" type="StaticBody3D" parent="Test-1/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -5.51962)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Left/Column-9"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Left/Column-10"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Left/Column-9"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Left/Column-10"]
+mesh = SubResource("25")
 
-[node name="Column-10" type="StaticBody" parent="Test-1/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -5.51962 )
+[node name="Column-11" type="StaticBody3D" parent="Test-1/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -3.24336)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Left/Column-10"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Left/Column-11"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Left/Column-10"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Left/Column-11"]
+mesh = SubResource("25")
 
-[node name="Column-11" type="StaticBody" parent="Test-1/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -3.24336 )
+[node name="Column-12" type="StaticBody3D" parent="Test-1/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -0.932863)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Left/Column-11"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Left/Column-12"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Left/Column-11"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Left/Column-12"]
+mesh = SubResource("25")
 
-[node name="Column-12" type="StaticBody" parent="Test-1/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8768, 4, -0.932863 )
+[node name="WoodWall-Right" type="Node3D" parent="Test-1"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Left/Column-12"]
-shape = SubResource( 26 )
+[node name="Column-1" type="StaticBody3D" parent="Test-1/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -27)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Left/Column-12"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Right/Column-1"]
+mesh = SubResource("25")
 
-[node name="WoodWall-Right" type="Spatial" parent="Test-1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Right/Column-1"]
+shape = SubResource("26")
 
-[node name="Column-1" type="StaticBody" parent="Test-1/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -27 )
+[node name="Column-2" type="StaticBody3D" parent="Test-1/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -24.4841)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Right/Column-1"]
-mesh = SubResource( 25 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Right/Column-2"]
+shape = SubResource("26")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Right/Column-1"]
-shape = SubResource( 26 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Right/Column-2"]
+mesh = SubResource("25")
 
-[node name="Column-2" type="StaticBody" parent="Test-1/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -24.4841 )
+[node name="Column-3" type="StaticBody3D" parent="Test-1/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -22.2079)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Right/Column-2"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Right/Column-3"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Right/Column-2"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Right/Column-3"]
+mesh = SubResource("25")
 
-[node name="Column-3" type="StaticBody" parent="Test-1/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -22.2079 )
+[node name="Column-4" type="StaticBody3D" parent="Test-1/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -19.8974)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Right/Column-3"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Right/Column-4"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Right/Column-3"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Right/Column-4"]
+mesh = SubResource("25")
 
-[node name="Column-4" type="StaticBody" parent="Test-1/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -19.8974 )
+[node name="Column-5" type="StaticBody3D" parent="Test-1/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -17.6175)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Right/Column-4"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Right/Column-5"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Right/Column-4"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Right/Column-5"]
+mesh = SubResource("25")
 
-[node name="Column-5" type="StaticBody" parent="Test-1/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -17.6175 )
+[node name="Column-6" type="StaticBody3D" parent="Test-1/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -15.1017)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Right/Column-5"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Right/Column-6"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Right/Column-5"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Right/Column-6"]
+mesh = SubResource("25")
 
-[node name="Column-6" type="StaticBody" parent="Test-1/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -15.1017 )
+[node name="Column-7" type="StaticBody3D" parent="Test-1/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -12.8254)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Right/Column-6"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Right/Column-7"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Right/Column-6"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Right/Column-7"]
+mesh = SubResource("25")
 
-[node name="Column-7" type="StaticBody" parent="Test-1/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -12.8254 )
+[node name="Column-8" type="StaticBody3D" parent="Test-1/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -10.5149)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Right/Column-7"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Right/Column-8"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Right/Column-7"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Right/Column-8"]
+mesh = SubResource("25")
 
-[node name="Column-8" type="StaticBody" parent="Test-1/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -10.5149 )
+[node name="Column-9" type="StaticBody3D" parent="Test-1/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -8.03549)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Right/Column-8"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Right/Column-9"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Right/Column-8"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Right/Column-9"]
+mesh = SubResource("25")
 
-[node name="Column-9" type="StaticBody" parent="Test-1/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -8.03549 )
+[node name="Column-10" type="StaticBody3D" parent="Test-1/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -5.51962)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Right/Column-9"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Right/Column-10"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Right/Column-9"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Right/Column-10"]
+mesh = SubResource("25")
 
-[node name="Column-10" type="StaticBody" parent="Test-1/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -5.51962 )
+[node name="Column-11" type="StaticBody3D" parent="Test-1/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -3.24336)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Right/Column-10"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Right/Column-11"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Right/Column-10"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Right/Column-11"]
+mesh = SubResource("25")
 
-[node name="Column-11" type="StaticBody" parent="Test-1/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -3.24336 )
+[node name="Column-12" type="StaticBody3D" parent="Test-1/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -0.932863)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Right/Column-11"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-1/WoodWall-Right/Column-12"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Right/Column-11"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-1/WoodWall-Right/Column-12"]
+mesh = SubResource("25")
 
-[node name="Column-12" type="StaticBody" parent="Test-1/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8868, 4, -0.932863 )
+[node name="Test-2" type="Node3D" parent="."]
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-1/WoodWall-Right/Column-12"]
-shape = SubResource( 26 )
+[node name="Floor" type="Node3D" parent="Test-2"]
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-1/WoodWall-Right/Column-12"]
-mesh = SubResource( 25 )
+[node name="Log-1" type="StaticBody3D" parent="Test-2/Floor"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -25.3942)
 
-[node name="Test-2" type="Spatial" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/Floor/Log-1"]
+mesh = SubResource("28")
 
-[node name="Floor" type="Spatial" parent="Test-2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/Floor/Log-1"]
+shape = SubResource("29")
 
-[node name="Log-1" type="StaticBody" parent="Test-2/Floor"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -25.3942 )
+[node name="Log-2" type="StaticBody3D" parent="Test-2/Floor"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -23.1195)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/Floor/Log-1"]
-mesh = SubResource( 28 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/Floor/Log-2"]
+mesh = SubResource("28")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/Floor/Log-1"]
-shape = SubResource( 29 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/Floor/Log-2"]
+shape = SubResource("29")
 
-[node name="Log-2" type="StaticBody" parent="Test-2/Floor"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -23.1195 )
+[node name="Log-3" type="StaticBody3D" parent="Test-2/Floor"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -20.8289)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/Floor/Log-2"]
-mesh = SubResource( 28 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/Floor/Log-3"]
+mesh = SubResource("28")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/Floor/Log-2"]
-shape = SubResource( 29 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/Floor/Log-3"]
+shape = SubResource("29")
 
-[node name="Log-3" type="StaticBody" parent="Test-2/Floor"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -20.8289 )
+[node name="Log-4" type="StaticBody3D" parent="Test-2/Floor"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -18.6119)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/Floor/Log-3"]
-mesh = SubResource( 28 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/Floor/Log-4"]
+mesh = SubResource("28")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/Floor/Log-3"]
-shape = SubResource( 29 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/Floor/Log-4"]
+shape = SubResource("29")
 
-[node name="Log-4" type="StaticBody" parent="Test-2/Floor"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -18.6119 )
+[node name="Log-5" type="StaticBody3D" parent="Test-2/Floor"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -16.2841)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/Floor/Log-4"]
-mesh = SubResource( 28 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/Floor/Log-5"]
+mesh = SubResource("28")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/Floor/Log-4"]
-shape = SubResource( 29 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/Floor/Log-5"]
+shape = SubResource("29")
 
-[node name="Log-5" type="StaticBody" parent="Test-2/Floor"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -16.2841 )
+[node name="Log-6" type="StaticBody3D" parent="Test-2/Floor"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -13.9563)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/Floor/Log-5"]
-mesh = SubResource( 28 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/Floor/Log-6"]
+mesh = SubResource("28")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/Floor/Log-5"]
-shape = SubResource( 29 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/Floor/Log-6"]
+shape = SubResource("29")
 
-[node name="Log-6" type="StaticBody" parent="Test-2/Floor"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -13.9563 )
+[node name="Log-7" type="StaticBody3D" parent="Test-2/Floor"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -11.6654)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/Floor/Log-6"]
-mesh = SubResource( 28 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/Floor/Log-7"]
+mesh = SubResource("28")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/Floor/Log-6"]
-shape = SubResource( 29 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/Floor/Log-7"]
+shape = SubResource("29")
 
-[node name="Log-7" type="StaticBody" parent="Test-2/Floor"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -11.6654 )
+[node name="Log-8" type="StaticBody3D" parent="Test-2/Floor"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -9.41151)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/Floor/Log-7"]
-mesh = SubResource( 28 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/Floor/Log-8"]
+mesh = SubResource("28")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/Floor/Log-7"]
-shape = SubResource( 29 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/Floor/Log-8"]
+shape = SubResource("29")
 
-[node name="Log-8" type="StaticBody" parent="Test-2/Floor"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -9.41151 )
+[node name="Log-9" type="StaticBody3D" parent="Test-2/Floor"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -7.0837)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/Floor/Log-8"]
-mesh = SubResource( 28 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/Floor/Log-9"]
+mesh = SubResource("28")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/Floor/Log-8"]
-shape = SubResource( 29 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/Floor/Log-9"]
+shape = SubResource("29")
 
-[node name="Log-9" type="StaticBody" parent="Test-2/Floor"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -7.0837 )
+[node name="Log-10" type="StaticBody3D" parent="Test-2/Floor"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -4.70784)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/Floor/Log-9"]
-mesh = SubResource( 28 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/Floor/Log-10"]
+mesh = SubResource("28")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/Floor/Log-9"]
-shape = SubResource( 29 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/Floor/Log-10"]
+shape = SubResource("29")
 
-[node name="Log-10" type="StaticBody" parent="Test-2/Floor"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.138851, 0.5, -4.70784 )
+[node name="WoodWall-Left" type="Node3D" parent="Test-2"]
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/Floor/Log-10"]
-mesh = SubResource( 28 )
+[node name="Column-1" type="StaticBody3D" parent="Test-2/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -27)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/Floor/Log-10"]
-shape = SubResource( 29 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Left/Column-1"]
+mesh = SubResource("25")
 
-[node name="WoodWall-Left" type="Spatial" parent="Test-2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Left/Column-1"]
+shape = SubResource("26")
 
-[node name="Column-1" type="StaticBody" parent="Test-2/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -27 )
+[node name="Column-2" type="StaticBody3D" parent="Test-2/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -24.4841)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Left/Column-1"]
-mesh = SubResource( 25 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Left/Column-2"]
+shape = SubResource("26")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Left/Column-1"]
-shape = SubResource( 26 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Left/Column-2"]
+mesh = SubResource("25")
 
-[node name="Column-2" type="StaticBody" parent="Test-2/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -24.4841 )
+[node name="Column-3" type="StaticBody3D" parent="Test-2/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -22.2079)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Left/Column-2"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Left/Column-3"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Left/Column-2"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Left/Column-3"]
+mesh = SubResource("25")
 
-[node name="Column-3" type="StaticBody" parent="Test-2/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -22.2079 )
+[node name="Column-4" type="StaticBody3D" parent="Test-2/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -19.8974)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Left/Column-3"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Left/Column-4"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Left/Column-3"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Left/Column-4"]
+mesh = SubResource("25")
 
-[node name="Column-4" type="StaticBody" parent="Test-2/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -19.8974 )
+[node name="Column-5" type="StaticBody3D" parent="Test-2/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -17.6175)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Left/Column-4"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Left/Column-5"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Left/Column-4"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Left/Column-5"]
+mesh = SubResource("25")
 
-[node name="Column-5" type="StaticBody" parent="Test-2/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -17.6175 )
+[node name="Column-6" type="StaticBody3D" parent="Test-2/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -15.1017)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Left/Column-5"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Left/Column-6"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Left/Column-5"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Left/Column-6"]
+mesh = SubResource("25")
 
-[node name="Column-6" type="StaticBody" parent="Test-2/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -15.1017 )
+[node name="Column-7" type="StaticBody3D" parent="Test-2/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -12.8254)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Left/Column-6"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Left/Column-7"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Left/Column-6"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Left/Column-7"]
+mesh = SubResource("25")
 
-[node name="Column-7" type="StaticBody" parent="Test-2/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -12.8254 )
+[node name="Column-8" type="StaticBody3D" parent="Test-2/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -10.5149)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Left/Column-7"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Left/Column-8"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Left/Column-7"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Left/Column-8"]
+mesh = SubResource("25")
 
-[node name="Column-8" type="StaticBody" parent="Test-2/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -10.5149 )
+[node name="Column-9" type="StaticBody3D" parent="Test-2/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -8.03549)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Left/Column-8"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Left/Column-9"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Left/Column-8"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Left/Column-9"]
+mesh = SubResource("25")
 
-[node name="Column-9" type="StaticBody" parent="Test-2/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -8.03549 )
+[node name="Column-10" type="StaticBody3D" parent="Test-2/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -5.51962)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Left/Column-9"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Left/Column-10"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Left/Column-9"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Left/Column-10"]
+mesh = SubResource("25")
 
-[node name="Column-10" type="StaticBody" parent="Test-2/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -5.51962 )
+[node name="Column-11" type="StaticBody3D" parent="Test-2/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -3.24336)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Left/Column-10"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Left/Column-11"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Left/Column-10"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Left/Column-11"]
+mesh = SubResource("25")
 
-[node name="Column-11" type="StaticBody" parent="Test-2/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -3.24336 )
+[node name="Column-12" type="StaticBody3D" parent="Test-2/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -0.932863)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Left/Column-11"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Left/Column-12"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Left/Column-11"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Left/Column-12"]
+mesh = SubResource("25")
 
-[node name="Column-12" type="StaticBody" parent="Test-2/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86427, 4, -0.932863 )
+[node name="WoodWall-Right" type="Node3D" parent="Test-2"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Left/Column-12"]
-shape = SubResource( 26 )
+[node name="Column-1" type="StaticBody3D" parent="Test-2/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -27)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Left/Column-12"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Right/Column-1"]
+mesh = SubResource("25")
 
-[node name="WoodWall-Right" type="Spatial" parent="Test-2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Right/Column-1"]
+shape = SubResource("26")
 
-[node name="Column-1" type="StaticBody" parent="Test-2/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -27 )
+[node name="Column-2" type="StaticBody3D" parent="Test-2/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -24.4841)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Right/Column-1"]
-mesh = SubResource( 25 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Right/Column-2"]
+shape = SubResource("26")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Right/Column-1"]
-shape = SubResource( 26 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Right/Column-2"]
+mesh = SubResource("25")
 
-[node name="Column-2" type="StaticBody" parent="Test-2/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -24.4841 )
+[node name="Column-3" type="StaticBody3D" parent="Test-2/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -22.2079)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Right/Column-2"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Right/Column-3"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Right/Column-2"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Right/Column-3"]
+mesh = SubResource("25")
 
-[node name="Column-3" type="StaticBody" parent="Test-2/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -22.2079 )
+[node name="Column-4" type="StaticBody3D" parent="Test-2/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -19.8974)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Right/Column-3"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Right/Column-4"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Right/Column-3"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Right/Column-4"]
+mesh = SubResource("25")
 
-[node name="Column-4" type="StaticBody" parent="Test-2/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -19.8974 )
+[node name="Column-5" type="StaticBody3D" parent="Test-2/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -17.6175)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Right/Column-4"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Right/Column-5"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Right/Column-4"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Right/Column-5"]
+mesh = SubResource("25")
 
-[node name="Column-5" type="StaticBody" parent="Test-2/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -17.6175 )
+[node name="Column-6" type="StaticBody3D" parent="Test-2/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -15.1017)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Right/Column-5"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Right/Column-6"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Right/Column-5"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Right/Column-6"]
+mesh = SubResource("25")
 
-[node name="Column-6" type="StaticBody" parent="Test-2/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -15.1017 )
+[node name="Column-7" type="StaticBody3D" parent="Test-2/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -12.8254)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Right/Column-6"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Right/Column-7"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Right/Column-6"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Right/Column-7"]
+mesh = SubResource("25")
 
-[node name="Column-7" type="StaticBody" parent="Test-2/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -12.8254 )
+[node name="Column-8" type="StaticBody3D" parent="Test-2/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -10.5149)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Right/Column-7"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Right/Column-8"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Right/Column-7"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Right/Column-8"]
+mesh = SubResource("25")
 
-[node name="Column-8" type="StaticBody" parent="Test-2/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -10.5149 )
+[node name="Column-9" type="StaticBody3D" parent="Test-2/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -8.03549)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Right/Column-8"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Right/Column-9"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Right/Column-8"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Right/Column-9"]
+mesh = SubResource("25")
 
-[node name="Column-9" type="StaticBody" parent="Test-2/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -8.03549 )
+[node name="Column-10" type="StaticBody3D" parent="Test-2/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -5.51962)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Right/Column-9"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Right/Column-10"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Right/Column-9"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Right/Column-10"]
+mesh = SubResource("25")
 
-[node name="Column-10" type="StaticBody" parent="Test-2/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -5.51962 )
+[node name="Column-11" type="StaticBody3D" parent="Test-2/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -3.24336)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Right/Column-10"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Right/Column-11"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Right/Column-10"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Right/Column-11"]
+mesh = SubResource("25")
 
-[node name="Column-11" type="StaticBody" parent="Test-2/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -3.24336 )
+[node name="Column-12" type="StaticBody3D" parent="Test-2/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -0.932863)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Right/Column-11"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-2/WoodWall-Right/Column-12"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Right/Column-11"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-2/WoodWall-Right/Column-12"]
+mesh = SubResource("25")
 
-[node name="Column-12" type="StaticBody" parent="Test-2/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12618, 4, -0.932863 )
+[node name="Test-3" type="Node3D" parent="."]
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-2/WoodWall-Right/Column-12"]
-shape = SubResource( 26 )
+[node name="WoodWall-Left" type="Node3D" parent="Test-3"]
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-2/WoodWall-Right/Column-12"]
-mesh = SubResource( 25 )
+[node name="Column-1" type="StaticBody3D" parent="Test-3/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -27)
 
-[node name="Test-3" type="Spatial" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Left/Column-1"]
+mesh = SubResource("25")
 
-[node name="WoodWall-Left" type="Spatial" parent="Test-3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Left/Column-1"]
+shape = SubResource("26")
 
-[node name="Column-1" type="StaticBody" parent="Test-3/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -27 )
+[node name="Column-2" type="StaticBody3D" parent="Test-3/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -24.4841)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Left/Column-1"]
-mesh = SubResource( 25 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Left/Column-2"]
+shape = SubResource("26")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Left/Column-1"]
-shape = SubResource( 26 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Left/Column-2"]
+mesh = SubResource("25")
 
-[node name="Column-2" type="StaticBody" parent="Test-3/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -24.4841 )
+[node name="Column-3" type="StaticBody3D" parent="Test-3/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -22.2079)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Left/Column-2"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Left/Column-3"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Left/Column-2"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Left/Column-3"]
+mesh = SubResource("25")
 
-[node name="Column-3" type="StaticBody" parent="Test-3/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -22.2079 )
+[node name="Column-4" type="StaticBody3D" parent="Test-3/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -19.8974)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Left/Column-3"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Left/Column-4"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Left/Column-3"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Left/Column-4"]
+mesh = SubResource("25")
 
-[node name="Column-4" type="StaticBody" parent="Test-3/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -19.8974 )
+[node name="Column-5" type="StaticBody3D" parent="Test-3/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -17.6175)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Left/Column-4"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Left/Column-5"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Left/Column-4"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Left/Column-5"]
+mesh = SubResource("25")
 
-[node name="Column-5" type="StaticBody" parent="Test-3/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -17.6175 )
+[node name="Column-6" type="StaticBody3D" parent="Test-3/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -15.1017)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Left/Column-5"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Left/Column-6"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Left/Column-5"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Left/Column-6"]
+mesh = SubResource("25")
 
-[node name="Column-6" type="StaticBody" parent="Test-3/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -15.1017 )
+[node name="Column-7" type="StaticBody3D" parent="Test-3/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -12.8254)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Left/Column-6"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Left/Column-7"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Left/Column-6"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Left/Column-7"]
+mesh = SubResource("25")
 
-[node name="Column-7" type="StaticBody" parent="Test-3/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -12.8254 )
+[node name="Column-8" type="StaticBody3D" parent="Test-3/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -10.5149)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Left/Column-7"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Left/Column-8"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Left/Column-7"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Left/Column-8"]
+mesh = SubResource("25")
 
-[node name="Column-8" type="StaticBody" parent="Test-3/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -10.5149 )
+[node name="Column-9" type="StaticBody3D" parent="Test-3/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -8.03549)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Left/Column-8"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Left/Column-9"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Left/Column-8"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Left/Column-9"]
+mesh = SubResource("25")
 
-[node name="Column-9" type="StaticBody" parent="Test-3/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -8.03549 )
+[node name="Column-10" type="StaticBody3D" parent="Test-3/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -5.51962)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Left/Column-9"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Left/Column-10"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Left/Column-9"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Left/Column-10"]
+mesh = SubResource("25")
 
-[node name="Column-10" type="StaticBody" parent="Test-3/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -5.51962 )
+[node name="Column-11" type="StaticBody3D" parent="Test-3/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -3.24336)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Left/Column-10"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Left/Column-11"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Left/Column-10"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Left/Column-11"]
+mesh = SubResource("25")
 
-[node name="Column-11" type="StaticBody" parent="Test-3/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -3.24336 )
+[node name="Column-12" type="StaticBody3D" parent="Test-3/WoodWall-Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -0.932863)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Left/Column-11"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Left/Column-12"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Left/Column-11"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Left/Column-12"]
+mesh = SubResource("25")
 
-[node name="Column-12" type="StaticBody" parent="Test-3/WoodWall-Left"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1217, 4, -0.932863 )
+[node name="WoodWall-Right" type="Node3D" parent="Test-3"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Left/Column-12"]
-shape = SubResource( 26 )
+[node name="Column-1" type="StaticBody3D" parent="Test-3/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -27)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Left/Column-12"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Right/Column-1"]
+mesh = SubResource("25")
 
-[node name="WoodWall-Right" type="Spatial" parent="Test-3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Right/Column-1"]
+shape = SubResource("26")
 
-[node name="Column-1" type="StaticBody" parent="Test-3/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -27 )
+[node name="Column-2" type="StaticBody3D" parent="Test-3/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -24.4841)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Right/Column-1"]
-mesh = SubResource( 25 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Right/Column-2"]
+shape = SubResource("26")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Right/Column-1"]
-shape = SubResource( 26 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Right/Column-2"]
+mesh = SubResource("25")
 
-[node name="Column-2" type="StaticBody" parent="Test-3/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -24.4841 )
+[node name="Column-3" type="StaticBody3D" parent="Test-3/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -22.2079)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Right/Column-2"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Right/Column-3"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Right/Column-2"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Right/Column-3"]
+mesh = SubResource("25")
 
-[node name="Column-3" type="StaticBody" parent="Test-3/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -22.2079 )
+[node name="Column-4" type="StaticBody3D" parent="Test-3/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -19.8974)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Right/Column-3"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Right/Column-4"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Right/Column-3"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Right/Column-4"]
+mesh = SubResource("25")
 
-[node name="Column-4" type="StaticBody" parent="Test-3/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -19.8974 )
+[node name="Column-5" type="StaticBody3D" parent="Test-3/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -17.6175)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Right/Column-4"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Right/Column-5"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Right/Column-4"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Right/Column-5"]
+mesh = SubResource("25")
 
-[node name="Column-5" type="StaticBody" parent="Test-3/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -17.6175 )
+[node name="Column-6" type="StaticBody3D" parent="Test-3/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -15.1017)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Right/Column-5"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Right/Column-6"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Right/Column-5"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Right/Column-6"]
+mesh = SubResource("25")
 
-[node name="Column-6" type="StaticBody" parent="Test-3/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -15.1017 )
+[node name="Column-7" type="StaticBody3D" parent="Test-3/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -12.8254)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Right/Column-6"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Right/Column-7"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Right/Column-6"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Right/Column-7"]
+mesh = SubResource("25")
 
-[node name="Column-7" type="StaticBody" parent="Test-3/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -12.8254 )
+[node name="Column-8" type="StaticBody3D" parent="Test-3/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -10.5149)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Right/Column-7"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Right/Column-8"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Right/Column-7"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Right/Column-8"]
+mesh = SubResource("25")
 
-[node name="Column-8" type="StaticBody" parent="Test-3/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -10.5149 )
+[node name="Column-9" type="StaticBody3D" parent="Test-3/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -8.03549)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Right/Column-8"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Right/Column-9"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Right/Column-8"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Right/Column-9"]
+mesh = SubResource("25")
 
-[node name="Column-9" type="StaticBody" parent="Test-3/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -8.03549 )
+[node name="Column-10" type="StaticBody3D" parent="Test-3/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -5.51962)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Right/Column-9"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Right/Column-10"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Right/Column-9"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Right/Column-10"]
+mesh = SubResource("25")
 
-[node name="Column-10" type="StaticBody" parent="Test-3/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -5.51962 )
+[node name="Column-11" type="StaticBody3D" parent="Test-3/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -3.24336)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Right/Column-10"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Right/Column-11"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Right/Column-10"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Right/Column-11"]
+mesh = SubResource("25")
 
-[node name="Column-11" type="StaticBody" parent="Test-3/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -3.24336 )
+[node name="Column-12" type="StaticBody3D" parent="Test-3/WoodWall-Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -0.932863)
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Right/Column-11"]
-shape = SubResource( 26 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/WoodWall-Right/Column-12"]
+shape = SubResource("26")
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Right/Column-11"]
-mesh = SubResource( 25 )
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test-3/WoodWall-Right/Column-12"]
+mesh = SubResource("25")
 
-[node name="Column-12" type="StaticBody" parent="Test-3/WoodWall-Right"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1121, 4, -0.932863 )
+[node name="Trees" type="Node3D" parent="Test-3"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/WoodWall-Right/Column-12"]
-shape = SubResource( 26 )
+[node name="Tree-1" type="StaticBody3D" parent="Test-3/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3775, 2.59973, -25.6679)
 
-[node name="MeshInstance" type="MeshInstance" parent="Test-3/WoodWall-Right/Column-12"]
-mesh = SubResource( 25 )
+[node name="Trunk" type="MeshInstance3D" parent="Test-3/Trees/Tree-1"]
+mesh = SubResource("34")
 
-[node name="Trees" type="Spatial" parent="Test-3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/Trees/Tree-1"]
+shape = SubResource("35")
 
-[node name="Tree-1" type="StaticBody" parent="Test-3/Trees"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3775, 2.59973, -25.6679 )
+[node name="Crown" type="MeshInstance3D" parent="Test-3/Trees/Tree-1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("37")
 
-[node name="Trunk" type="MeshInstance" parent="Test-3/Trees/Tree-1"]
-mesh = SubResource( 34 )
+[node name="CollisionShape2" type="CollisionShape3D" parent="Test-3/Trees/Tree-1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("38")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/Trees/Tree-1"]
-shape = SubResource( 35 )
+[node name="Tree-2" type="StaticBody3D" parent="Test-3/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8482, 2.59973, -25.6575)
 
-[node name="Crown" type="MeshInstance" parent="Test-3/Trees/Tree-1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh = SubResource( 37 )
+[node name="Trunk" type="MeshInstance3D" parent="Test-3/Trees/Tree-2"]
+mesh = SubResource("34")
 
-[node name="CollisionShape2" type="CollisionShape" parent="Test-3/Trees/Tree-1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-shape = SubResource( 38 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/Trees/Tree-2"]
+shape = SubResource("35")
 
-[node name="Tree-2" type="StaticBody" parent="Test-3/Trees"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8482, 2.59973, -25.6575 )
+[node name="Crown" type="MeshInstance3D" parent="Test-3/Trees/Tree-2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("37")
 
-[node name="Trunk" type="MeshInstance" parent="Test-3/Trees/Tree-2"]
-mesh = SubResource( 34 )
+[node name="CollisionShape2" type="CollisionShape3D" parent="Test-3/Trees/Tree-2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("38")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/Trees/Tree-2"]
-shape = SubResource( 35 )
+[node name="Tree-3" type="StaticBody3D" parent="Test-3/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9317, 2.59973, -21.6466)
 
-[node name="Crown" type="MeshInstance" parent="Test-3/Trees/Tree-2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh = SubResource( 37 )
+[node name="Trunk" type="MeshInstance3D" parent="Test-3/Trees/Tree-3"]
+mesh = SubResource("34")
 
-[node name="CollisionShape2" type="CollisionShape" parent="Test-3/Trees/Tree-2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-shape = SubResource( 38 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/Trees/Tree-3"]
+shape = SubResource("35")
 
-[node name="Tree-3" type="StaticBody" parent="Test-3/Trees"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9317, 2.59973, -21.6466 )
+[node name="Crown" type="MeshInstance3D" parent="Test-3/Trees/Tree-3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("37")
 
-[node name="Trunk" type="MeshInstance" parent="Test-3/Trees/Tree-3"]
-mesh = SubResource( 34 )
+[node name="CollisionShape2" type="CollisionShape3D" parent="Test-3/Trees/Tree-3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("38")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/Trees/Tree-3"]
-shape = SubResource( 35 )
+[node name="Tree-4" type="StaticBody3D" parent="Test-3/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9112, 2.59973, -17.6357)
 
-[node name="Crown" type="MeshInstance" parent="Test-3/Trees/Tree-3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh = SubResource( 37 )
+[node name="Trunk" type="MeshInstance3D" parent="Test-3/Trees/Tree-4"]
+mesh = SubResource("34")
 
-[node name="CollisionShape2" type="CollisionShape" parent="Test-3/Trees/Tree-3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-shape = SubResource( 38 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/Trees/Tree-4"]
+shape = SubResource("35")
 
-[node name="Tree-4" type="StaticBody" parent="Test-3/Trees"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9112, 2.59973, -17.6357 )
+[node name="Crown" type="MeshInstance3D" parent="Test-3/Trees/Tree-4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("37")
 
-[node name="Trunk" type="MeshInstance" parent="Test-3/Trees/Tree-4"]
-mesh = SubResource( 34 )
+[node name="CollisionShape2" type="CollisionShape3D" parent="Test-3/Trees/Tree-4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("38")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/Trees/Tree-4"]
-shape = SubResource( 35 )
+[node name="Tree-5" type="StaticBody3D" parent="Test-3/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9908, 2.59973, -20.2707)
 
-[node name="Crown" type="MeshInstance" parent="Test-3/Trees/Tree-4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh = SubResource( 37 )
+[node name="Trunk" type="MeshInstance3D" parent="Test-3/Trees/Tree-5"]
+mesh = SubResource("34")
 
-[node name="CollisionShape2" type="CollisionShape" parent="Test-3/Trees/Tree-4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-shape = SubResource( 38 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/Trees/Tree-5"]
+shape = SubResource("35")
 
-[node name="Tree-5" type="StaticBody" parent="Test-3/Trees"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9908, 2.59973, -20.2707 )
+[node name="Crown" type="MeshInstance3D" parent="Test-3/Trees/Tree-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("37")
 
-[node name="Trunk" type="MeshInstance" parent="Test-3/Trees/Tree-5"]
-mesh = SubResource( 34 )
+[node name="CollisionShape2" type="CollisionShape3D" parent="Test-3/Trees/Tree-5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("38")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/Trees/Tree-5"]
-shape = SubResource( 35 )
+[node name="Tree-6" type="StaticBody3D" parent="Test-3/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7083, 2.59973, -16.0033)
 
-[node name="Crown" type="MeshInstance" parent="Test-3/Trees/Tree-5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh = SubResource( 37 )
+[node name="Trunk" type="MeshInstance3D" parent="Test-3/Trees/Tree-6"]
+mesh = SubResource("34")
 
-[node name="CollisionShape2" type="CollisionShape" parent="Test-3/Trees/Tree-5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-shape = SubResource( 38 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/Trees/Tree-6"]
+shape = SubResource("35")
 
-[node name="Tree-6" type="StaticBody" parent="Test-3/Trees"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7083, 2.59973, -16.0033 )
+[node name="Crown" type="MeshInstance3D" parent="Test-3/Trees/Tree-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("37")
 
-[node name="Trunk" type="MeshInstance" parent="Test-3/Trees/Tree-6"]
-mesh = SubResource( 34 )
+[node name="CollisionShape2" type="CollisionShape3D" parent="Test-3/Trees/Tree-6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("38")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/Trees/Tree-6"]
-shape = SubResource( 35 )
+[node name="Tree-7" type="StaticBody3D" parent="Test-3/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2295, 2.59973, -13.9279)
 
-[node name="Crown" type="MeshInstance" parent="Test-3/Trees/Tree-6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh = SubResource( 37 )
+[node name="Trunk" type="MeshInstance3D" parent="Test-3/Trees/Tree-7"]
+mesh = SubResource("34")
 
-[node name="CollisionShape2" type="CollisionShape" parent="Test-3/Trees/Tree-6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-shape = SubResource( 38 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/Trees/Tree-7"]
+shape = SubResource("35")
 
-[node name="Tree-7" type="StaticBody" parent="Test-3/Trees"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2295, 2.59973, -13.9279 )
+[node name="Crown" type="MeshInstance3D" parent="Test-3/Trees/Tree-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("37")
 
-[node name="Trunk" type="MeshInstance" parent="Test-3/Trees/Tree-7"]
-mesh = SubResource( 34 )
+[node name="CollisionShape2" type="CollisionShape3D" parent="Test-3/Trees/Tree-7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("38")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/Trees/Tree-7"]
-shape = SubResource( 35 )
+[node name="Tree-8" type="StaticBody3D" parent="Test-3/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8439, 2.59973, -12.4122)
 
-[node name="Crown" type="MeshInstance" parent="Test-3/Trees/Tree-7"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh = SubResource( 37 )
+[node name="Trunk" type="MeshInstance3D" parent="Test-3/Trees/Tree-8"]
+mesh = SubResource("34")
 
-[node name="CollisionShape2" type="CollisionShape" parent="Test-3/Trees/Tree-7"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-shape = SubResource( 38 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/Trees/Tree-8"]
+shape = SubResource("35")
 
-[node name="Tree-8" type="StaticBody" parent="Test-3/Trees"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8439, 2.59973, -12.4122 )
+[node name="Crown" type="MeshInstance3D" parent="Test-3/Trees/Tree-8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("37")
 
-[node name="Trunk" type="MeshInstance" parent="Test-3/Trees/Tree-8"]
-mesh = SubResource( 34 )
+[node name="CollisionShape2" type="CollisionShape3D" parent="Test-3/Trees/Tree-8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("38")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/Trees/Tree-8"]
-shape = SubResource( 35 )
+[node name="Tree-9" type="StaticBody3D" parent="Test-3/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6616, 2.59973, -11.8758)
 
-[node name="Crown" type="MeshInstance" parent="Test-3/Trees/Tree-8"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh = SubResource( 37 )
+[node name="Trunk" type="MeshInstance3D" parent="Test-3/Trees/Tree-9"]
+mesh = SubResource("34")
 
-[node name="CollisionShape2" type="CollisionShape" parent="Test-3/Trees/Tree-8"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-shape = SubResource( 38 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/Trees/Tree-9"]
+shape = SubResource("35")
 
-[node name="Tree-9" type="StaticBody" parent="Test-3/Trees"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6616, 2.59973, -11.8758 )
+[node name="Crown" type="MeshInstance3D" parent="Test-3/Trees/Tree-9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("37")
 
-[node name="Trunk" type="MeshInstance" parent="Test-3/Trees/Tree-9"]
-mesh = SubResource( 34 )
+[node name="CollisionShape2" type="CollisionShape3D" parent="Test-3/Trees/Tree-9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("38")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/Trees/Tree-9"]
-shape = SubResource( 35 )
+[node name="Tree-10" type="StaticBody3D" parent="Test-3/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9729, 2.59973, -10.1735)
 
-[node name="Crown" type="MeshInstance" parent="Test-3/Trees/Tree-9"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh = SubResource( 37 )
+[node name="Trunk" type="MeshInstance3D" parent="Test-3/Trees/Tree-10"]
+mesh = SubResource("34")
 
-[node name="CollisionShape2" type="CollisionShape" parent="Test-3/Trees/Tree-9"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-shape = SubResource( 38 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/Trees/Tree-10"]
+shape = SubResource("35")
 
-[node name="Tree-10" type="StaticBody" parent="Test-3/Trees"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9729, 2.59973, -10.1735 )
+[node name="Crown" type="MeshInstance3D" parent="Test-3/Trees/Tree-10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("37")
 
-[node name="Trunk" type="MeshInstance" parent="Test-3/Trees/Tree-10"]
-mesh = SubResource( 34 )
+[node name="CollisionShape2" type="CollisionShape3D" parent="Test-3/Trees/Tree-10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("38")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/Trees/Tree-10"]
-shape = SubResource( 35 )
+[node name="Tree-11" type="StaticBody3D" parent="Test-3/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3076, 2.59973, -8.96095)
 
-[node name="Crown" type="MeshInstance" parent="Test-3/Trees/Tree-10"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh = SubResource( 37 )
+[node name="Trunk" type="MeshInstance3D" parent="Test-3/Trees/Tree-11"]
+mesh = SubResource("34")
 
-[node name="CollisionShape2" type="CollisionShape" parent="Test-3/Trees/Tree-10"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-shape = SubResource( 38 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/Trees/Tree-11"]
+shape = SubResource("35")
 
-[node name="Tree-11" type="StaticBody" parent="Test-3/Trees"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3076, 2.59973, -8.96095 )
+[node name="Crown" type="MeshInstance3D" parent="Test-3/Trees/Tree-11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("37")
 
-[node name="Trunk" type="MeshInstance" parent="Test-3/Trees/Tree-11"]
-mesh = SubResource( 34 )
+[node name="CollisionShape2" type="CollisionShape3D" parent="Test-3/Trees/Tree-11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("38")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/Trees/Tree-11"]
-shape = SubResource( 35 )
+[node name="Tree-12" type="StaticBody3D" parent="Test-3/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8249, 2.59973, -8.42461)
 
-[node name="Crown" type="MeshInstance" parent="Test-3/Trees/Tree-11"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh = SubResource( 37 )
+[node name="Trunk" type="MeshInstance3D" parent="Test-3/Trees/Tree-12"]
+mesh = SubResource("34")
 
-[node name="CollisionShape2" type="CollisionShape" parent="Test-3/Trees/Tree-11"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-shape = SubResource( 38 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/Trees/Tree-12"]
+shape = SubResource("35")
 
-[node name="Tree-12" type="StaticBody" parent="Test-3/Trees"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8249, 2.59973, -8.42461 )
+[node name="Crown" type="MeshInstance3D" parent="Test-3/Trees/Tree-12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("37")
 
-[node name="Trunk" type="MeshInstance" parent="Test-3/Trees/Tree-12"]
-mesh = SubResource( 34 )
+[node name="CollisionShape2" type="CollisionShape3D" parent="Test-3/Trees/Tree-12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("38")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/Trees/Tree-12"]
-shape = SubResource( 35 )
+[node name="Tree-13" type="StaticBody3D" parent="Test-3/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2061, 2.59973, -6.86222)
 
-[node name="Crown" type="MeshInstance" parent="Test-3/Trees/Tree-12"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh = SubResource( 37 )
+[node name="Trunk" type="MeshInstance3D" parent="Test-3/Trees/Tree-13"]
+mesh = SubResource("34")
 
-[node name="CollisionShape2" type="CollisionShape" parent="Test-3/Trees/Tree-12"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-shape = SubResource( 38 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/Trees/Tree-13"]
+shape = SubResource("35")
 
-[node name="Tree-13" type="StaticBody" parent="Test-3/Trees"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2061, 2.59973, -6.86222 )
+[node name="Crown" type="MeshInstance3D" parent="Test-3/Trees/Tree-13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("37")
 
-[node name="Trunk" type="MeshInstance" parent="Test-3/Trees/Tree-13"]
-mesh = SubResource( 34 )
+[node name="CollisionShape2" type="CollisionShape3D" parent="Test-3/Trees/Tree-13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("38")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/Trees/Tree-13"]
-shape = SubResource( 35 )
+[node name="Tree-14" type="StaticBody3D" parent="Test-3/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9139, 2.59973, -5.53303)
 
-[node name="Crown" type="MeshInstance" parent="Test-3/Trees/Tree-13"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh = SubResource( 37 )
+[node name="Trunk" type="MeshInstance3D" parent="Test-3/Trees/Tree-14"]
+mesh = SubResource("34")
 
-[node name="CollisionShape2" type="CollisionShape" parent="Test-3/Trees/Tree-13"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-shape = SubResource( 38 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/Trees/Tree-14"]
+shape = SubResource("35")
 
-[node name="Tree-14" type="StaticBody" parent="Test-3/Trees"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9139, 2.59973, -5.53303 )
+[node name="Crown" type="MeshInstance3D" parent="Test-3/Trees/Tree-14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("37")
 
-[node name="Trunk" type="MeshInstance" parent="Test-3/Trees/Tree-14"]
-mesh = SubResource( 34 )
+[node name="CollisionShape2" type="CollisionShape3D" parent="Test-3/Trees/Tree-14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("38")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/Trees/Tree-14"]
-shape = SubResource( 35 )
+[node name="Tree-15" type="StaticBody3D" parent="Test-3/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8249, 2.59973, -4.95005)
 
-[node name="Crown" type="MeshInstance" parent="Test-3/Trees/Tree-14"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh = SubResource( 37 )
+[node name="Trunk" type="MeshInstance3D" parent="Test-3/Trees/Tree-15"]
+mesh = SubResource("34")
 
-[node name="CollisionShape2" type="CollisionShape" parent="Test-3/Trees/Tree-14"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-shape = SubResource( 38 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Test-3/Trees/Tree-15"]
+shape = SubResource("35")
 
-[node name="Tree-15" type="StaticBody" parent="Test-3/Trees"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8249, 2.59973, -4.95005 )
+[node name="Crown" type="MeshInstance3D" parent="Test-3/Trees/Tree-15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("37")
 
-[node name="Trunk" type="MeshInstance" parent="Test-3/Trees/Tree-15"]
-mesh = SubResource( 34 )
+[node name="CollisionShape2" type="CollisionShape3D" parent="Test-3/Trees/Tree-15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("38")
 
-[node name="CollisionShape" type="CollisionShape" parent="Test-3/Trees/Tree-15"]
-shape = SubResource( 35 )
-
-[node name="Crown" type="MeshInstance" parent="Test-3/Trees/Tree-15"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-mesh = SubResource( 37 )
-
-[node name="CollisionShape2" type="CollisionShape" parent="Test-3/Trees/Tree-15"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-shape = SubResource( 38 )
-
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( -0.0843387, -0.253005, 0.963782, 0, 0.967228, 0.25391, -0.996437, 0.0214144, -0.0815748, 32.209, 2.89931, -31.951 )
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.0843387, -0.253005, 0.963782, 0, 0.967228, 0.25391, -0.996437, 0.0214144, -0.0815748, 32.209, 2.89931, -31.951)
 cull_mask = 1047935
 
-[node name="Zombie_UV_export" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.760809, 0.77978, -35.4583 )
+[node name="aa_50_beowulf" parent="." instance=ExtResource("4_popji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9542, 2.13336, -29.1666)
 
-[node name="Character" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.273, 0.500112, -34.5084 )
+[node name="Character" parent="." instance=ExtResource("6_26wo4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2288, 0.5, -32.2066)

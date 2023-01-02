@@ -3,19 +3,20 @@ class_name Consumable extends Item
 
 # Export member variables
 #-------------------------------------------------------------------------------
-export var MAX_CHARGES: int setget ,get_max_charges
+@export var MAX_CHARGES: int : get = get_max_charges
 #-------------------------------------------------------------------------------
 
 
 # Member variables
 #-------------------------------------------------------------------------------
-var charges: int setget set_charges,get_charges
+var charges: int : get = get_charges, set = set_charges
 #-------------------------------------------------------------------------------
 
 
 # Constructors/Initializers
 #-------------------------------------------------------------------------------
-func _init(audioPlayerPath = null).(audioPlayerPath):
+func _init(audioPlayerPath = null):
+	super(audioPlayerPath)
 	pass
 
 

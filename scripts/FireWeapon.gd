@@ -3,26 +3,26 @@ class_name FireWeapon extends Item
 
 # Export member variables
 #-------------------------------------------------------------------------------
-export var DAMAGE: int            setget ,get_damage
-export var MAX_AMMO: int          setget ,get_max_ammo
-export var MAG_MAX_AMMO: int      setget ,get_mag_max_ammo
-export var current_ammo: int      setget ,get_current_ammo
-export var current_mag_ammo: int  setget ,get_current_mag_ammo
-export var RANGE: int             setget ,get_range
-export var FIRE_RATE: float       setget ,get_fire_rate
-export var RELOAD_TIME: float     setget ,get_reload_time
+@export var DAMAGE: int            : get = get_damage
+@export var MAX_AMMO: int          : get = get_max_ammo
+@export var MAG_MAX_AMMO: int      : get = get_mag_max_ammo
+@export var current_ammo: int      : get = get_current_ammo
+@export var current_mag_ammo: int  : get = get_current_mag_ammo
+@export var RANGE: int             : get = get_range
+@export var FIRE_RATE: float       : get = get_fire_rate
+@export var RELOAD_TIME: float     : get = get_reload_time
 
-export var ANIMATION_RELOAD: Animation  setget ,get_animation_reload
-export var ANIMATION_FIRE: Animation    setget ,get_animation_fire
-export var AUDIO_FIRE: AudioStream      setget ,get_audio_fire
-export var AUDIO_RELOAD: AudioStream    setget ,get_audio_reload
-export var AUDIO_EMPTY: AudioStream     setget ,get_audio_empty
+@export var ANIMATION_RELOAD: Animation  : get = get_animation_reload
+@export var ANIMATION_FIRE: Animation    : get = get_animation_fire
+@export var AUDIO_FIRE: AudioStream      : get = get_audio_fire
+@export var AUDIO_RELOAD: AudioStream    : get = get_audio_reload
+@export var AUDIO_EMPTY: AudioStream     : get = get_audio_empty
 #-------------------------------------------------------------------------------
 
 
 # Member variables
 #-------------------------------------------------------------------------------
-var raycast: RayCast setget set_raycast,get_raycast
+var raycast: RayCast3D : get = get_raycast, set = set_raycast
 #-------------------------------------------------------------------------------
 
 
@@ -44,7 +44,8 @@ enum {
 
 # Constructors/Initializers
 #-------------------------------------------------------------------------------
-func _init(audioPlayerPath = null).(audioPlayerPath):
+func _init(audioPlayerPath = null):
+	super(audioPlayerPath)
 	pass
 #-------------------------------------------------------------------------------
 
@@ -88,7 +89,7 @@ func get_reload_time():
 
 
 func get_animation(animationName):
-	var retAnim = .get_animation(animationName)
+	var retAnim = super.get_animation(animationName)
 	if !retAnim:
 		match animationName:
 			RELOAD:
@@ -146,7 +147,7 @@ func get_raycast():
 # Setters
 #-------------------------------------------------------------------------------
 func set_fire_audio():
-	if AUDIO_PLAYER_PATH and ANIMATION_FIRE and AUDIO_FIRE:
+	if AUDIO_PLAYER_PATH != null and ANIMATION_FIRE and AUDIO_FIRE:
 		pass
 #		var track_idx = ANIMATION_FIRE.add_track(Animation.TYPE_AUDIO)
 #		ANIMATION_FIRE.track_set_path(track_idx, AUDIO_PLAYER_PATH)
@@ -155,9 +156,10 @@ func set_fire_audio():
 #		ANIMATION_FIRE.audio_track_insert_key(track_idx, 0, AUDIO_FIRE)
 
 
-func set_raycast(argRaycast: RayCast):
+func set_raycast(argRaycast: RayCast3D):
 	raycast = argRaycast
-	raycast.cast_to = Vector3(0, 0, -get_range())
+#	raycast.cast_to = Vector3(0, 0, -get_range())
+	raycast.set_target_position(Vector3(0, 0, -get_range()))
 #-------------------------------------------------------------------------------
 
 
@@ -168,7 +170,7 @@ func use():
 
 
 func pick(audioPlayerPath = null):
-	.pick(audioPlayerPath)
+	super.pick(audioPlayerPath)
 	set_fire_audio()
 	return self
 
@@ -193,7 +195,7 @@ func add_ammo(ammo: int):
 		current_ammo += ammo
 
 
-func reload():
+func reload_gun():
 	if current_mag_ammo == MAG_MAX_AMMO:
 		return WeaponState.FULL
 	if current_ammo == 0:
@@ -211,8 +213,8 @@ func reload():
 
 
 func clone():
-	var clone = load(get_filename()).instance()
-	clone.current_mag_ammo = current_mag_ammo
-	clone.current_ammo = current_ammo
-	return clone
+	var _clone = load(get_scene_file_path()).instantiate()
+	_clone.current_mag_ammo = current_mag_ammo
+	_clone.current_ammo = current_ammo
+	return _clone
 #-------------------------------------------------------------------------------

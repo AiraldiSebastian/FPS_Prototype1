@@ -3,7 +3,7 @@ class_name ItemTexture extends TextureRect
 
 # Member variables
 #-------------------------------------------------------------------------------
-var itemRef setget set_itemRef, get_itemRef
+var itemRef : get = get_itemRef, set = set_itemRef
 #-------------------------------------------------------------------------------
 
 

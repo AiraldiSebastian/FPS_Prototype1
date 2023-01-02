@@ -1,28 +1,28 @@
-class_name Item extends RigidBody
+class_name Item extends RigidBody3D
 
 
 # Export member variables
 #-------------------------------------------------------------------------------
-export var NAME: String        setget ,get_name
-export var ICON: StreamTexture setget ,get_icon
+@export var NAME: String        : get = get_name
+@export var ICON: CompressedTexture2D : get = get_icon
 
-export var COLLISION_LAYERS: Array setget ,get_collision_layers
-export var COLLISION_MASKS: Array  setget ,get_collision_masks
+@export var COLLISION_LAYERS: Array : get = get_collision_layers
+@export var COLLISION_MASKS: Array  : get = get_collision_masks
 
-export var HAND_POSITION: Vector3  setget ,get_hand_position
+@export var HAND_POSITION: Vector3  : get = get_hand_position
 
-export var ANIMATION_USE: Animation     setget ,get_animation_use
-export var AUDIO_USE: AudioStream       setget ,get_audio_use
-export var ANIMATION_EQUIP: Animation   setget ,get_animation_equip
-export var AUDIO_EQUIP: AudioStream     setget ,get_audio_equip
-export var ANIMATION_UNEQUIP: Animation setget ,get_animation_unequip
-export var AUDIO_UNEQUIP: AudioStream   setget ,get_audio_unequip
+@export var ANIMATION_USE: Animation     : get = get_animation_use
+@export var AUDIO_USE: AudioStream       : get = get_audio_use
+@export var ANIMATION_EQUIP: Animation   : get = get_animation_equip
+@export var AUDIO_EQUIP: AudioStream     : get = get_audio_equip
+@export var ANIMATION_UNEQUIP: Animation : get = get_animation_unequip
+@export var AUDIO_UNEQUIP: AudioStream   : get = get_audio_unequip
 #-------------------------------------------------------------------------------
 
 
 # Member variables
 #-------------------------------------------------------------------------------
-var AUDIO_PLAYER_PATH: String setget ,get_audio_player_path
+var AUDIO_PLAYER_PATH: String : get = get_audio_player_path
 #-------------------------------------------------------------------------------
 
 
@@ -108,6 +108,8 @@ func get_audio_player_path():
 
 
 func get_item_mesh():
+	# This should definitely be updated. Returning the first children
+	# is a very bad way of implementing this function...
 	return get_child(0)
 
 
@@ -120,7 +122,7 @@ func get_animation_use(): # Pure virtual
 # Setters
 #-------------------------------------------------------------------------------
 func set_equip_audio():
-	if AUDIO_PLAYER_PATH and ANIMATION_EQUIP and AUDIO_EQUIP:
+	if AUDIO_PLAYER_PATH != null and ANIMATION_EQUIP and AUDIO_EQUIP:
 		var track_idx = ANIMATION_EQUIP.add_track(Animation.TYPE_AUDIO)
 		ANIMATION_EQUIP.track_set_path(track_idx, AUDIO_PLAYER_PATH)
 		
@@ -154,7 +156,7 @@ func use(): # Pure Virtual
 
 
 func clone():
-	return load(get_filename()).instance()
+	return load(get_scene_file_path()).instantiate()
 #-------------------------------------------------------------------------------
 
 
@@ -162,20 +164,20 @@ func clone():
 # ------------------------------------------------------------------------------
 func set_initial_layers():
 	for index in COLLISION_LAYERS.size():
-		set_collision_layer_bit(COLLISION_LAYERS[index] - 1, true)
+		set_collision_layer_value(COLLISION_LAYERS[index], true)
 
 
 func set_initial_masks():
 	for index in COLLISION_MASKS.size():
-		set_collision_mask_bit(COLLISION_MASKS[index] - 1, true)
+		set_collision_mask_value(COLLISION_MASKS[index], true)
 
 
 func clear_all_layers():
 	for index in 31:
-		set_collision_layer_bit(index, false)
+		set_collision_layer_value(index + 1, false)
 
 
 func clear_all_masks():
 	for index in 31:
-		set_collision_mask_bit(index, false)
+		set_collision_mask_value(index + 1, false)
 # ------------------------------------------------------------------------------

@@ -2,13 +2,14 @@ class_name Medkit extends Consumable
 
 # Export member variables
 #-------------------------------------------------------------------------------
-export var HEAL_EFFECT: int setget ,get_heal_effect
+@export var HEAL_EFFECT: int : get = get_heal_effect
 #-------------------------------------------------------------------------------
 
 
 # Constructors/Initializers
 #-------------------------------------------------------------------------------
-func _init(audioPlayerPath = null).(audioPlayerPath):
+func _init(audioPlayerPath = null):
+	super(audioPlayerPath)
 	pass
 
 

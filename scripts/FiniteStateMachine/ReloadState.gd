@@ -3,7 +3,8 @@ class_name ReloadState extends BaseState
 
 # Constructors / Initialzers
 # ------------------------------------------------------------------------------
-func _init(character, argAudioPlayer = null, argAudioPlayerContinuous = null).(character, argAudioPlayer, argAudioPlayerContinuous):
+func _init(character,argAudioPlayer = null,argAudioPlayerContinuous = null):
+	super(character,argAudioPlayer,argAudioPlayerContinuous)
 	pass
 # ------------------------------------------------------------------------------
 
@@ -23,7 +24,7 @@ func get_name():
 # Class related methods
 # ------------------------------------------------------------------------------
 func handle_input(event):
-	var retState = .handle_input(event)
+	var retState = super.handle_input(event)
 	if !retState:
 		# Now check for low priorities events
 		# ----------------------------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-class_name Character extends KinematicBody
+class_name Character extends CharacterBody3D
 
 
 # Member variables
@@ -6,12 +6,12 @@ class_name Character extends KinematicBody
 # Movement related
 # ----------------------------------
 # Physics
-export var GRAVITY: int
+@export var GRAVITY: int
 
 # Kinematic
-export var MAX_SPEED: int
-export var ACCEL:     int
-export var MAX_SLOPE_ANGLE: int
+@export var MAX_SPEED: int
+@export var ACCEL:     int
+@export var MAX_SLOPE_ANGLE: int
 
 var playerVel: Vector3
 var playerDir: Vector3
@@ -26,21 +26,21 @@ var is_sprinting: bool
 # Health
 var healthSystem: HealthSystem
 
-export var MAX_HEALTH:   int
-export var START_HEALTH: int
+@export var MAX_HEALTH:   int
+@export var START_HEALTH: int
 # ----------------------------------
 
 
-# Camera control
+# Camera3D control
 # ----------------------------------
 # Rotation holder
 var rot_horiz: float
 var rot_verti: float
 
-# Camera and Skeleton nodes
-var perspCamera: Camera
-var skel: Skeleton
-var perspSkel: Skeleton
+# Camera3D and Skeleton3D nodes
+var perspCamera: Camera3D
+var skel: Skeleton3D
+var perspSkel: Skeleton3D
 # ----------------------------------
 
 
@@ -64,16 +64,16 @@ var playerState: BaseState
 # ----------------------------------
 var playerCurrentItem
 var perspCurrentItem
-var weaponRaycast: RayCast
+var weaponRaycast: RayCast3D
 
-var handRight: BoneAttachment
-var perspHandRight: BoneAttachment
+var handRight: BoneAttachment3D
+var perspHandRight: BoneAttachment3D
 # ----------------------------------
 
 
 # Interaction
 # ----------------------------------
-var handRaycast: RayCast
+var handRaycast: RayCast3D
 # ----------------------------------
 
 
@@ -111,8 +111,9 @@ func _ready():
 	playerVel		= Vector3()
 	playerDir		= Vector3()
 	animationDir	= Vector3()
-
 	is_sprinting	= false
+	
+	set_floor_max_angle(deg_to_rad(MAX_SLOPE_ANGLE))
 	# ----------------------------------
 
 
@@ -120,31 +121,36 @@ func _ready():
 	# ----------------------------------
 	healthSystem = HealthSystem.new(MAX_HEALTH, START_HEALTH)
 	# warning-ignore:return_value_discarded
-	healthSystem.connect("isDead", self, "die")
+	healthSystem.connect("isDead",Callable(self,"die"))
 	# ----------------------------------
 
 
-	# Camera control
+	# Camera3D control
 	# ----------------------------------
 	# Rotation holder
 	rot_horiz = 0
 	rot_verti = 0
 
-	# Camera and Skeleton nodes
-	perspCamera		= $Perspective/Armature/Skeleton/CameraAttachment/Camera
-	skel			= $Armature/Skeleton
-	perspSkel		= $Perspective/Armature/Skeleton
+	# Camera3D and Skeleton3D nodes
+	perspCamera		= $Character_Aim/Armature/Skeleton3D/CameraAttachment/Camera3D
+	skel			= $Armature/Skeleton3D
+	perspSkel		= $Character_Aim/Armature/Skeleton3D
 	# ----------------------------------
 
 
 	# Animation & Audio
 	# ----------------------------------
 	characterAnim	= $CharacterAnimation
-	perspectiveAnim	= $Perspective/PerspectiveAnimation
+	perspectiveAnim	= $Character_Aim/PerspectiveAnimation
 	charMoveState	= $AnimationTree
-	charMoveState.set_active(true)
+#	The line below is the one causing the problem of the CharacterAnimation not playing.
+#	Read AnimationTree to understand. Basically, an active AnimationTree will disable all
+#	basic functions of an AnimationPlayer.
+#	charMoveState.set_active(true)
 	audioPlayer	= $AudioStreamPlayer
 	audioPlayerContinuous = $AudioManager
+	# warning-ignore:return_value_discarded
+	characterAnim.connect("animation_started",Callable(self,"print_animation_info").bind("Character"))
 	playerState	= UnequipItemState.new(self, audioPlayer, audioPlayerContinuous)
 	playerState.play_state()
 	# ----------------------------------
@@ -155,20 +161,16 @@ func _ready():
 	playerCurrentItem	= null
 	perspCurrentItem	= null
 	
-	handRight		= $Armature/Skeleton/RightHand
-	perspHandRight	= $Perspective/Armature/Skeleton/RightHand
-	
-	weaponRaycast	= $Perspective/Armature/Skeleton/CameraAttachment/Camera/WeaponRaycast
-	weaponRaycast.set_collision_mask_bit(12, true)
+	handRight		= $Armature/Skeleton3D/RightHand
+	perspHandRight	= $Character_Aim/Armature/Skeleton3D/RightHand
+	weaponRaycast	= $Character_Aim/Armature/Skeleton3D/CameraAttachment/Camera3D/WeaponRaycast
 	# ----------------------------------
 
 
 	# Interaction
 	# ----------------------------------
-	handRaycast		= $Perspective/Armature/Skeleton/CameraAttachment/Camera/HandRaycast
-	
-	handRaycast.set_cast_to(Vector3(0, 0, -4))
-	handRaycast.set_collision_mask_bit(4, true)
+	handRaycast		= $Character_Aim/Armature/Skeleton3D/CameraAttachment/Camera3D/HandRaycast
+	handRaycast.set_target_position(Vector3(0, 0, -4))
 	# ----------------------------------
 
 
@@ -181,9 +183,9 @@ func _ready():
 	UI_HotbarMarker = HotbarMarker.new(UI_Hotbar)
 	
 	# warning-ignore:return_value_discarded
-	UI_HUD.connect("drop_item", self, "hud_event")
+	UI_HUD.connect("drop_item",Callable(self,"hud_event"))
 	# warning-ignore:return_value_discarded
-	UI_HotbarMarker.connect("itemChanged", self, "hotbar_event")
+	UI_HotbarMarker.connect("itemChanged",Callable(self,"hotbar_event"))
 	# ----------------------------------
 
 
@@ -193,11 +195,7 @@ func _ready():
 	MOUSE_SENSITIVITY	= 0.005
 	# ----------------------------------
 	
-	
-	# warning-ignore:return_value_discarded
-	characterAnim.connect("animation_started", self, "print_animation_info", ["Character"])
-	
-	Engine.set_target_fps(0)
+#	Engine.set_target_fps(0)
 #-------------------------------------------------------------------------------
 
 
@@ -206,6 +204,12 @@ func _ready():
 func _physics_process(delta):
 	# Processes
 	# -----------------------
+#	print_animation_info(characterAnim.get_current_animation(), characterAnim.get_name())
+#	print_animation_info(perspectiveAnim.get_current_animation(), perspectiveAnim.get_name())
+	if !characterAnim.is_playing():
+		characterAnim.play("equip_fire_weapon")
+	else:
+		print("PLAYING LOL: " + characterAnim.current_animation)
 	process_input(delta)
 	process_ui(delta)
 	process_movement(delta)
@@ -219,8 +223,8 @@ func process_input(_delta):
 			# FireWeapon, everything else is and should be handled in unhandled_input
 			# --------------------------------------------------------------------------------------
 			var event = InputEventAction.new()
-			event.action = "use_item"
-			event.pressed = true
+			event.set_action("use_item")
+			event.set_pressed(true)
 			handle_input(event)
 			# --------------------------------------------------------------------------------------
 
@@ -262,7 +266,7 @@ func process_movement(delta):
 	playerDir = playerDir.normalized()
 	
 	
-	playerVel = playerVel.linear_interpolate(playerDir * MAX_SPEED, delta * ACCEL)
+	playerVel = playerVel.lerp(playerDir * MAX_SPEED, delta * ACCEL)
 	
 	if playerVel.length() > MAX_SPEED:
 		playerVel = playerVel.normalized() * MAX_SPEED
@@ -272,7 +276,9 @@ func process_movement(delta):
 		animationDir.y = -1
 	
 	charMoveState.set("parameters/blend_position", Vector2(animationDir.x, animationDir.z))
-	playerVel = move_and_slide_with_snap(playerVel, Vector3(0, -0.1, 0), Vector3.UP, true, 1, deg2rad(MAX_SLOPE_ANGLE), true)
+	set_velocity(playerVel)
+	move_and_slide()
+	playerVel = get_velocity()
 	# ----------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------
 
@@ -288,7 +294,7 @@ func print_animation_info(animationPlaying: String, animationPlayer: String):
 # Event related methods
 #---------------------------------------------------------------------------------------------------
 func hud_event(item):
-	# This is generated by an item drop on the HUD
+	# This is generated by an item drop checked the HUD
 	# --------------------------------------------------------------------------
 	drop_item(item)
 	# --------------------------------------------------------------------------
@@ -298,11 +304,12 @@ func hotbar_event(item):
 	# This is generated by an item switch between slots
 	# --------------------------------------------------------------------------
 	var event = InputEventAction.new()
-	event.pressed = true
+	event.set_pressed(true)
 	if item:
-		event.action = "equip_item"
+		print("event_equip!")
+		event.set_action("equip_item")
 	else:
-		event.action = "unequip_item"
+		event.set_action("unequip_item")
 	handle_input(event)
 	# --------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------
@@ -312,6 +319,7 @@ func hotbar_event(item):
 #---------------------------------------------------------------------------------------------------
 func handle_input(event: InputEvent):
 	var new_state: BaseState = playerState.handle_input(event)
+	print(playerState.get_name())
 	if !(new_state is NullState):
 		playerState = new_state
 		new_state.play_state()
@@ -350,13 +358,13 @@ func _unhandled_input(event):
 		# Others
 		# ----------------------------------------------------------------------
 		if event.is_action_pressed("change_camera"):
-			get_viewport().get_camera().clear_current();
+			get_viewport().get_camera_3d().clear_current();
 		# ----------------------------------------------------------------------
 	handle_input(event)
 #---------------------------------------------------------------------------------------------------
 
 
-# Camera related methods
+# Camera3D related methods
 #---------------------------------------------------------------------------------------------------
 func camera_control(event):
 	# Update our rotations variables in function of mouse movement
@@ -368,8 +376,8 @@ func camera_control(event):
 
 	# Clamp the values to the allowed degree of motion 
 	# ----------------------------------------------------------------------------------------------
-	rot_horiz += clamp(rot_horiz, deg2rad(0), deg2rad(360))
-	rot_verti = clamp(rot_verti, deg2rad(-70), deg2rad(70))
+	rot_horiz += clampf(rot_horiz, deg_to_rad(0), deg_to_rad(360))
+	rot_verti = clampf(rot_verti, deg_to_rad(-70), deg_to_rad(70))
 	# ----------------------------------------------------------------------------------------------
 
 
@@ -384,14 +392,16 @@ func camera_control(event):
 	# ----------------------------------------------------------------------------------------------
 	# Rotate Head on X-Axis (Vertically)
 	var headBoneIndex = skel.find_bone("head")
-	var headBoneTransform = skel.get_bone_custom_pose(headBoneIndex)
-	skel.set_bone_pose(headBoneIndex, headBoneTransform.rotated(Vector3(1, 0, 0), rot_verti))
+	var headBoneRotation = skel.get_bone_pose_rotation(headBoneIndex)
+	headBoneRotation.x = Quaternion(Vector3(1, 0, 0), rot_verti).x
+	skel.set_bone_pose_rotation(headBoneIndex, headBoneRotation)
 	
 	# Rotate arms on X-Axis (Vertically)
 	if playerCurrentItem:
-		var armsIndex = skel.find_bone("arm_control")
-		var armsTransform = skel.get_bone_custom_pose(armsIndex)
-		skel.set_bone_pose(armsIndex, armsTransform.rotated(Vector3(1, 0, 0), rot_verti))
+		var armsBoneIndex = skel.find_bone("arm_control")
+		var armsBoneRotation = skel.get_bone_pose_rotation(armsBoneIndex)
+		armsBoneRotation.x = Quaternion(Vector3(1, 0, 0), rot_verti).x
+		skel.set_bone_pose_rotation(armsBoneIndex, armsBoneRotation)
 	# ----------------------------------------------------------------------------------------------
 	
 	
@@ -399,14 +409,17 @@ func camera_control(event):
 	# ----------------------------------------------------------------------------------------------
 	# Rotate Head on X-Axis (Vertically)
 	var perspHeadBoneIndex = perspSkel.find_bone("head")
-	var perspHeadBoneTransform = perspSkel.get_bone_custom_pose(perspHeadBoneIndex)
-	perspSkel.set_bone_pose(perspHeadBoneIndex, perspHeadBoneTransform.rotated(Vector3(1, 0, 0), rot_verti))
+	var perspHeadBoneRotation = perspSkel.get_bone_pose_rotation(perspHeadBoneIndex)
+	perspHeadBoneRotation.x = Quaternion(Vector3(1, 0, 0), rot_verti).x
+	perspSkel.set_bone_pose_rotation(perspHeadBoneIndex, perspHeadBoneRotation)
 	
 	# Rotate arms on X-Axis (Vertically)
 	if playerCurrentItem:
 		var perspArmsIndex = perspSkel.find_bone("arm_control")
-		var perspArmsTransform = perspSkel.get_bone_custom_pose(perspArmsIndex)
-		perspSkel.set_bone_pose(perspArmsIndex, perspArmsTransform.rotated(Vector3(1, 0, 0), rot_verti))
+		var perspArmsRotation = perspSkel.get_bone_pose_rotation(perspArmsIndex)
+		perspArmsRotation.x = Quaternion(Vector3(1, 0, 0), rot_verti).x
+		perspSkel.set_bone_pose_rotation(perspArmsIndex, perspArmsRotation)
+
 	# ----------------------------------------------------------------------------------------------
 # --------------------------------------------------------------------------------------------------
 
@@ -435,7 +448,7 @@ func reload():
 		# Reload, in case reload() returns empty, search if an AMMO
 		# Pack is available in the inventory and reload using it.
 		# ------------------------------------------------------------------------------------------
-		if playerCurrentItem.reload() == FireWeapon.WeaponState.EMPTY:
+		if playerCurrentItem.reload_gun() == FireWeapon.WeaponState.EMPTY:
 			var item = null
 			var ammo = null
 			
@@ -497,9 +510,11 @@ func use_item(item):
 
 
 func add_item(item):
+	print("ADD_ITEM!")
 	# First try add to Hotbar
 	# --------------------------------------------------------------------------
 	if !UI_Hotbar.is_full():
+		print("ADD_ITEM_UI_Hotbar.is_full()!")
 		UI_Hotbar.add_item(item.pick(audioPlayer.get_path()))
 	# --------------------------------------------------------------------------
 	
@@ -533,9 +548,9 @@ func drop_item(item):
 	
 	# Set where the item should spawn (players mid body for now)
 	# --------------------------------------------------------------------------
-	var newTransform: Transform = transform
+	var newTransform: Transform3D = transform
 	newTransform.origin.y += transform.origin.y / 2
-	itemRef.set_global_transform(Transform.IDENTITY)
+	itemRef.set_global_transform(Transform3D.IDENTITY)
 	itemRef.set_transform(newTransform)
 	# --------------------------------------------------------------------------
 	
@@ -581,7 +596,7 @@ func equip_items():
 		synchronize_arms_to_head()
 	# ----------------------------------------------------------------------------------------------
 	
-	# Equip the items, change type from rigid to static and turn off collisions
+	# Equip the items, change type from rigid to static and turn unchecked collisions
 	# ----------------------------------------------------------------------------------------------
 	playerCurrentItem = item.equip()
 	perspCurrentItem = playerCurrentItem.clone()
@@ -635,7 +650,7 @@ func remove_items():
 	# Set the initial collision layers and masks for the characters weapon
 	# Only for the characters weapon, since the perspective one will be deleted
 	# ----------------------------------------------------------------------------------------------
-	playerCurrentItem.set_mode(RigidBody.MODE_RIGID)
+	playerCurrentItem.set_freeze_enabled(false)
 	playerCurrentItem.set_initial_layers()
 	playerCurrentItem.set_initial_masks()
 	# ----------------------------------------------------------------------------------------------
@@ -643,18 +658,15 @@ func remove_items():
 	
 	# Reset the layer mask bits from the characters weapon mesh
 	# ----------------------------------------------------------------------------------------------
-#	var weaponMesh = playerCurrentItem.get_item_mesh()
-#	weaponMesh.set_layer_mask_bit(4, true)
-#	weaponMesh.set_layer_mask_bit(5, false)
 	var itemMesh = playerCurrentItem.get_item_mesh()
-	if itemMesh is Skeleton:
+	if itemMesh is Skeleton3D:
 		var childrenMesh = itemMesh.get_children()
 		for mesh in childrenMesh:
-			mesh.set_layer_mask_bit(4, true)
-			mesh.set_layer_mask_bit(5, false)
+			mesh.set_layer_mask_value(5, true)
+			mesh.set_layer_mask_value(6, false)
 	else:
-		itemMesh.set_layer_mask_bit(4, true)
-		itemMesh.set_layer_mask_bit(5, false)
+		itemMesh.set_layer_mask_value(5, true)
+		itemMesh.set_layer_mask_value(6, false)
 	# ----------------------------------------------------------------------------------------------
 	
 	
@@ -662,7 +674,8 @@ func remove_items():
 	# ----------------------------------------------------------------------------------------------
 	playerCurrentItem = null
 	perspCurrentItem = null
-	weaponRaycast.cast_to = Vector3(0, 0, 0)
+#	weaponRaycast.cast_to = Vector3(0, 0, 0)
+	weaponRaycast.set_target_position(Vector3(0, 0, 0))
 	# ----------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------
 
@@ -672,32 +685,38 @@ func reset_arms():
 	# Set the arm_control to its rest position as well as the arms
 	# ----------------------------------------------------------------------------------------------
 	# Rotate first on the characters skeleton
-	var armsIndex = skel.find_bone("arm_control")
-	skel.set_bone_pose(armsIndex, Transform.IDENTITY)
+	var armsBoneIndex = skel.find_bone("arm_control")
+	skel.set_bone_pose_rotation(armsBoneIndex, Quaternion())
+#	skel.set_bone_rest(armsBoneIndex)
 	
 	# Rotate now on the perspective skeleton
-	var perspArmsIndex = perspSkel.find_bone("arm_control")
-	perspSkel.set_bone_pose(perspArmsIndex, Transform.IDENTITY)
+	var perspArmsBoneIndex = perspSkel.find_bone("arm_control")
+	perspSkel.set_bone_pose_rotation(perspArmsBoneIndex, Quaternion())
+#	skel.set_bone_rest(perspArmsBoneIndex)
 	# ----------------------------------------------------------------------------------------------
 
 
 func synchronize_arms_to_head():
 	# Rotate first on the characters skeleton	
-	var armsIndex = skel.find_bone("arm_control")
-	var armsTransform = skel.get_bone_custom_pose(armsIndex)
-	skel.set_bone_pose(armsIndex, armsTransform.rotated(Vector3(1, 0, 0), rot_verti))
+	var armsBoneIndex = skel.find_bone("arm_control")
+	var armsBoneRotation = skel.get_bone_pose_rotation(armsBoneIndex)
+	armsBoneRotation.x = Quaternion(Vector3(1, 0, 0), rot_verti).x
+	skel.set_bone_pose_rotation(armsBoneIndex, armsBoneRotation)
 
 	# Rotate now on the perspective skeleton
-	var perspArmsIndex = perspSkel.find_bone("arm_control")
-	var perspArmsTransform = perspSkel.get_bone_custom_pose(perspArmsIndex)
-	perspSkel.set_bone_pose(perspArmsIndex, perspArmsTransform.rotated(Vector3(1, 0, 0), rot_verti))
+	var perspArmsBoneIndex = perspSkel.find_bone("arm_control")
+	var perspArmsBoneRotation = perspSkel.get_bone_pose_rotation(perspArmsBoneIndex)
+	perspArmsBoneRotation.x = Quaternion(Vector3(1, 0, 0), rot_verti).x
+	perspSkel.set_bone_pose_rotation(perspArmsBoneIndex, perspArmsBoneRotation)
 	# ----------------------------------------------------------------------------------------------
 
 
 func adapt_item_static(item):
-	# Change the item type from rigid to static and turn off collisions
+	# Change the item type from rigid to static and turn unchecked collisions
 	# ----------------------------------------------------------------------------------------------
-	item.set_mode(RigidBody.MODE_STATIC)
+#	
+	item.set_freeze_mode(RigidBody3D.FREEZE_MODE_STATIC)
+	item.set_freeze_enabled(true)
 	item.clear_all_layers()
 	item.clear_all_masks()
 	item.set_identity()
@@ -706,26 +725,27 @@ func adapt_item_static(item):
 
 func adapt_item_invisibility(argPlayerCurrentItem, argPerspCurrentItem):
 	# Make the characters item mesh invisible for our camera perspective 8, 10 | 6, 7, 9
+	# Make the perspective item mesh invisible for the world
 	# ----------------------------------------------------------------------------------------------
 	var itemMesh = argPlayerCurrentItem.get_item_mesh()
-	if itemMesh is Skeleton:
+	if itemMesh is Skeleton3D:
 		var childrenMesh = itemMesh.get_children()
 		for mesh in childrenMesh:
-			mesh.set_layer_mask_bit(4, false)
-			mesh.set_layer_mask_bit(5, true)
+			mesh.set_layer_mask_value(5, false)
+			mesh.set_layer_mask_value(6, true)
 			
 		itemMesh = argPerspCurrentItem.get_item_mesh()
 		childrenMesh = itemMesh.get_children()
 		for mesh in childrenMesh:
-			mesh.set_layer_mask_bit(4, false)
-			mesh.set_layer_mask_bit(7, true)
+			mesh.set_layer_mask_value(5, false)
+			mesh.set_layer_mask_value(8, true)
 	else:
-		itemMesh.set_layer_mask_bit(4, false)
-		itemMesh.set_layer_mask_bit(5, true)
+		itemMesh.set_layer_mask_value(5, false)
+		itemMesh.set_layer_mask_value(6, true)
 		
 		itemMesh = argPerspCurrentItem.get_item_mesh()
-		itemMesh.set_layer_mask_bit(4, false)
-		itemMesh.set_layer_mask_bit(7, true)
+		itemMesh.set_layer_mask_value(5, false)
+		itemMesh.set_layer_mask_value(8, true)
 	# ----------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------
 

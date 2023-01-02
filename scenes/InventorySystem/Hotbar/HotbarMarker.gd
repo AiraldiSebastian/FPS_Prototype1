@@ -48,7 +48,7 @@ func select_slot(index: int):
 	# If connected to another slot, disconnect from it
 	#---------------------------------------------------------------------------
 	if connectedSlot:
-		connectedSlot.disconnect("itemChanged", self, "communicate")
+		connectedSlot.disconnect("itemChanged",Callable(self,"communicate"))
 		connectedSlot.selected(false)
 	#---------------------------------------------------------------------------
 	
@@ -56,7 +56,7 @@ func select_slot(index: int):
 	#---------------------------------------------------------------------------
 	connectedSlot = slotContainer.get_child(index)
 	# warning-ignore:return_value_discarded
-	connectedSlot.connect("itemChanged", self, "communicate")
+	connectedSlot.connect("itemChanged",Callable(self,"communicate"))
 	connectedSlot.selected(true)
 	#---------------------------------------------------------------------------
 

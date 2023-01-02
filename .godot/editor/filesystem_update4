@@ -1,0 +1,7 @@
+res://scenes/Units/Player/Character_Alpha.tscn
+res://scenes/Testing_Area/1_Testing.tscn
+res://scenes/Weapons/FireWeapons/aa_50_beowulf.tscn
+res://scenes/Units/Player/Character.gd
+res://scripts/FiniteStateMachine/BaseState.gd
+res://scripts/FiniteStateMachine/UnequipItemState.gd
+res://scenes/Units/Player/Character_Alpha_TEST.tscn

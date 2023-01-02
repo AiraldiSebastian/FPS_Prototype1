@@ -33,7 +33,7 @@ func get_item_index(item):
 
 
 func is_full():
-	return get_item_count() == get_size()
+	return get_item_count() == self.get_size()
 
 
 func get_size():
@@ -67,7 +67,8 @@ func add_item(item):
 	if !(item is Item):
 		return false
 	
-	for index in get_size():
+	for index in self.get_size():
+		print("NOP")
 		if get_slot(index).is_empty():
 			get_slot(index).add_ItemTexture(item)
 			return true

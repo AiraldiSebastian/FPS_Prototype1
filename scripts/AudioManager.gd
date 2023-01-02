@@ -9,9 +9,9 @@ var timer: Timer
 
 # Constructors / Initializers
 # ------------------------------------------------------------------------------
-func _init(stream: AudioStream):
-	if stream:
-		set_stream(stream)
+func _init(argStream: AudioStream):
+	if argStream:
+		set_stream(argStream)
 # ------------------------------------------------------------------------------
 
 
@@ -19,6 +19,6 @@ func _init(stream: AudioStream):
 # ------------------------------------------------------------------------------
 func play_sound():
 	# warning-ignore:return_value_discarded
-	connect("finished", self, "queue_free")
+	connect("finished",Callable(self,"queue_free"))
 	play()
 # ------------------------------------------------------------------------------

@@ -1,5 +1,4 @@
- class_name BaseState
-
+class_name BaseState
 
 # Member variables
 # ------------------------------------------------------------------------------
@@ -12,7 +11,7 @@ var audioPlayerContinuous: AudioStreamPlayer
 
 # Constructors / Initialzers
 # ------------------------------------------------------------------------------
-func _init(argCharacter, argAudioPlayer = null, argAudioPlayerContinuous = null):
+func _init(argCharacter,argAudioPlayer = null,argAudioPlayerContinuous = null):
 	character = argCharacter
 	audioPlayer = argAudioPlayer
 	audioPlayerContinuous = argAudioPlayerContinuous
@@ -64,16 +63,18 @@ func play_state():
 
 
 func play_animation(animationName):
-	var charAnim = character.characterAnim
-	var perspAnim = character.perspectiveAnim
+	var charAnim : AnimationPlayer = character.characterAnim
+	var perspAnim : AnimationPlayer = character.perspectiveAnim
 	
 	# If the item has a animation for this State, add it to the animation player and play it
 	# ----------------------------------------------------------------------------------------------
 	var animation = character.playerCurrentItem.get_animation(animationName)
 	if animation:
 		if !charAnim.has_animation(animation.get_name()):
-			charAnim.add_animation(animation.get_name(), animation)
-			perspAnim.add_animation(animation.get_name(), animation)
+			charAnim.get_animation_library("").add_animation(animation.get_name(), animation)
+			perspAnim.get_animation_library("").add_animation(animation.get_name(), animation)
+#			charAnim.add_animation_library(animation.get_name(), animation)
+#			perspAnim.add_animation_library(animation.get_name(), animation)
 		charAnim.play(animation.get_name())
 		perspAnim.play(animation.get_name())
 		return true

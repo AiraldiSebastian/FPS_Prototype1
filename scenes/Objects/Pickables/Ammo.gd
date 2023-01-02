@@ -3,13 +3,14 @@ class_name Ammo extends Consumable
 
 # Export member variables
 #-------------------------------------------------------------------------------
-export var AMMO: int setget ,get_ammo
+@export var AMMO: int : get = get_ammo
 #-------------------------------------------------------------------------------
 
 
 # Constructors/Initializers
 #-------------------------------------------------------------------------------
-func _init(audioPlayerPath = null).(audioPlayerPath):
+func _init(audioPlayerPath = null):
+	super(audioPlayerPath)
 	pass
 
 

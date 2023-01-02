@@ -3,17 +3,18 @@ extends FireWeapon
 
 # Export member variables
 #-------------------------------------------------------------------------------
-export var AUDIO_CLIPOUT: AudioStream
-export var AUDIO_CLIPIN: AudioStream
-export var AUDIO_CLIPHIT: AudioStream
-export var AUDIO_BOLTPULL: AudioStream
-export var AUDIO_BOLTFORWARD: AudioStream
+@export var AUDIO_CLIPOUT: AudioStream
+@export var AUDIO_CLIPIN: AudioStream
+@export var AUDIO_CLIPHIT: AudioStream
+@export var AUDIO_BOLTPULL: AudioStream
+@export var AUDIO_BOLTFORWARD: AudioStream
 #-------------------------------------------------------------------------------
 
 
 # Constructors/Initializers
 #-------------------------------------------------------------------------------
-func _init(audioPlayerPath = null).(audioPlayerPath):
+func _init(audioPlayerPath = null):
+	super(audioPlayerPath)
 	pass
 
 
@@ -50,7 +51,7 @@ func set_reload_audio():
 # Others
 #-------------------------------------------------------------------------------
 func pick(audioPlayerPath = null):
-	.pick(audioPlayerPath)
+	super.pick(audioPlayerPath)
 	set_reload_audio()
 	return self
 #-------------------------------------------------------------------------------

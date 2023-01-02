@@ -18,8 +18,8 @@ func _ready():
 
 # Class related methods
 #-------------------------------------------------------------------------------
-func selected(selected: bool):
-	if selected:
+func selected(_selected: bool):
+	if _selected:
 		set('custom_styles/panel', selected_style)
 		emit_signal("itemChanged", get_itemRef())
 	else:

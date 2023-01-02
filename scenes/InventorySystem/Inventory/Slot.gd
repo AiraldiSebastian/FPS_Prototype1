@@ -20,7 +20,7 @@ func add_ItemTexture(item):
 	if get_child_count() > 0:
 		return false
 	
-	# Create the Texture for the item being added
+	# Create the Texture2D for the item being added
 	# --------------------------------------------------------------------------
 	var nodeIcon:ItemTexture = ItemTexture.new()
 	nodeIcon.itemRef = item
@@ -32,7 +32,7 @@ func add_ItemTexture(item):
 	# Center our item's texture
 	# --------------------------------------------------------------------------
 	nodeIcon.set_anchors_preset(Control.PRESET_CENTER)
-	nodeIcon.set_margins_preset(Control.PRESET_CENTER)
+	nodeIcon.set_offsets_preset(Control.PRESET_CENTER)
 	# --------------------------------------------------------------------------
 	
 	# Communicate the signal
@@ -77,7 +77,7 @@ func is_empty():
 
 # Functions specifically for dragging the item's texture
 # --------------------------------------------------------------------------------------------------
-func get_drag_data(_position):
+func _get_drag_data(_position):
 	if get_child_count() == 0:
 		return null
 	
@@ -116,7 +116,7 @@ func drop_data(_position, data):
 	dataParent.remove_child(data)
 	# --------------------------------------------------------------------------
 	
-	# If this slot has a child, remove it and add it to the other slot
+	# If this slot has a child, remove_at it and add it to the other slot
 	# --------------------------------------------------------------------------
 	if get_child_count() > 0:
 		var ourChild = get_child(0)
@@ -129,7 +129,7 @@ func drop_data(_position, data):
 	add_child(data)
 	# --------------------------------------------------------------------------
 	
-	# Communicate signal on bot slots
+	# Communicate signal checked bot slots
 	# --------------------------------------------------------------------------
 	dataParent.emit_signal("itemChanged", dataParent.get_itemRef())
 	emit_signal("itemChanged", get_itemRef())

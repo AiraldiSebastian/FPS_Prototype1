@@ -17,7 +17,7 @@ var currentHealth: int
 
 # Constructors / Initializers
 # ------------------------------------------------------------------------------
-func _init(arg_MAX_HEALTH, arg_currentHealth):
+func _init(arg_MAX_HEALTH,arg_currentHealth):
 	MAX_HEALTH = arg_MAX_HEALTH
 	currentHealth = arg_currentHealth
 # ------------------------------------------------------------------------------

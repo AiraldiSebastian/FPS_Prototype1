@@ -3,7 +3,8 @@ class_name EquipItemState extends BaseState
 
 # Constructors / Initialzers
 # ------------------------------------------------------------------------------
-func _init(character, argAudioPlayer = null, argAudioPlayerContinuous = null).(character, argAudioPlayer, argAudioPlayerContinuous):
+func _init(argCharacter,argAudioPlayer = null,argAudioPlayerContinuous = null):
+	super(argCharacter,argAudioPlayer,argAudioPlayerContinuous)
 	pass
 # ------------------------------------------------------------------------------
 
@@ -23,7 +24,7 @@ func get_name():
 # Class related methods
 # ------------------------------------------------------------------------------
 func handle_input(event):
-	var retState = .handle_input(event)
+	var retState = super.handle_input(event)
 	if !retState:
 		# Now check for low priorities events
 		# ----------------------------------------------------------------------------------------------
@@ -43,11 +44,12 @@ func play_state():
 	# ----------------------------------------------------------------------------------------------
 	character.equip_items()
 	# ----------------------------------------------------------------------------------------------
-	
+	print("YEP!")
 	# If the item has a animation for this State, add it to the animation player and play it
 	# Else, play the default animation for this state
 	# ----------------------------------------------------------------------------------------------
 	if !play_animation(Item.EQUIP):
+		print("YEPx2!")
 		character.characterAnim.play("equip_item")
 		character.perspectiveAnim.play("equip_item")
 	# ----------------------------------------------------------------------------------------------
