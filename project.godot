@@ -22,7 +22,7 @@ _global_script_classes=[{
 "base": "RefCounted",
 "class": &"BaseState",
 "language": &"GDScript",
-"path": "res://scripts/FiniteStateMachine/BaseState.gd"
+"path": "res://scenes/Units/Player/FiniteStateMachine/BaseState.gd"
 }, {
 "base": "CharacterBody3D",
 "class": &"Character",
@@ -37,7 +37,7 @@ _global_script_classes=[{
 "base": "BaseState",
 "class": &"EquipItemState",
 "language": &"GDScript",
-"path": "res://scripts/FiniteStateMachine/EquipItemState.gd"
+"path": "res://scenes/Units/Player/FiniteStateMachine/EquipItemState.gd"
 }, {
 "base": "Item",
 "class": &"FireWeapon",
@@ -82,12 +82,12 @@ _global_script_classes=[{
 "base": "BaseState",
 "class": &"NullState",
 "language": &"GDScript",
-"path": "res://scripts/FiniteStateMachine/NullState.gd"
+"path": "res://scenes/Units/Player/FiniteStateMachine/NullState.gd"
 }, {
 "base": "BaseState",
 "class": &"ReloadState",
 "language": &"GDScript",
-"path": "res://scripts/FiniteStateMachine/ReloadState.gd"
+"path": "res://scenes/Units/Player/FiniteStateMachine/ReloadState.gd"
 }, {
 "base": "Panel",
 "class": &"Slot",
@@ -97,12 +97,12 @@ _global_script_classes=[{
 "base": "BaseState",
 "class": &"UnequipItemState",
 "language": &"GDScript",
-"path": "res://scripts/FiniteStateMachine/UnequipItemState.gd"
+"path": "res://scenes/Units/Player/FiniteStateMachine/UnequipItemState.gd"
 }, {
 "base": "BaseState",
 "class": &"UseItemState",
 "language": &"GDScript",
-"path": "res://scripts/FiniteStateMachine/UseItemState.gd"
+"path": "res://scenes/Units/Player/FiniteStateMachine/UseItemState.gd"
 }]
 _global_script_class_icons={
 "Ammo": "",
