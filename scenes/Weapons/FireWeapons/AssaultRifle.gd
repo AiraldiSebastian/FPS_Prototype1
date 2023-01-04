@@ -30,6 +30,8 @@ func _ready():
 #-------------------------------------------------------------------------------
 func set_reload_audio():
 	if AUDIO_PLAYER_PATH:
+		print("gg:")
+		print(ANIMATION_RELOAD.get_name())
 		var track_idx = ANIMATION_RELOAD.add_track(Animation.TYPE_AUDIO)
 		ANIMATION_RELOAD.track_set_path(track_idx, AUDIO_PLAYER_PATH)
 		

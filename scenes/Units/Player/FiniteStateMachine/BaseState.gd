@@ -71,7 +71,7 @@ func play_animation(animationName):
 	# ----------------------------------------------------------------------------------------------
 	var animation = character.playerCurrentItem.get_animation(animationName)
 	if animation:
-		if !charAnim.has_animation(animation.get_name()):
+		if !charAnim.has_animation(animation.get_name()) or !perspAnim.has_animation(animation.get_name()):
 			charAnim.get_animation_library("").add_animation(animation.get_name(), animation)
 			perspAnim.get_animation_library("").add_animation(animation.get_name(), animation)
 #			charAnim.add_animation_library(animation.get_name(), animation)
