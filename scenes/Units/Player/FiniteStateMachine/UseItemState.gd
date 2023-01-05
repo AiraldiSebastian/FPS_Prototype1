@@ -42,6 +42,13 @@ func handle_input(event):
 
 
 func play_state():
+	
+	# For playing the audio we have to make the distinction between items that have their
+	# use_audio embeded into the animation (for example a medkit should be the case) and
+	# items that can't have audio embeded to their animations (like a fire weapon, where 
+	# the sound has to be played outside of the animation, since the audio of a weapon
+	# shooting is longer than the duration of its animation).
+	
 	# Fire Weapon
 	# ----------------------------------------------------------------------------------------------
 	if character.playerCurrentItem is FireWeapon:
@@ -53,7 +60,7 @@ func play_state():
 				character.characterAnim.play("use_item")
 				character.perspectiveAnim.play("use_item")
 			
-			# If the item has an Audio available for its use, play the sound
+			# If the weapon has an Audio available for its use, play the sound
 			# ------------------------------------------------------------------
 			if character.playerCurrentItem.get_audio_use():
 				var audioPlayerTest = AudioManager.new(character.playerCurrentItem.get_audio_use())

@@ -131,13 +131,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6458, 2.04371, -29.4667)
 
 [node name="Ammo" parent="." instance=ExtResource("8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.4269, 1.93547, -29.5272)
-collision_layer = 16
-collision_mask = 17
 
 [node name="Ammo2" parent="." instance=ExtResource("8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8735, 1.93766, -29.5436)
-collision_layer = 16
-collision_mask = 17
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
@@ -1648,3 +1644,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9542, 2.13336, -29.1666)
 
 [node name="Character" parent="." instance=ExtResource("6_26wo4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8216, 0.5, -31.9305)
+
+[node name="Ammo3" parent="." instance=ExtResource("8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.1133, 1.98578, -29.2507)
+
+[node name="Ammo4" parent="." instance=ExtResource("8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.916, 1.91902, -28.5268)

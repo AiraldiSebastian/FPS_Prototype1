@@ -43,8 +43,7 @@ func play_state():
 	if character.playerCurrentItem is FireWeapon:
 		# Check if a reload is possible. 
 		# ----------------------------------------------------------------------------------------------
-		var weaponState = character.playerCurrentItem.get_weapon_state()
-		if weaponState == FireWeapon.WeaponState.NOT_FULL:
+		if character.can_reload():
 			# If the item has a animation for this State, add it to the animation player and play it
 			# Else, play the default animation for this state
 			# ------------------------------------------------------------------------------------------

@@ -185,6 +185,11 @@ func _ready():
 	UI_HUD.connect("drop_item",Callable(self,"hud_event"))
 	# warning-ignore:return_value_discarded
 	UI_HotbarMarker.connect("itemChanged",Callable(self,"hotbar_event"))
+	
+	# Close inventory when starting
+	UI_HUD.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
+	UI_Inventory.set_visible(false)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	# ----------------------------------
 
 
@@ -230,7 +235,7 @@ func process_ui(_delta):
 	# ----------------------------------------------------------------------------------------------
 	if playerCurrentItem is FireWeapon:
 		UI_InfoLabel.text = "HEALTH: " + str(healthSystem.get_currentHealth()) + "/" + str(healthSystem.get_max_health()) + \
-				"\nAMMO: " + str(playerCurrentItem.get_current_mag_ammo()) + "/" + str(playerCurrentItem.get_current_ammo())
+				"\nAMMO: " + str(playerCurrentItem.get_current_mag_ammo()) + "/" + str(playerCurrentItem.get_mag_max_ammo())
 	elif playerCurrentItem is Medkit:
 		UI_InfoLabel.text = "HEALTH: " + str(healthSystem.get_currentHealth()) + "/" + str(healthSystem.get_max_health()) + \
 				"\nHealing: " + str(playerCurrentItem.get_heal_effect())
@@ -310,8 +315,7 @@ func process_animation_upperBody(_delta):
 # Print / Info related methods
 #---------------------------------------------------------------------------------------------------
 func print_animation_info(animationPlaying: String, animationPlayer: String):
-	if animationPlaying != "idle":
-		print(animationPlayer, " is playing: \"", animationPlaying, "\"")
+	print(animationPlayer, " is playing: \"", animationPlaying, "\"")
 #---------------------------------------------------------------------------------------------------
 
 
@@ -330,7 +334,6 @@ func hotbar_event(item):
 	var event = InputEventAction.new()
 	event.set_pressed(true)
 	if item:
-		print("event_equip!")
 		event.set_action("equip_item")
 	else:
 		event.set_action("unequip_item")
@@ -429,7 +432,7 @@ func camera_control(event):
 	headBoneRotation.x = Quaternion(Vector3(1, 0, 0), rot_verti).x
 	skel.set_bone_pose_rotation(headBoneIndex, headBoneRotation)
 	
-	# Rotate arms on X-Axis (Vertically)
+	# Rotate arms (arm_control) on X-Axis (Vertically)
 	if playerCurrentItem:
 		var armsBoneIndex = skel.find_bone("arm_control")
 		var armsBoneRotation = skel.get_bone_pose_rotation(armsBoneIndex)
@@ -446,7 +449,7 @@ func camera_control(event):
 	perspHeadBoneRotation.x = Quaternion(Vector3(1, 0, 0), rot_verti).x
 	perspSkel.set_bone_pose_rotation(perspHeadBoneIndex, perspHeadBoneRotation)
 	
-	# Rotate arms on X-Axis (Vertically)
+	# Rotate arms (arm_control) on X-Axis (Vertically)
 	if playerCurrentItem:
 		var perspArmsIndex = perspSkel.find_bone("arm_control")
 		var perspArmsRotation = perspSkel.get_bone_pose_rotation(perspArmsIndex)
@@ -481,19 +484,18 @@ func reload():
 		# Reload, in case reload() returns empty, search if an AMMO
 		# Pack is available in the inventory and reload using it.
 		# ------------------------------------------------------------------------------------------
-		if playerCurrentItem.reload_gun() == FireWeapon.WeaponState.EMPTY:
-			var item = null
-			var ammo = null
+		if playerCurrentItem.get_weapon_state() != FireWeapon.WeaponState.FULL:
+			var item : Item = null
 			
 			# First search in Hotbar
 			# --------------------------------------------------------------------------------------
 			item = UI_Hotbar.get_first_item_of_type("Ammo")
 			if item:
-				ammo = item.use()
+				item.use()
 				if item.get_charges() == 0:
 					delete_item(item)
-				playerCurrentItem.add_ammo(ammo)
-				perspCurrentItem.add_ammo(ammo)
+				playerCurrentItem.change_mag()
+				perspCurrentItem.change_mag()
 				return
 			# --------------------------------------------------------------------------------------
 			
@@ -501,15 +503,31 @@ func reload():
 			# --------------------------------------------------------------------------------------
 			item = UI_Inventory.get_first_item_of_type("Ammo")
 			if item:
-				ammo = item.use()
+				item.use()
 				if item.get_charges() == 0:
 					delete_item(item)
-				playerCurrentItem.add_ammo(ammo)
-				perspCurrentItem.add_ammo(ammo)
+				playerCurrentItem.change_mag()
+				perspCurrentItem.change_mag()
 				return
 			# --------------------------------------------------------------------------------------
 	return true
 
+
+func can_reload():
+	if playerCurrentItem is FireWeapon:
+		if playerCurrentItem.get_weapon_state() != FireWeapon.WeaponState.FULL:
+			# First search in Hotbar
+			# --------------------------------------------------------------------------------------
+			if UI_Hotbar.get_first_item_of_type("Ammo"):
+				return true
+			# --------------------------------------------------------------------------------------
+			
+			# Second search in Inventory
+			# --------------------------------------------------------------------------------------
+			if UI_Inventory.get_first_item_of_type("Ammo"):
+				return true
+			# --------------------------------------------------------------------------------------
+	return false
 
 func use_item(item):
 	if !item:
@@ -546,12 +564,11 @@ func add_item(item):
 	# First try add to Hotbar
 	# --------------------------------------------------------------------------
 	if !UI_Hotbar.is_full():
-		print("ADD_ITEM_UI_Hotbar.is_full()!")
 		UI_Hotbar.add_item(item.pick(audioPlayer.get_path()))
 	# --------------------------------------------------------------------------
 	
 	# If Hotbar full, try Inventory
-	# --------------------------------------------------------------------------
+	# ------------------------------------------------------------------------f--
 	elif !UI_Inventory.is_full():
 		UI_Inventory.add_item(item.pick(audioPlayer.get_path()))
 	# --------------------------------------------------------------------------
@@ -618,6 +635,10 @@ func hold_item():
 	# Equip the items, change type from rigid to static and turn unchecked collisions
 	# ----------------------------------------------------------------------------------------------
 	playerCurrentItem = item.equip()
+	
+	# Clone will not truly be a "clone". For a cloned item, the functions _init and _ready
+	# will be called, this is not true for the original item. This will in most cases give 
+	# the cloned object different values, since it will initialise it with the initial values.
 	perspCurrentItem = playerCurrentItem.clone()
 	adapt_item_static(playerCurrentItem)
 	adapt_item_static(perspCurrentItem)

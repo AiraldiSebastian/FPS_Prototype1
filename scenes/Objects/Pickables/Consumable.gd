@@ -17,7 +17,6 @@ var charges: int : get = get_charges, set = set_charges
 #-------------------------------------------------------------------------------
 func _init(audioPlayerPath = null):
 	super(audioPlayerPath)
-	pass
 
 
 func _ready():

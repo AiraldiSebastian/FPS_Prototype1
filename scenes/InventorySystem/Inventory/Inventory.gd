@@ -17,7 +17,7 @@ func _ready():
 # Getters
 # ------------------------------------------------------------------------------
 func get_first_item_of_type(itemType: String):
-	for index in get_size():
+	for index in self.get_size():
 		if get_slot(index).get_itemRef():
 			if get_slot(index).get_itemRef().get_class() == itemType:
 				return get_slot(index).get_itemRef()
@@ -68,7 +68,6 @@ func add_item(item):
 		return false
 	
 	for index in self.get_size():
-		print("NOP")
 		if get_slot(index).is_empty():
 			get_slot(index).add_ItemTexture(item)
 			return true

@@ -41,7 +41,7 @@ func _init(audioPlayerPath = null):
 
 
 func _ready():
-	set_equip_audio()
+	pass
 #-------------------------------------------------------------------------------
 
 
@@ -124,7 +124,7 @@ func set_equip_audio():
 	if AUDIO_PLAYER_PATH != null and ANIMATION_EQUIP and AUDIO_EQUIP:
 		var track_idx = ANIMATION_EQUIP.add_track(Animation.TYPE_AUDIO)
 		ANIMATION_EQUIP.track_set_path(track_idx, AUDIO_PLAYER_PATH)
-		
+
 		# warning-ignore:return_value_discarded
 		ANIMATION_EQUIP.audio_track_insert_key(track_idx, 0, AUDIO_EQUIP)
 #-------------------------------------------------------------------------------

@@ -27,9 +27,11 @@ size = Vector3(0.5, 0.3, 0.3)
 size = Vector3(0.155407, 0.0631686, 0.18295)
 
 [node name="Ammo" type="RigidBody3D"]
+collision_layer = 16
+collision_mask = 17
 script = ExtResource("1")
 AMMO = 30
-MAX_CHARGES = 1
+MAX_CHARGES = 3
 ICON = ExtResource("5")
 COLLISION_LAYERS = [5]
 COLLISION_MASKS = [1, 5]

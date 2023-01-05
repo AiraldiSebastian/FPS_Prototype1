@@ -10,11 +10,10 @@ class_name Medkit extends Consumable
 #-------------------------------------------------------------------------------
 func _init(audioPlayerPath = null):
 	super(audioPlayerPath)
-	pass
 
 
 func _ready():
-	charges = MAX_CHARGES
+	super()
 #-------------------------------------------------------------------------------
 
 

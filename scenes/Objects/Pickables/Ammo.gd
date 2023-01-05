@@ -11,11 +11,10 @@ class_name Ammo extends Consumable
 #-------------------------------------------------------------------------------
 func _init(audioPlayerPath = null):
 	super(audioPlayerPath)
-	pass
 
 
 func _ready():
-	pass
+	super()
 #-------------------------------------------------------------------------------
 
 
