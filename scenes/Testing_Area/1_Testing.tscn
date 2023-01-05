@@ -1642,11 +1642,11 @@ cull_mask = 1047935
 [node name="aa_50_beowulf" parent="." instance=ExtResource("4_popji")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9542, 2.13336, -29.1666)
 
-[node name="Character" parent="." instance=ExtResource("6_26wo4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8216, 0.5, -31.9305)
-
 [node name="Ammo3" parent="." instance=ExtResource("8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.1133, 1.98578, -29.2507)
 
 [node name="Ammo4" parent="." instance=ExtResource("8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.916, 1.91902, -28.5268)
+
+[node name="Character" parent="." instance=ExtResource("6_26wo4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8216, 0.5, -31.9305)
