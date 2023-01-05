@@ -35,6 +35,7 @@ enum WeaponState {
 }
 
 
+# Animation States
 enum {
 	RELOAD = Item.UNEQUIP + 1,
 	EMPTY
@@ -53,7 +54,7 @@ func _init(audioPlayerPath = null):
 # Getters
 #-------------------------------------------------------------------------------
 func get_class():
-	return "Medkit"
+	return "FireWeapon"
 
 
 func get_damage():
@@ -148,23 +149,25 @@ func get_raycast():
 #-------------------------------------------------------------------------------
 func set_fire_audio():
 	if AUDIO_PLAYER_PATH != null and ANIMATION_FIRE and AUDIO_FIRE:
-		pass
-#		var track_idx = ANIMATION_FIRE.add_track(Animation.TYPE_AUDIO)
-#		ANIMATION_FIRE.track_set_path(track_idx, AUDIO_PLAYER_PATH)
-#
-#		# warning-ignore:return_value_discarded
-#		ANIMATION_FIRE.audio_track_insert_key(track_idx, 0, AUDIO_FIRE)
+		var track_idx = ANIMATION_FIRE.add_track(Animation.TYPE_AUDIO)
+		ANIMATION_FIRE.track_set_path(track_idx, AUDIO_PLAYER_PATH)
+	
+		# warning-ignore:return_value_discarded
+		ANIMATION_FIRE.audio_track_insert_key(track_idx, 0, AUDIO_FIRE)
 
 
 func set_raycast(argRaycast: RayCast3D):
 	raycast = argRaycast
-#	raycast.cast_to = Vector3(0, 0, -get_range())
 	raycast.set_target_position(Vector3(0, 0, -get_range()))
 #-------------------------------------------------------------------------------
 
 
 # Class related methods
 #-------------------------------------------------------------------------------
+# Not sure if these methods should actually exist... An item can be picked but
+# a method should reflect a verb that the object executes. The player picks, 
+# drops and equips the item. The item does not execute these actions,
+# the player does... 
 func use():
 	return fire()
 
@@ -182,10 +185,10 @@ func fire():
 	current_mag_ammo -= 1
 	var collider = raycast.get_collider()
 	if collider:
-		# This should be changed
+		# This should be changed. (Update 05.01.2022) Why/Because?
 		#-----------------------------------------------------------------------
 		if "healthSystem" in collider:
-			collider.healthSystem.take_damage(DAMAGE)
+			collider.get_healthSystem().take_damage(DAMAGE)
 		#-----------------------------------------------------------------------
 	return true
 

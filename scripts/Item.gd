@@ -3,7 +3,7 @@ class_name Item extends RigidBody3D
 
 # Export member variables
 #-------------------------------------------------------------------------------
-@export var NAME: String        : get = get_name
+@export var NAME: String              : get = get_name
 @export var ICON: CompressedTexture2D : get = get_icon
 
 @export var COLLISION_LAYERS: Array : get = get_collision_layers
@@ -25,7 +25,7 @@ class_name Item extends RigidBody3D
 var AUDIO_PLAYER_PATH: String : get = get_audio_player_path
 #-------------------------------------------------------------------------------
 
-
+# Animation States
 enum {
 	USE,
 	EQUIP,
@@ -83,6 +83,10 @@ func get_animation(animationName):
 			return null
 
 
+# The derived items from this class, should always implement this method!
+func get_animation_use(): # Pure virtual
+	pass
+
 func get_audio_use():
 	return AUDIO_USE
 
@@ -111,11 +115,6 @@ func get_item_mesh():
 	# This should definitely be updated. Returning the first children
 	# is a very bad way of implementing this function...
 	return get_child(0)
-
-
-# The derived items from this class, should always implement this method!
-func get_animation_use(): # Pure virtual
-	pass
 #-------------------------------------------------------------------------------
 
 
@@ -133,6 +132,10 @@ func set_equip_audio():
 
 # Class related methods
 #-------------------------------------------------------------------------------
+# Not sure if these methods should actually exist... An item can be picked but
+# a method should reflect a verb that the object executes. The player picks, 
+# drops and equips the item. The item does not execute these actions,
+# the player does... 
 func pick(audioPlayerPath = null):
 	if get_parent():
 		get_parent().remove_child(self)
@@ -142,6 +145,7 @@ func pick(audioPlayerPath = null):
 	set_equip_audio()
 	
 	return self
+
 
 func drop(): # Pure Virtual
 	pass

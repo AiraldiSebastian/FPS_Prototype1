@@ -10,8 +10,8 @@ signal healthChange
 
 # Member variables
 # ------------------------------------------------------------------------------
-var MAX_HEALTH: int
-var currentHealth: int
+var MAX_HEALTH: int    : get = get_max_health
+var currentHealth: int : get = get_currentHealth
 # ------------------------------------------------------------------------------
 
 
@@ -25,11 +25,11 @@ func _init(arg_MAX_HEALTH,arg_currentHealth):
 
 # Getters
 # ------------------------------------------------------------------------------
-func get_MAX_HEALTH():
+func get_max_health():
 	return MAX_HEALTH
 
 
-func get_health():
+func get_currentHealth():
 	return currentHealth
 # ------------------------------------------------------------------------------
 
@@ -40,9 +40,8 @@ func take_damage(points):
 	currentHealth -= points
 	
 	emit_signal("healthChange")
-	if is_health_zero():
+	if currentHealth <= 0:
 		emit_signal("isDead")
-	
 
 
 func take_health(points):
@@ -51,8 +50,4 @@ func take_health(points):
 		currentHealth = MAX_HEALTH
 	
 	emit_signal("healthChange")
-
-
-func is_health_zero():
-	return currentHealth <= 0
 # ------------------------------------------------------------------------------

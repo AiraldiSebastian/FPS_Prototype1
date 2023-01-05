@@ -42,7 +42,7 @@ func handle_input(event):
 func play_state():
 	# First of all, equip the new items
 	# ----------------------------------------------------------------------------------------------
-	character.equip_items()
+	character.hold_item()
 	# ----------------------------------------------------------------------------------------------
 	# If the item has a animation for this State, add it to the animation player and play it
 	# Else, play the default animation for this state

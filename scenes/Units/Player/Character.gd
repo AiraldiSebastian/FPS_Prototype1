@@ -24,7 +24,7 @@ var is_sprinting: bool
 # Health related
 # ----------------------------------
 # Health
-var healthSystem: HealthSystem
+var healthSystem: HealthSystem   : get = get_healthSystem
 
 @export var MAX_HEALTH:   int
 @export var START_HEALTH: int
@@ -229,13 +229,13 @@ func process_ui(_delta):
 	# Method 1
 	# ----------------------------------------------------------------------------------------------
 	if playerCurrentItem is FireWeapon:
-		UI_InfoLabel.text = "HEALTH: " + str(healthSystem.get_health()) + "/" + str(healthSystem.get_MAX_HEALTH()) + \
+		UI_InfoLabel.text = "HEALTH: " + str(healthSystem.get_currentHealth()) + "/" + str(healthSystem.get_max_health()) + \
 				"\nAMMO: " + str(playerCurrentItem.get_current_mag_ammo()) + "/" + str(playerCurrentItem.get_current_ammo())
 	elif playerCurrentItem is Medkit:
-		UI_InfoLabel.text = "HEALTH: " + str(healthSystem.get_health()) + "/" + str(healthSystem.get_MAX_HEALTH()) + \
+		UI_InfoLabel.text = "HEALTH: " + str(healthSystem.get_currentHealth()) + "/" + str(healthSystem.get_max_health()) + \
 				"\nHealing: " + str(playerCurrentItem.get_heal_effect())
 	else:
-		UI_InfoLabel.text = "HEALTH: " + str(healthSystem.get_health()) + "/" + str(healthSystem.get_MAX_HEALTH())
+		UI_InfoLabel.text = "HEALTH: " + str(healthSystem.get_currentHealth()) + "/" + str(healthSystem.get_max_health())
 	# ----------------------------------------------------------------------------------------------
 
 
@@ -269,6 +269,7 @@ func process_movement(delta):
 	# ----------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------
 
+
 func process_animation(delta):
 	process_animation_lowerBody(delta)
 	
@@ -301,8 +302,10 @@ func process_animation_lowerBody(_delta):
 		elif animationDir.z < 0:
 			charLegsAnim.play("backward")
 
+
 func process_animation_upperBody(_delta):
-	var _x = 0
+	pass
+
 
 # Print / Info related methods
 #---------------------------------------------------------------------------------------------------
@@ -355,6 +358,7 @@ func handle_input_fsm(event: InputEvent):
 	# --------------------------------------------------------------------------
 	return false
 # ------------------------------------------------------------------------------
+
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -539,7 +543,6 @@ func use_item(item):
 
 
 func add_item(item):
-	print("ADD_ITEM!")
 	# First try add to Hotbar
 	# --------------------------------------------------------------------------
 	if !UI_Hotbar.is_full():
@@ -592,24 +595,17 @@ func drop_item(item):
 	# --------------------------------------------------------------------------
 
 
-func delete_item(item):
-	if !item:
-		return false
-	
-	# Delete item from inventory
-	# --------------------------------------------------------------------------
-	var retVal = UI_Hotbar.delete_item(item)
-	if !retVal:
-		retVal = UI_Inventory.delete_item(item)
-	# --------------------------------------------------------------------------
-	
-	return retVal
+# There is a difference between equiping an item and holding an item.
+# One equips the backpack but holds a weapon.
+func equip_item():
+	# To be implemented
+	pass
 
 
-func equip_items():
+func hold_item():
 	# Remove current items
 	# ----------------------------------------------------------------------------------------------
-	remove_items()
+	unhold_item()
 	# ----------------------------------------------------------------------------------------------
 	
 	# Get the new Item
@@ -619,12 +615,6 @@ func equip_items():
 		return
 	# ----------------------------------------------------------------------------------------------
 	
-	# If player did not had any item equipped, set the arm_control rotation to the heads rotation
-	# ----------------------------------------------------------------------------------------------
-	if !playerCurrentItem:
-		synchronize_arms_to_head()
-	# ----------------------------------------------------------------------------------------------
-	
 	# Equip the items, change type from rigid to static and turn unchecked collisions
 	# ----------------------------------------------------------------------------------------------
 	playerCurrentItem = item.equip()
@@ -632,12 +622,11 @@ func equip_items():
 	adapt_item_static(playerCurrentItem)
 	adapt_item_static(perspCurrentItem)
 	# ----------------------------------------------------------------------------------------------
-
+	
 	# Make the characters item mesh invisible for our camera perspective 8, 10 | 6, 7, 9
 	# ----------------------------------------------------------------------------------------------
 	adapt_item_invisibility(playerCurrentItem, perspCurrentItem)	
 	# ----------------------------------------------------------------------------------------------
-	
 	
 	# Add the items to the hands
 	# ----------------------------------------------------------------------------------------------
@@ -656,16 +645,17 @@ func equip_items():
 #---------------------------------------------------------------------------------------------------
 
 
-func unequip_items():
-	remove_items()
-	reset_arms()
+# There is a difference between unequiping an item and unholding an item.
+# One unequips the backpack but unholds a weapon.
+func unequip_item():
+	unhold_item()
 
 
-func remove_items():
+func unhold_item():
 	if !playerCurrentItem:
 		return 
-
-
+	
+	
 	# Remove characters weapon and delete the perspective weapon
 	# ----------------------------------------------------------------------------------------------
 	handRight.remove_child(playerCurrentItem)
@@ -705,44 +695,41 @@ func remove_items():
 	perspCurrentItem = null
 	weaponRaycast.set_target_position(Vector3(0, 0, 0))
 	# ----------------------------------------------------------------------------------------------
+
+
+func delete_item(item):
+	if !item:
+		return false
+	
+	# Delete item from inventory
+	# --------------------------------------------------------------------------
+	var retVal = UI_Hotbar.delete_item(item)
+	if !retVal:
+		retVal = UI_Inventory.delete_item(item)
+	# --------------------------------------------------------------------------
+	
+	return retVal
 #---------------------------------------------------------------------------------------------------
+
 
 # Helper methods
 #---------------------------------------------------------------------------------------------------
-func reset_arms():
+func reset_arms_control():
 	# Set the arm_control to its rest position as well as the arms
 	# ----------------------------------------------------------------------------------------------
 	# Rotate first on the characters skeleton
 	var armsBoneIndex = skel.find_bone("arm_control")
 	skel.set_bone_pose_rotation(armsBoneIndex, Quaternion())
-#	skel.set_bone_rest(armsBoneIndex)
 	
 	# Rotate now on the perspective skeleton
 	var perspArmsBoneIndex = perspSkel.find_bone("arm_control")
 	perspSkel.set_bone_pose_rotation(perspArmsBoneIndex, Quaternion())
-#	skel.set_bone_rest(perspArmsBoneIndex)
-	# ----------------------------------------------------------------------------------------------
-
-
-func synchronize_arms_to_head():
-	# Rotate first on the characters skeleton	
-	var armsBoneIndex = skel.find_bone("arm_control")
-	var armsBoneRotation = skel.get_bone_pose_rotation(armsBoneIndex)
-	armsBoneRotation.x = Quaternion(Vector3(1, 0, 0), rot_verti).x
-	skel.set_bone_pose_rotation(armsBoneIndex, armsBoneRotation)
-
-	# Rotate now on the perspective skeleton
-	var perspArmsBoneIndex = perspSkel.find_bone("arm_control")
-	var perspArmsBoneRotation = perspSkel.get_bone_pose_rotation(perspArmsBoneIndex)
-	perspArmsBoneRotation.x = Quaternion(Vector3(1, 0, 0), rot_verti).x
-	perspSkel.set_bone_pose_rotation(perspArmsBoneIndex, perspArmsBoneRotation)
 	# ----------------------------------------------------------------------------------------------
 
 
 func adapt_item_static(item):
 	# Change the item type from rigid to static and turn unchecked collisions
 	# ----------------------------------------------------------------------------------------------
-#	
 	item.set_freeze_mode(RigidBody3D.FREEZE_MODE_STATIC)
 	item.set_freeze_enabled(true)
 	item.clear_all_layers()
@@ -777,5 +764,13 @@ func adapt_item_invisibility(argPlayerCurrentItem, argPerspCurrentItem):
 	# ----------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------
 
+
 func die():
 	queue_free()
+
+
+# Getters
+#-------------------------------------------------------------------------------
+func get_healthSystem():
+	return healthSystem
+#-------------------------------------------------------------------------------

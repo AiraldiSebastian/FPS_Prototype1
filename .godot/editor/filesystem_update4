@@ -2,8 +2,6 @@ res://scenes/Units/Player/Character_Alpha.tscn
 res://scenes/Testing_Area/1_Testing.tscn
 res://scenes/Weapons/FireWeapons/aa_50_beowulf.tscn
 res://scenes/Units/Player/Test/Character_Alpha_Test_Item_Location.tscn
-res://scenes/Weapons/FireWeapons/AssaultRifle.gd
 res://scenes/Units/Player/Character.gd
-res://assets/Weapons/FireWeapons/AssaultRifle/assault_rifle_reload.res
-res://assets/Weapons/FireWeapons/AssaultRifle/assault_rifle_fire.res
-res://scenes/Units/Player/FiniteStateMachine/BaseState.gd
+res://scenes/Units/Player/FiniteStateMachine/EquipItemState.gd
+res://scenes/Units/Player/FiniteStateMachine/UnequipItemState.gd

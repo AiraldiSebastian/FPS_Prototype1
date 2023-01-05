@@ -92,20 +92,20 @@ func _get_drag_data(_position):
 	return get_child(0)
 
 
-func can_drop_data(_position, data):
+func _can_drop_data(_position, data):
 	if !data is ItemTexture:
 		return false
-	
+
 	# Check if drop position is same as the picked-up position
 	# --------------------------------------------------------------------------
 	if get_child_count() != 0 && data == get_child(0):
 		return false
 	# --------------------------------------------------------------------------
-	
+
 	return true
 
 
-func drop_data(_position, data):
+func _drop_data(_position, data):
 	# Store a reference to data's parent
 	# --------------------------------------------------------------------------
 	var dataParent = data.get_parent()
