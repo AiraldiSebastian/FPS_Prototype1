@@ -632,6 +632,12 @@ func hold_item():
 		return
 	# ----------------------------------------------------------------------------------------------
 	
+	# If player did not had any item equipped, set the arm_control rotation to the heads rotation
+	# ----------------------------------------------------------------------------------------------
+	if !playerCurrentItem:
+		synchronize_arms_to_head()
+	# ----------------------------------------------------------------------------------------------
+	
 	# Equip the items, change type from rigid to static and turn unchecked collisions
 	# ----------------------------------------------------------------------------------------------
 	playerCurrentItem = item.equip()
@@ -735,16 +741,18 @@ func delete_item(item):
 
 # Helper methods
 #---------------------------------------------------------------------------------------------------
-func reset_arms_control():
-	# Set the arm_control to its rest position as well as the arms
-	# ----------------------------------------------------------------------------------------------
-	# Rotate first on the characters skeleton
+func synchronize_arms_to_head():
+	# Rotate first on the characters skeleton	
 	var armsBoneIndex = skel.find_bone("arm_control")
-	skel.set_bone_pose_rotation(armsBoneIndex, Quaternion())
-	
+	var armsBoneRotation = skel.get_bone_pose_rotation(armsBoneIndex)
+	armsBoneRotation.x = Quaternion(Vector3(1, 0, 0), rot_verti).x
+	skel.set_bone_pose_rotation(armsBoneIndex, armsBoneRotation)
+
 	# Rotate now on the perspective skeleton
 	var perspArmsBoneIndex = perspSkel.find_bone("arm_control")
-	perspSkel.set_bone_pose_rotation(perspArmsBoneIndex, Quaternion())
+	var perspArmsBoneRotation = perspSkel.get_bone_pose_rotation(perspArmsBoneIndex)
+	perspArmsBoneRotation.x = Quaternion(Vector3(1, 0, 0), rot_verti).x
+	perspSkel.set_bone_pose_rotation(perspArmsBoneIndex, perspArmsBoneRotation)
 	# ----------------------------------------------------------------------------------------------
 
 

@@ -41,15 +41,12 @@ func _ready():
 	# Animation & Audio
 	# ----------------------------------
 	zombieAnim	= $AnimationPlayer
-#	charMoveState.set_active(true)
-#	playerState	= UnequipItemState.new(self, audioPlayer, audioPlayerContinuous)
-#	playerState.play_state()
 	# ----------------------------------
 	
 	healthSystem = HealthSystem.new(100, 100)
 	# warning-ignore:return_value_discarded
 	healthSystem.connect("isDead",Callable(self,"is_dead"))
-	
+	healthSystem.connect("healthChange",Callable(self,"print_health"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -87,9 +84,18 @@ func remove_bodyInAttackArea(player):
 
 func attack():
 	var bodies = SPACE_ATTACK.get_overlapping_bodies()
+	print("Attacking!")
 	for body in bodies:
+		print("Body!")
 		if body is Character:
-			body.healthSystem.take_damage(DAMAGE)
+			body.get_healthSystem().take_damage(DAMAGE)
+
+func get_healthSystem():
+	return healthSystem
+
+
+func print_health():
+	print("Zombies health: " + str(get_healthSystem().get_currentHealth()))
 
 func is_dead():
 	queue_free()
