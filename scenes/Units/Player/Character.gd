@@ -51,6 +51,7 @@ var perspectiveAnim: AnimationPlayer
 var charLegsAnim: AnimationPlayer
 var audioPlayer: AudioStreamPlayer
 var audioPlayerContinuous: AudioStreamPlayer
+var audioMovement: AudioStreamPlayer3D
 # ----------------------------------
 
 
@@ -145,6 +146,7 @@ func _ready():
 	charLegsAnim = $LowerBodyAnimation
 	audioPlayer	= $AudioStreamPlayer
 	audioPlayerContinuous = $AudioManager
+	audioMovement = $AudioMovement
 	
 	# Callbacks for observing animation player (Debugging)
 	# warning-ignore:return_value_discarded
@@ -295,9 +297,14 @@ func process_animation_lowerBody(_delta):
 	if Input.is_action_pressed("movement_right"):
 		animationDir.x -= 1
 	
-	if animationDir == Vector3() and charLegsAnim.get_current_animation() != "legs_idle":
-		charLegsAnim.play("legs_idle")
+	if animationDir == Vector3():
+		if charLegsAnim.get_current_animation() != "legs_idle":
+			charLegsAnim.play("legs_idle")
+		if audioMovement.is_playing():
+			audioMovement.stop()
 	else:
+		if !audioMovement.is_playing():
+			audioMovement.play()
 		if animationDir.x > 0:
 			charLegsAnim.play("left")
 		elif animationDir.x < 0:
@@ -393,8 +400,8 @@ func _unhandled_input(event):
 		
 		# Others
 		# ----------------------------------------------------------------------
-		if event.is_action_pressed("change_camera"):
-			get_viewport().get_camera_3d().clear_current();
+#		if event.is_action_pressed("change_camera"):
+#			get_viewport().get_camera_3d().clear_current();
 		# ----------------------------------------------------------------------
 	handle_input_fsm(event)
 #---------------------------------------------------------------------------------------------------

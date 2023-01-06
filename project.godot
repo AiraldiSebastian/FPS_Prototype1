@@ -129,7 +129,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Godot"
-run/main_scene="res://scenes/Testing_Area/1_Testing.tscn"
+run/main_scene="res://scenes/Game_Scenarios/Night_Village.tscn"
 config/features=PackedStringArray("4.0")
 
 [display]
