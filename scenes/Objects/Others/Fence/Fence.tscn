@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx5ulj1qhefcu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jdo3k"]
+size = Vector3(1, 1.2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0x2gm"]
+albedo_color = Color(0.447059, 0.305882, 0.172549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r8foq"]
+material = SubResource("StandardMaterial3D_0x2gm")
+size = Vector3(0.05, 1.2, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ysmdy"]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_50wse"]
+material = SubResource("StandardMaterial3D_ysmdy")
+top_radius = 0.005
+bottom_radius = 0.005
+height = 1.0
+radial_segments = 8
+
+[node name="Fence" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("BoxShape3D_jdo3k")
+
+[node name="PostL" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.6, 0)
+mesh = SubResource("BoxMesh_r8foq")
+
+[node name="PostR" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.6, 0)
+mesh = SubResource("BoxMesh_r8foq")
+
+[node name="Wire1" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CylinderMesh_50wse")
+
+[node name="Wire2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.7, 0)
+mesh = SubResource("CylinderMesh_50wse")
+
+[node name="Wire3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.4, 0)
+mesh = SubResource("CylinderMesh_50wse")
+
+[node name="Wire4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("CylinderMesh_50wse")

@@ -1,0 +1,113 @@
+[gd_scene load_steps=8 format=3 uid="uid://ytyim0xfe6au"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fo0un"]
+albedo_color = Color(0.447059, 0.305882, 0.172549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ewpl0"]
+material = SubResource("StandardMaterial3D_fo0un")
+size = Vector3(0.1, 1.5, 0.01)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5op6b"]
+albedo_color = Color(0.447059, 0.305882, 0.172549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yhg77"]
+material = SubResource("StandardMaterial3D_5op6b")
+size = Vector3(2.1, 0.1, 0.01)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2mjxk"]
+albedo_color = Color(0.447059, 0.305882, 0.172549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8uskg"]
+material = SubResource("StandardMaterial3D_2mjxk")
+size = Vector3(2.3, 0.1, 0.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_syw70"]
+size = Vector3(4, 1.5, 0.03)
+
+[node name="Gate_Wood" type="Node3D"]
+
+[node name="PostLF" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.75, 0.01)
+mesh = SubResource("BoxMesh_ewpl0")
+
+[node name="PostLB" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.75, -0.01)
+mesh = SubResource("BoxMesh_ewpl0")
+
+[node name="PostCF" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.01)
+mesh = SubResource("BoxMesh_ewpl0")
+
+[node name="PostCB" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -0.01)
+mesh = SubResource("BoxMesh_ewpl0")
+
+[node name="PostRF" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.75, 0.01)
+mesh = SubResource("BoxMesh_ewpl0")
+
+[node name="PostRB" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.75, -0.01)
+mesh = SubResource("BoxMesh_ewpl0")
+
+[node name="PlankL1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.36152, 0)
+mesh = SubResource("BoxMesh_yhg77")
+
+[node name="PlankL2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.06152, 0)
+mesh = SubResource("BoxMesh_yhg77")
+
+[node name="PlankL3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.761524, 0)
+mesh = SubResource("BoxMesh_yhg77")
+
+[node name="PlankL4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.461524, 0)
+mesh = SubResource("BoxMesh_yhg77")
+
+[node name="PlankL5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.161524, 0)
+mesh = SubResource("BoxMesh_yhg77")
+
+[node name="PlankR1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.36152, 0)
+mesh = SubResource("BoxMesh_yhg77")
+
+[node name="PlankR2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.06152, 0)
+mesh = SubResource("BoxMesh_yhg77")
+
+[node name="PlankR3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.761524, 0)
+mesh = SubResource("BoxMesh_yhg77")
+
+[node name="PlankR4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.461524, 0)
+mesh = SubResource("BoxMesh_yhg77")
+
+[node name="PlankR5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.161524, 0)
+mesh = SubResource("BoxMesh_yhg77")
+
+[node name="PlankLFDiag" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.85596, -0.517041, 0, 0.517041, 0.85596, 0, 0, 0, 1, 1, 0.761524, -0.01)
+mesh = SubResource("BoxMesh_8uskg")
+
+[node name="PlankRFDiag" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.85596, -0.517041, 0, 0.517041, 0.85596, 0, 0, 0, 1, -1, 0.761524, -0.01)
+mesh = SubResource("BoxMesh_8uskg")
+
+[node name="PlankLBDiag" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.856267, 0.516533, 0, -0.516533, 0.856267, 0, 0, 0, 1, 1, 0.761524, 0.01)
+mesh = SubResource("BoxMesh_8uskg")
+
+[node name="PlankRBDiag" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.856267, 0.516533, 0, -0.516533, 0.856267, 0, 0, 0, 1, -1, 0.761524, 0.01)
+mesh = SubResource("BoxMesh_8uskg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("BoxShape3D_syw70")

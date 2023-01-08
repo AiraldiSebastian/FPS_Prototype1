@@ -297,13 +297,16 @@ func process_animation_lowerBody(_delta):
 	if Input.is_action_pressed("movement_right"):
 		animationDir.x -= 1
 	
+	if !is_on_floor() and audioMovement.is_playing():
+		audioMovement.stop()
+	
 	if animationDir == Vector3():
 		if charLegsAnim.get_current_animation() != "legs_idle":
 			charLegsAnim.play("legs_idle")
 		if audioMovement.is_playing():
 			audioMovement.stop()
 	else:
-		if !audioMovement.is_playing():
+		if is_on_floor() and !audioMovement.is_playing():
 			audioMovement.play()
 		if animationDir.x > 0:
 			charLegsAnim.play("left")
