@@ -215,6 +215,15 @@ func _physics_process(delta):
 	process_movement(delta)
 	process_animation(delta)
 	# process: unhandled_input(event) | Process called autom. by the engine.
+	
+	# Testing with Visual Profiler
+	# Change between slot 1 and 2 fast to drop fps.
+#	counterFrames = 30
+#	if int(Engine.get_physics_frames()) % counterFrames == 0:
+#		if randi()%2 == 0:
+#			UI_HotbarMarker.select_slot(0)
+#		else:
+#			UI_HotbarMarker.select_slot(1)
 	# -----------------------
 
 

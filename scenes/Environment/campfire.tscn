@@ -8,14 +8,14 @@
 offsets = PackedFloat32Array(0, 0.00390625, 0.648438)
 colors = PackedColorArray(0, 0, 0, 1, 1, 0.776471, 0, 1, 1, 0.168627, 0, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_o66i7"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lsgxs"]
 gradient = SubResource("Gradient_25qvi")
 
 [sub_resource type="Curve" id="Curve_6fwjg"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.322581, 0.990909), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_53swj"]
+[sub_resource type="CurveTexture" id="CurveTexture_i4ysi"]
 curve = SubResource("Curve_6fwjg")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_inl1j"]
@@ -31,10 +31,10 @@ linear_accel_max = 1.0
 angle_max = 360.0
 scale_min = 2.0
 scale_max = 2.0
-scale_curve = SubResource("CurveTexture_53swj")
-color_ramp = SubResource("GradientTexture1D_o66i7")
+scale_curve = SubResource("CurveTexture_i4ysi")
+color_ramp = SubResource("GradientTexture1D_lsgxs")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvt31"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7b4h"]
 transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
@@ -46,13 +46,13 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_5wgq5"]
-material = SubResource("StandardMaterial3D_tvt31")
+material = SubResource("StandardMaterial3D_a7b4h")
 
 [sub_resource type="Gradient" id="Gradient_rlspb"]
 offsets = PackedFloat32Array(0.28125, 0.785156, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.521569, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_3c3r2"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xvkit"]
 gradient = SubResource("Gradient_rlspb")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vkw7x"]
@@ -66,9 +66,9 @@ angular_velocity_max = 50.0
 linear_accel_min = 1.0
 linear_accel_max = 1.0
 angle_max = 360.0
-color_ramp = SubResource("GradientTexture1D_3c3r2")
+color_ramp = SubResource("GradientTexture1D_xvkit")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12vnq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56v55"]
 transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
@@ -80,7 +80,7 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_3f3fc"]
-material = SubResource("StandardMaterial3D_12vnq")
+material = SubResource("StandardMaterial3D_56v55")
 
 [node name="campfire" instance=ExtResource("1_lp3yb")]
 
