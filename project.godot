@@ -94,6 +94,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://scenes/InventorySystem/Inventory/Slot.gd"
 }, {
+"base": "Panel",
+"class": &"SlotTEST",
+"language": &"GDScript",
+"path": "res://scenes/InventorySystem/Inventory/SlotTEST.gd"
+}, {
 "base": "BaseState",
 "class": &"UnequipItemState",
 "language": &"GDScript",
@@ -122,6 +127,7 @@ _global_script_class_icons={
 "NullState": "",
 "ReloadState": "",
 "Slot": "",
+"SlotTEST": "",
 "UnequipItemState": "",
 "UseItemState": ""
 }
