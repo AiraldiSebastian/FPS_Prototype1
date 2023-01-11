@@ -23,6 +23,9 @@ class_name Item extends RigidBody3D
 # Member variables
 #-------------------------------------------------------------------------------
 var AUDIO_PLAYER_PATH: String : get = get_audio_player_path
+
+# itemOwner instead of owner to not clash with Node.owner var.
+var itemOwner : get = get_item_owner
 #-------------------------------------------------------------------------------
 
 # Animation States
@@ -115,6 +118,9 @@ func get_item_mesh():
 	# This should definitely be updated. Returning the first children
 	# is a very bad way of implementing this function...
 	return get_child(0)
+
+func get_item_owner():
+	return itemOwner
 #-------------------------------------------------------------------------------
 
 
@@ -127,6 +133,10 @@ func set_equip_audio():
 
 		# warning-ignore:return_value_discarded
 		ANIMATION_EQUIP.audio_track_insert_key(track_idx, 0, AUDIO_EQUIP)
+
+func set_item_owner(owner):
+	itemOwner = owner
+	
 #-------------------------------------------------------------------------------
 
 
