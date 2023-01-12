@@ -1,14 +1,14 @@
 class_name Character extends CharacterBody3D
 
 
-# Member variables
+# Member variables.
 #-------------------------------------------------------------------------------
-# Movement related
+# Movement related.
 # ----------------------------------
-# Physics
+# Physics.
 @export var GRAVITY: int
 
-# Kinematic
+# Kinematic.
 @export var MAX_SPEED: int
 @export var ACCEL:     int
 @export var MAX_SLOPE_ANGLE: int
@@ -21,9 +21,9 @@ var is_sprinting: bool
 # ----------------------------------
 
 
-# Health related
+# Health related.
 # ----------------------------------
-# Health
+# Health.
 var healthSystem: HealthSystem   : get = get_healthSystem
 
 @export var MAX_HEALTH:   int
@@ -31,20 +31,20 @@ var healthSystem: HealthSystem   : get = get_healthSystem
 # ----------------------------------
 
 
-# Camera3D control
+# Camera3D control.
 # ----------------------------------
-# Rotation holder
+# Rotation holder.
 var rot_horiz: float
 var rot_verti: float
 
-# Camera3D and Skeleton3D nodes
+# Camera3D and Skeleton3D nodes.
 var perspCamera: Camera3D
 var skel: Skeleton3D
 var perspSkel: Skeleton3D
 # ----------------------------------
 
 
-# Animation & Audio
+# Animation & Audio.
 # ----------------------------------
 var characterAnim: AnimationPlayer
 var perspectiveAnim: AnimationPlayer
@@ -55,13 +55,13 @@ var audioMovement: AudioStreamPlayer3D
 # ----------------------------------
 
 
-# Player State
+# Player State.
 # ----------------------------------
 var playerState: BaseState
 # ----------------------------------
 
 
-# Weapons
+# Weapons.
 # ----------------------------------
 var playerCurrentItem
 var perspCurrentItem
@@ -72,13 +72,13 @@ var perspHandRight: BoneAttachment3D
 # ----------------------------------
 
 
-# Interaction
+# Interaction.
 # ----------------------------------
 var handRaycast: RayCast3D
 # ----------------------------------
 
 
-# User Interface
+# User Interface.
 # ----------------------------------
 var UI_HUD: Control
 var UI_InfoLabel: Label
@@ -88,26 +88,28 @@ var UI_HotbarMarker: HotbarMarker
 # ----------------------------------
 
 
-# Others
+# Others.
 # ----------------------------------
-# For debugging
+# For debugging.
 var counterFrames:  int = 0
 var counterFrames2: int = 0
 var counterFrames3: int = 0
 var counterFrames4: int = 0
 var counterFrames5: int = 0
 
-# Mouse
+# Mouse.
 var MOUSE_SENSITIVITY: float
 # ----------------------------------
 #-------------------------------------------------------------------------------
+func _init():
+	UI_Inventory	= preload("res://scenes/InventorySystem/Inventory/Inventory.gd").new()
+	UI_Hotbar		= preload("res://scenes/InventorySystem/Inventory/Inventory.gd").new(Inventory.SlotType.HotbarSlot, 5, 5)
 
 
-# Constructors/Initializers
+# Constructors/Initializers.
 #-------------------------------------------------------------------------------
 func _ready():
-	
-	# Movement related
+	# Movement related.
 	# ----------------------------------
 	playerVel		= Vector3()
 	playerDir		= Vector3()
@@ -116,30 +118,30 @@ func _ready():
 	
 	set_floor_max_angle(deg_to_rad(MAX_SLOPE_ANGLE))
 	# ----------------------------------
-
-
-	# Health related
+	
+	
+	# Health related.
 	# ----------------------------------
 	healthSystem = HealthSystem.new(MAX_HEALTH, START_HEALTH)
 	# warning-ignore:return_value_discarded
 	healthSystem.connect("isDead",Callable(self,"die"))
 	# ----------------------------------
-
-
-	# Camera3D control
+	
+	
+	# Camera3D control.
 	# ----------------------------------
-	# Rotation holder
+	# Rotation holder.
 	rot_horiz = 0
 	rot_verti = 0
-
-	# Camera3D and Skeleton3D nodes
+	
+	# Camera3D and Skeleton3D nodes.
 	perspCamera		= $Character_Aim/Armature/Skeleton3D/CameraAttachment/Camera3D
 	skel			= $Armature/Skeleton3D
 	perspSkel		= $Character_Aim/Armature/Skeleton3D
 	# ----------------------------------
-
-
-	# Animation & Audio
+	
+	
+	# Animation & Audio.
 	# ----------------------------------
 	characterAnim	= $CharacterAnimation
 	perspectiveAnim	= $Character_Aim/PerspectiveAnimation
@@ -155,9 +157,9 @@ func _ready():
 	playerState	= UnequipItemState.new(self, audioPlayer, audioPlayerContinuous)
 	playerState.play_state()
 	# ----------------------------------
-
-
-	# Weapons
+	
+	
+	# Weapons.
 	# ----------------------------------
 	playerCurrentItem	= null
 	perspCurrentItem	= null
@@ -166,22 +168,37 @@ func _ready():
 	perspHandRight	= $Character_Aim/Armature/Skeleton3D/RightHand
 	weaponRaycast	= $Character_Aim/Armature/Skeleton3D/CameraAttachment/Camera3D/WeaponRaycast
 	# ----------------------------------
-
-
-	# Interaction
+	
+	
+	# Interaction.
 	# ----------------------------------
 	handRaycast		= $Character_Aim/Armature/Skeleton3D/CameraAttachment/Camera3D/HandRaycast
 	handRaycast.set_target_position(Vector3(0, 0, -4))
 	# ----------------------------------
-
-
-	# User Interface
+	
+	
+	# User Interface.
 	# ----------------------------------
 	UI_HUD			= $HUD
 	UI_InfoLabel	= $HUD/Panel/Info_Label
-	UI_Inventory	= $HUD/Inventory/Inventory
-	UI_Hotbar		= $HUD/Inventory/Hotbar
+	
+	# Add and center the Inventory.
+	# ---------------------------------
+	UI_HUD.add_child(UI_Inventory)
+	var pos_x = get_viewport().get_size().x / 2 - UI_Inventory.size.x / 2
+	var pos_y = get_viewport().get_size().y / 2 - UI_Inventory.size.y / 2
+	UI_Inventory.set_position(Vector2(pos_x, pos_y))
+	# ---------------------------------
+	
+	# Add and position the Hotbar
+	# ---------------------------------
+	UI_HUD.add_child(UI_Hotbar)
+	pos_x = get_viewport().get_size().x / 2 - UI_Hotbar.size.x / 2
+	pos_y = get_viewport().get_size().y - UI_Hotbar.size.y
+	UI_Hotbar.set_position(Vector2(pos_x, pos_y))
+	
 	UI_HotbarMarker = HotbarMarker.new(UI_Hotbar)
+	# ---------------------------------
 	
 	# warning-ignore:return_value_discarded
 	UI_HUD.connect("drop_item",Callable(self,"hud_event"))
@@ -189,13 +206,15 @@ func _ready():
 	UI_HotbarMarker.connect("itemChanged",Callable(self,"hotbar_event"))
 	
 	# Close inventory when starting
+	# ---------------------------------
 	UI_HUD.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
 	UI_Inventory.set_visible(false)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	# ---------------------------------
 	# ----------------------------------
-
-
-	# Mouse
+	
+	
+	# Mouse.
 	# ----------------------------------
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	MOUSE_SENSITIVITY	= 0.005
@@ -246,10 +265,10 @@ func process_ui(_delta):
 	# ----------------------------------------------------------------------------------------------
 	if playerCurrentItem is FireWeapon:
 		UI_InfoLabel.text = "HEALTH: " + str(healthSystem.get_currentHealth()) + "/" + str(healthSystem.get_max_health()) + \
-				"\nAMMO: " + str(playerCurrentItem.get_current_mag_ammo()) + "/" + str(playerCurrentItem.get_mag_max_ammo())
+			"\nAMMO: " + str(playerCurrentItem.get_current_mag_ammo()) + "/" + str(playerCurrentItem.get_mag_max_ammo())
 	elif playerCurrentItem is Medkit:
 		UI_InfoLabel.text = "HEALTH: " + str(healthSystem.get_currentHealth()) + "/" + str(healthSystem.get_max_health()) + \
-				"\nHealing: " + str(playerCurrentItem.get_heal_effect())
+			"\nHealing: " + str(playerCurrentItem.get_heal_effect())
 	else:
 		UI_InfoLabel.text = "HEALTH: " + str(healthSystem.get_currentHealth()) + "/" + str(healthSystem.get_max_health())
 	# ----------------------------------------------------------------------------------------------
@@ -412,8 +431,8 @@ func _unhandled_input(event):
 		
 		# Others
 		# ----------------------------------------------------------------------
-#		if event.is_action_pressed("change_camera"):
-#			get_viewport().get_camera_3d().clear_current();
+		if event.is_action_pressed("change_camera"):
+			get_viewport().get_camera_3d().clear_current();
 		# ----------------------------------------------------------------------
 	handle_input_fsm(event)
 #---------------------------------------------------------------------------------------------------
@@ -500,36 +519,37 @@ func interact():
 
 func reload():
 	if playerCurrentItem is FireWeapon:
-		# Reload, in case reload() returns empty, search if an AMMO
-		# Pack is available in the inventory and reload using it.
-		# ------------------------------------------------------------------------------------------
 		if playerCurrentItem.get_weapon_state() != FireWeapon.WeaponState.FULL:
-			var item : Item = null
+			var item : Item
+			# First search Ammo in Hotbar
+			# --------------------------------------------------------------------------------------
+			for i in UI_Hotbar.get_inventory_size():
+				if UI_Hotbar.get_item(i):
+					if UI_Hotbar.get_item(i).get_class() == "Ammo":
+						item = UI_Hotbar.get_item(i)
+						item.use()
+						if item.get_charges() == 0:
+							delete_item(item)
+#							UI_Hotbar.remove_item(item).queue_free()
+						playerCurrentItem.change_mag()
+						perspCurrentItem.change_mag()
+						return true
+			# --------------------------------------------------------------------------------------
 			
-			# First search in Hotbar
+			# Second search Ammo in Inventory
 			# --------------------------------------------------------------------------------------
-			item = UI_Hotbar.get_first_item_of_type("Ammo")
-			if item:
-				item.use()
-				if item.get_charges() == 0:
-					delete_item(item)
-				playerCurrentItem.change_mag()
-				perspCurrentItem.change_mag()
-				return
+			for i in UI_Inventory.get_inventory_size():
+				if UI_Inventory.get_item(i):
+					if UI_Hotbar.get_item(i).get_class() == "Ammo":
+						item.use()
+						if item.get_charges() == 0:
+							delete_item(item)
+#							UI_Inventory.remove_item(item).queue_free()
+						playerCurrentItem.change_mag()
+						perspCurrentItem.change_mag()
+						return true
 			# --------------------------------------------------------------------------------------
-			
-			# Second search in Inventory
-			# --------------------------------------------------------------------------------------
-			item = UI_Inventory.get_first_item_of_type("Ammo")
-			if item:
-				item.use()
-				if item.get_charges() == 0:
-					delete_item(item)
-				playerCurrentItem.change_mag()
-				perspCurrentItem.change_mag()
-				return
-			# --------------------------------------------------------------------------------------
-	return true
+	return false
 
 
 func can_reload():
@@ -537,41 +557,45 @@ func can_reload():
 		if playerCurrentItem.get_weapon_state() != FireWeapon.WeaponState.FULL:
 			# First search in Hotbar
 			# --------------------------------------------------------------------------------------
-			if UI_Hotbar.get_first_item_of_type("Ammo"):
-				return true
+			for i in UI_Hotbar.get_inventory_size():
+				if UI_Hotbar.get_item(i):
+					if UI_Hotbar.get_item(i).get_class() == "Ammo":
+						return true
 			# --------------------------------------------------------------------------------------
 			
 			# Second search in Inventory
 			# --------------------------------------------------------------------------------------
-			if UI_Inventory.get_first_item_of_type("Ammo"):
-				return true
+			for i in UI_Inventory.get_inventory_size():
+				if UI_Inventory.get_item(i):
+					if UI_Inventory.get_item(i).get_class() == "Ammo":
+						return true
 			# --------------------------------------------------------------------------------------
 	return false
 
-func use_item(item):
-	if !item:
+func use_item(p_item):
+	if !p_item:
 		return false
 	
 	# Compare the item to the possible item classes
 	# --------------------------------------------------------------------------
-	if item is FireWeapon:
+	if p_item is FireWeapon:
 		# Fire Weapon
 		# ----------------------------------------------------------------------
-		return item.use()
+		return p_item.use()
 		# ----------------------------------------------------------------------
-	elif item is Consumable:
+	elif p_item is Consumable:
 		# Medkit
 		# ----------------------------------------------------------------------
-		if item is Medkit:
-			healthSystem.take_health(item.use())
-			if item.get_charges() == 0:
-				delete_item(item)
+		if p_item is Medkit:
+			healthSystem.take_health(p_item.use())
+			if p_item.get_charges() == 0:
+				delete_item(p_item)
 			return true
 		# ----------------------------------------------------------------------
 		
 		# Ammo
 		# ----------------------------------------------------------------------
-		elif item is Ammo:
+		elif p_item is Ammo:
 			pass
 		# ----------------------------------------------------------------------
 	# --------------------------------------------------------------------------
@@ -579,17 +603,17 @@ func use_item(item):
 	return false
 
 
-func add_item(item):
+func add_item(p_item):
 	# First try add to Hotbar
 	# --------------------------------------------------------------------------
 	if !UI_Hotbar.is_full():
-		UI_Hotbar.add_item(item.pick(audioPlayer.get_path()))
+		UI_Hotbar.add_item(p_item.pick(audioPlayer.get_path()))
 	# --------------------------------------------------------------------------
 	
 	# If Hotbar full, try Inventory
 	# ------------------------------------------------------------------------f--
 	elif !UI_Inventory.is_full():
-		UI_Inventory.add_item(item.pick(audioPlayer.get_path()))
+		UI_Inventory.add_item(p_item.pick(audioPlayer.get_path()))
 	# --------------------------------------------------------------------------
 	
 	# Else return false (both are full)
@@ -601,16 +625,16 @@ func add_item(item):
 	return true
 
 
-func drop_item(item):
-	if !item:
+func drop_item(p_item):
+	if !p_item:
 		return false
 	
 	
 	# We assume the item is in the inventory
 	# --------------------------------------------------------------------------
-	var itemRef = UI_Hotbar.remove_item(item)
+	var itemRef = UI_Hotbar.remove_item(p_item)
 	if !itemRef:
-		itemRef = UI_Inventory.remove_item(item)
+		itemRef = UI_Inventory.remove_item(p_item)
 	# --------------------------------------------------------------------------
 	
 	
@@ -671,7 +695,7 @@ func hold_item():
 	
 	# Make the characters item mesh invisible for our camera perspective 8, 10 | 6, 7, 9
 	# ----------------------------------------------------------------------------------------------
-	adapt_item_invisibility(playerCurrentItem, perspCurrentItem)	
+	adapt_item_invisibility(playerCurrentItem, perspCurrentItem)
 	# ----------------------------------------------------------------------------------------------
 	
 	# Add the items to the hands
@@ -699,7 +723,7 @@ func unequip_item():
 
 func unhold_item():
 	if !playerCurrentItem:
-		return 
+		return
 	
 	
 	# Remove characters weapon and delete the perspective weapon
@@ -743,18 +767,21 @@ func unhold_item():
 	# ----------------------------------------------------------------------------------------------
 
 
-func delete_item(item):
-	if !item:
+func delete_item(p_item):
+	if !p_item:
 		return false
 	
-	# Delete item from inventory
+	# Remove Item from Inventory
 	# --------------------------------------------------------------------------
-	var retVal = UI_Hotbar.delete_item(item)
-	if !retVal:
-		retVal = UI_Inventory.delete_item(item)
+	var retItem : Item = UI_Hotbar.remove_item(p_item)
+	if !retItem:
+		retItem = UI_Inventory.remove_item(p_item)
 	# --------------------------------------------------------------------------
+	if retItem:
+		retItem.queue_free()
+		return true
 	
-	return retVal
+	return false
 #---------------------------------------------------------------------------------------------------
 
 

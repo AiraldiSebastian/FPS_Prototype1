@@ -52,12 +52,12 @@ _global_script_classes=[{
 "base": "RefCounted",
 "class": &"HotbarMarker",
 "language": &"GDScript",
-"path": "res://scenes/InventorySystem/Hotbar/HotbarMarker.gd"
+"path": "res://scenes/InventorySystem/Inventory/HotbarMarker.gd"
 }, {
 "base": "Slot",
 "class": &"HotbarSlot",
 "language": &"GDScript",
-"path": "res://scenes/InventorySystem/Hotbar/HotbarSlot.gd"
+"path": "res://scenes/InventorySystem/Inventory/HotbarSlot.gd"
 }, {
 "base": "TextureRect",
 "class": &"Inventory",
@@ -94,11 +94,6 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://scenes/InventorySystem/Inventory/Slot.gd"
 }, {
-"base": "Panel",
-"class": &"SlotTEST",
-"language": &"GDScript",
-"path": "res://scenes/InventorySystem/Inventory/SlotTEST.gd"
-}, {
 "base": "BaseState",
 "class": &"UnequipItemState",
 "language": &"GDScript",
@@ -127,7 +122,6 @@ _global_script_class_icons={
 "NullState": "",
 "ReloadState": "",
 "Slot": "",
-"SlotTEST": "",
 "UnequipItemState": "",
 "UseItemState": ""
 }

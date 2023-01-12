@@ -1,7 +1,7 @@
 class_name Item extends RigidBody3D
 
 
-# Export member variables
+# Export member variables.
 #-------------------------------------------------------------------------------
 @export var NAME: String              : get = get_name
 @export var ICON: CompressedTexture2D : get = get_icon
@@ -20,7 +20,7 @@ class_name Item extends RigidBody3D
 #-------------------------------------------------------------------------------
 
 
-# Member variables
+# Member variables.
 #-------------------------------------------------------------------------------
 var AUDIO_PLAYER_PATH: String : get = get_audio_player_path
 
@@ -28,19 +28,21 @@ var AUDIO_PLAYER_PATH: String : get = get_audio_player_path
 var itemOwner : get = get_item_owner
 #-------------------------------------------------------------------------------
 
-# Animation States
+
+# Animation States.
+#-------------------------------------------------------------------------------
 enum {
 	USE,
 	EQUIP,
 	UNEQUIP
 }
-
-
-# Constructors/Initializers
 #-------------------------------------------------------------------------------
-func _init(audioPlayerPath = null):
-	if audioPlayerPath:
-		AUDIO_PLAYER_PATH = audioPlayerPath
+
+# Constructors/Initializers.
+#-------------------------------------------------------------------------------
+func _init(p_audioPlayerPath = null):
+	if p_audioPlayerPath:
+		AUDIO_PLAYER_PATH = p_audioPlayerPath
 
 
 func _ready():
@@ -48,7 +50,7 @@ func _ready():
 #-------------------------------------------------------------------------------
 
 
-# Getters
+# Getters.
 #-------------------------------------------------------------------------------
 func get_class():
 	return "Item"
@@ -74,8 +76,8 @@ func get_hand_position():
 	return HAND_POSITION
 
 
-func get_animation(animationName):
-	match animationName:
+func get_animation(p_animationName):
+	match p_animationName:
 		USE:
 			return get_animation_use()
 		EQUIP:
@@ -124,7 +126,7 @@ func get_item_owner():
 #-------------------------------------------------------------------------------
 
 
-# Setters
+# Setters.
 #-------------------------------------------------------------------------------
 func set_equip_audio():
 	if AUDIO_PLAYER_PATH != null and ANIMATION_EQUIP and AUDIO_EQUIP:
@@ -134,24 +136,24 @@ func set_equip_audio():
 		# warning-ignore:return_value_discarded
 		ANIMATION_EQUIP.audio_track_insert_key(track_idx, 0, AUDIO_EQUIP)
 
-func set_item_owner(owner):
-	itemOwner = owner
+func set_item_owner(p_owner):
+	itemOwner = p_owner
 	
 #-------------------------------------------------------------------------------
 
 
-# Class related methods
+# Class related methods.
 #-------------------------------------------------------------------------------
 # Not sure if these methods should actually exist... An item can be picked but
 # a method should reflect a verb that the object executes. The player picks, 
 # drops and equips the item. The item does not execute these actions,
 # the player does... 
-func pick(audioPlayerPath = null):
+func pick(p_audioPlayerPath = null):
 	if get_parent():
 		get_parent().remove_child(self)
 	
-	if audioPlayerPath:
-		AUDIO_PLAYER_PATH = audioPlayerPath
+	if p_audioPlayerPath:
+		AUDIO_PLAYER_PATH = p_audioPlayerPath
 	set_equip_audio()
 	
 	return self
@@ -174,7 +176,7 @@ func clone():
 #-------------------------------------------------------------------------------
 
 
-# Collision related
+# Collision related.
 # ------------------------------------------------------------------------------
 func set_initial_layers():
 	for index in COLLISION_LAYERS.size():

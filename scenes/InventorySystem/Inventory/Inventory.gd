@@ -1,108 +1,115 @@
 class_name Inventory extends TextureRect
 
+var slotContainer : GridContainer
+var switch = true
 
-# Member variables
-# ------------------------------------------------------------------------------
-var refSlotCntr: GridContainer
-# ------------------------------------------------------------------------------
-
-
-# Constructors / Initialzers
-# ------------------------------------------------------------------------------
-func _ready():
-	refSlotCntr = $CenterContainer/SlotContainer
-# ------------------------------------------------------------------------------
-
-
-# Getters
-# ------------------------------------------------------------------------------
-func get_first_item_of_type(itemType: String):
-	for index in self.get_size():
-		if get_slot(index).get_itemRef():
-			if get_slot(index).get_itemRef().get_class() == itemType:
-				return get_slot(index).get_itemRef()
-	return null
-
-
-func get_item_index(item):
-	for index in refSlotCntr.get_child_count():
-		if get_slot(index).get_child_count() > 0:
-			if get_slot(index).get_child(0).get_itemRef() == item:
-				return index
-	return -1
-
-
-func is_full():
-	return get_item_count() == self.get_size()
-
-
-func get_size():
-	return refSlotCntr.get_child_count()
-
-
-func get_item_count():
-	var ctr: int = 0
+func _init(p_typeOfSlot : SlotType = SlotType.NormalSlot, p_numberOfSlots : int = 20, p_numberOfColumns: int = 5, p_slotSize: Vector2 = Vector2(118, 80)):
+	# Create and configure inventory subtree.
+	# --------------------------------------------------------------------------
+	set_texture(load("res://scenes/InventorySystem/Inventory/inventory_background1.png"))
 	
-	for index in refSlotCntr.get_child_count():
-		if get_slot(index).get_itemRef():
-			ctr +=1
-	return ctr
+	add_child(CenterContainer.new())
+	
+	slotContainer = GridContainer.new()
+	slotContainer.set_columns(p_numberOfColumns)
+	get_child(0).add_child(slotContainer)
+	
+	# Chose type of Slot for this Inventory
+	# ----------------------------------
+	match(p_typeOfSlot):
+		SlotType.NormalSlot:
+			for i in p_numberOfSlots:
+				slotContainer.add_child(Slot.new(p_slotSize))
+		SlotType.HotbarSlot:
+			for i in p_numberOfSlots:
+				slotContainer.add_child(HotbarSlot.new(p_slotSize))
+	# ----------------------------------
+	# --------------------------------------------------------------------------
 
 
-func get_slot_container():
-	return refSlotCntr
+func _ready():
+	# Keep configuring subtree here.
+	# ------------------------------
+	# Resize inventory.
+	set_size(Vector2(slotContainer.get_size().x + 40, slotContainer.get_size().y + 40))
+	get_child(0).set_size(slotContainer.get_size() + Vector2(40,40))
+	# ------------------------------
 
 
-func get_slot(index: int):
-	if index < refSlotCntr.get_child_count():
-		return refSlotCntr.get_child(index)
-	else:
-		return null
+# Enums.
+# ------------------------------------------------------------------------------
+enum SlotType {
+	NormalSlot,
+	HotbarSlot
+}
 # ------------------------------------------------------------------------------
 
+#func _process(_delta):
+#	if switch:
+#		switch = false
+#		var pos_x = get_viewport().get_size().x / 2 - size.x / 2
+#		var pos_y = get_viewport().get_size().y - size.y
+#		set_position(Vector2(pos_x, pos_y))
+#		print(str(pos_x) + " : " + str(pos_y))
+#		print(get_position())
+
+# Functions an inventory should provide:
+# 01) add_item
+# 02) remove_item
+# 03) get_item
+# 04) get_size
+# 05) is_full
+# 06) get_space_available
 
 # Class related methods
 # ------------------------------------------------------------------------------
-func add_item(item):
-	if !(item is Item):
-		return false
-	
-	for index in self.get_size():
-		if get_slot(index).is_empty():
-			get_slot(index).add_ItemTexture(item)
+func add_item(p_item: Item):
+	for i in get_inventory_size():
+		if get_slot(i).is_empty():
+			get_slot(i).add_item(p_item)
 			return true
-	
 	return false
 
 
-func remove_item(item):
-	if !(item is Item):
+func remove_item(p_item: Item):
+	for i in slotContainer.get_child_count():
+		if get_slot(i).get_item() == p_item:
+			return get_slot(i).remove_item()
+	return null
+
+
+func get_item(p_index: int):
+	if get_slot(p_index):
+		return get_slot(p_index).get_item()
+	return null
+
+
+func get_space_available():
+	var ctr = 0
+	for i in slotContainer.get_child_count():
+		if get_slot(i).is_empty():
+			ctr += 1
+	return ctr
+
+
+func get_inventory_size():
+	print("Count is: " + str(slotContainer.get_child_count()))
+	return slotContainer.get_child_count()
+
+
+func is_full():
+	return get_space_available() == 0
+
+func get_slot_container():
+	return slotContainer
+# ------------------------------------------------------------------------------
+
+
+# Class helper methods
+# ------------------------------------------------------------------------------
+func get_slot(p_index: int):
+	if p_index < slotContainer.get_child_count():
+		return slotContainer.get_child(p_index)
+	else:
 		return null
-	
-	var index = get_item_index(item)
-	if index < 0:
-		return null
-	
-	var itemRef = get_slot(index).get_itemRef()
-	get_slot(index).delete_ItemTexture()
-	
-	return itemRef
-
-
-func delete_item(item):
-	var itemRef = remove_item(item)
-	if itemRef:
-		itemRef.queue_free()
-		return true
-	
-	return false
-
-
-func item_type_exists(itemType: String):
-	for index in get_size():
-		if get_slot(index).get_itemRef():
-			if get_slot(index).get_itemRef().get_type() == itemType:
-				return true
-	
-	return false
 # ------------------------------------------------------------------------------

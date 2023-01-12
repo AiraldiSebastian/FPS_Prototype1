@@ -1,7 +1,6 @@
-[gd_scene load_steps=96 format=3 uid="uid://dshfdu3ylhpue"]
+[gd_scene load_steps=95 format=3 uid="uid://dshfdu3ylhpue"]
 
 [ext_resource type="Texture2D" uid="uid://d1aeium0o3vww" path="res://scenes/Game_Scenarios/sky.png" id="1_00sg5"]
-[ext_resource type="PackedScene" uid="uid://cep7dypcjn0gc" path="res://scenes/Units/Player/Character.tscn" id="1_lwrm4"]
 [ext_resource type="PackedScene" uid="uid://dno1ca2lwbit6" path="res://scenes/Objects/Others/Fence/Post.tscn" id="2_de3n4"]
 [ext_resource type="PackedScene" uid="uid://cfw7tm25wxta1" path="res://scenes/Objects/Others/Fence/FenceRight.tscn" id="3_841jj"]
 [ext_resource type="Texture2D" uid="uid://dwbk6gyv7i2qm" path="res://assets/Other/Environment/ground_forest.png" id="3_ob17y"]
@@ -3931,10 +3930,6 @@ mesh = SubResource("25")
 [node name="Small crown3 (unique)" type="MeshInstance3D" parent="Map/Foresttt/BunchOfTrees"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.70921, 1.56277, -4.33484)
 mesh = SubResource("26")
-
-[node name="Character" parent="." instance=ExtResource("1_lwrm4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8324, 0.208494, -37.6485)
-MAX_SLOPE_ANGLE = 60
 
 [node name="Enemies" type="Node3D" parent="."]
 

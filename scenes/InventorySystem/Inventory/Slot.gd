@@ -1,137 +1,150 @@
 class_name Slot extends Panel
 
 
-# Signals
+# Signals.
 # ------------------------------------------------------------------------------
 signal itemChanged
 # ------------------------------------------------------------------------------
 
 
-# Getters
+# Member variables.
 # ------------------------------------------------------------------------------
-func get_itemRef():
-	return get_child(0).itemRef if get_child_count() > 0 else null
+var item : Item
 # ------------------------------------------------------------------------------
 
 
-# Class related methods
+# Constructors/Initializers.
+#-------------------------------------------------------------------------------
+func _init(slotSize: Vector2 = Vector2(118, 80)):
+	custom_minimum_size = slotSize
+#-------------------------------------------------------------------------------
+
+
+# Getters.
 # ------------------------------------------------------------------------------
-func add_ItemTexture(item):
-	if get_child_count() > 0:
+func get_item():
+	return item
+# ------------------------------------------------------------------------------
+
+
+# Class related methods.
+# ------------------------------------------------------------------------------
+func add_item(p_item):
+	if !p_item:
+		return false
+	if item:
 		return false
 	
-	# Create the Texture2D for the item being added
+	item = p_item
+	item.set_item_owner(self)
+	
+	# Create the Texture2D for the item being added.
 	# --------------------------------------------------------------------------
-	var nodeIcon:ItemTexture = ItemTexture.new()
-	nodeIcon.itemRef = item
-	nodeIcon.texture = item.get_icon()
+	var itemIcon = TextureRect.new()
+	itemIcon.set_texture(item.get_icon())
+	add_child(itemIcon)
 	# --------------------------------------------------------------------------
 	
-	add_child(nodeIcon)
-	
-	# Center our item's texture
+	# Center our item's texture.
 	# --------------------------------------------------------------------------
-	nodeIcon.set_anchors_preset(Control.PRESET_CENTER)
-	nodeIcon.set_offsets_preset(Control.PRESET_CENTER)
+	itemIcon.set_anchors_preset(Control.PRESET_CENTER)
+	itemIcon.set_offsets_preset(Control.PRESET_CENTER)
 	# --------------------------------------------------------------------------
 	
-	# Communicate the signal
+	# Communicate the signal.
 	# --------------------------------------------------------------------------
-	emit_signal("itemChanged", get_itemRef())
+	emit_signal("itemChanged", get_item())
 	return true
 	# --------------------------------------------------------------------------
 
 
-func remove_ItemTexture():
-	if get_child_count() == 0:
+func remove_item():
+	if !item:
 		return null
 	
-	var retNode = get_child(0)
 	remove_child(get_child(0))
+	item.set_owner(null)
+	var retItem = item
+	item = null
 	
-	# Communicate the signal
+	# Communicate the signal.
 	# --------------------------------------------------------------------------
-	emit_signal("itemChanged", get_itemRef())
-	return retNode
-	# --------------------------------------------------------------------------
-
-
-func delete_ItemTexture():
-	if get_child_count() == 0:
-		return
-	
-	var itemTexture = get_child(0)
-	remove_child(itemTexture)
-	itemTexture.queue_free()
-	
-	# Communicate the signal
-	# --------------------------------------------------------------------------
-	emit_signal("itemChanged", get_itemRef())
+	emit_signal("itemChanged", get_item())
+	return retItem
 	# --------------------------------------------------------------------------
 
 
 func is_empty():
-	return get_child_count() == 0
+	return item == null
 # ------------------------------------------------------------------------------
 
 
-# Functions specifically for dragging the item's texture
+# Functions specifically for dragging the item's texture.
 # --------------------------------------------------------------------------------------------------
 func _get_drag_data(_position):
-	if get_child_count() == 0:
+	if !item:
 		return null
 	
-	# Create the texture that will be previewed when dragging the item around
+	# Set the texture that will be previewed when dragging the item around.
 	# --------------------------------------------------------------------------
-	var copyIconNode = ItemTexture.new()
-	copyIconNode.set_itemRef(get_child(0).get_itemRef())
-	copyIconNode.set_texture(get_child(0).get_texture())
-	set_drag_preview(copyIconNode)
+	var itemDragTexture = TextureRect.new()
+	itemDragTexture.set_texture(item.get_icon())
+	set_drag_preview(itemDragTexture)
 	# --------------------------------------------------------------------------
 	
-	return get_child(0)
+	return item
 
 
-func _can_drop_data(_position, data):
-	if !data is ItemTexture:
-		return false
-
-	# Check if drop position is same as the picked-up position
+func _can_drop_data(_position, p_item):
+	# First check if item was not removed from the slot while being dragged [1].
 	# --------------------------------------------------------------------------
-	if get_child_count() != 0 && data == get_child(0):
+	if p_item.get_item_owner().is_empty():
+		return
+	# --------------------------------------------------------------------------
+	
+	if !p_item is Item:
+		return false
+	
+	# Check if drop position is same as the picked-up position.
+	# --------------------------------------------------------------------------
+	if item == p_item:
 		return false
 	# --------------------------------------------------------------------------
-
+	
 	return true
 
 
-func _drop_data(_position, data):
-	# Store a reference to data's parent
+func _drop_data(_position, p_item):
+	# Store a reference to item's owner.
 	# --------------------------------------------------------------------------
-	var dataParent = data.get_parent()
-	# --------------------------------------------------------------------------
-	
-	# Remove data from its parent slot
-	# --------------------------------------------------------------------------
-	dataParent.remove_child(data)
+	var itemOwner = p_item.get_item_owner()
 	# --------------------------------------------------------------------------
 	
-	# If this slot has a child, remove_at it and add it to the other slot
+	# Remove data from its parent slot.
 	# --------------------------------------------------------------------------
-	if get_child_count() > 0:
-		var ourChild = get_child(0)
-		remove_child(ourChild)
-		dataParent.add_child(ourChild)
+	itemOwner.remove_item()
 	# --------------------------------------------------------------------------
 	
-	# Add the data as a child of this slot
+	# If this slot has a child, remove_at it and add it to the other slot.
 	# --------------------------------------------------------------------------
-	add_child(data)
+	if item:
+		var ourItem = item
+		remove_item()
+		itemOwner.add_item(ourItem)
 	# --------------------------------------------------------------------------
 	
-	# Communicate signal checked bot slots
+	# Add the data as a child of this slot.
 	# --------------------------------------------------------------------------
-	dataParent.emit_signal("itemChanged", dataParent.get_itemRef())
-	emit_signal("itemChanged", get_itemRef())
+	add_item(p_item)
 	# --------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------
+
+
+# Notes to have in mind.
+# --------------------------------------------------------------------------------------------------
+# 1) Checking if the item has been removed while being dragged seems to be fixed by handling it
+# only in this method _can_drop_data(). But this is only because when the mouse has been clicked
+# (left-click for example) to drop the item, the method _can_drop_data() gets refreshed. Otherwise 
+# (if the left-click) would not update this method the fix would also/additionaly have to be 
+# implemented in the method _drop_data().
 # --------------------------------------------------------------------------------------------------
