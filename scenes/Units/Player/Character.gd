@@ -269,6 +269,9 @@ func process_ui(_delta):
 	elif playerCurrentItem is Medkit:
 		UI_InfoLabel.text = "HEALTH: " + str(healthSystem.get_currentHealth()) + "/" + str(healthSystem.get_max_health()) + \
 			"\nHealing: " + str(playerCurrentItem.get_heal_effect())
+	elif playerCurrentItem is Ammo:
+		UI_InfoLabel.text = "HEALTH: " + str(healthSystem.get_currentHealth()) + "/" + str(healthSystem.get_max_health()) + \
+			"\nCharges: " + str(playerCurrentItem.get_charges())
 	else:
 		UI_InfoLabel.text = "HEALTH: " + str(healthSystem.get_currentHealth()) + "/" + str(healthSystem.get_max_health())
 	# ----------------------------------------------------------------------------------------------
@@ -431,8 +434,8 @@ func _unhandled_input(event):
 		
 		# Others
 		# ----------------------------------------------------------------------
-		if event.is_action_pressed("change_camera"):
-			get_viewport().get_camera_3d().clear_current();
+#		if event.is_action_pressed("change_camera"):
+#			get_viewport().get_camera_3d().clear_current();
 		# ----------------------------------------------------------------------
 	handle_input_fsm(event)
 #---------------------------------------------------------------------------------------------------
@@ -530,7 +533,6 @@ func reload():
 						item.use()
 						if item.get_charges() == 0:
 							delete_item(item)
-#							UI_Hotbar.remove_item(item).queue_free()
 						playerCurrentItem.change_mag()
 						perspCurrentItem.change_mag()
 						return true
@@ -540,11 +542,11 @@ func reload():
 			# --------------------------------------------------------------------------------------
 			for i in UI_Inventory.get_inventory_size():
 				if UI_Inventory.get_item(i):
-					if UI_Hotbar.get_item(i).get_class() == "Ammo":
+					if UI_Inventory.get_item(i).get_class() == "Ammo":
+						item = UI_Inventory.get_item(i)
 						item.use()
 						if item.get_charges() == 0:
 							delete_item(item)
-#							UI_Inventory.remove_item(item).queue_free()
 						playerCurrentItem.change_mag()
 						perspCurrentItem.change_mag()
 						return true
@@ -688,7 +690,8 @@ func hold_item():
 	# Clone will not truly be a "clone". For a cloned item, the functions _init and _ready
 	# will be called, this is not true for the original item. This will in most cases give 
 	# the cloned object different values, since it will initialise it with the initial values.
-	perspCurrentItem = playerCurrentItem.clone()
+#	perspCurrentItem = playerCurrentItem.clone()
+	perspCurrentItem = playerCurrentItem.get_twin_item()
 	adapt_item_static(playerCurrentItem)
 	adapt_item_static(perspCurrentItem)
 	# ----------------------------------------------------------------------------------------------
@@ -732,7 +735,10 @@ func unhold_item():
 	
 	var perspItem = perspHandRight.get_child(0)
 	perspHandRight.remove_child(perspItem)
-	perspItem.queue_free()
+	
+	# Save items twin in the item itself
+	playerCurrentItem.twinItem = perspCurrentItem
+#	perspItem.queue_free()
 	# ----------------------------------------------------------------------------------------------
 	
 	

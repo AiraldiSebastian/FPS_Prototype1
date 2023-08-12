@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://3mv5l4q3uqgj"]
+[gd_scene load_steps=9 format=3 uid="uid://3mv5l4q3uqgj"]
 
 [ext_resource type="Script" path="res://scenes/Objects/Pickables/Medkit.gd" id="1"]
 [ext_resource type="Material" path="res://assets/Pickables/Health/MedKit.material" id="2"]
 [ext_resource type="Texture2D" uid="uid://db1mcmvved3ax" path="res://assets/Pickables/Health/MedkitIcon.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://buv5w3b2i3ed4" path="res://assets/Pickables/Health/MedKit_twin.tscn" id="3_ml0f4"]
 [ext_resource type="Animation" uid="uid://hbldlt1n2awt" path="res://assets/Pickables/Health/medkit_equip.res" id="3_ujjxs"]
 [ext_resource type="AudioStream" uid="uid://cf5siaktghvqa" path="res://assets/Pickables/Health/medkit_equip.wav" id="5"]
 
@@ -31,6 +32,7 @@ HEAL_EFFECT = 20
 MAX_CHARGES = 1
 NAME = "MedKit"
 ICON = ExtResource("3")
+twinItemResource = ExtResource("3_ml0f4")
 COLLISION_LAYERS = [5]
 COLLISION_MASKS = [1, 5]
 HAND_POSITION = Vector3(0, 0.15, 0.1)

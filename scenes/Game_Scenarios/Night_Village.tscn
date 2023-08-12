@@ -1,6 +1,7 @@
 [gd_scene load_steps=95 format=3 uid="uid://dshfdu3ylhpue"]
 
 [ext_resource type="Texture2D" uid="uid://d1aeium0o3vww" path="res://scenes/Game_Scenarios/sky.png" id="1_00sg5"]
+[ext_resource type="PackedScene" uid="uid://cqyamkpwsjvek" path="res://scenes/Units/Player/Character.tscn" id="1_lwrm4"]
 [ext_resource type="PackedScene" uid="uid://dno1ca2lwbit6" path="res://scenes/Objects/Others/Fence/Post.tscn" id="2_de3n4"]
 [ext_resource type="PackedScene" uid="uid://cfw7tm25wxta1" path="res://scenes/Objects/Others/Fence/FenceRight.tscn" id="3_841jj"]
 [ext_resource type="Texture2D" uid="uid://dwbk6gyv7i2qm" path="res://assets/Other/Environment/ground_forest.png" id="3_ob17y"]
@@ -17,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://3mv5l4q3uqgj" path="res://scenes/Objects/Pickables/MedKit.tscn" id="15_04qll"]
 [ext_resource type="PackedScene" uid="uid://biiqv5fipc37w" path="res://scenes/Weapons/FireWeapons/aa_50_beowulf.tscn" id="17_qiu1g"]
 [ext_resource type="PackedScene" uid="uid://dgcr8s58buaqr" path="res://scenes/Units/Enemies/Zombie.tscn" id="18_rpdab"]
-[ext_resource type="Script" path="res://scenes/Game_Scenarios/SpawnPoint.gd" id="20_ce06d"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xm67s"]
 panorama = ExtResource("1_00sg5")
@@ -310,7 +310,7 @@ environment = SubResource("Environment_sqd6c")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 13.5876, 0)
 light_color = Color(0.313726, 0.407843, 0.52549, 1)
-light_energy = 0.5
+light_energy = 0.25
 shadow_opacity = 0.65
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -3992,6 +3992,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1, 1.28, -42.4)
 [node name="aa_50_beowulf" parent="Pickables" instance=ExtResource("17_qiu1g")]
 transform = Transform3D(-4.37114e-08, -6.16922e-16, -1, 0.999577, 0.0290847, -4.36929e-08, 0.0290847, -0.999577, -1.27134e-09, 14.3, 1.13, -42.2)
 
-[node name="SpawnPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3, 2.3, -22.1)
-script = ExtResource("20_ce06d")
+[node name="Character" parent="." instance=ExtResource("1_lwrm4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1, 0.2, -33.6)

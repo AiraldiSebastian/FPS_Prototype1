@@ -44,6 +44,9 @@ enum {
 func _init(audioPlayerPath = null):
 	super(audioPlayerPath)
 	pass
+
+func _ready():
+	super()
 #-------------------------------------------------------------------------------
 
 
@@ -153,6 +156,7 @@ func fire():
 	if current_mag_ammo == 0:
 		return false
 	
+	$GPUParticles3D.set_emitting(true)
 	current_mag_ammo -= 1
 	var collider = raycast.get_collider()
 	if collider:

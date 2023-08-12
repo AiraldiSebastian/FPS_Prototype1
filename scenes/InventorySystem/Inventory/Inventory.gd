@@ -44,14 +44,6 @@ enum SlotType {
 }
 # ------------------------------------------------------------------------------
 
-#func _process(_delta):
-#	if switch:
-#		switch = false
-#		var pos_x = get_viewport().get_size().x / 2 - size.x / 2
-#		var pos_y = get_viewport().get_size().y - size.y
-#		set_position(Vector2(pos_x, pos_y))
-#		print(str(pos_x) + " : " + str(pos_y))
-#		print(get_position())
 
 # Functions an inventory should provide:
 # 01) add_item
@@ -93,7 +85,6 @@ func get_space_available():
 
 
 func get_inventory_size():
-	print("Count is: " + str(slotContainer.get_child_count()))
 	return slotContainer.get_child_count()
 
 

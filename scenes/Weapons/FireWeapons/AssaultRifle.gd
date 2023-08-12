@@ -13,10 +13,10 @@ extends FireWeapon
 #-------------------------------------------------------------------------------
 func _init(audioPlayerPath = null):
 	super(audioPlayerPath)
-	pass
 
 
 func _ready():
+	super()
 	set_reload_audio()
 #-------------------------------------------------------------------------------
 

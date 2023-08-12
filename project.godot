@@ -131,6 +131,8 @@ _global_script_class_icons={
 config/name="Godot"
 run/main_scene="res://scenes/Game_Scenarios/Night_Village.tscn"
 config/features=PackedStringArray("4.0")
+boot_splash/image="res://assets/Intro/intro_black-mesa.png"
+boot_splash/minimum_display_time=5000
 config/defaults/default_clear_color=Color(0.3, 0.3, 0.3, 1)
 
 [display]

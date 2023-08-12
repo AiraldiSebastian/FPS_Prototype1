@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://csspcinh4jada"]
+[gd_scene load_steps=19 format=3 uid="uid://csspcinh4jada"]
 
 [ext_resource type="PackedScene" uid="uid://bwydrny5mhyiu" path="res://assets/Other/Environment/campfire.glb" id="1_lp3yb"]
 [ext_resource type="Texture2D" uid="uid://b70o3qk8rc33j" path="res://assets/Other/Environment/fire.png" id="2_8hnxr"]
+[ext_resource type="Script" path="res://scenes/Environment/campfire.gd" id="2_m8w8b"]
 [ext_resource type="Texture2D" uid="uid://cnetur21haifo" path="res://assets/Other/Environment/smoke.png" id="3_e366i"]
 
 [sub_resource type="Gradient" id="Gradient_25qvi"]
@@ -82,7 +83,14 @@ particles_anim_loop = false
 [sub_resource type="QuadMesh" id="QuadMesh_3f3fc"]
 material = SubResource("StandardMaterial3D_56v55")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_ilivl"]
+radius = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ox44t"]
+size = Vector3(0.75, 0.5, 0.75)
+
 [node name="campfire" instance=ExtResource("1_lp3yb")]
+script = ExtResource("2_m8w8b")
 
 [node name="flames" type="GPUParticles3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
@@ -102,3 +110,17 @@ draw_pass_1 = SubResource("QuadMesh_3f3fc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.682353, 0.168627, 1)
 omni_range = 15.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+shape = SubResource("SphereShape3D_ilivl")
+
+[node name="Fire_Area" type="Area3D" parent="." index="5"]
+collision_layer = 12288
+collision_mask = 4352
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fire_Area" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("BoxShape3D_ox44t")

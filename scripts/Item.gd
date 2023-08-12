@@ -5,6 +5,8 @@ class_name Item extends RigidBody3D
 #-------------------------------------------------------------------------------
 @export var NAME: String              : get = get_name
 @export var ICON: CompressedTexture2D : get = get_icon
+# Its twin for using with the perspective-character.
+@export var twinItemResource: Resource
 
 @export var COLLISION_LAYERS: Array : get = get_collision_layers
 @export var COLLISION_MASKS: Array  : get = get_collision_masks
@@ -26,6 +28,9 @@ var AUDIO_PLAYER_PATH: String : get = get_audio_player_path
 
 # itemOwner instead of owner to not clash with Node.owner var.
 var itemOwner : get = get_item_owner
+
+# Its twin for using with the perspective-character.
+var twinItem: Item : get = get_twin_item
 #-------------------------------------------------------------------------------
 
 
@@ -44,8 +49,9 @@ func _init(p_audioPlayerPath = null):
 	if p_audioPlayerPath:
 		AUDIO_PLAYER_PATH = p_audioPlayerPath
 
-
 func _ready():
+	if twinItemResource:
+		twinItem = twinItemResource.instantiate()
 	pass
 #-------------------------------------------------------------------------------
 
@@ -123,6 +129,9 @@ func get_item_mesh():
 
 func get_item_owner():
 	return itemOwner
+
+func get_twin_item():
+	return twinItem
 #-------------------------------------------------------------------------------
 
 

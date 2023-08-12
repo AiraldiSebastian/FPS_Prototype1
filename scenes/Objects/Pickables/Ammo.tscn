@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfs0hahfmti7s"]
+[gd_scene load_steps=10 format=3 uid="uid://cfs0hahfmti7s"]
 
 [ext_resource type="Script" path="res://scenes/Objects/Pickables/Ammo.gd" id="1"]
 [ext_resource type="Material" path="res://assets/Pickables/Ammo/Ammo.material" id="2"]
 [ext_resource type="Animation" uid="uid://dt0bdv4j2yhc2" path="res://assets/Pickables/Ammo/ammo_equip.res" id="3_7j1tc"]
+[ext_resource type="PackedScene" uid="uid://dsaopudq5kj18" path="res://assets/Pickables/Ammo/Ammo_twin.tscn" id="3_g3e12"]
 [ext_resource type="AudioStream" uid="uid://dwsiisufp1bdp" path="res://assets/Pickables/Ammo/ammo_equip.wav" id="4"]
 [ext_resource type="Texture2D" uid="uid://dg27fggkxmstc" path="res://assets/Pickables/Ammo/AmmoIcon.png" id="5"]
 
@@ -33,6 +34,7 @@ script = ExtResource("1")
 AMMO = 30
 MAX_CHARGES = 3
 ICON = ExtResource("5")
+twinItemResource = ExtResource("3_g3e12")
 COLLISION_LAYERS = [5]
 COLLISION_MASKS = [1, 5]
 HAND_POSITION = Vector3(0, 0.15, 0.1)

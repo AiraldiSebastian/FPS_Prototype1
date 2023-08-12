@@ -20,6 +20,7 @@ func _init(audioPlayerPath = null):
 
 
 func _ready():
+	super()
 	charges = MAX_CHARGES
 #-------------------------------------------------------------------------------
 
